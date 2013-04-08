@@ -1,29 +1,12 @@
-<h1>Listing incidents</h1>
+<div class="pagination-details"><%=  page_entries_info @incidents %></div>
+<%= paginate @incidents %>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Location</th>
-    <th>Incidenttype</th>
-    <th>Occurence date</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
 
+<ul class="incident-list">
 <% @incidents.each do |incident| %>
-  <tr>
-    <td><%= incident.name %></td>
-    <td><%= incident.location %></td>
-    <td><%= incident.incidenttype %></td>
-    <td><%= incident.occurence_date %></td>
-    <td><%= link_to 'Show', incident %></td>
-    <td><%= link_to 'Edit', edit_incident_path(incident) %></td>
-    <td><%= link_to 'Destroy', incident, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+<li style="" class="summary-text"><div  style="float:left;background-color:#E0E0E0;border-radius:3px;border:1px solid #D8D8D8;width:150px;color:#222;margin-right:15px;font-size:11px;padding:4px;"><%= incident.location %></div><strong style="font-family: FacitWeb-Bold;font-size:11px;display:block;"><%= incident.incident_number %></strong><%= incident.summary %></li> 
+   
 <% end %>
-</table>
+</ul>
 
-<br />
-
-<%= link_to 'New Incident', new_incident_path %>
+<%= paginate @incidents %>

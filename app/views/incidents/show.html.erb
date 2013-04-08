@@ -1,8 +1,18 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Name:</b>
-  <%= @incident.name %>
+  <b>Incident number:</b>
+  <%= @incident.incident_number %>
+</p>
+
+<p>
+  <b>Incident type:</b>
+  <%= @incident.incident_type %>
+</p>
+
+<p>
+  <b>Level:</b>
+  <%= @incident.level %>
 </p>
 
 <p>
@@ -11,13 +21,18 @@
 </p>
 
 <p>
-  <b>Incidenttype:</b>
-  <%= @incident.incidenttype %>
+  <b>Location details:</b>
+  <%= @incident.location_details %>
 </p>
 
 <p>
-  <b>Occurence date:</b>
-  <%= @incident.occurence_date %>
+  <b>Summary:</b>
+  <%= @incident.summary %>
+</p>
+
+<p>
+  <b>Occured on:</b>
+  <%= @incident.occured_on %>
 </p>
 
 

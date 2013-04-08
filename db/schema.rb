@@ -11,15 +11,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130326111034) do
+ActiveRecord::Schema.define(:version => 20130408114136) do
 
   create_table "incidents", :force => true do |t|
-    t.string   "name"
+    t.string   "incident_number"
+    t.string   "incident_type"
+    t.string   "level"
     t.string   "location"
-    t.string   "incidenttype"
-    t.datetime "occurence_date"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.string   "location_details"
+    t.text     "summary"
+    t.datetime "occured_on"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
   end
+
+  add_index "incidents", ["location", "occured_on", "incident_type"], :name => "index_incidents_on_location_and_occured_on_and_incident_type"
 
 end

@@ -1,3 +1,3 @@
 class Incident < ActiveRecord::Base
-  attr_accessible :incidenttype, :location, :name, :occurence_date
+  attr_accessible :incident_number, :incident_type, :level, :location, :location_details, :occured_on, :summary
 end

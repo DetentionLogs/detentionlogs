@@ -1,13 +1,19 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  name: MyString
+  incident_number: MyString
+  incident_type: MyString
+  level: MyString
   location: MyString
-  incidenttype: MyString
-  occurence_date: 2013-03-26 22:10:34
+  location_details: MyString
+  summary: MyText
+  occured_on: 2013-04-02 23:08:57
 
 two:
-  name: MyString
+  incident_number: MyString
+  incident_type: MyString
+  level: MyString
   location: MyString
-  incidenttype: MyString
-  occurence_date: 2013-03-26 22:10:34
+  location_details: MyString
+  summary: MyText
+  occured_on: 2013-04-02 23:08:57
