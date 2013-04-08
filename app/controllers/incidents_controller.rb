@@ -1,6 +1,5 @@
 class IncidentsController < ApplicationController
-  
-   http_basic_authenticate_with :name => "detention", :password => "logs"  
+ 
    
   # GET /incidents
   # GET /incidents.json
