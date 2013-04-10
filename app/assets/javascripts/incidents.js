@@ -117,10 +117,10 @@
 		
 		var first_day_of_set = moment("Aug 25, 2010") ;
 		
-		start_day = moment("<%= params[:date_first] %>")
+
 		$("#slider_start").css("left", start_day.diff(first_day_of_set, 'days'));
 		
-		end_day = moment("<%= params[:date_second] %>")
+
 		$("#slider_end").css("left", end_day.diff(first_day_of_set, 'days'));
 		
 		
@@ -146,7 +146,7 @@
 		
 	   	setDates() 
 		
-		var locations = "<%= params[:location] %>";
+
 		var locations_array = locations.split(',');
 		
 		for(i = 0; i < locations_array.length; i++)
@@ -183,7 +183,7 @@
 	}
 	
 	
-	var incident_types = "<%= params[:incident] %>";
+
 	var incident_types_array = incident_types.split(',');
 	
 	for(i = 0; i < incident_types_array.length; i++)
@@ -221,7 +221,7 @@ function iterateOverIncidentList() {
 	
 	
 	
-	var level_types = "<%= params[:level] %>";
+
 	var level_types_array = level_types.split(',');
 	
 	for(i = 0; i < level_types_array.length; i++)

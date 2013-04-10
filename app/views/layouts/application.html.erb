@@ -16,7 +16,16 @@
 		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
  	   <%= stylesheet_link_tag    "normalize", :media => "all" %>	
  	   <%= stylesheet_link_tag    "incidents", :media => "all" %>
+	   
+
 	   <%= javascript_include_tag "moment.min" %>
+	   <script>
+	   		var locations = "<%= params[:location] %>";
+	   	var level_types = "<%= params[:level] %>";
+		var incident_types = "<%= params[:incident] %>";
+		var start_day = moment("<%= params[:date_first] %>")
+		var end_day = moment("<%= params[:date_second] %>")
+	   </script>
 	   <%= javascript_include_tag "incidents" %>
 
 

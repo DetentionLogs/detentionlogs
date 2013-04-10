@@ -21,7 +21,7 @@ class IncidentsController < ApplicationController
       @locations = params[:location].split(',')
       @incident_type = params[:incident].split(',')
       @level = params[:level].split(',')
-      @incidents = Incident.where("occured_on in (?) AND location in (?) AND incident_type in (?) AND level in (?)", @date_first..@date_second, @locations, @incident_type, @level).page(params[:page])
+      @incidents = Incident.where("location in (?) AND occured_on in (?) AND incident_type in (?)", @locations, @date_first..@date_second,  @incident_type).page(params[:page])
     else
       @incidents = Incident.where("occured_on in (?)", @date_first..@date_second).page(params[:page])
     end
