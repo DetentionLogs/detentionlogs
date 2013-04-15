@@ -4,7 +4,7 @@
 
 <ul class="incident-list">
 <% @incidents.each do |incident| %>
-<li style="" class="summary-text"><div  style="float:left;background-color:#E0E0E0;border-radius:3px;border:1px solid #D8D8D8;width:150px;color:#222;margin-right:15px;font-size:11px;padding:4px;"><%= incident.location %></div><strong style="font-family: FacitWeb-Bold;font-size:11px;display:block;"><%= incident.incident_number %></strong><%= incident.summary %></li> 
+<li style="" class="summary-text"><div><%= incident.location %></div><strong><%= incident.incident_number %></strong><%= incident.summary %></li> 
    
 <% end %>
 </ul>
