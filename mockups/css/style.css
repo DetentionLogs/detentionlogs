@@ -112,14 +112,17 @@ input {
 .mail-list .btn {
   background-color: #467719;
   color: #fff; }
+  .mail-list .btn:hover, .mail-list .btn:focus {
+    background-color: rgba(70, 119, 25, 0.2); }
+  .mail-list .btn:active {
+    background-color: #444444; }
 
 .share-item a {
   background-color: silver;
   color: white; }
-  .share-item a :hover,
-  .share-item a :focus {
+  .share-item a:hover, .share-item a:focus {
     background-color: #444444; }
-  .share-item a :active {
+  .share-item a:active {
     background-color: silver; }
 
 /* @end Colours */
@@ -198,6 +201,27 @@ body {
     margin-top: 1rem; }
 
 /* @end Navigation */
+/* @group Icons */
+.contact .email {
+  background: url(email-small.png) no-repeat left 0.2rem;
+  background-size: 21%;
+  padding-left: 2.1rem;
+  text-decoration: none; }
+  .no-backgroundSize .contact .email {
+    background: none;
+    text-decoration: underline;
+    padding-left: none; }
+.contact .twitter {
+  background: url(twitter-small.png) no-repeat left bottom;
+  background-size: 13%;
+  padding-left: 2.2rem;
+  text-decoration: none; }
+  .no-backgroundSize .contact .twitter {
+    background: none;
+    text-decoration: underline;
+    padding-left: none; }
+
+/* @end Icons */
 /* @group Table */
 table {
   font-size: 14px;

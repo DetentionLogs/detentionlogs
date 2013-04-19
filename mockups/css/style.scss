@@ -95,17 +95,24 @@ input {
 .mail-list .btn {
 	background-color: $green;
 	color: #fff;
+	&:hover,
+	&:focus {
+		background-color: transparentize( $green, .8);
+	}
+	&:active {
+	background-color: $regular-text;
+	}
 }
 
 .share-item {
 	a {
 		background-color: $grey;
 		color: white;
-		:hover,
-		:focus {
+		&:hover,
+		&:focus {
 			background-color: $regular-text;
 		}
-		:active {
+		&:active {
 		background-color: $grey;
 		}
 	}
@@ -207,6 +214,34 @@ body {
 }
 
 /* @end Navigation */
+
+/* @group Icons */
+
+.contact {
+	.email {
+		background: url(email-small.png) no-repeat left .2rem;
+		background-size: 21%;
+		padding-left: 2.1rem;
+		text-decoration: none;
+		.no-backgroundSize & {
+			background: none;
+			text-decoration: underline;
+			padding-left: none;
+		}
+	}
+	.twitter {
+		background: url(twitter-small.png) no-repeat left bottom;
+		background-size: 13%;
+		padding-left: 2.2rem;
+		text-decoration: none;
+		.no-backgroundSize & {
+			background: none;
+			text-decoration: underline;
+			padding-left: none;
+		}
+	}
+}
+/* @end Icons */
 
 /* @group Table */
 
