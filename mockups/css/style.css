@@ -113,7 +113,8 @@ input {
   background-color: #467719;
   color: #fff; }
   .mail-list .btn:hover, .mail-list .btn:focus {
-    background-color: rgba(70, 119, 25, 0.2); }
+    background-color: rgba(70, 119, 25, 0.2);
+    color: #444444; }
   .mail-list .btn:active {
     background-color: #444444; }
 

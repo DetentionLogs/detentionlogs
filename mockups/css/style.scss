@@ -98,6 +98,7 @@ input {
 	&:hover,
 	&:focus {
 		background-color: transparentize( $green, .8);
+		color: $regular-text;
 	}
 	&:active {
 	background-color: $regular-text;
