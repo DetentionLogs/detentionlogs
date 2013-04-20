@@ -1,0 +1,1 @@
+/* write abbr filling library from the glossary */
