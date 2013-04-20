@@ -363,5 +363,5 @@ input, .btn {
 
   /* @end Forms */ }
 @media all and (min-width: 80em) {
-  body {
+  .site-intro {
     padding-top: 3rem; } }
