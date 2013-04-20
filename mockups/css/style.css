@@ -107,6 +107,10 @@ a:focus {
   background-color: #fbefd6;
   color: #111; }
 
+.redacted {
+  background-color: #444444;
+  color: silver; }
+
 input {
   background-color: #fff; }
 
@@ -182,6 +186,12 @@ input {
   font-size: 12px;
   font-size: .75rem;
   line-height: 1.4em; }
+
+.redacted {
+  display: inline-block;
+  padding: 0 .5rem;
+  border-bottom: none;
+  letter-spacing: 0.1875rem; }
 
 /* @end Typography */
 /* @group Navigation */
