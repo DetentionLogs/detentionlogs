@@ -132,6 +132,9 @@ input {
   .share-item a:active {
     background-color: silver; }
 
+.incident dt {
+  color: #9a9a9a; }
+
 /* @end Colours */
 /* @group Page structure */
 .holding {

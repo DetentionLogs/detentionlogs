@@ -126,7 +126,14 @@ input {
 	}
 }
 
+.incident {
+	dt {
+		color: darken($grey, 15%) ;
+	}
+}
+
 /* @end Colours */
+
 
 /* @group Page structure */
 .holding {
