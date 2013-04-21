@@ -180,8 +180,52 @@ input {
     font-size: 1rem;
     width: 100%; }
 
-/* @group Page Structer > footer */
-/* @end Page Structer > footer */
+/* @group Incidents */
+.incident h1 {
+  height: 0;
+  text-indent: -999em; }
+.incident dl {
+  margin-top: 0;
+  margin-bottom: 0; }
+.incident dt {
+  text-transform: uppercase;
+  font-size: 12px;
+  font-size: 0.75rem;
+  font-weight: bold; }
+  .incident dt:after {
+    content: " :"; }
+.incident dd {
+  margin: 0 0 .5rem; }
+
+.incident-primary-meta a {
+  text-decoration: none; }
+
+.incident-primary {
+  padding-bottom: 1em;
+  margin-bottom: 1em;
+  border-bottom: 1px #eaeaea solid; }
+
+.incident-summary {
+  padding-top: 1em; }
+
+.incident-number,
+.incident-level {
+  width: 50%;
+  display: block; }
+
+.incident-number {
+  float: left;
+  clear: left; }
+
+.incident-level {
+  float: right;
+  clear: right; }
+
+dt.incident-location-details {
+  clear: both;
+  padding-top: 1rem; }
+
+/* @end Incidents */
 /* @end Page Structure */
 /* @group Typography */
 .loud {
