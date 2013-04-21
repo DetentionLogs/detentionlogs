@@ -201,9 +201,12 @@ input {
 
 .redacted {
   display: inline-block;
+  padding: 0 8px;
   padding: 0 .5rem;
   border-bottom: none;
-  letter-spacing: 0.1875rem; }
+  letter-spacing: 0.1875rem;
+  font-size: 16px;
+  font-size: 1rem; }
 
 /* @end Typography */
 /* @group Navigation */
