@@ -148,9 +148,12 @@ input {
 .box {
   padding: 24px 24px 8px;
   padding: 1.5rem 1.5rem .5rem;
-  border-width: 2px;
-  border-width: 0.125rem;
-  border-style: solid;
+  border-top-width: 2px;
+  border-top-width: 0.125rem;
+  border-top-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-width: 0.125rem;
+  border-bottom-style: solid;
   margin: 1.5rem 0;
   color: #000; }
   .box :first-child {
