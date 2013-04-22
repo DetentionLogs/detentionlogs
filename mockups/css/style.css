@@ -122,7 +122,8 @@ input {
     background-color: rgba(70, 119, 25, 0.2);
     color: #444444; }
   .mail-list .btn:active {
-    background-color: #444444; }
+    background-color: #444444;
+    color: white; }
 
 .share-item a {
   background-color: silver;
