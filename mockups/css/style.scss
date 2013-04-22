@@ -6,7 +6,7 @@ body {
 	padding: 0;
 	font-family: 'Open Sans', Verdana, sans-serif;
 	line-height: 1.6em;
-	font-size: 1.125em; /* 18px */
+	font-size: 1em; /* 16px */
 }
 
 /* @group Elements */
@@ -456,6 +456,13 @@ input, .btn {
 	max-width: 43rem;
 }
 
+/* @end Page Structure */
+
+/* @group Typography */
+body {
+		font-size: 18px;
+		font-size: 1.125rem; /* 18px */
+	}
 .site-intro .logo {
 	font-size: 48px;
 	font-size: 3rem;
