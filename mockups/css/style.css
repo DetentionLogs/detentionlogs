@@ -185,7 +185,7 @@ input {
   height: 0;
   text-indent: -999em; }
 .incident dl {
-  margin-top: 0;
+  margin-top: 1em;
   margin-bottom: 0; }
 .incident dt {
   text-transform: uppercase;
@@ -204,9 +204,6 @@ input {
   padding-bottom: 1em;
   margin-bottom: 1em;
   border-bottom: 1px #eaeaea solid; }
-
-.incident-summary {
-  padding-top: 1em; }
 
 .incident-number,
 .incident-level {
