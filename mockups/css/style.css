@@ -1,0 +1,367 @@
+/* apply a natural box layout model to all elements */
+/* http://paulirish.com/2012/box-sizing-border-box-ftw/ */
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+/**
+ * Correct `block` display not defined in IE 8/9.
+ */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* Mozilla dosen't style place holders by default */
+input:-moz-placeholder {
+  color: #a9a9a9; }
+
+textarea:-moz-placeholder {
+  color: #a9a9a9; }
+
+body {
+  margin: 0 auto;
+  padding: 0 1em;
+  font-family: 'Open Sans', Verdana, sans-serif;
+  line-height: 1.6em;
+  font-size: 18px; }
+
+/* @group Elements */
+h1, h2, h3, h4 {
+  margin-top: 16px;
+  margin-top: 1rem;
+  margin-bottom: 0;
+  font-weight: normal;
+  font-size: 16px;
+  font-size: 1rem; }
+
+h1 {
+  font-weight: bold;
+  font-size: 32px;
+  font-size: 2rem;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  line-height: 1.4; }
+
+h2 {
+  font-weight: bold;
+  font-size: 24px;
+  font-size: 1.5rem;
+  padding-top: 32px;
+  padding-top: 2rem; }
+
+code {
+  font-family: monospace; }
+
+p {
+  margin-top: 16px;
+  margin-top: 1rem; }
+
+a {
+  text-decoration: underline; }
+
+abbr {
+  text-decoration: none;
+  letter-spacing: 1px;
+  letter-spacing: 0.0625rem;
+  text-transform: uppercase;
+  border-bottom: 1px #aaa dashed; }
+
+ul {
+  margin: 1em 0;
+  padding: 0 0 0 1.6em; }
+
+/* @end Elements */
+/* @group Colours */
+body {
+  color: #444444;
+  background-color: #FCFEFB; }
+
+.logo {
+  color: #467719; }
+
+a {
+  color: #467719; }
+
+a:hover,
+a:focus {
+  color: #2d4d10; }
+
+.note {
+  border-color: #f1cb7a;
+  background-color: #fbefd6;
+  color: #111; }
+
+input {
+  background-color: #fff; }
+
+.mail-list .btn {
+  background-color: #467719;
+  color: #fff; }
+  .mail-list .btn:hover, .mail-list .btn:focus {
+    background-color: rgba(70, 119, 25, 0.2);
+    color: #444444; }
+  .mail-list .btn:active {
+    background-color: #444444; }
+
+.share-item a {
+  background-color: silver;
+  color: white; }
+  .share-item a:hover, .share-item a:focus {
+    background-color: #444444; }
+  .share-item a:active {
+    background-color: silver; }
+
+/* @end Colours */
+/* @group Page structure */
+.holding {
+  text-align: center; }
+
+.box {
+  padding: 24px 24px 8px;
+  padding: 1.5rem 1.5rem .5rem;
+  border-width: 2px;
+  border-width: 0.125rem;
+  border-style: solid;
+  margin: 1.5rem 0;
+  color: #000; }
+  .box :first-child {
+    padding-top: 0;
+    margin-top: 0; }
+
+.share-list {
+  list-style: none;
+  margin: 0 0 0;
+  padding: 0; }
+
+.share-item {
+  display: inline-block;
+  text-align: left;
+  width: 32%;
+  min-width: 6rem;
+  margin-top: 1em; }
+  .share-item .share-item + .share-item {
+    margin-left: 1%; }
+  .share-item a {
+    display: block;
+    text-decoration: none;
+    padding: .875rem 1.2rem .875rem .5rem;
+    font-size: 1rem;
+    width: 100%; }
+
+/* @group Page Structer > footer */
+/* @end Page Structer > footer */
+/* @end Page Structure */
+/* @group Typography */
+.loud {
+  font-size: 18px;
+  font-size: 1.125rem;
+  /* 18px */ }
+
+.discrete {
+  font-size: 14px;
+  font-size: .875rem;
+  /* 12px */ }
+
+.supporting {
+  font-size: 12px;
+  font-size: .75rem;
+  line-height: 1.4em; }
+
+/* @end Typography */
+/* @group Navigation */
+.main-navigation ul {
+  list-style: none;
+  margin: 1rem 0;
+  padding: 0; }
+  .main-navigation ul li {
+    display: inline-block; }
+  .main-navigation ul li + li {
+    padding-left: 1rem; }
+
+.site-footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0; }
+  .site-footer ul li {
+    margin-top: 16px;
+    margin-top: 1rem; }
+
+/* @end Navigation */
+/* @group Icons */
+.contact .email {
+  background: url(email-small.png) no-repeat left 0.2rem;
+  background-size: 21%;
+  padding-left: 2.1rem;
+  text-decoration: none; }
+  .no-backgroundSize .contact .email {
+    background: none;
+    text-decoration: underline;
+    padding-left: none; }
+.contact .twitter {
+  background: url(twitter-small.png) no-repeat left bottom;
+  background-size: 13%;
+  padding-left: 2.2rem;
+  text-decoration: none; }
+  .no-backgroundSize .contact .twitter {
+    background: none;
+    text-decoration: underline;
+    padding-left: none; }
+
+/* @end Icons */
+/* @group Table */
+table {
+  font-size: 14px;
+  font-size: 0.875rem;
+  text-align: left;
+  padding: 0;
+  margin: 48px 0;
+  margin: 4rem 0;
+  max-width: 90rem; }
+
+caption {
+  font-size: 18px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-align: left;
+  padding-bottom: 1rem; }
+
+.total {
+  border-left: 1px #aaa solid; }
+
+thead {
+  vertical-align: bottom;
+  border-bottom: 1px #eee solid; }
+
+th, td {
+  padding: 0.5rem .5rem 0.75rem;
+  margin: 0; }
+
+tbody th,
+tbody td {
+  vertical-align: top;
+  border-bottom: 1px #bbb solid; }
+
+tbody th {
+  font-weight: bold;
+  letter-spacing: 1px;
+  width: 9em;
+  background-color: #eee;
+  white-space: nowrap; }
+
+tbody td {
+  width: 10em; }
+
+tbody tr:hover th,
+tbody tr:hover td {
+  background-color: #fdf6e9; }
+
+/* @end Table */
+/* @group Forms */
+form, input {
+  display: block;
+  text-align: center; }
+
+legend {
+  font-weight: bold;
+  margin-bottom: 14px;
+  margin: 0 auto 14px;
+  margin: 0 auto .875rem; }
+  legend label {
+    display: block;
+    cursor: pointer; }
+
+input {
+  border: 1px #ccc solid;
+  border: .0625rem #ccc solid;
+  box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0.07rem 0.07rem 0.1875rem rgba(0, 0, 0, 0.1); }
+  input :focus {
+    border: .0625rem #aaa solid; }
+
+input, .btn {
+  width: 100%;
+  font-size: 1.125rem;
+  padding: 12px 18px;
+  padding: .75rem 1.125rem;
+  margin-bottom: 4px;
+  margin-bottom: 0.25rem; }
+
+.btn {
+  display: block;
+  cursor: pointer;
+  letter-spacing: .07em; }
+  .btn input {
+    left: -1000em;
+    position: absolute;
+    width: 0; }
+
+/* @end Forms */
+/* @group Layout */
+.read {
+  max-width: 40em; }
+
+.site-footer {
+  margin-top: 32px;
+  margin-top: 2rem;
+  padding-bottom: 0 0 32px;
+  padding: 0 0 2rem; }
+
+/* @end Layout */
+@media all and (min-width: 40em) {
+  /* @group Typography */
+  body {
+    max-width: 43rem; }
+
+  .site-intro .logo {
+    font-size: 48px;
+    font-size: 3rem;
+    margin-bottom: 1rem; }
+
+  .loud {
+    font-size: 30px;
+    font-size: 1.875rem;
+    line-height: 1.3; }
+
+  /* @end Typography */
+  /* @group Navigation */
+  .site-footer ul li {
+    display: inline-block; }
+  .site-footer ul li + li {
+    margin-left: 48px;
+    margin-left: 3rem; }
+
+  /* @end Navigation */
+  /* @group Forms */
+  .mail-list input[type="email"] {
+    max-width: 30rem;
+    padding: 1rem .5rem;
+    letter-spacing: .07rem; }
+
+  .btn {
+    margin-top: 1rem;
+    max-width: 17em; }
+
+  .mail-list input,
+  .mail-list .btn {
+    margin-left: auto;
+    margin-right: auto; }
+
+  /* @end Forms */ }
+@media all and (min-width: 80em) {
+  .site-intro {
+    padding-top: 3rem; } }
