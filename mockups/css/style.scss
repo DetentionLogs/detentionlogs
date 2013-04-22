@@ -453,17 +453,26 @@ input, .btn {
 .site-footer {
 	margin-top: 32px;
 	margin-top: 2rem;
-	padding-bottom: 0 0 32px;
-	padding: 0 0 2rem;
+	padding-bottom: 32px;
+	padding-bottom: 2rem;
 }
 
 /* @end Layout */
 
 @media all and (min-width: 40em) {
-/* @group Typography */
+
+/* @group Page Structure */
+
 .holding {
 	max-width: 43rem;
 }
+.site-header,
+.main,
+.site-footer {
+	max-width: 40rem;
+	margin: 0 auto;
+}
+
 
 /* @end Page Structure */
 
@@ -523,5 +532,13 @@ body {
 @media all and (min-width: 80em) {
 	.site-intro {
 		padding-top: 3rem;
+	}
+	.site-header,
+	.main,
+	.site-footer {
+		max-width: 34rem;
+		margin: 0 auto;
+		padding-left: 0;
+		padding-right: 0;
 	}
 }
