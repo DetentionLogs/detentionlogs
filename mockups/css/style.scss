@@ -140,9 +140,12 @@ input {
 .holding {
 	text-align: center;
 	padding: 0 1em;
+	max-width: 24em;
 }
 
-.main {
+.site-header,
+.main,
+.site-footer {
 	padding: 0 16px;
 	padding: 0 1rem;
 }
