@@ -226,6 +226,8 @@ dt.incident-location-details {
 /* @end Page Structure */
 /* @group Typography */
 .loud {
+.loud,
+.distinct {
   font-size: 18px;
   font-size: 1.125rem;
   /* 18px */ }
