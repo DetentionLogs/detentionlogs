@@ -360,9 +360,9 @@ input {
 
 .contact {
 	.email {
-		background: url(email-small.png) no-repeat left .2rem;
+		background: url(email-small.png) no-repeat left center;
 		background-size: 21%;
-		padding-left: 2.1rem;
+		padding-left: 1.5rem;
 		text-decoration: none;
 		.no-backgroundSize & {
 			background: none;
@@ -373,7 +373,7 @@ input {
 	.twitter {
 		background: url(twitter-small.png) no-repeat left bottom;
 		background-size: 13%;
-		padding-left: 2.2rem;
+		padding-left: 1.5rem;
 		text-decoration: none;
 		.no-backgroundSize & {
 			background: none;

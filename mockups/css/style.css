@@ -319,9 +319,9 @@ dt.incident-location-details {
 /* @end Navigation */
 /* @group Icons */
 .contact .email {
-  background: url(email-small.png) no-repeat left 0.2rem;
+  background: url(email-small.png) no-repeat left center;
   background-size: 21%;
-  padding-left: 2.1rem;
+  padding-left: 1.5rem;
   text-decoration: none; }
   .no-backgroundSize .contact .email {
     background: none;
@@ -330,7 +330,7 @@ dt.incident-location-details {
 .contact .twitter {
   background: url(twitter-small.png) no-repeat left bottom;
   background-size: 13%;
-  padding-left: 2.2rem;
+  padding-left: 1.5rem;
   text-decoration: none; }
   .no-backgroundSize .contact .twitter {
     background: none;
