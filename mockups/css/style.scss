@@ -77,6 +77,11 @@ p {
 	margin-top: 16px;
 	margin-top: 1rem;
 }
+/* @group exceptions */
+	h2 + p {
+		margin-top: .25rem;
+	}
+/* @end exceptions */
 a {
 	text-decoration: underline;
 }
