@@ -281,14 +281,11 @@ dt.incident-location-details {
   font-size: 1.125rem;
   /* 18px */ }
 
+.supporting,
 .discrete {
   font-size: 14px;
   font-size: .875rem;
-  /* 12px */ }
-
-.supporting {
-  font-size: 12px;
-  font-size: .75rem;
+  /* 14px */
   line-height: 1.4em; }
 
 .redacted {
@@ -467,6 +464,11 @@ input, .btn {
     font-size: 30px;
     font-size: 1.875rem;
     line-height: 1.3; }
+
+  .supporting {
+    font-size: 13px;
+    font-size: 0.8125rem;
+    line-height: 1.4em; }
 
   /* @end Typography */
   /* @group Navigation */
