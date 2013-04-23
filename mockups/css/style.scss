@@ -487,12 +487,10 @@ input, .btn {
 
 /* @group Layout */
 
-.read {
-	max-width: 40em;
-}
+
 .site-footer {
-	margin-top: 32px;
-	margin-top: 2rem;
+	margin-top: 48px;
+	margin-top: 3rem;
 	padding-bottom: 32px;
 	padding-bottom: 2rem;
 }
@@ -509,8 +507,14 @@ input, .btn {
 .site-header,
 .main,
 .site-footer {
-	max-width: 40rem;
-	margin: 0 auto;
+	max-width: 38rem;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 0;
+	padding-right: 0;
+}
+.reading {
+	max-width: 38rem;
 }
 
 
