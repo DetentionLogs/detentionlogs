@@ -45,6 +45,7 @@ body {
 	text-rendering: optimizeLegibility;
 }
 
+/* @end Font Families */
 
 /* @group Elements */
 h1,h2,h3,h4 {
@@ -93,6 +94,12 @@ abbr {
 	border-bottom: 1px #aaa dashed;
 	cursor: help;
 }
+strong {
+	font-weight: bold;
+}
+em, cite {
+	font-style: italic;
+}
 ul {
 	margin: 1em 0;
 	padding: 0 0 0 1.6em;
@@ -103,7 +110,7 @@ ul {
 
 $regular-text : #444;
 $green : #467719;
-$grey : #c0c0c0;
+$grey : #9a9a9a;
 $fine-graphite :  #eaeaea;
 
 $note : #F1CB7A;

@@ -75,6 +75,7 @@ body {
   font-family: 'Open Sans', Verdana, sans-serif;
   text-rendering: optimizeLegibility; }
 
+/* @end Font Families */
 /* @group Elements */
 h1, h2, h3, h4 {
   margin-top: 16px;
@@ -121,6 +122,12 @@ abbr {
   text-transform: uppercase;
   border-bottom: 1px #aaa dashed;
   cursor: help; }
+
+strong {
+  font-weight: bold; }
+
+em, cite {
+  font-style: italic; }
 
 ul {
   margin: 1em 0;
