@@ -110,8 +110,8 @@ ul {
 
 $regular-text : #444;
 $green : #467719;
-$grey : #9a9a9a;
-$fine-graphite :  #eaeaea;
+$fade : #9a9a9a;
+$contrast :  #eaeaea;
 
 $note : #F1CB7A;
 
@@ -139,9 +139,12 @@ a:focus {
 	color: #111;
 }
 
+.related {
+	background-color: $contrast;
+}
 .redacted {
 	background-color: $regular-text;
-	color: $grey;
+	color: $fade;
 }
 
 input {
@@ -153,34 +156,43 @@ input {
 	color: #fff;
 	&:hover,
 	&:focus {
-		background-color: transparentize( $green, .8);
-		color: $regular-text;
+		background-color: #ccc;
 	}
 	&:active {
 	background-color: $regular-text;
-	color: white;
 	}
+}
+
+input::-webkit-input-placeholder,
+input::-moz-placeholder,
+input:-moz-placeholder,
+input:-ms-input-placeholder {  
+   color: #000;  
 }
 
 .share-item {
 	a {
-		background-color: $grey;
+		background-color: $fade;
 		color: white;
 		&:hover,
 		&:focus {
 			background-color: $regular-text;
 		}
 		&:active {
-		background-color: $grey;
+		background-color: $fade;
 		}
 	}
 }
 
 .incident {
 	dt {
-		color: darken($grey, 15%) ;
+		color: $fade;
 	}
 }
+.incident-summary {
+	color: #222;
+}
+
 
 /* @end Colours */
 
@@ -200,8 +212,8 @@ input {
 }
 
 .box {
-	padding: 24px 24px 8px;
-	padding: 1.5rem 1.5rem .5rem;
+	padding: 24px 5% 8px;
+	padding: 1.5rem 5% .5rem;
 	border-top-width: 2px;
 	border-top-width: 0.125rem;
 	border-top-style: solid;
@@ -244,9 +256,10 @@ input {
 /* @group Incidents */
 
 .incident {
+	clear: both;
+	float: none;
 	h1 {
-		height: 0;
-		text-indent: -999em;
+		font-size: 1.125rem;
 	}
 	dl {
 		margin-top: 1em;
@@ -264,6 +277,23 @@ input {
 	dd {
 		margin: 0 0 .5rem;
 	}
+	.related {
+		margin-top: 2rem;
+		padding-top: 1rem;
+		padding-bottom: 1rem;
+		dt {
+			font-weight: normal;
+			text-transform: none;
+			letter-spacing: 0.0625rem;
+			color: $regular-text;
+		}
+		dd {
+			padding-left: 1rem;
+		}
+	}
+	.box {
+		margin-top: 0;
+	}
 }
 	.incident-primary-meta {
 		a {
@@ -276,24 +306,23 @@ input {
 		border-bottom: 1px #eaeaea solid;
 	}
 	.incident-summary {
+		dt, dd {
+			width: auto;
+		}
 	}
-	.incident-number,
-	.incident-level {
-		width: 50%;
-		display: block;
-	}
-	.incident-number {
-		float: left;
-		clear: left;
-	}
-	.incident-level {
-		float: right;
-		clear: right;
+	.incident-additional {
+		dt {			
+			float: left;
+			clear: left;
+			padding-right: 1rem;
+		}	
 	}
 	dt.incident-location-details {
 		clear: both;
 		padding-top: 1rem;
+		float: none;
 	}
+
 
 
 /* @end Incidents */
@@ -320,7 +349,6 @@ input {
 .discrete {
 	font-size: 14px;
 	font-size: .875rem; /* 14px */	
-	line-height: 1.4em;
 }
 .redacted {
 	display: inline-block;
@@ -444,25 +472,24 @@ tbody tr:hover td {
 
 /* @end Table */
 
+
 /* @group Forms */
 	
-form, input {
+.mail-list,
+.mail-list input {
 	display: block;
 	text-align: center;
 }
-legend {
+.mail-list legend {
 	font-weight: bold;
-	margin-bottom: 14px;
 	margin: 0 auto 14px;
 	margin: 0 auto .875rem;
 	label {
-		display: block;
 		cursor: pointer;
+		text-align: center;
 	}
 }
 input {
-	border: 1px #ccc solid;
-	border: .0625rem #ccc solid;
 	box-shadow: inset 1px 1px 3px rgba(0,0,0,0.1);
 	box-shadow: inset 0.07rem 0.07rem 0.1875rem rgba(0,0,0,0.1);
 	:focus {
@@ -471,12 +498,16 @@ input {
 }
 
 input, .btn {
+	border: 1px #ccc solid;
+	border: .0625rem #ccc solid;
 	width: 100%;
 	font-size: 1.125rem;
+	line-height: 1.4rem;
 	padding: 12px 18px;
 	padding: .75rem 1.125rem;
 	margin-bottom: 8px;
 	margin-bottom: 0.5rem;
+	margin-top: 0;
 }
 .btn {
 	display: block;
@@ -488,9 +519,13 @@ input, .btn {
 	    width: 0;
 	}
 }
-
+.holding .mail-list small {
+	display: block;
+	clear: both;
+}
 
 /* @end Forms */
+
 
 /* @group Layout */
 
@@ -509,7 +544,11 @@ input, .btn {
 /* @group Page Structure */
 
 .holding {
-	max-width: 43rem;
+	max-width: 36rem;
+	.site-intro p {
+		text-align: left;
+
+	}
 }
 .site-header,
 .main,
@@ -523,7 +562,10 @@ input, .btn {
 .reading {
 	max-width: 38rem;
 }
-
+.box {
+	padding: 24px 24px 8px;
+	padding: 1.5rem 1.5rem .5rem;
+}
 
 /* @end Page Structure */
 
@@ -535,7 +577,7 @@ body {
 .site-intro .logo {
 	font-size: 48px;
 	font-size: 3rem;
-	margin-bottom: 1rem;
+	margin-bottom: 2rem;
 }
 .loud {
 	font-size: 30px;
@@ -564,21 +606,43 @@ body {
 /* @end Navigation */
 
 /* @group Forms */
-
-	.mail-list input[type="email"] {
-		max-width: 30rem;
-		padding: 1rem .5rem;
-		letter-spacing: .07rem;
+	.mail-list {
+		width: 34rem;
+		margin-left: auto;
+		margin-right: auto;
+		text-align: left;
+		input {
+			text-align: left;
+			margin-bottom: 1rem;
+			&[type="email"] {
+				max-width: 25rem;
+				padding: 1rem 0 1rem 1.5rem;
+				border-right: 0;
+				letter-spacing: .07rem;
+				display:block;
+				clear: left;
+				border-radius: 4px 0px 0px 4px;
+				border-radius: .25rem 0px 0px .25rem;
+			}
+		}
+	legend {
+			margin: 0 0 14px;
+			margin: 0 0 .875rem;
+		}
 	}
 	.btn {
-		margin-top: 16px;
-		margin-top: 1rem;
-		max-width: 17em;
+		max-width: 8rem;
+		display: block;
+		clear: right;
+		padding: 1rem;
+		border-radius: 4px 0 0 4px;
+		border-radius: 0 .25rem .25rem 0;
 	}
 	.mail-list input,
 	.mail-list .btn {
-		margin-left: auto;
-		margin-right: auto;
+		margin-left: 0;
+		margin-right: 0;
+		float: left;
 	}
 	
 /* @end Forms */
