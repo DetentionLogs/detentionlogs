@@ -163,12 +163,10 @@ input {
 	}
 }
 
-input::-webkit-input-placeholder,
-input::-moz-placeholder,
-input:-moz-placeholder,
-input:-ms-input-placeholder {  
-   color: #000;  
-}
+input::-webkit-input-placeholder { color: #555;}
+input::-moz-placeholder { color: #555;}
+input:-moz-placeholder { color: #555;}
+input:-ms-input-placeholder { color: #555;}
 
 .share-item {
 	a {
@@ -579,6 +577,7 @@ body {
 	font-size: 3rem;
 	margin-bottom: 2rem;
 }
+.site-intro 
 .loud {
 	font-size: 30px;
 	font-size: 1.875rem;
