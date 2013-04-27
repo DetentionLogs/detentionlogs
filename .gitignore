@@ -20,3 +20,8 @@
 
 config/database.yml
 /mockups/css/.sass-cache/
+.log
+/log/development.log
+/mockups/css/style.css
+/Gemfile.lock
+/tmp/pids/server.pid
