@@ -1,13 +1,50 @@
 @import "reset";
 
-
 body {
 	margin: 0 auto;
-	padding: 0 1em;
+	padding: 0;
 	font-family: 'Open Sans', Verdana, sans-serif;
 	line-height: 1.6em;
-	font-size: 18px;
+	font-size: 1em; /* 16px */
 }
+
+/* @group Font Families */
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'), url(http://themes.googleusercontent.com/static/fonts/opensans/v6/cJZKeOuBrn4kERxqtaUH3bO3LdcAZYWl9Si6vvxL-qU.woff) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Open Sans Bold'), local('OpenSans-Bold'), url(http://themes.googleusercontent.com/static/fonts/opensans/v6/k3k702ZOKiLJc3WVjuplzKRDOzjiPcYnFooOUGCOsRk.woff) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Open Sans Italic'), local('OpenSans-Italic'), url(http://themes.googleusercontent.com/static/fonts/opensans/v6/xjAJXh38I15wypJXxuGMBrrIa-7acMAeDBVuclsi6Gc.woff) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Open Sans Bold Italic'), local('OpenSans-BoldItalic'), url(http://themes.googleusercontent.com/static/fonts/opensans/v6/PRmiXeptR36kaC0GEAetxhbnBKKEOwRKgsHDreGcocg.woff) format('woff');
+}
+
+.wf-loading .site-header,
+.wf-loading .main,
+.wf-loading .site-footer {
+	visibility: hidden;
+}
+.wf-active body {
+	font-family: 'Open Sans', Verdana, sans-serif;
+	text-rendering: optimizeLegibility;
+}
+
 
 /* @group Elements */
 h1,h2,h3,h4 {
@@ -28,8 +65,8 @@ h1 {
 }
 h2 {
 	font-weight: bold;
-	font-size: 24px;
-	font-size: 1.5rem;
+	font-size: 18px;
+	font-size: 1.125rem;
 	padding-top: 32px;
 	padding-top: 2rem;
 }
@@ -40,6 +77,11 @@ p {
 	margin-top: 16px;
 	margin-top: 1rem;
 }
+/* @group exceptions */
+	h2 + p {
+		margin-top: .25rem;
+	}
+/* @end exceptions */
 a {
 	text-decoration: underline;
 }
@@ -49,6 +91,7 @@ abbr {
     letter-spacing: 0.0625rem;
     text-transform: uppercase;
 	border-bottom: 1px #aaa dashed;
+	cursor: help;
 }
 ul {
 	margin: 1em 0;
@@ -61,12 +104,13 @@ ul {
 $regular-text : #444;
 $green : #467719;
 $grey : #c0c0c0;
+$fine-graphite :  #eaeaea;
 
 $note : #F1CB7A;
 
 body {
 	color: $regular-text;
-	background-color: #FCFEFB;
+	background-color: #FFF
 
 }
 
@@ -88,6 +132,11 @@ a:focus {
 	color: #111;
 }
 
+.redacted {
+	background-color: $regular-text;
+	color: $grey;
+}
+
 input {
 	background-color: #fff;
 }
@@ -102,6 +151,7 @@ input {
 	}
 	&:active {
 	background-color: $regular-text;
+	color: white;
 	}
 }
 
@@ -119,19 +169,38 @@ input {
 	}
 }
 
+.incident {
+	dt {
+		color: darken($grey, 15%) ;
+	}
+}
+
 /* @end Colours */
+
 
 /* @group Page structure */
 .holding {
 	text-align: center;
+	padding: 0 1em;
+	max-width: 27em;
+}
+
+.site-header,
+.main,
+.site-footer {
+	padding-left: 5%;
+	padding-right: 5%;
 }
 
 .box {
 	padding: 24px 24px 8px;
 	padding: 1.5rem 1.5rem .5rem;
-	border-width: 2px;
-	border-width: 0.125rem;
-	border-style: solid;
+	border-top-width: 2px;
+	border-top-width: 0.125rem;
+	border-top-style: solid;
+	border-bottom-width: 2px;
+	border-bottom-width: 0.125rem;
+	border-bottom-style: solid;
 	margin: 1.5rem 0;
 	color: #000;
 	:first-child {
@@ -163,8 +232,64 @@ input {
 		}
 	}
 
-/* @group Page Structer > footer */
-/* @end Page Structer > footer */
+
+
+/* @group Incidents */
+
+.incident {
+	h1 {
+		height: 0;
+		text-indent: -999em;
+	}
+	dl {
+		margin-top: 1em;
+		margin-bottom: 0;
+	}
+	dt {
+		text-transform: uppercase;
+		font-size: 12px;
+		font-size: 0.75rem;
+		font-weight: bold;
+		&:after {
+			content: " :";
+		}
+	}
+	dd {
+		margin: 0 0 .5rem;
+	}
+}
+	.incident-primary-meta {
+		a {
+			text-decoration: none;
+		}
+	}
+	.incident-primary {
+		padding-bottom: 1em;
+		margin-bottom: 1em;
+		border-bottom: 1px #eaeaea solid;
+	}
+	.incident-summary {
+	}
+	.incident-number,
+	.incident-level {
+		width: 50%;
+		display: block;
+	}
+	.incident-number {
+		float: left;
+		clear: left;
+	}
+	.incident-level {
+		float: right;
+		clear: right;
+	}
+	dt.incident-location-details {
+		clear: both;
+		padding-top: 1rem;
+	}
+
+
+/* @end Incidents */
 
 /* @end Page Structure */
 
@@ -172,20 +297,34 @@ input {
 /* @group Typography */
 
 .logo {
+	font-size: 16px;
+	font-size: 1.5rem;
+	font-family: 'Open Sans', verdana, sans-serif;
+	a {
+		text-decoration: none;
+	}
 }
-.loud {
+.loud,
+.distinct {
 	font-size: 18px;
 	font-size: 1.125rem; /* 18px */
 }
+.supporting,
 .discrete {
 	font-size: 14px;
-	font-size: .875rem; /* 12px */	
-}
-.supporting {
-	font-size: 12px;
-	font-size: .75rem;
+	font-size: .875rem; /* 14px */	
 	line-height: 1.4em;
 }
+.redacted {
+	display: inline-block;
+	padding: 0 8px;
+	padding: 0 .5rem;
+	border-bottom: none;
+	letter-spacing: 0.1875rem;
+	font-size: 16px;
+	font-size: 1rem;
+}
+
 /* @end Typography */
 
 /* @group Navigation */
@@ -216,13 +355,14 @@ input {
 
 /* @end Navigation */
 
+
 /* @group Icons */
 
 .contact {
 	.email {
-		background: url(email-small.png) no-repeat left .2rem;
+		background: url(email-small.png) no-repeat left center;
 		background-size: 21%;
-		padding-left: 2.1rem;
+		padding-left: 1.5rem;
 		text-decoration: none;
 		.no-backgroundSize & {
 			background: none;
@@ -233,7 +373,7 @@ input {
 	.twitter {
 		background: url(twitter-small.png) no-repeat left bottom;
 		background-size: 13%;
-		padding-left: 2.2rem;
+		padding-left: 1.5rem;
 		text-decoration: none;
 		.no-backgroundSize & {
 			background: none;
@@ -328,8 +468,8 @@ input, .btn {
 	font-size: 1.125rem;
 	padding: 12px 18px;
 	padding: .75rem 1.125rem;
-	margin-bottom: 4px;
-	margin-bottom: 0.25rem;
+	margin-bottom: 8px;
+	margin-bottom: 0.5rem;
 }
 .btn {
 	display: block;
@@ -347,36 +487,59 @@ input, .btn {
 
 /* @group Layout */
 
-.read {
-	max-width: 40em;
-}
+
 .site-footer {
-	margin-top: 32px;
-	margin-top: 2rem;
-	padding-bottom: 0 0 32px;
-	padding: 0 0 2rem;
+	margin-top: 48px;
+	margin-top: 3rem;
+	padding-bottom: 32px;
+	padding-bottom: 2rem;
 }
 
 /* @end Layout */
 
 @media all and (min-width: 40em) {
-/* @group Typography */
-body {
+
+/* @group Page Structure */
+
+.holding {
 	max-width: 43rem;
 }
+.site-header,
+.main,
+.site-footer {
+	max-width: 38rem;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 0;
+	padding-right: 0;
+}
+.reading {
+	max-width: 38rem;
+}
 
+
+/* @end Page Structure */
+
+/* @group Typography */
+body {
+		font-size: 18px;
+		font-size: 1.125rem; /* 18px */
+	}
 .site-intro .logo {
 	font-size: 48px;
 	font-size: 3rem;
 	margin-bottom: 1rem;
 }
-
 .loud {
 	font-size: 30px;
 	font-size: 1.875rem;
 	line-height: 1.3;
 }
-
+.supporting {
+	font-size: 13px;
+	font-size: 0.8125rem;
+	line-height: 1.4em;
+}
 /* @end Typography */
 
 /* @group Navigation */
@@ -401,6 +564,7 @@ body {
 		letter-spacing: .07rem;
 	}
 	.btn {
+		margin-top: 16px;
 		margin-top: 1rem;
 		max-width: 17em;
 	}
@@ -416,5 +580,17 @@ body {
 @media all and (min-width: 80em) {
 	.site-intro {
 		padding-top: 3rem;
+	}
+	.site-header,
+	.main,
+	.site-footer {
+		max-width: 60rem;
+		margin-left: auto;
+		margin-right: auto;
+		padding-left: 0;
+		padding-right: 0;
+	}
+	.reading > * {
+	max-width: 38rem;
 	}
 }
