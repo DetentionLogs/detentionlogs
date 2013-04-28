@@ -1,0 +1,12 @@
+/app/views/.DS_Store
+/db/development.sqlite3
+/Gemfile.lock
+/log/development.log
+/mockups/.sass-cache/
+/mockups/about/privacy/.DS_Store
+/mockups/css/.DS_Store
+/mockups/css/.sass-cache/
+/mockups/css/style.css
+/mockups/js/.DS_Store
+/tmp/cache/sass/cd098fe37e07d3e8a9c9505c6909819df3fec0a3/
+/tmp/pids/
