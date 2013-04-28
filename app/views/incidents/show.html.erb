@@ -1,3 +1,4 @@
+<!--
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -35,6 +36,65 @@
   <%= @incident.occured_on %>
 </p>
 
-
 <%= link_to 'Edit', edit_incident_path(@incident) %> |
 <%= link_to 'Back', incidents_path %>
+-->
+
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <title>
+        Self Harm - Actual on 25th May 2011, at Villawood IDC - Incident 1-7AFG2G | Detention Logs
+    </title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="http://detentionlogs.development/mockups/css/style.css">
+</head>
+<body>
+	<article class="incident">
+	    <section class="incident-primary main">
+	        <h1>Incident <%= @incident.incident_number %></h1>
+			<dl class="incident-primary-meta">
+				<dt "incident-type">Type</dt>
+					<dd "incident-type"><a href=""><%= @incident.incident_type %></a></dd>
+				<dt class="incident-location">Location</dt>
+					<dd class="incident-location"><a href=""><%= @incident.location %></a></dd>
+				<dt class="incident-occured-on">Occured On</dt>
+					<dd class="incident-occured-on"><a href=""><%= @incident.occured_on %></a></dd>
+			</dl>
+	    	<dl class="incident-summary">
+	    		<dt>Incident Summary</dt>
+		 	   		<dd><%= @incident.summary %></dd>
+	    	</dl>
+	    	<p></p>
+	    </section>
+	    <dl class="discrete main incident-additional">
+                <dt class="incident-informed-by">Informed By</dt>
+	            	<dd class="incident-informed-by">Service Provider Staff</dd>
+	            <dt class="incident-number">Incident Number</dt>
+	                <dd class="incident-number">1-7AFG2G</dd>
+	            <dt class="incident-level"><abbr title="The level of ... as defined by Detention Centre Staff">Level</abbr></dt>
+	                <dd class="incident-level critical">Critical</dd>
+	            <dt class="incident-location-details">Location Details</dt>
+	                <dd class="incident-location-details"><%= @incident.location_details %></dd>
+	    </dl>
+<!-- 	    If there are related documents or investigations -->
+	    <!--
+<dl class="discrete main related">
+		    <dt class="related-documents">Related Documents</dt>
+		    	<dd class="related-documents"><a href=""><cite>Incident Detail Report - Incident 1-7AFG2G</cite></a></dd>
+		    <dt class="related-investigations">Related Investigations</dt>
+		    	<dd class="related-investigations"><a href=""><cite>Removals Story</cite></a></dd>
+	    </dl>
+-->
+<!-- 	    end if -->
+	     <section class="note box main">
+			<h2>What is this?</h2>
+			<p></p>
+		 </section>
+	</article>
+	<footer>
+	</footer>
+</body>
+</html>
