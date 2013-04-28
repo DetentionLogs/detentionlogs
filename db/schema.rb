@@ -28,4 +28,10 @@ ActiveRecord::Schema.define(:version => 20130427070820) do
 
   add_index "incidents", ["location", "occured_on", "incident_type"], :name => "index_incidents_on_location_and_occured_on_and_incident_type"
 
+  create_table "subscriptions", :force => true do |t|
+    t.string   "email"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
 end

@@ -4,7 +4,9 @@
 
 <ul class="incident-list">
 <% @incidents.each do |incident| %>
+
 <li style="" class="summary-text"><div><%= incident.location %></div><strong><a href="/incidents/<%= incident.id %>"><%= incident.incident_number %></a></strong><%= incident.summary %></li> 
+
    
 <% end %>
 </ul>

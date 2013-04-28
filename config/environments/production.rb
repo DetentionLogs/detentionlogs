@@ -53,9 +53,6 @@ Detentionlogs::Application.configure do
 
   # Enable threaded mode
   # config.threadsafe!
-  config.middleware.insert_after(::Rack::Lock, "::Rack::Auth::Basic", "Production") do |u, p|
-    [u, p] == ['detention', 'dentention']
-  end
   
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation can not be found)
