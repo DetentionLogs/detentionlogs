@@ -3,6 +3,9 @@ Detentionlogs::Application.routes.draw do
   
   
   
+  resources :locations
+
+
   match 'subscriptions/create' => 'subscriptions#create'  
   match 'subscriptions/thankyou' => 'subscriptions#thankyou'
   resources :subscriptions

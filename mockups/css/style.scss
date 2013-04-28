@@ -168,6 +168,11 @@ input::-moz-placeholder { color: #555;}
 input:-moz-placeholder { color: #555;}
 input:-ms-input-placeholder { color: #555;}
 
+#email-error {
+	background-color: #e7916f;
+	border-color:  #e7916f;
+}
+
 .share-item {
 	a {
 		background-color: $fade;
@@ -481,7 +486,8 @@ tbody tr:hover td {
 .mail-list legend {
 	font-weight: bold;
 	margin: 0 auto 14px;
-	margin: 0 auto .875rem;
+	margin: 0 auto 1rem;
+	display: block;
 	label {
 		cursor: pointer;
 		text-align: center;
@@ -521,6 +527,14 @@ input, .btn {
 	display: block;
 	clear: both;
 }
+.verification-msg {
+	clear: both;
+	padding: .5rem 1.5rem .5rem;
+	border-width: 2px;
+	border-width: 0.125rem;
+	border-style: solid;
+	display: none;
+}
 
 /* @end Forms */
 
@@ -543,9 +557,11 @@ input, .btn {
 
 .holding {
 	max-width: 36rem;
+	padding-left: 0;
+	padding-right: 0;
 	.site-intro p {
 		text-align: left;
-
+		margin-bottom: 3rem;
 	}
 }
 .site-header,
@@ -564,6 +580,10 @@ input, .btn {
 	padding: 24px 24px 8px;
 	padding: 1.5rem 1.5rem .5rem;
 }
+.box.verification-msg {
+	padding: 24px 24px 8px;	
+	padding: .5rem 1.5rem .5rem;
+}
 
 /* @end Page Structure */
 
@@ -575,9 +595,14 @@ body {
 .site-intro .logo {
 	font-size: 48px;
 	font-size: 3rem;
-	margin-bottom: 2rem;
+	margin-bottom: 3rem;
 }
-.site-intro 
+.site-intro .loud {
+	font-size: 30px;
+	font-size: 1.4rem;
+	line-height: 1.5;
+}
+
 .loud {
 	font-size: 30px;
 	font-size: 1.875rem;
@@ -606,7 +631,6 @@ body {
 
 /* @group Forms */
 	.mail-list {
-		width: 34rem;
 		margin-left: auto;
 		margin-right: auto;
 		text-align: left;
@@ -614,10 +638,9 @@ body {
 			text-align: left;
 			margin-bottom: 1rem;
 			&[type="email"] {
-				max-width: 25rem;
+				max-width: 28rem;
 				padding: 1rem 0 1rem 1.5rem;
 				border-right: 0;
-				letter-spacing: .07rem;
 				display:block;
 				clear: left;
 				border-radius: 4px 0px 0px 4px;
@@ -626,7 +649,7 @@ body {
 		}
 	legend {
 			margin: 0 0 14px;
-			margin: 0 0 .875rem;
+			margin: 0 0 1rem;
 		}
 	}
 	.btn {

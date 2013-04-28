@@ -8,10 +8,10 @@ class SubscriptionsController < ApplicationController
 
     respond_to do |format|
       if @subscription.save
-        format.html { redirect_to :back, notice: "Thank you for subscribing" }
+        format.html { redirect_to :back, notice: "emailtrue" }
         format.json { render json: @subscription, status: :created, location: @subscription }
       else
-        format.html { redirect_to :back, notice: "Please enter a valid email" }
+        format.html { redirect_to :back, notice: "emailfalse" }
       end
     end
   end

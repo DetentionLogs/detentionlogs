@@ -12,24 +12,29 @@
         <meta name="description" content="We publish databases, documents and investigations that reveal new perspectives on conditions and events in Australia’s immigration detention&nbsp;network.">
         <meta name="viewport" content="width=device-width">
 
-        <link rel="stylesheet" href="css/style.css">
-        <script src="js/fixers.js"></script>
+        <%= stylesheet_link_tag    "style", :media => "all" %>
+       	   <%= javascript_include_tag "fixers" %>
     </head>
     <body class="h-card holding">
-		<%= notice %>
         <article class="site-intro">
            <h1 class="logo p-org fn">Detention Logs</h1>
 	       <p class="loud p-note">We publish databases, documents and investigations that reveal new perspectives on conditions and events in Australia’s immigration detention&nbsp;network.</p>
         </article>
-        <form class="mail-list" action="/subscriptions" method="post">
-            <legend class="distinct">Get access soon <label for="">Sign up for updates</label></legend>
-	        <input type="email" name="subscription[email]" placeholder="Email Address" id="" required/>
+
+        <%= form_for @subscription, :html => {:class => "mail-list"} do |f| %>
+			<% if notice == "emailfalse" %>
+	         <p class="verification-msg box note" id="email-error">Please enter a valid email&nbsp;address</p>
+			 <% elsif notice == "emailtrue" %>
+		     <p class="verification-msg box note" id="email-success">Success. We'll be in touch soon.</p>
+			 <% end %>
+            <legend class="distinct"><label for="email">Get Detention&nbsp;Logs updates</label></legend>
+	        <input type="email" name="subscription[email]" placeholder="Email Address" id="email" required/>
 	        <label for="submit" class="btn">
 	        	Subscribe
 	        	<input type="submit" />
 	        </label>
 	        <small class="supporting">Receive occasional emails about our releases.  <a href="about/privacy/" title="Detention Logs Privacy Policy">See&nbsp;our&nbsp;Privacy&nbsp;Policy</a>.</small>
-        </form>
+		<% end %>
         <footer class="site-footer" role="contentinfo">
 	        <ul class="contact discrete">
 	        	<li><a href="http://twitter.com/detentionlogs" class="u-url twitter" rel="me">@DetentionLogs</a></li>
@@ -54,3 +59,4 @@
 		</script>
     </body>
 </html>
+
