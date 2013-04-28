@@ -3,21 +3,34 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
+   <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Detention Logs | Opening Australia's Immigration Detention</title>
+        <title>Detention Logs</title>
         
         <meta name="author" content="Detention Logs">
-        <meta name="description" content="We publish databases, documents and investigations that reveal new perspectives on conditions and events in Australia’s immigration detention&nbsp;network.">
+        <meta name="description" content="We publish databases, documents and investigations that reveal new perspectives on conditions and events in Australia’s immigration detention network.">
         <meta name="viewport" content="width=device-width">
+		<meta name="google-site-verification" content="UyFaPbUx_nMcjSfI1G-dkYcTZljC0-do61HPxvESXic" />
+
+    	<!-- Twitter -->
+	    <meta name="twitter:card" content="summary">
+		<meta name="twitter:url" content="http://detentionlogs.com.au">
+		<meta name="twitter:title" content="Detention Logs">
+		<meta name="twitter:description" content="We publish databases, documents and investigations that reveal new perspectives on conditions and events in Australia’s immigration detention network.">
+		<meta name="twitter:creator" content="@detentionlogs">
+
+		<!-- Facebook -->
+	    <meta property="og:title" content="Detention Logs" />
+		<meta property="og:description" content="We publish databases, documents and investigations that reveal new perspectives on conditions and events in Australia’s immigration detention network." />
+		<meta property="og:url" content="http://detentionlogs.com.au" />
 
         <%= stylesheet_link_tag    "style", :media => "all" %>
        	   <%= javascript_include_tag "fixers" %>
     </head>
     <body class="h-card holding">
         <article class="site-intro">
-           <h1 class="logo p-org fn">Detention Logs</h1>
+           <h1 class="logo p-org p-name">Detention Logs</h1>
 	       <p class="loud p-note">We publish databases, documents and investigations that reveal new perspectives on conditions and events in Australia’s immigration detention&nbsp;network.</p>
         </article>
 
@@ -29,16 +42,16 @@
 			 <% end %>
             <legend class="distinct"><label for="email">Get Detention&nbsp;Logs updates</label></legend>
 	        <input type="email" name="subscription[email]" placeholder="Email Address" id="email" required/>
-	        <label for="submit" class="btn">
+	        <label class="btn">
 	        	Subscribe
-	        	<input type="submit" />
+	        	<input type="submit" onClick="_gaq.push(['_trackEvent', 'contact', 'list-subscribe', 'holding form']);"/>
 	        </label>
-	        <small class="supporting">Receive occasional emails about our releases.  <a href="about/privacy/" title="Detention Logs Privacy Policy">See&nbsp;our&nbsp;Privacy&nbsp;Policy</a>.</small>
+	        <small class="supporting">Receive occasional emails about our releases. <!--  <a href="about/privacy/" title="Detention Logs Privacy Policy">See&nbsp;our&nbsp;Privacy&nbsp;Policy</a> -->.</small>
 		<% end %>
-        <footer class="site-footer" role="contentinfo">
+         <footer class="site-footer" role="contentinfo">
 	        <ul class="contact discrete">
-	        	<li><a href="http://twitter.com/detentionlogs" class="u-url twitter" rel="me">@DetentionLogs</a></li>
-	        	<li><a class="u-email email" href="mailto:detentionlogs@gmail.com">Contact</a></li>
+	        	<li><a href="http://twitter.com/detentionlogs" class="u-url twitter" rel="me" onClick="_gaq.push(['_trackEvent', 'social', 'out to Twitter', 'footer']);">@DetentionLogs</a></li>
+	        	<li><a class="u-email email" href="mailto:detentionlogs@gmail.com" onClick="_gaq.push(['_trackEvent', 'contact', 'email', 'footer']);">Contact</a></li>
 	        </ul>
         </footer>
 <!--
@@ -52,11 +65,12 @@
 		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-		
+
 		  ga('create', 'UA-40270731-1', 'detentionlogs.com.au');
 		  ga('send', 'pageview');
-		
+
 		</script>
+
     </body>
 </html>
 
