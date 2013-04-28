@@ -27,14 +27,14 @@
 	        <input type="email" name="email" placeholder="Email Address" id="email" required/>
 	        <label class="btn">
 	        	Subscribe
-	        	<input type="submit" />
+	        	<input type="submit" onClick="_gaq.push(['_trackEvent', 'contact', 'subscribe', 'holding form']);"/>
 	        </label>
 	        <small class="supporting">Receive occasional emails about our releases.  <a href="about/privacy/" title="Detention Logs Privacy Policy">See&nbsp;our&nbsp;Privacy&nbsp;Policy</a>.</small>
         </form>
         <footer class="site-footer" role="contentinfo">
 	        <ul class="contact discrete">
-	        	<li><a href="http://twitter.com/detentionlogs" class="u-url twitter" rel="me">@DetentionLogs</a></li>
-	        	<li><a class="u-email email" href="mailto:detentionlogs@gmail.com">Contact</a></li>
+	        	<li><a href="http://twitter.com/detentionlogs" class="u-url twitter" rel="me" onClick="_gaq.push(['_trackEvent', 'social', 'out to Twitter', 'footer']);">@DetentionLogs</a></li>
+	        	<li><a class="u-email email" href="mailto:detentionlogs@gmail.com" onClick="_gaq.push(['_trackEvent', 'contact', 'email', 'footer']);">Contact</a></li>
 	        </ul>
         </footer>
 <!--
