@@ -37,7 +37,8 @@ class IncidentsController < ApplicationController
   # GET /incidents/1
   # GET /incidents/1.json
   def show
-    @incident = Incident.find(params[:id])
+ 
+    	@incident = Incident.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
