@@ -885,6 +885,9 @@ body {
 .incident {
 	max-width: 42rem;
 	margin: 0 auto;
+	.main {
+		max-width: 42rem;		
+	}
 	.related,
 	.box {
 		clear: both;
