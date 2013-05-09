@@ -71,6 +71,10 @@
 					var observation = $(this).html();
 					observation = observation.replace(/\bobs\b/i, '<abbr title="observation">OBS</abbr>'); //this should be fixed replace that actual text, so as to keep the capitalisation used by the original author. 
 					$(this).html(observation);
+					
+					var idc = $(this).html();
+					idc = idc.replace(/\bidc\b/i, '<abbr title="Immigration Detention Centre">IDC</abbr>'); //this should be fixed replace that actual text, so as to keep the capitalisation used by the original author. 
+					$(this).html(idc);
 				})
 			
 			
