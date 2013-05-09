@@ -1,100 +1,59 @@
-<!--
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Incident number:</b>
-  <%= @incident.incident_number %>
-</p>
-
-<p>
-  <b>Incident type:</b>
-  <%= @incident.incident_type %>
-</p>
-
-<p>
-  <b>Level:</b>
-  <%= @incident.level %>
-</p>
-
-<p>
-  <b>Location:</b>
-  <%= @incident.location %>
-</p>
-
-<p>
-  <b>Location details:</b>
-  <%= @incident.location_details %>
-</p>
-
-<p>
-  <b>Summary:</b>
-  <%= @incident.summary %>
-</p>
-
-<p>
-  <b>Occured on:</b>
-  <%= @incident.occured_on %>
-</p>
-
-<%= link_to 'Edit', edit_incident_path(@incident) %> |
-<%= link_to 'Back', incidents_path %>
--->
-
-<!DOCTYPE html>
-<html class="no-js">
-<head>
-    <meta charset="utf-8">
-    <title>
-        Self Harm - Actual on 25th May 2011, at Villawood IDC - Incident 1-7AFG2G | Detention Logs
-    </title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" href="http://detentionlogs.development/mockups/css/style.css">
-</head>
-<body>
-	<article class="incident">
+	<article class="incident" role="">
 	    <section class="incident-primary main">
 	        <h1>Incident <%= @incident.incident_number %></h1>
+			<dl class="related-signpost discrete">
+				<dt class="docs-icon">Related Documents</dt>
+					<dd><a href="#attachments" title="see documents related to this incident">1</a></dd>
+				<dt class="investigations-icon">Related Investigations</dt>
+					<dd><a href="#related-investigations" title="see stories related to this incident">1</a></dd>
+			</dl>
+	        
+	        <a href="#about" title="about the information on this page" class="supporting">What is this?</a>
 			<dl class="incident-primary-meta">
-				<dt "incident-type">Type</dt>
-					<dd "incident-type"><a href=""><%= @incident.incident_type %></a></dd>
+				<dt class="incident-type">Type</dt>
+					<dd class="incident-type"><a href=""><%= @incident.incident_type %></a></dd>
+				<dt class="incident-occured-on">Occured On</dt>
+					<dd class="incident-occured-on"><a href=""><time><%= @incident.occured_on.strftime("%d %b %Y %H:%M") %></time></a></dd>
 				<dt class="incident-location">Location</dt>
 					<dd class="incident-location"><a href=""><%= @incident.location %></a></dd>
-				<dt class="incident-occured-on">Occured On</dt>
-					<dd class="incident-occured-on"><a href=""><%= @incident.occured_on %></a></dd>
+
 			</dl>
 	    	<dl class="incident-summary">
 	    		<dt>Incident Summary</dt>
-		 	   		<dd><%= @incident.summary %></dd>
+		 	   		<dd class="distinct"><%= @incident.summary %></dd>
 	    	</dl>
 	    	<p></p>
 	    </section>
 	    <dl class="discrete main incident-additional">
                 <dt class="incident-informed-by">Informed By</dt>
 	            	<dd class="incident-informed-by">Service Provider Staff</dd>
-	            <dt class="incident-number">Incident Number</dt>
-	                <dd class="incident-number">1-7AFG2G</dd>
-	            <dt class="incident-level"><abbr title="The level of ... as defined by Detention Centre Staff">Level</abbr></dt>
+	            <dt class="incident-level"><abbr title="The level of incident is tied to the type, not decided by the detention facility staff who reported the incident.">Level</abbr></dt>
 	                <dd class="incident-level critical">Critical</dd>
+   	            <dt class="incident-number">Incident Number</dt>
+	                <dd class="incident-number">1-7AFG2G</dd>
 	            <dt class="incident-location-details">Location Details</dt>
 	                <dd class="incident-location-details"><%= @incident.location_details %></dd>
 	    </dl>
 <!-- 	    If there are related documents or investigations -->
 	    <!--
-<dl class="discrete main related">
-		    <dt class="related-documents">Related Documents</dt>
-		    	<dd class="related-documents"><a href=""><cite>Incident Detail Report - Incident 1-7AFG2G</cite></a></dd>
-		    <dt class="related-investigations">Related Investigations</dt>
-		    	<dd class="related-investigations"><a href=""><cite>Removals Story</cite></a></dd>
-	    </dl>
--->
+	    <section class="discrete related main" id="related">
+		    <h2 class="related-documents" id="attachments">Attachements</h2>
+		    <ul>
+		    	<li class="related-documents"><a href=""><cite>Incident Detail Report</cite></a></li>
+		    </ul>
+		    
+		    <h2 class="related-investigations" id="related-investigations">Related Investigations</h2>
+		    <ul>
+		    	<li class="related-investigations"><a href=""><cite>Removals Story</cite></a></li>
+		    </ul>
+	    </section>
+		-->    
 <!-- 	    end if -->
-	     <section class="note box main">
-			<h2>What is this?</h2>
+	     <section class="note box main" id="about">
+			<h2>About this information</h2>
 			<p></p>
+			<h3>Disclaimer</h3>
+			<p>The data published here has been provided by THIS IS HOLDING TEXT the Department of immigration and citizenship under the freedom of information act 1982.  Detention logs has only altered data that contains defamatory imputations or may be in contempt of legal proceedings.</p>
+			<p>If you see anything that is defamatory or in contempt of court please contact us.</p>
 		 </section>
 	</article>
-	<footer>
-	</footer>
-</body>
-</html>
