@@ -7,23 +7,32 @@
     </title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" href="css/style.css">
+    <link href="http://localhost:3000/assets/style.css?body=1" media="all" rel="stylesheet" type="text/css" />
 </head>
 <body>
 	<article class="incident">
 	    <section class="incident-primary main">
-			<h1><span class="incident-occured-on">2010-09-13</span> <span class="incident-type">Assault - Serious</span> at <span class="incident-location">Gwalia Lodge</span></h1>
+			<h1>Incident 1-4M3M9X</h1>
+			<dl class="related-signpost discrete">
+				<dt class="docs-icon">Related Documents</dt>
+					<dd><a href="#attachments" title="see documents related to this incident">1</a></dd>
+				<dt class="investigations-icon">Related Investigations</dt>
+					<dd><a href="#related-investigations" title="see stories related to this incident">1</a></dd>
+			</dl>
+			
+			<a href="#about" title="about the information on this page" class="supporting">What is this?</a>
+			
 			<dl class="incident-primary-meta">
 					<dt class="incident-type">Type</dt>
 						<dd class="incident-type"><a href="">Assault - Serious</a></dd>
+					<dt class="incident-occured-on">Occured On</dt>
+						<dd class="incident-occured-on"><time><a href="">2010-09-13</a></time></dd>
 					<dt class="incident-location">Location</dt>
 						<dd class="incident-location"><a href="">North Test Point IDC</a></dd>
-					<dt class="incident-occured-on">Occured On</dt>
-						<dd class="incident-occured-on"><a href="">2010-09-13</a></dd>
 			</dl>
 	    	<dl class="incident-summary">
 	    		<dt>Incident Summary</dt>
-		 	   		<dd>Diac Regional Manager informed Serco of alleged sexual assault o<abbr class="redacted" title="text redacted under section 47F(1) of the FOI Act ###">s. 47F(1)</abbr> All Participents being interviewed by WA Police 16/7. No charges laid by <abbr title="Western Australia Police">WAPOL</abbr> client returned to <abbr title="Leonora Alternative Place of Detention">LAPOD</abbr> separated from compound pending trans. to <abbr title="Perth Immigration Detention Centre">PIDC</abbr></dd>
+		 	   		<dd class="distinct">Diac Regional Manager informed Serco of alleged sexual assault o<abbr class="redacted" title="text redacted under section 47F(1) of the FOI Act ###">s. 47F(1)</abbr> All Participents being interviewed by WA Police 16/7. No charges laid by <abbr title="Western Australia Police">WAPOL</abbr> client returned to <abbr title="Leonora Alternative Place of Detention">LAPOD</abbr> separated from compound pending trans. to <abbr title="Perth Immigration Detention Centre">PIDC</abbr></dd>
 	    	</dl>
 	    </section>
 		<dl class="discrete main incident-additional">
@@ -34,13 +43,18 @@
             <dt class="incident-location-details">Location Details</dt>
                 <dd class="incident-location-details">Roon 38 Gwalia Lodge</dd>
 	    </dl>
-	    <dl class="discrete main related">
-		    <dt class="related-documents">Related Documents</dt>
-		    	<dd class="related-documents"><a href=""><cite>Incident Detail Report</cite></a></dd>
-		    <dt class="related-investigations">Related Investigations</dt>
-		    	<dd class="related-investigations"><a href=""><cite>Removals Story</cite></a></dd>
-	    </dl>
-	    <section class="explanation note box">
+	    <section class="discrete related main" id="related">
+		    <h2 class="related-documents" id="attachments">Attachements</h2>
+		    <ul>
+		    	<li class="related-documents"><a href=""><cite>Incident Detail Report</cite></a></li>
+		    </ul>
+		    
+		    <h2 class="related-investigations" id="related-investigations">Related Investigations</h2>
+		    <ul>
+		    	<li class="related-investigations"><a href=""><cite>Removals Story</cite></a></li>
+		    </ul>
+	    </section>
+	    <section class="explanation note box" id="about">
 			<h2>About this incident</h2>
 			<p></p>
 		 </section>

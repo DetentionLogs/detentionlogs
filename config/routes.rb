@@ -8,6 +8,12 @@ Detentionlogs::Application.routes.draw do
 
   match 'subscriptions/create' => 'subscriptions#create'  
   match 'subscriptions/thankyou' => 'subscriptions#thankyou'
+  
+  
+  match 'incidents/incident-number/:incident_number' => 'incidents#show'
+  
+  match 'incidents/:id' => 'incidents#show'
+  
   resources :subscriptions
 
 
