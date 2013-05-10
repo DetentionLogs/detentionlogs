@@ -272,6 +272,17 @@ input:-ms-input-placeholder { color: #555;}
 	text-align: center;
 	padding: 0 1em;
 	max-width: 27em;
+	.site-footer {
+		border: 0;
+		ul.contact {
+			list-style: none;
+			padding: 0;
+			li {
+				margin-top: 1em;
+				display: block;
+			}
+		}
+	}
 }
 
 .site-header,
@@ -741,6 +752,7 @@ input, .btn {
 	padding-bottom: 2rem;
 }
 
+
 /* @end Layout */
 
 /* @group Tools */
@@ -893,6 +905,16 @@ body {
 	.site-intro p {
 		text-align: left;
 		margin-bottom: 3rem;
+	}
+	.site-footer {
+		ul.contact {
+			li {
+				display: inline-block;
+				+ li {
+					margin-left: 2em;
+				}
+			}
+		}
 	}
 }
 .site-header,
