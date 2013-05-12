@@ -257,6 +257,11 @@ input:-ms-input-placeholder { color: #555;}
 	font-size: 14px;
 	font-size: .875rem; /* 14px */	
 }
+.discrete {
+	li {
+		margin-bottom: 1em;
+	}
+}
 .redacted {
     text-transform: uppercase;
 	display: inline-block;
