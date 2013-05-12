@@ -3,6 +3,9 @@ Detentionlogs::Application.routes.draw do
   
   
   
+  resources :attachments
+
+
   resources :locations
 
 

@@ -1,6 +1,8 @@
 class IncidentsController < ApplicationController
  
-   
+  http_basic_authenticate_with :name => "aaa", :password => "bbb"
+  
+  
   # GET /incidents
   # GET /incidents.json
   def index
