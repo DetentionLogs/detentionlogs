@@ -1210,12 +1210,8 @@ header .primary-nav {
 	transition: all .3s ease;
 	&:hover,
 	&:focus {
-		margin-left: -1rem;
-		margin-right: -1rem;
-		padding: .5rem 1rem 1.5rem;
-		border-top: 1px darken($contrast, 20%) solid;
+		border-top: 1px darken($contrast, 10%) solid;
 		color: #111;
-		background-color: $contrast;
 	}
 	> * {
 		display: inline-block;
@@ -1286,8 +1282,14 @@ header .primary-nav {
 		.incident-link {
 			font-weight: 400;
 			padding-right: 0;
+			text-decoration: underline;
 			i {
 				display: none;
+			}
+			&:focus,
+			&:hover {
+				background-color: transparent;
+				color: darken($green, 10%);
 			}
 		}
 }
