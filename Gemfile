@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby "1.9.2p290"
 
 gem 'rails', '3.2.12'
 gem "paperclip", "~> 3.0"
