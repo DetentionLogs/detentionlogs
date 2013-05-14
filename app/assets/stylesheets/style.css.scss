@@ -408,8 +408,10 @@ input:-ms-input-placeholder { color: #555;}
 	.incident-location {
 		.add-details {
 			visibility: hidden;
+			font-weight: normal;
 		}
 		.collapsible-heading-toggle {
+			text-decoration: underline;
 			visibility: visible;
 			display: block;
 			padding-left: 0;
@@ -792,7 +794,6 @@ input, .btn {
 	*/
 }
 .collapsible-heading-toggle {
-	text-decoration:none;
 	color:#333;
 }
 .collapsible-heading-status {
