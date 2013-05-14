@@ -138,7 +138,7 @@ nav {
 /* @group Colours */
 
 $regular-text : #444;
-$green : #467719;
+$primary : #467719;
 $fade : #9a9a9a;
 $contrast :  #eaeaea;
 
@@ -151,15 +151,15 @@ body {
 }
 
 .logo {
-	color: $green;
+	color: $primary;
 }
 
 a {
-		color: $green;
+		color: $primary;
 }
 a:hover,
 a:focus {
-	color: darken($green, 10%);
+	color: darken($primary, 10%);
 }
 
 .note {
@@ -181,7 +181,7 @@ input {
 }
 
 .mail-list .btn {
-	background-color: $green;
+	background-color: $primary;
 	color: #fff;
 	&:hover,
 	&:focus {
@@ -223,7 +223,11 @@ input:-ms-input-placeholder { color: #555;}
 .incident-summary {
 	color: #222;
 }
-
+.distinct-download {
+	background-color: $contrast;
+	color: $regular-text;
+	border-color: $fade;
+}
 
 /* @end Colours */
 /* @group Typography */
@@ -273,6 +277,21 @@ input:-ms-input-placeholder { color: #555;}
 }
 
 .additional-info {
+}
+.distinct-download {
+	padding: .25rem .5rem;
+	border-width:  1px;
+	border-width:  .07rem;
+	border-radius: .25rem;
+	border-style: solid;
+	text-decoration: none;
+	margin-bottom: 1rem;
+	display: inline-block;
+}
+.docs-icon.distinct-download {
+	padding-left: 1.75rem;
+	background-position-x: .25rem;
+	width: auto;
 }
 /* @end Typography */
 /* @group Page structure */
@@ -357,8 +376,9 @@ input:-ms-input-placeholder { color: #555;}
 	float: none;
 	h1 {
 		font-size: 1.125rem;
-		float: left;
-		clear: left;
+	}
+	.help {
+		display: block;
 	}
 	dl {
 		margin-top: 1em;
@@ -508,7 +528,7 @@ input:-ms-input-placeholder { color: #555;}
 	.incident-link {
 		display: inline-block;
 		float: right;
-		background-color: $green;
+		background-color: $primary;
 		color: #fff;
 		padding: .25rem .5rem;
 		&:hover,
@@ -567,7 +587,7 @@ header .primary-nav {
 				padding-left: .5rem;
 			}
 			&:active {
-				background: $green;
+				background: $primary;
 				color: white;
 				padding-left: .5rem;				
 			}
@@ -602,34 +622,46 @@ header .primary-nav {
 
 .contact {
 	.email {
-		background: url(email-small.png) no-repeat left center;
+		background-image: url(email-small.png);
+		background-position: left center;
+		background-repeat: no-repeat;
 		padding-left: 1.5rem;
 		text-decoration: none;
 	}
 	.twitter {
-		background: url(twitter-small.png) no-repeat left center;
+		background-image: url(twitter-small.png);
+		background-position: left center;
+		background-repeat: no-repeat;
 		padding-left: 1.5rem;
 		text-decoration: none;
 	}
 	.phone.google-voice {
-		background: url(google-voice.png) no-repeat left center;
+		background-image: url(google-voice.png) no-repeat left center;
+		background-position: left center;
+		background-repeat: no-repeat;
 		padding-left: 1.5rem;
 		text-decoration: none;
 	}
 	.github {
-		background: url(github-small.png) no-repeat left center;
+		background-image: url(github-small.png);
+		background-position: left center;
+		background-repeat: no-repeat;
 		padding-left: 1.5rem;
 		text-decoration: none;
 	}
 	
 }
 .docs-icon {
-	background: url(doc-small.png) no-repeat left center;
+	background-image: url(doc-small.png);
+	background-position: left center;
+	background-repeat: no-repeat;
 	padding-left: 1.125rem;
 	width: 0;
 }
 .investigations-icon {
-	background: url(investigation-small.png) no-repeat left center;
+	background-image: url(investigation-small.png);
+	background-position: left center;
+	background-repeat: no-repeat;
 	padding-left: 1.125rem;
 	width: 0;
 }
@@ -1051,7 +1083,7 @@ body {
 	.incident-location-details {
 	}
 	.incident-link {
-		color: $green;
+		color: $primary;
 		background-color: transparent;
 		font-weight: bold;
 		&:hover,
@@ -1293,7 +1325,7 @@ header .primary-nav {
 			&:focus,
 			&:hover {
 				background-color: transparent;
-				color: darken($green, 10%);
+				color: darken($primary, 10%);
 			}
 		}
 }
