@@ -811,7 +811,11 @@ input, .btn {
 
 
 /* @end Tools */
-
+@media all and (max-width: 30em) {
+	abbr {
+		border-bottom: none;
+	}
+}
 @media all and (min-width: 30em) {
 
 /* @group Page structure */
