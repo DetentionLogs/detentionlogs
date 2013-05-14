@@ -443,6 +443,7 @@ input:-ms-input-placeholder { color: #555;}
 	}
 }
 	.incident-primary-meta {
+		font-weight: bold;
 		a {
 			text-decoration: none;
 		}
@@ -975,6 +976,8 @@ body {
 		margin-right: -2rem;
 		padding-right: 2rem;
 		padding-left: 2rem;
+	.incident-primary-meta {
+		font-weight: normal;
 	}
 }
 .incident-additional {
