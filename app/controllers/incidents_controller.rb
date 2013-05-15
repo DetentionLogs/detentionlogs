@@ -77,7 +77,21 @@ class IncidentsController < ApplicationController
       end
     end
   end
+  def deletereport
+    @incident = Incident.find(params[:id])
+    
+    @incident.detailed_report = nil
+    respond_to do |format|
+      if @incident.save
+        format.html { redirect_to @incident, notice: 'Incident was successfully updated.' }
+        format.json { head :no_content }
+      else
+        format.html { render action: "edit" }
+        format.json { render json: @incident.errors, status: :unprocessable_entity }
+      end
+    end
 
+  end
   # DELETE /incidents/1
   # DELETE /incidents/1.json
   def destroy

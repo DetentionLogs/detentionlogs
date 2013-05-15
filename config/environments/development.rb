@@ -35,4 +35,17 @@ Detentionlogs::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+  
+  
+  config.paperclip_defaults = {
+    :storage => :s3,
+    :s3_credentials => {
+      :bucket => 'detention_logs',
+      :access_key_id => 'AKIAJBTOM2DBBAPGCMAQ',
+      :secret_access_key => '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'
+    }
+  }
+  
+  
+  
 end

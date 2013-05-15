@@ -6,7 +6,7 @@
 	    <section class="incident-primary main">
 	        <h1>Incident <%= @incident.incident_number %></h1>
 <!-- 	        if has detail incident report -->
-	        <em class="detail-report-link"><a href="#" title="Download the Incident Detail Report for this incident to find more information" class="docs-icon discrete distinct-download">See Incident Detail Report [PDF]</a></em>
+	        <% if @incident.detailed_report.path %><em class="detail-report-link"><a href="<%= @incident.detailed_report.url %>" title="Download the Incident Detail Report for this incident to find more information" class="docs-icon discrete distinct-download">See Incident Detail Report [PDF]</a></em><% end %>
 <!-- 	        end if -->
 			<!--
 <dl class="related-signpost discrete">
@@ -94,3 +94,4 @@
 		    </ul>
 	    </nav>
 	</article>
+<!-- edit --><div style="text-align:center;text-transform:uppercase"><%= link_to 'Edit', edit_incident_path(@incident) %></div>

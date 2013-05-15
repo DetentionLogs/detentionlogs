@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130513010223) do
+ActiveRecord::Schema.define(:version => 20130515095904) do
 
   create_table "attachments", :force => true do |t|
     t.string   "name"
@@ -35,6 +35,10 @@ ActiveRecord::Schema.define(:version => 20130513010223) do
     t.datetime "updated_at"
     t.string   "informed_by"
     t.datetime "informed_on"
+    t.string   "detailed_report_file_name"
+    t.string   "detailed_report_content_type"
+    t.integer  "detailed_report_file_size"
+    t.datetime "detailed_report_updated_at"
   end
 
   add_index "incidents", ["location", "occured_on", "incident_type"], :name => "index_incidents_on_location_and_occured_on_and_incident_type"
