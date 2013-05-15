@@ -502,6 +502,7 @@ input:-ms-input-placeholder { color: #555;}
 		}
 	}
 	.incident-additional {
+		overflow: hidden;
 		dt {			
 			float: left;
 			clear: left;
@@ -583,6 +584,16 @@ input:-ms-input-placeholder { color: #555;}
 }
 header .primary-nav {
 	display: none;
+}
+
+.sideways-nav {
+	padding-top: $scale-1;
+	li {
+		margin: 0 0 $scale-n2;
+		a {	
+			padding: .5rem 0;
+		}
+	}
 }
 
 /*
@@ -892,7 +903,24 @@ input, .btn {
 
 /* @end Incidents */
 
-/* @group Page structure */
+/* @end Page structure */
+
+/* @group Navigation */
+.sideways-nav {
+	padding-top: $scale-1;
+	overflow: hidden;
+	li {
+		margin: 0;
+		padding: 0;
+	}
+	.previous {
+		float: left;
+	}
+	.next {
+		float: right;
+	}
+}
+/* @end Navigation */
 
 }
 
@@ -922,7 +950,7 @@ nav {
 /* @group Colours */
 .editors-additional {
 	background: #fff;
-	border-color: $contrast;
+	border-color: darken($contrast, 20%);
 }
 .header-row {
 	background: $note;
