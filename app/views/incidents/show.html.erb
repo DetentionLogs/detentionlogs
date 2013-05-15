@@ -5,17 +5,9 @@
 	<article class="incident" role="">
 	    <section class="incident-primary main">
 	        <h1>Incident <%= @incident.incident_number %></h1>
-<!-- 	        if has detail incident report -->
+	        
 	        <% if @incident.detailed_report.path %><em class="detail-report-link"><a href="<%= @incident.detailed_report.url %>" title="Download the Incident Detail Report for this incident to find more information" class="docs-icon discrete distinct-download">See Incident Detail Report [PDF]</a></em><% end %>
-<!-- 	        end if -->
-			<!--
-<dl class="related-signpost discrete">
-				<dt class="docs-icon">Related Documents</dt>
-					<dd><a href="#attachments" title="see documents related to this incident">1</a></dd>
-				<dt class="investigations-icon">Related Investigations</dt>
-					<dd><a href="#related-investigations" title="see stories related to this incident">1</a></dd>
-			</dl>
--->
+	        
 	        <a href="#about" title="about the information on this page" class="supporting help">What is this?</a>
 			<dl class="incident-primary-meta">
 				<dt class="incident-type">Type</dt>
