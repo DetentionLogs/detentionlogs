@@ -48,11 +48,11 @@
 	    </section>
 	    <dl class="discrete main incident-additional">
                 <dt class="incident-informed-by">Informed By</dt>
-	            	<dd class="incident-informed-by">Service Provider Staff</dd>
+	            	<dd class="incident-informed-by"><%= @incident.informed_by %></dd>
 	            <dt class="incident-level"><abbr title="The level of incident is tied to the type, not decided by the detention facility staff who reported the incident.">Level</abbr></dt>
-	                <dd class="incident-level critical">Critical</dd>
+	                <dd class="incident-level critical"><%= @incident.level %></dd>
    	            <dt class="incident-number">Incident Number</dt>
-	                <dd class="incident-number">1-7AFG2G</dd>
+	                <dd class="incident-number"><%= @incident.incident_number %></dd>
 	            <dt class="incident-location-details">Location Details</dt>
 	                <dd class="incident-location-details"><%= @incident.location_details %></dd>
 	    </dl>
