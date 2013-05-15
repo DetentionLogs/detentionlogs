@@ -425,7 +425,8 @@ input:-ms-input-placeholder { color: #555;}
 	.incident-primary {
 		padding-bottom: 1em;
 		margin-bottom: 1em;
-		border-bottom: 1px #eaeaea solid;
+		border-bottom: 1px $contrast solid;
+		border-bottom: .07rem $contrast solid;
 	}
 	.related-signpost {
 		float: right;
@@ -1069,7 +1070,8 @@ body {
 	}
 }
 .editors-additional {
-	box-shadow: inset 0px 8px 5px pink;
+	box-shadow: inset 0 8px 8px -5px $contrast;
+	box-shadow: inset 0 .5rem .5rem -.25rem $contrast,0 .8rem .8rem -.25rem lighten($contrast, 10%);
 	border-top-width: .07rem;
 	border-top-style: solid;
 }
