@@ -19,11 +19,11 @@
 	        <a href="#about" title="about the information on this page" class="supporting help">What is this?</a>
 			<dl class="incident-primary-meta">
 				<dt class="incident-type">Type</dt>
-					<dd class="incident-type"><a href=""><%= @incident.incident_type %></a></dd>
+					<dd class="incident-type"><%= @incident.incident_type %> <a href="" class="supporting">see all incidents like this</a></dd>
 				<dt class="incident-occured-on">Occured On</dt>
-					<dd class="incident-occured-on"><a href=""><time><%= @incident.occured_on.strftime("%d %b %Y %H:%M") %></time></a></dd>
+					<dd class="incident-occured-on"><time><%= @incident.occured_on.strftime("%d %b %Y %H:%M") %></time> <a href="" class="supporting">see incidents on this day</a></dd>
 				<dt class="incident-location">Location</dt>
-					<dd class="incident-location"><a href=""><%= @incident.location %></a>
+					<dd class="incident-location"><%= @incident.location %>
 					<strong class="add-details">info</strong>
 					<div class="additional-info discrete box note">
 						<h2>About <%= @incident.location %></h2>
