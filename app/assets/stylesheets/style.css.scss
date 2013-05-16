@@ -408,7 +408,7 @@ input:-ms-input-placeholder { color: #555;}
 	padding-top: 2rem;
 	h1 {
 		margin-top: 0;
-		font-size: 1.125rem;
+		font-size: 1.5rem;
 	}
 	.help {
 		display: block;
@@ -427,13 +427,16 @@ input:-ms-input-placeholder { color: #555;}
 		}
 	}
 	dd {
-		margin: 0 0 .5rem;
+		margin: 0 0 $scale-1;
 	}
 	.incident-primary {
 		padding-bottom: 1em;
 		margin-bottom: 1em;
 		border-bottom: 1px $contrast solid;
 		border-bottom: .07rem $contrast solid;
+		dt {
+			line-height: 1;
+		}
 	}
 	.related-signpost {
 		float: right;
