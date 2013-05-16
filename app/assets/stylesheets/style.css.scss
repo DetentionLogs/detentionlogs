@@ -152,6 +152,9 @@ body {
 
 .logo {
 	color: $primary;
+	span {
+		color: $regular-text;
+	}
 }
 
 a {
@@ -250,6 +253,10 @@ input:-ms-input-placeholder { color: #555;}
 	margin: 0;
 	a {
 		text-decoration: none;
+	}
+	span {
+		line-height: 0;
+		font-size: $scale-n1;	
 	}
 }
 .lede,
