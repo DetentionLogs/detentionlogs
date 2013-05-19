@@ -271,11 +271,11 @@ vendor
 + add to location model ,summary, address
 
 + Filters
-	+ Reorder types and locations
 	+ add the logic for automatically adding the :start_date and :end_date params
 	+	example
 		:	localhost:3000/incidents?incident_type=&location=&start_date=&end_date=&has_detail_report=true
 	+ order by
+	+ Sticky head_row
 
 + Model
 	+ investigations
