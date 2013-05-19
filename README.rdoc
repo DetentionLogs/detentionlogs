@@ -269,7 +269,7 @@ vendor
 + Filters
 	+ Reorder types and locations
 	+ 
-	+ localhost:3000/incidents?incident_type=&location=&start_date=&end_date=&detailed_reports=true
+	+ localhost:3000/incidents?incident_type=&location=&start_date=&end_date=&has_detail_report=true
 
 + Model
 	+ investigations
