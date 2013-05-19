@@ -22,12 +22,14 @@ Detentionlogs::Application.routes.draw do
   match 'data/incidents/:id/update' => 'incidents#update'
   match 'data/incidents/:id/create' => 'incidents#create'
   match 'data/incidents/:id/destroy' => 'incidents#destroy'
+  match 'data/incidents/:id/adopt' => 'incidents#adopt'
   
+    
   match 'data/incidents/incident_number/:incident_number' => 'incidents#show_by_incident_number'
 
   match 'data' => redirect('data/incidents')
   match 'incidents' => redirect('data/incidents')
-  
+  match 'incidents/:id' => redirect('data/incidents/:id') 
  
   
   
