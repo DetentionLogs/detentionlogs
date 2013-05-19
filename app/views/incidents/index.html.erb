@@ -1,6 +1,121 @@
 <section class="main incident-explorer" role="">
-<div class="pagination-details"><%=  page_entries_info @incidents %></div>
-<%= paginate @incidents %>
+<form class="incident-filter" action="#">
+	<legend>Find Incidents</legend>
+	<label>Type</label>
+		<select>
+<!-- 		 @incidents.incident_type  -->
+			<option selected="selected">All</option>
+			<option>Accident/Injury - Serious</option>
+			<option>Complaint Unresolved in time</option>
+			<option>Disturbance - Minor</option>
+			<option>Self Harm - Threatened</option>
+			<option>Voluntary starvation (<24 hrs)</option>
+			<option>Abusive/Aggressive Behaviour</option>
+			<option>Self Harm - Actual</option>
+			<option>Voluntary starvation (>24 hrs)</option>
+			<option>Complaint - re MinorIncident</option>
+			<option>Assault - Minor</option>
+			<option>Contraband found</option>
+			<option>Damage - Minor</option>
+			<option>Failure - IT Systems</option>
+			<option>Transfer to APOD</option>
+			<option>Use of Force</option>
+			<option>Assault - Not OBH</option>
+			<option>Use of Observation Rm > 24 hrs</option>
+			<option>Voluntary Starvation - End of</option>
+			<option>Disturbance - Major</option>
+			<option>Emergency - medical - offsite</option>
+			<option>Demonstration - Onsite</option>
+			<option>Media - Unauthorised presence</option>
+			<option>Transfer btwn facilities</option>
+			<option>Escape</option>
+			<option>Media - Incident of interest</option>
+			<option>Failure - Security System</option>
+			<option>Use of Restraints</option>
+			<option>Escape - Attempted</option>
+			<option>Assault - Serious</option>
+			<option>Removal - Aborted</option>
+			<option>Media - Approach staff/clients</option>
+			<option>Visitor-Other refused</option>
+			<option>Self Harm-Attpted Serious</option>
+			<option>Birth of a child</option>
+			<option>Damage - Serious</option>
+			<option>Property - Missing</option>
+			<option>Failure - Power</option>
+			<option>Theft</option>
+			<option>Demonstration - Offsite</option>
+			<option>Voluntary starvation by Minor</option>
+			<option>Notification by Welfare Auth</option>
+			<option>Weapon - Client in possession</option>
+			<option>Contraband brought by Visitor</option>
+			<option>Barricade/Sit-In</option>
+			<option>Use of Emergency Equip</option>
+			<option>Complaint - re Crit Incident</option>
+			<option>Death</option>
+			<option>Food poisoning</option>
+			<option>Public Health Risk - L/Serious</option>
+			<option>Substance abuse</option>
+			<option>Contamination/Infection</option>
+			<option>Escape - Mass Breakout</option>
+			<option>Use of Restraints-Unplnd</option>
+			<option>Visitor-HP refused access</option>
+			<option>Property - Missing Money</option>
+			<option>Riot</option>
+			<option>Use of weaponry by a Client</option>
+			<option>Clinical Depression</option>
+			<option>Complaint - re MajorIncident</option>
+			<option>Industrial Action - Minor</option>
+			<option>Industrial Action - No Labour</option>
+			<option>Public Health Risk - Serious</option>
+			<option>Threat-Bomb Biologic Chem</option>
+			<option>Visitor-Client denied</option>
+<!-- 		 end -->
+		</select>
+	<label>Location</label>
+<!-- 		 @incidents.incident_location  -->
+		<select>
+			<option selected="selected">All</option>
+			<option>Berrimah Accommodation Facility</option>
+			<option>Brisbane ITA</option>
+			<option>Christmas Island</option>
+			<option>Construction Camp APOD</option>
+			<option>Curtin IDC</option>
+			<option>Darwin Airport Lodge</option>
+			<option>Gwalia Lodge</option>
+			<option>Inverbrackie APOD</option>
+			<option>Jandakot APOD</option>
+			<option>Leonora APOD</option>
+			<option>Leonora Lodge</option>
+			<option>Lilac Aqua</option>
+			<option>Maribyrnong IDC</option>
+			<option>Melbourne ITA</option>
+			<option>North West Point Immigration Facility</option>
+			<option>Northern IDC</option>
+			<option>Perth IDC</option>
+			<option>Perth IRH</option>
+			<option>Phosphate Hill APOD</option>
+			<option>Phosphate Hill B Compound</option>
+			<option>Port Augusta IRH</option>
+			<option>SA Detention Operations</option>
+			<option>Scherger IDC</option>
+			<option>Sydney IRH</option>
+			<option>Villawood IDC</option>
+			<option>Virginia Palms Motel</option>
+<!-- 		 end -->
+		</select>
+	<label>First Date</label>
+		<%= date_select("incident", "start_date") %>
+	<label>Last Date</label>
+		<%= date_select("incident", "end_date") %>
+	<input class="btn" type="submit" role="button" value="Go"/>
+</form>
+<h1 class="distinct query-results-description" id="#results"><strong class="query-count"><%= @incidents.total_count %></strong><strong class="type"><% if params[:incident_type] %><!-- else --> <%= params[:incident_type] %> <% end %></strong> incident reports <strong class="location">across all locations<!-- #locations queried --></strong> between <strong class="start-date">3 October 2009<!-- #start-date queried --></strong> and <strong class="end-date">26 May 2011<!-- #end date queried -->.</strong>
+</h1>
+<dl class="page-link supporting">
+	<dt class="">Link for these results</dt>
+		<dd><a href="<%= "#{request.protocol}#{request.host_with_port}#{request.fullpath}" %>" title="url to share or bookmark these results"><%= "#{request.protocol}#{request.host_with_port}#{request.fullpath}" %></a></dd>
+</dl>
+
 <ul class="header-row supporting">
 	<li class="incident-occured-on">Occured On</li>
 	<li class="incident-type">Type</li>
@@ -15,7 +130,7 @@
 	<% @incidents.each do |incident| %>
 
 	<li class="supporting">
-		<article class="incident-item">
+		<article class="incident-item <% if incident.detailed_report.path %>has-detailed-report<% end %>">
 
 			<section class="incident-primary">
 				<span class="field-label">Occured On</span><time class="incident-occured-on"><%= incident.occured_on.strftime("%d %b %Y %H:%M") %></time>
@@ -35,6 +150,6 @@
 	<% end %>
 	
 </ul>
-
+<div class="pagination-details"><%=  page_entries_info @incidents %></div>
 <%= paginate @incidents %>
 </section>

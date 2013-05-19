@@ -225,10 +225,30 @@ input:-ms-input-placeholder { color: #555;}
 .incident dt,
 .field-label { color: $fade; }
 
-
 .incident-summary {
 	color: #222;
 }
+
+.incident-link {
+	background-color: $primary;
+	color: #fff;
+	&:hover,
+	&:focus {
+		background-color: $fade;
+	}
+}
+
+.has-detailed-report {
+	a.incident-number {
+	color: $note;
+	}
+	.incident-link {
+		background-color: $note;
+		color: $regular-text;
+	}
+}
+
+
 .distinct-download {
 	background-color: lighten($note, 20%);
 	border-color: $note;
@@ -285,6 +305,14 @@ input:-ms-input-placeholder { color: #555;}
 	li {
 		margin-bottom: 1em;
 	}
+}
+.query-results-description {
+	font-weight: normal;
+	.start-date,
+	.end-date {
+		display: inline-block;
+	}
+	
 }
 .redacted {
     text-transform: uppercase;
@@ -598,16 +626,23 @@ input:-ms-input-placeholder { color: #555;}
 	.incident-link {
 		display: inline-block;
 		float: right;
-		background-color: $primary;
-		color: #fff;
 		padding: .25rem .5rem;
-		&:hover,
-		&:focus {
-			background-color: $fade;
-		}
 	}
 }
-
+.page-link {
+		dt {
+			color: $fade;		
+			&:after {
+				content: ":";
+			}
+		}
+		dd {
+			margin: 0;
+			a {
+				word-wrap: break-word;
+			}
+		}
+}
 
 /* @end Incidents list */
 
@@ -745,6 +780,13 @@ header .primary-nav {
 	padding-left: 1.125rem;
 	width: 0;
 }
+.link-icon {
+	background-image: url(link-small.png);
+	background-position: left center;
+	background-repeat: no-repeat;
+	padding-left: 1.25rem;
+	width: 0;	
+}
 /* @end Icons */
 
 /* @group Table */
@@ -826,7 +868,8 @@ input {
 	}
 }
 
-input, .btn {
+.mail-list input,
+.mail-list .btn {
 	border: 1px #ccc solid;
 	border: .0625rem #ccc solid;
 	width: 100%;
@@ -858,6 +901,14 @@ input, .btn {
 	border-width: 2px;
 	border-width: 0.125rem;
 	border-style: solid;
+}
+
+.incident-filter {
+	label {
+		font-size: $scale-n1;
+		text-transform: uppercase;
+		display: block;
+	}
 }
 
 /* @end Forms */
@@ -941,6 +992,17 @@ input, .btn {
 	}
 }
 
+.page-link {
+		dt { 
+			display: inline-block;
+		}
+		dd {
+			display: inline-block;
+			margin-left: 4px;
+			margin-left: .25rem;
+		}
+}
+
 
 /* @end Incidents */
 
@@ -996,6 +1058,28 @@ nav {
 .header-row {
 	background: $note;
 }
+.incident-link {
+	color: $primary;
+	background-color: transparent;
+	&:hover,
+	&:focus {
+		color: #fff;	
+	}
+}
+.has-detailed-report {
+	a.incident-number {
+		color: darken($note, 25%);
+	}
+	.incident-link {
+		color: darken($note, 25%);
+		background-color: transparent;
+		&:hover,
+		&:focus {
+			color: #fff;	
+		}	
+	}
+}
+
 /* @End */
 
 /* @group Typography */
@@ -1196,15 +1280,17 @@ body {
 	.incident-location-details {
 	}
 	.incident-link {
-		color: $primary;
-		background-color: transparent;
 		font-weight: bold;
-		&:hover,
-		&:focus {
-			color: #fff;
-		}
 	}	
 }
+.page-link {
+	dl {
+		dd {
+			margin: 0;
+		}
+	}
+}
+
 
 /* @end Incidents list */
 

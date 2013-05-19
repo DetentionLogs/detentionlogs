@@ -8,7 +8,7 @@ class IncidentsController < ApplicationController
   def index
 
     
-    @incidents = Kaminari.paginate_array(Incident.all).page(params[:page])
+    @incidents = Kaminari.paginate_array(Incident.all).page(params[:page]).per(50)
 
 
 
@@ -29,6 +29,13 @@ class IncidentsController < ApplicationController
       format.json { render json: @incident }
     end
   end
+  
+  def show_by_incident_number
+ 
+    @incident = Incident.find(params[:id])
+
+  end
+  
 
   # GET /incidents/new
   # GET /incidents/new.json

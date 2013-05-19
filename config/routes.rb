@@ -16,8 +16,24 @@ Detentionlogs::Application.routes.draw do
   
   resources :subscriptions
 
+  match 'data/incidents' => 'incidents#index'
+  match 'data/incidents/:id' => 'incidents#show'
+  match 'data/incidents/:id/edit' => 'incidents#edit'
+  match 'data/incidents/:id/update' => 'incidents#update'
+  match 'data/incidents/:id/create' => 'incidents#create'
+  match 'data/incidents/:id/destroy' => 'incidents#destroy'
+  
+  match 'data/incidents/incident_number/:incident_number' => 'incidents#show_by_incident_number'
 
-  resources :incidents
+  match 'data' => redirect('data/incidents')
+  match 'incidents' => redirect('data/incidents')
+  
+ 
+  
+  
+  
+  
+  #resources :incidents
 
 
   # The priority is based upon order of creation:

@@ -1,4 +1,4 @@
-/app/views/.DS_Store
+.DS_Store
 /db/development.sqlite3
 /Gemfile.lock
 /log/development.log

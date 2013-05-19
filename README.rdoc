@@ -259,3 +259,25 @@ vendor
   External libraries that the application depends on. Also includes the plugins
   subdirectory. If the app has frozen rails, those gems also go here, under
   vendor/rails/. This directory is in the load path.
+
+## To Do
+
++ establish urls
+  + to incidents, to statics.
+  + date/incidents redirect?
+
++ Filters
+	+ Reorder types and locations
+	+ 
+	+ localhost:3000/incidents?incident_type=&location=&start_date=&end_date=&detailed_reports=true
+
++ Model
+	+ investigations
+	+ resources
+	+ glossary
+
++ Authentication
+
++ design about
++ design resources
++ design home
