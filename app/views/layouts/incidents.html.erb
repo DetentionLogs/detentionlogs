@@ -1,150 +1,63 @@
-
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width">
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <title>
+	    | Detention Logs
+    </title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <%= stylesheet_link_tag    "style", :media => "all" %>
+    <%= csrf_meta_tag %>
 
-        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
-		<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-		<link href='http://fonts.googleapis.com/css?family=Tauri' rel='stylesheet' type='text/css'>
-		
- 	   <%= stylesheet_link_tag    "normalize", :media => "all" %>	
- 	   <%= stylesheet_link_tag    "incidents", :media => "all" %>
-	   
+</head>
+<body>
+	<header class="site-header">
+    	<h1 class="logo"><a href="http://detentionlogs.com.au" rel="home">Detention&nbsp;Logs<span> beta</span></a></h1>
+    	<nav class="main-nav">
+    		<a href="#navigation" class="menu-btn">Menu</a>
+			<ul class="primary-nav">
+				<li><a href="http://detentionlogs.com.au/incidents">Data</a></li>
+				<li><a href="http://detentionlogs.com.au/investigations">Investigations</a></li>
+				<li><a href="http://detentionlogs.com.au/about">About</a></li>
+			</ul>
+		</nav>
+    </header>
 
-	   <%= javascript_include_tag "moment.min" %>
-	   <script>
-	   		var locations = "<%= params[:location] %>";
-	   	var level_types = "<%= params[:level] %>";
-		var incident_types = "<%= params[:incident] %>";
-		var start_day = moment("<%= params[:date_first] %>")
-		var end_day = moment("<%= params[:date_second] %>")
-	   </script>
-	   <%= javascript_include_tag "incidents" %>
+    <%= yield %>
 
+	<footer role="contentinfo" class="main site-footer">
+		<nav class="footer-nav" role="navigation" id="navigation">
+			<ul class="primary-nav">
+				<li><a href="http://detentionlogs.com.au/incidents">Data</a></li>
+				<li><a href="http://detentionlogs.com.au/investigations">Investigations</a></li>
+				<li><a href="http://detentionlogs.com.au/about">About</a></li>
+			</ul>
+			<ul class="supporting">
+				<li><a href="http://detentionlogs.com.au/about/resources">Resources</a></li>
+				<li><a href="http://detentionlogs.com.au/glossary">Glossary</a></li>
+				<li><a href="http://detentionlogs.com.au/principles">Our Principles</a></li>				
+			</ul>
+		</nav>
+		<ul class="footer-contact contact  supporting">
+			<li><a class="twitter" href="https://twitter.com/DetentionLogs/" title="Detention Logs on Twitter" rel="me">@detentionlogs</a></li>
+			<li><a class="github" href="https://github.com/DetentionLogs/" title="Detention Logs on Github" rel="me">GitHub</a></li>
+		</ul>
+		<ul class="footer-contact contact  supporting">
+			<li><a class="email" href="">Contact</a></li>
+<!-- 			<li><a class="phone google-voice" href="">+08 173 453 235</a></li> -->
+		</ul>
+		<article id="copyright" class="supporting">
+			<h2 class="discrete">Using this content / Copyright</h2>
+			<p>Umami synth dreamcatcher skateboard, pickled pop-up occupy pug.  Williamsburg shoreditch pop-up, street art keytar before they sold out authentic sriracha semiotics truffaut hella plaid wes anderson church-key carles.  Gastropub aesthetic +1, blue bottle ethnic hoodie cliche.</p>
+			<p>Semiotics actually bespoke, high life street art +1 carles fanny pack neutra williamsburg craft beer whatever 90's.  Forage truffaut wes anderson, narwhal photo booth food truck actually swag next level.</p>
+		</article>
+	</footer>
 
-    </head>
-    <body >
-        <!--[if lt IE 7]>
-            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
-        <![endif]-->
+<!-- Grab Google CDN's jQuery. fall back to local if necessary -->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script>window.jQuery || document.write("<script src='../assets/jquery-1.9.1.min.js'>\x3C/script>")</script>
+	    <%= javascript_include_tag "fixers", "site" %>
 
-		<div id="container" >
-			<header>
-				<h1>Detention Logs</h1>
-			<h2>Incident explorer</h1>
-			<div class="explainer">Use the filter below to search for incidents as reported by DIAC</div>
-			</header>
-			<div id='filter-block'>
-				<form id="filter-form" action"#">
-					<input type="hidden" id="location-input" name="location" value="" />
-					<input type="hidden" id="incident-input" name="incident" value="" />
-					<input type="hidden" id="level-input" name="level" value="" />
-				<div id="filter">
-					<ul >
-					<li style="position:relative" class="center-filter">Centre<span class="current">Villawood</span><ul id="location-list"> <li>Perth IDC</li><li>Sydney IRH</li><li>Brisbane ITA</li><li>Construction Camp APOD</li><li>Inverbrackie APOD</li><li>Lilac Aqua</li><li>Gwalia Lodge</li><li>Curtin IDC</li><li>Phosphate Hill APOD</li><li>Port Augusta IRH</li><li>Northern IDC</li><li>SA Detention Operations</li><li>Phosphate Hill B Compound</li><li>Scherger IDC</li><li>North West Point Immigration Facility</li><li>Villawood IDC</li><li>Perth IRH</li><li>Melbourne ITA</li><li>Maribyrnong IDC</li><li>Christmas Island</li></ul></li>
-					<li class="level-filter">Level<span class="current">Critical, Major</span><ul id="level-list"><li>Critical</li><li>Major</li><li>Minor</li></ul></li>
-					<li class="incident-filter">Type<span class="current">Escape</span><ul id="incident-list">
-						
-					    <li>Escape - Mass Breakout</li>
-					    <li>Damage - Minor</li>
-					    <li>Contraband found</li>
-					    <li>Assault - Minor</li>
-					    <li>Demonstration - Onsite</li>
-					    <li>Weapon - Client in possession</li>
-					   <li>Theft</li>
-					    <li>Food poisoning</li>
-					    <li>Substance abuse</li>
-					    <li>Barricade/Sit-In</li>
-					    <li>Riot</li>
-					    <li>Use of Observation Rm > 24 hrs</li>
-					    <li>Escape - Attempted</li>
-					    <li>Abusive/Aggressive Behaviour</li>
-					    <li>Failure - Security System</li>
-					    <li>Use of weaponry by a Client</li>
-					    <li>Use of Emergency Equip</li>
-					    <li>s. 46(a)</li>
-					    <li>Failure - IT Systems</li>
-					    <li>Complaint - re Crit Incident</li>
-					    <li>Assault - Serious</li>
-					    <li>Escape</li>
-					    <li>Removal - Aborted</li>
-					    <li>Disturbance - Minor</li>
-					    <li>Complaint Unresolved in time</li>
-					    <li>Transfer btwn facilities</li>
-					    <li>Self Harm - Threatened</li>
-					    <li>Emergency - medical - offsite</li>
-					    <li>Use of Restraints</li>
-					    <li>Property - Missing</li>
-					    <li>Damage - Serious</li>
-					    <li>Voluntary starvation (under 24 hrs)</li>
-					    <li>Use of Force</li>
-					    <li>Public Health Risk - L/Serious</li>
-					    <li>Use of Restraints-Unplnd</li>
-					    <li>Self Harm - Actual</li>
-					    <li>Visitor-Other refused</li>
-					    <li>Disturbance - Major</li>
-					    <li>Self Harm-Attpted Serious</li>
-					    <li>Media - Approach staff/clients</li>
-					    <li>Media - Incident of interest</li>
-					    <li>Demonstration - Offsite</li>
-					    <li>Complaint - re Minor Incident</li>
-					    <li>Assault - Not OBH</li>
-					    <li>Birth of a child</li>
-					    <li>Media - Unauthorised presence</li>
-					    <li>Property - Missing Money</li>
-					    <li>Accident/Injury - Serious</li>
-					    <li>Notification by Welfare Auth</li>
-					    <li>Voluntary starvation by minor</li>
-					    <li>Transfer to APOD</li>
-					    <li>Failure - Power</li>
-					    <li>Voluntary starvation (>24 hrs)</li>
-					    <li>Voluntary Starvation - End of</li>
-					    <li>Contraband brought by Visitor</li>
-					    <li>Death</li>
-						
-						
-						
-						
-					</ul></li>
-					<li  class="date-filter">Date<span class="current" id="date_counter"></span>
-					
-					
-								<ul style="width:400px;margin-left:30px;height:50px;background-color:#DDD;"><li><div  style="position:relative; width:285px;margin-left:20px;margin-top:-20px;height:40px;">
-					<div class="panel" style="position:absolute;z-index:0;height:5px;background-color:#CCC; top:22px;border-radius:2px;width:285px;"></div>
-					<div id="in_between" style="position:absolute;z-index:1;height:5px;background-color:#27ae60; top:22px;border-radius:2px;width:285px;"></div>
-					<input type="hidden" id="date_first" name="date_first" value="" />
-					<div id="slider_start" style="cursor:pointer; position:absolute; z-index:3;width:15px; left:0px; height:30px;border-radius:2px;background:#000;margin-top:10px;"></div>
-					<div id="slider_end" style="cursor:pointer; position:absolute; z-index:3;width:15px;left:185px; height:30px;border-radius:2px;background:#000;margin-top:10px;"></div>
-					<input type="hidden" id="date_second" name="date_second" value="" />
-					</div></li>		</ul>
-					
-					</li>
-				<li style="border-right:none;margin-left:40px;" class="submit"><input type="submit" value="Go" style="border:1px solid #222;background-color:#111;font-size:14px;border-radius:2px;color:#FFF;" />
-					</ul>
-				</div>
-			</form>
-			</div>
-		</div>
-		
-		<%= yield %>
-
-
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-            s.parentNode.insertBefore(g,s)}(document,'script'));
-        </script>
-    </body>
+	</body>
 </html>

@@ -1,7 +1,10 @@
 source 'https://rubygems.org'
+ruby "1.9.2"
 
 gem 'rails', '3.2.12'
-
+gem "paperclip", "~> 3.0"
+gem 'aws-sdk'
+gem 'devise'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 

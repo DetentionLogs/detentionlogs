@@ -259,3 +259,44 @@ vendor
   External libraries that the application depends on. Also includes the plugins
   subdirectory. If the app has frozen rails, those gems also go here, under
   vendor/rails/. This directory is in the load path.
+
+## To Do
+
++ establish urls
+  + to incidents, to statics.
+  + date/incidents redirect?
+
++ Find and replace Minor Major and Critical in the sumary and location details fields with “minor “ etc. uncapitalising and adding a space after. localhost:3000/data/incidents/43030 .
+
++ add to location model ,summary, address
+
++ Filters
+	+ add the logic for automatically adding the :start_date and :end_date params
+	+	example
+		:	localhost:3000/incidents?incident_type=&location=&start_date=&end_date=&has_detail_report=true
+	+ order by
+	+ Sticky head_row
+
++ Model
+	+ investigations
+		+ url
+		+ title
+		+ id
+		+ summary
+		+ body
+		+ related incidents
+	+ resources
+		+ url
+		+ title
+		+ id
+		+ summary
+		+ related incidents
+	+ glossary
++ Authentication
+
++ Incidents
+	+ remove details initial animation
+	+ fix link to the incident from index
++ design about
++ design resources
++ design home

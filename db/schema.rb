@@ -11,22 +11,44 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130427070820) do
+ActiveRecord::Schema.define(:version => 20130515095904) do
+
+  create_table "attachments", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "file"
+    t.datetime "publication_date"
+    t.datetime "update_date"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
 
   create_table "incidents", :force => true do |t|
     t.string   "incident_number"
     t.string   "incident_type"
     t.string   "level"
     t.string   "location"
-    t.string   "location_details"
+    t.text     "location_details"
     t.text     "summary"
     t.datetime "occured_on"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string   "informed_by"
+    t.datetime "informed_on"
+    t.string   "detailed_report_file_name"
+    t.string   "detailed_report_content_type"
+    t.integer  "detailed_report_file_size"
+    t.datetime "detailed_report_updated_at"
   end
 
   add_index "incidents", ["location", "occured_on", "incident_type"], :name => "index_incidents_on_location_and_occured_on_and_incident_type"
+
+  create_table "locations", :force => true do |t|
+    t.string   "name"
+    t.string   "geoloc"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "subscriptions", :force => true do |t|
     t.string   "email"

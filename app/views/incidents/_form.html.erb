@@ -1,4 +1,4 @@
-<%= form_for(@incident) do |f| %>
+<%= form_for @incident, :html => { :multipart => true }  do |f| %>
   <% if @incident.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@incident.errors.count, "error") %> prohibited this incident from being saved:</h2>
@@ -38,6 +38,14 @@
   <div class="field">
     <%= f.label :occured_on %><br />
     <%= f.datetime_select :occured_on %>
+  </div>
+  <div class="field">
+	<%= f.label :detailed_report  %><br />
+
+	<%= f.file_field :detailed_report %>
+	<% if @incident.detailed_report.path %>	<a href="<%= @incident.detailed_report.url %>">DETAILED REPORT</a>
+	<a href='/incidents/<%= @incident.id %>/deletereport'>Delete detailed report</a>
+	<% end %>
   </div>
   <div class="actions">
     <%= f.submit %>

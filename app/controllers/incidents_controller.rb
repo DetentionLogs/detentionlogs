@@ -1,31 +1,15 @@
 class IncidentsController < ApplicationController
  
-   
+  http_basic_authenticate_with :name => "aaa", :password => "bbb"
+  
+  
   # GET /incidents
   # GET /incidents.json
   def index
-    if(params[:date_first])
-      @date_first = Date.parse(params[:date_first])
-    else
-      @date_first = Date.parse("2010-08-25")
-      params[:date_first] = @date_first
-    end
-    if(params[:date_second])
-      @date_second = Date.parse(params[:date_second])
-    else
-      @date_second = Date.parse("2011-04-25")
-      params[:date_second] = @date_second
-    end
+
     
-    if params[:location]
-      @locations = params[:location].split(',')
-      @incident_type = params[:incident].split(',')
-      @level = params[:level].split(',')
-      @incidents = Incident.where("location in (?) AND occured_on in (?) AND incident_type in (?)", @locations, @date_first..@date_second,  @incident_type).page(params[:page])
-    else
-      @incidents = Incident.where("occured_on in (?)", @date_first..@date_second).page(params[:page])
-    end
-    
+    @incidents = Kaminari.paginate_array(Incident.all).page(params[:page]).per(50)
+
 
 
     respond_to do |format|
@@ -37,6 +21,7 @@ class IncidentsController < ApplicationController
   # GET /incidents/1
   # GET /incidents/1.json
   def show
+ 
     @incident = Incident.find(params[:id])
 
     respond_to do |format|
@@ -44,6 +29,23 @@ class IncidentsController < ApplicationController
       format.json { render json: @incident }
     end
   end
+  
+  def adopt
+    @incident = Incident.find(params[:id])
+
+    respond_to do |format|
+      format.html # adopt.html.erb
+      format.json { render json: @incident }
+    end
+  end
+  
+  
+  def show_by_incident_number
+ 
+    @incident = Incident.find(params[:id])
+
+  end
+  
 
   # GET /incidents/new
   # GET /incidents/new.json
@@ -92,7 +94,21 @@ class IncidentsController < ApplicationController
       end
     end
   end
+  def deletereport
+    @incident = Incident.find(params[:id])
+    
+    @incident.detailed_report = nil
+    respond_to do |format|
+      if @incident.save
+        format.html { redirect_to @incident, notice: 'Incident was successfully updated.' }
+        format.json { head :no_content }
+      else
+        format.html { render action: "edit" }
+        format.json { render json: @incident.errors, status: :unprocessable_entity }
+      end
+    end
 
+  end
   # DELETE /incidents/1
   # DELETE /incidents/1.json
   def destroy
