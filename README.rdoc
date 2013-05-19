@@ -268,8 +268,9 @@ vendor
 
 + Filters
 	+ Reorder types and locations
-	+ 
-	+ localhost:3000/incidents?incident_type=&location=&start_date=&end_date=&has_detail_report=true
+	+ add the logic for automatically adding the :start_date and :end_date params
+	+	example
+		:	localhost:3000/incidents?incident_type=&location=&start_date=&end_date=&has_detail_report=true
 
 + Model
 	+ investigations
