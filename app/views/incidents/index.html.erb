@@ -2,8 +2,7 @@
 <form class="incident-filter" action="#">
 	<legend>Find Incidents</legend>
 	<label>Type</label>
-		<select>
-<!-- 		 @incidents.incident_type  -->
+		<select id="incident_type">
 			<option selected="selected">All</option>
 			<option>Accident/Injury - Serious</option>
 			<option>Complaint Unresolved in time</option>
@@ -73,7 +72,7 @@
 		</select>
 	<label>Location</label>
 <!-- 		 @incidents.incident_location  -->
-		<select>
+		<select id="location">
 			<option selected="selected">All</option>
 			<option>Berrimah Accommodation Facility</option>
 			<option>Brisbane ITA</option>
@@ -107,10 +106,13 @@
 		<%= date_select("incident", "start_date") %>
 	<label>Last Date</label>
 		<%= date_select("incident", "end_date") %>
+	<label>Has detail report</label>
+		<input type="checkbox" id="has_detail_report" />
 	<input class="btn" type="submit" role="button" value="Go"/>
 </form>
-<h1 class="distinct query-results-description" id="#results"><strong class="query-count"><%= @incidents.total_count %></strong><strong class="type"><% if params[:incident_type] %><!-- else --> <%= params[:incident_type] %> <% end %></strong> incident reports <strong class="location">across all locations<!-- #locations queried --></strong> between <strong class="start-date">3 October 2009<!-- #start-date queried --></strong> and <strong class="end-date">26 May 2011<!-- #end date queried -->.</strong>
-</h1>
+
+<h1 class="distinct query-results-description" id="#results"><strong class="query-count"><%= @incidents.total_count %></strong><% if params[:incident_type] %><strong class="type"><%= params[:incident_type] %></strong><% end %> incident reports <% if params[:location] %><strong class="location"><%= params[:location] %></strong><% end %> between <strong class="start-date"><% params[:start_date] %></strong> and <strong class="end-date"><% params[:end_date] %>.</strong></h1>
+
 <dl class="page-link supporting">
 	<dt class="">Link for these results</dt>
 		<dd><a href="<%= "#{request.protocol}#{request.host_with_port}#{request.fullpath}" %>" title="url to share or bookmark these results"><%= "#{request.protocol}#{request.host_with_port}#{request.fullpath}" %></a></dd>
