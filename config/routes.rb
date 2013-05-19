@@ -17,8 +17,8 @@ Detentionlogs::Application.routes.draw do
   resources :subscriptions
 
   match 'data/incidents' => 'incidents#index'
-  match 'data/incidents/:id' => 'incidents#show'
-  match 'data/incidents/:id/edit' => 'incidents#edit'
+  match 'data/incidents/:id' => 'incidents#show', :as => :incident
+  match 'data/incidents/:id/edit' => 'incidents#edit', :as => :edit_incident
   match 'data/incidents/:id/update' => 'incidents#update'
   match 'data/incidents/:id/create' => 'incidents#create'
   match 'data/incidents/:id/destroy' => 'incidents#destroy'
