@@ -169,7 +169,7 @@
 			</section>
 			<section class="incident-secondary">
 				<span class="field-label">Location Details</span><section class="incident-location-details"><p><%= incident.location_details %></p></section>
-				<span class="field-label"><abbr title="Incident">In.</abbr> Number</span><a href="incidents/<%= incident.id %>" class="incident-number" title="Get more information about Incident <%= incident.incident_number %>"><%= incident.incident_number %> <span class="incident-link">see&nbsp;details<i> &rarr;</i></span></a>
+				<span class="field-label"><abbr title="Incident">In.</abbr> Number</span><a href="<%= incident.id %>" class="incident-number" title="Get more information about Incident <%= incident.incident_number %>"><%= incident.incident_number %> <span class="incident-link">see&nbsp;details<i> &rarr;</i></span></a>
 			</section>
 		</article>
 	</li>
