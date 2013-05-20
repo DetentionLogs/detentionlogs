@@ -1,131 +1,142 @@
 <section class="main incident-explorer" role="">
-<form class="incident-filter" action="#">
-	<legend>Find Incidents</legend>
-	<label for="incident_type">Type</label>
-		<select id="incident_type">
-			<option selected="selected">All</option>
-Abusive/Aggressive Behaviour</option>
-			<option>Accident/Injury - Serious</option>
-			<option>Assault - Minor</option>
-			<option>Assault - Not OBH</option>
-			<option>Assault - Serious</option>
-			<option>Barricade/Sit-In</option>
-			<option>Birth of a child</option>
-			<option>Clinical Depression</option>
-			<option>Complaint - re Crit Incident</option>
-			<option>Complaint - re MajorIncident</option>
-			<option>Complaint - re MinorIncident</option>
-			<option>Complaint Unresolved in time</option>
-			<option>Contamination/Infection</option>
-			<option>Contraband brought by Visitor</option>
-			<option>Contraband found</option>
-			<option>Damage - Minor</option>
-			<option>Damage - Serious</option>
-			<option>Death</option>
-			<option>Demonstration - Offsite</option>
-			<option>Demonstration - Onsite</option>
-			<option>Disturbance - Major</option>
-			<option>Disturbance - Minor</option>
-			<option>Emergency - medical - offsite</option>
-			<option>Escape</option>
-			<option>Escape - Attempted</option>
-			<option>Escape - Mass Breakout</option>
-			<option>Failure - IT Systems</option>
-			<option>Failure - Power</option>
-			<option>Failure - Security System</option>
-			<option>Food poisoning</option>
-			<option>Industrial Action - Minor</option>
-			<option>Industrial Action - No Labour</option>
-			<option>Media - Approach staff/clients</option>
-			<option>Media - Incident of interest</option>
-			<option>Media - Unauthorised presence</option>
-			<option>Notification by Welfare Auth</option>
-			<option>Property - Missing</option>
-			<option>Property - Missing Money</option>
-			<option>Public Health Risk - L/Serious</option>
-			<option>Public Health Risk - Serious</option>
-			<option>Removal - Aborted</option>
-			<option>Riot</option>
-			<option>Self Harm - Actual</option>
-			<option>Self Harm - Threatened</option>
-			<option>Self Harm-Attpted Serious</option>
-			<option>Substance abuse</option>
-			<option>Theft</option>
-			<option>Threat-Bomb Biologic Chem</option>
-			<option>Transfer btwn facilities</option>
-			<option>Transfer to APOD</option>
-			<option>Use of Emergency Equip</option>
-			<option>Use of Force</option>
-			<option>Use of Observation Rm > 24 hrs</option>
-			<option>Use of Restraints</option>
-			<option>Use of Restraints-Unplnd</option>
-			<option>Use of weaponry by a Client</option>
-			<option>Visitor-Client denied</option>
-			<option>Visitor-HP refused access</option>
-			<option>Visitor-Other refused</option>
-			<option>Voluntary Starvation - End of</option>
-			<option>Voluntary starvation (<24 hrs)</option>
-			<option>Voluntary starvation (>24 hrs)</option>
-			<option>Voluntary starvation by Minor</option>
-			<option>Weapon - Client in possession</option>
-			<!-- 		 end -->
-		</select>
-	<label for="location">Location</label>
-<!-- 		 @incidents.incident_location  -->
-		<select id="location">
-			<option selected="selected">All</option>
-			<optgroup label="Chistmas Island">
-				<option>Christmas Island</option>
-				<option>Construction Camp APOD</option>
-				<option>Lilac Aqua</option>
-				<option>North West Point Immigration Facility</option>
-				<option>Phosphate Hill APOD</option>
-				<option>Phosphate Hill B Compound</option>
-			</optgroup>
-			<optgroup label="New South Wales">
-				<option>Sydney IRH</option>
-				<option>Villawood IDC</option>
-			</optgroup>
-			<optgroup label="Northern Territory">
-				<option>Berrimah Accommodation Facility</option>
-				<option>Darwin Airport Lodge</option>
-				<option>Northern IDC</option>
-			</optgroup>
-			<optgroup label="Queensland">
-				<option>Brisbane ITA</option>
-				<option>Scherger IDC</option>
-				<option>Virginia Palms Motel</option>		
-			</optgroup>
-			<optgroup label="South Australia">
-				<option>Inverbrackie APOD</option>
-				<option>Port Augusta IRH</option>
-				<option>SA Detention Operations</option>
-			</optgroup>
-			<optgroup label="Victoria">
-				<option>Maribyrnong IDC</option>
-				<option>Melbourne ITA</option>	
-			</optgroup>
-			<optgroup label="Western Australia">
-				<option>Curtin IDC</option>
-				<option>Gwalia Lodge</option>
-				<option>Jandakot APOD</option>
-				<option>Leonora APOD</option>
-				<option>Leonora Lodge</option>
-				<option>Perth IDC</option>
-				<option>Perth IRH</option>
-			</optgroup>
-<!-- 		 end -->
-		</select>
-	<label>First Date</label>
-		<%= date_select("incident", "start_date") %>
-	<label>Last Date</label>
-		<%= date_select("incident", "end_date") %>
-	<label for="has_detail_report">Has detail report</label>
-		<input type="checkbox" id="has_detail_report" />
+<h1>Incident Explorer</h1>
+<p></p>
+
+<form class="incident-filter" action="/data/incidents" method="post">
+	<legend>Filter Incident List</legend>
+	<fieldset class="type">
+		<label for="incident_type">Type</label>
+			<select id="incident_type">
+				<option value="all" selected="selected">All</option>
+				<option value="Abusive/Aggressive Behaviour">Abusive/Aggressive Behaviour</option>
+				<option value="Accident/Injury - Serious">Accident/Injury - Serious</option>
+				<option value="Assault - Minor">Assault - Minor</option>
+				<option value="Assault - Not OBH">Assault - Not OBH</option>
+				<option value="Assault - Seriou">Assault - Serious</option>
+				<option value="Barricade/Sit-In">Barricade/Sit-In</option>
+				<option value="Birth of a child">Birth of a child</option>
+				<option value="Clinical Depression">Clinical Depression</option>
+				<option value="Complaint - re Crit Incident">Complaint - re Crit Incident</option>
+				<option value="Complaint - re Major Incident">Complaint - re Major Incident</option>
+				<option value="Complaint - re Minor Incident">Complaint - re Minor Incident</option>
+				<option value="Complaint Unresolved in time">Complaint Unresolved in time</option>
+				<option value="Contamination/Infection">Contamination/Infection</option>
+				<option value="Contraband brought by Visitor">Contraband brought by Visitor</option>
+				<option value="Contraband found">Contraband found</option>
+				<option value="Damage - Minor">Damage - Minor</option>
+				<option value="Damage - Serious">Damage - Serious</option>
+				<option value="Death">Death</option>
+				<option value="Demonstration - Offsite">Demonstration - Offsite</option>
+				<option value="Demonstration - Onsite">Demonstration - Onsite</option>
+				<option value="Disturbance - Major">Disturbance - Major</option>
+				<option value="Disturbance - Minor">Disturbance - Minor</option>
+				<option value="Emergency - medical - offsite">Emergency - medical - offsite</option>
+				<option value="Escape">Escape</option>
+				<option value="Escape - Attempted">Escape - Attempted</option>
+				<option value="Escape - Mass Breakout">Escape - Mass Breakout</option>
+				<option value="Failure - IT Systems">Failure - IT Systems</option>
+				<option value="Failure - Power">Failure - Power</option>
+				<option value="Failure - Security System">Failure - Security System</option>
+				<option value="Food poisoning">Food poisoning</option>
+				<option value="Industrial Action - Minor">Industrial Action - Minor</option>
+				<option value="Industrial Action - No Labour">Industrial Action - No Labour</option>
+				<option value="Media - Approach staff/clients">Media - Approach staff/clients</option>
+				<option value="Media - Incident of interest">Media - Incident of interest</option>
+				<option value="Media - Unauthorised presence">Media - Unauthorised presence</option>
+				<option value="Notification by Welfare Auth">Notification by Welfare Auth</option>
+				<option value="Property - Missing">Property - Missing</option>
+				<option value="Property - Missing Money">Property - Missing Money</option>
+				<option value="Public Health Risk - L/Serious">Public Health Risk - L/Serious</option>
+				<option value="Public Health Risk - Serious">Public Health Risk - Serious</option>
+				<option value="Removal - Aborted">Removal - Aborted</option>
+				<option value="Riot">Riot</option>
+				<option value="Self Harm - Actual">Self Harm - Actual</option>
+				<option value="Self Harm - Threatened">Self Harm - Threatened</option>
+				<option value="Self Harm-Attpted Serious">Self Harm-Attpted Serious</option>
+				<option value="Substance abuse">Substance abuse</option>
+				<option value="Threft">Theft</option>
+				<option value="Threat-Bomb Biologic Chem">Threat-Bomb Biologic Chem</option>
+				<option value="Transfer btwn facilities">Transfer btwn facilities</option>
+				<option value="Transfer to APOD">Transfer to APOD</option>
+				<option value="Use of Emergency Equip">Use of Emergency Equip</option>
+				<option value="Use of Force">Use of Force</option>
+				<option value="Use of Observation Rm > 24 hrs">Use of Observation Rm > 24 hrs</option>
+				<option value="Use of Restraints">Use of Restraints</option>
+				<option value="Use of Restraints-Unplnd">Use of Restraints-Unplnd</option>
+				<option value="Use of weaponry by a Client">Use of weaponry by a Client</option>
+				<option value="Visitor-Client denied">Visitor-Client denied</option>
+				<option value="Visitor-HP refused access">Visitor-HP refused access</option>
+				<option value="Visitor-Other refused">Visitor-Other refused</option>
+				<option value="Voluntary Starvation - End of">Voluntary Starvation - End of</option>
+				<option value="Voluntary starvation (<24 hrs)">Voluntary starvation (<24 hrs)</option>
+				<option value="Voluntary starvation (>24 hrs)">Voluntary starvation (>24 hrs)</option>
+				<option value="Voluntary starvation by Minor">Voluntary starvation by Minor</option>
+				<option value="Weapon - Client in possession">Weapon - Client in possession</option>
+			</select>
+	</fieldset>
+
+	<fieldset class="location">
+		<label for="location">Location</label>
+			<select id="location">
+				<option selected="selected">All</option>
+				<optgroup label="Chistmas Island">
+					<option value="Christmas Island">Christmas Island</option>
+					<option value="Construction Camp APOD">Construction Camp APOD</option>
+					<option value="Lilac Aqua">Lilac Aqua</option>
+					<option value="North West Point Immigration Facility">North West Point Immigration Facility</option>
+					<option value="Phosphate Hill APOD">Phosphate Hill APOD</option>
+					<option value="Phosphate Hill B Compound">Phosphate Hill B Compound</option>
+				</optgroup>
+				<optgroup label="New South Wales">
+					<option value="Sydney IRH">Sydney IRH</option>
+					<option value="Villawood IDC">Villawood IDC</option>
+				</optgroup>
+				<optgroup label="Northern Territory">
+					<option value="Berrimah Accommadation Facility">Berrimah Accommodation Facility</option>
+					<option value="Darwin Airport Lodge">Darwin Airport Lodge</option>
+					<option value="Nortern IDC">Northern IDC</option>
+				</optgroup>
+				<optgroup label="Queensland">
+					<option value="Brisbane ITA">Brisbane ITA</option>
+					<option value="Scherger IDC">Scherger IDC</option>
+					<option value="Virginia Palms Motel">Virginia Palms Motel</option>		
+				</optgroup>
+				<optgroup label="South Australia">
+					<option value="Inverbrackie APOD">Inverbrackie APOD</option>
+					<option value="Port Augusta IRH">Port Augusta IRH</option>
+					<option value="SA Detention Operations">SA Detention Operations</option>
+				</optgroup>
+				<optgroup label="Victoria">
+					<option value="Maribyrnong IDC">Maribyrnong IDC</option>
+					<option value="Melbourne ITA">Melbourne ITA</option>	
+				</optgroup>
+				<optgroup label="Western Australia">
+					<option value="Curtin IDC">Curtin IDC</option>
+					<option value="Qwalia Lodge">Gwalia Lodge</option>
+					<option value="Jandakot APOD">Jandakot APOD</option>
+					<option value="Leonora APOD">Leonora APOD</option>
+					<option value="Leonora Lodge">Leonora Lodge</option>
+					<option value="Perth IDC">Perth IDC</option>
+					<option value="Perth IRH">Perth IRH</option>
+				</optgroup>
+			</select>
+	</fieldset>
+	<fieldset class="start-date">
+		<label>Start Date</label>
+		<%= date_select("incident", "start_date", :use_short_month => true) %>
+	</fieldset>
+	<fieldset class="end-date">
+		<label>End Date</label>
+			<%= date_select("incident", "end_date", :use_short_month => true) %>
+	</fieldset>
+	<fieldset class="has-detail-report">
+		<label for="has_detail_report">Has detail report</label>
+			<input type="checkbox" id="has_detail_report" />
+	</fieldset>
 	<input class="btn" type="submit" role="button" value="Go"/>
 </form>
-
-<h1 class="distinct query-results-description" id="#results"><strong class="query-count"><%= @incidents.total_count %></strong><% if params[:incident_type] %><strong class="type"><%= params[:incident_type] %></strong><% end %> incident reports <% if params[:location] %><strong class="location"><%= params[:location] %></strong><% end %> between <strong class="start-date"><% params[:start_date] %></strong> and <strong class="end-date"><% params[:end_date] %>.</strong></h1>
+<h2 class="supporting-heading">Results:</h2>
+<h3 class="distinct query-results-description" id="#results"><strong class="query-count"><%= @incidents.total_count %></strong><% if params[:incident_type] %><strong class="type"><%= params[:incident_type] %></strong><% end %> incident reports <% if params[:location] %><strong class="location"><%= params[:location] %></strong><% end %> between <strong class="start-date"><% params[:start_date] %></strong> and <strong class="end-date"><% params[:end_date] %>.</strong></h1>
 
 <dl class="page-link supporting">
 	<dt class="">Link for these results</dt>
