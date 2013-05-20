@@ -42,7 +42,8 @@ class IncidentsController < ApplicationController
   
   def show_by_incident_number
  
-    @incident = Incident.find(params[:id])
+    @incident = Incident.where(["incident_number = ?", params[:incident_number]]).first
+    redirect_to(@incident)
 
   end
   
