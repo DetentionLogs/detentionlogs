@@ -270,6 +270,8 @@ vendor
 
 + add to location model ,summary, address
 
++ add download data as .cvs
+
 + Filters
 	+ add the logic for automatically adding the :start_date and :end_date params
 	+	example
@@ -295,8 +297,8 @@ vendor
 + Authentication
 
 + Incidents
-	+ remove details initial animation
-	+ fix link to the incident from index
+	+ add links to the type and date for seeing all incidents from those cats.
+	
 + design about
 + design resources
 + design home
