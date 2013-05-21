@@ -22,6 +22,7 @@
 					<strong class="add-details">info</strong>
 					<div class="additional-info discrete box note collapsible-content-collapsed">
 						<h2>About <%= @incident.location.name %></h2>
+						<%= raw(@incident.location.description) %>
 						<p><strong><a href="link to location search" title="index of available incidents from this locations">See all available incident records from <%= @incident.location %></a></strong></p>
 					</div>
 					</dd>
