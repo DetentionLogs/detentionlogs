@@ -5,6 +5,7 @@ gem 'rails', '3.2.12'
 gem "paperclip", "~> 3.0"
 gem 'aws-sdk'
 gem 'devise'
+gem 'has_scope'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 

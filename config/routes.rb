@@ -3,6 +3,9 @@ Detentionlogs::Application.routes.draw do
   
   
   
+  resources :location_groups
+
+
   resources :attachments
 
 
@@ -16,22 +19,21 @@ Detentionlogs::Application.routes.draw do
   
   resources :subscriptions
 
-  match 'data/incidents' => 'incidents#index'
+  match 'data/incidents/' => 'incidents#index'
   match 'data/incidents/:id' => 'incidents#show', :as => :incident
   match 'data/incidents/:id/edit' => 'incidents#edit', :as => :edit_incident
   match 'data/incidents/:id/update' => 'incidents#update'
   match 'data/incidents/:id/create' => 'incidents#create'
   match 'data/incidents/:id/destroy' => 'incidents#destroy'
   match 'data/incidents/:id/adopt' => 'incidents#adopt'
-  
-    
-  match 'data/incidents/incident_number/:incident_number' => 'incidents#show_by_incident_number'
+  match 'data/incidents/' => 'incidents#index'
+  match 'incidents/all.:format' => 'incidents#all'  
 
-  match 'data' => redirect('data/incidents')
-  match 'incidents' => redirect('data/incidents')
+  match 'data' => redirect('data/incidents/')
+  match 'incidents' => redirect('data/incidents/')
   match 'incidents/:id' => redirect('data/incidents/:id') 
- 
-  
+
+  match 'populate_location_id' => 'incidents#populate_location_id'
   
   
   

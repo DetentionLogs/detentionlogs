@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130515095904) do
+ActiveRecord::Schema.define(:version => 20130521041408) do
 
   create_table "attachments", :force => true do |t|
     t.string   "name"
@@ -39,15 +39,24 @@ ActiveRecord::Schema.define(:version => 20130515095904) do
     t.string   "detailed_report_content_type"
     t.integer  "detailed_report_file_size"
     t.datetime "detailed_report_updated_at"
+    t.integer  "location_id"
   end
 
   add_index "incidents", ["location", "occured_on", "incident_type"], :name => "index_incidents_on_location_and_occured_on_and_incident_type"
 
+  create_table "location_groups", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "locations", :force => true do |t|
     t.string   "name"
     t.string   "geoloc"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+    t.text     "description"
+    t.integer  "location_group_id"
   end
 
   create_table "subscriptions", :force => true do |t|
