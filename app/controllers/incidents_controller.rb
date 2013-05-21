@@ -50,15 +50,7 @@ class IncidentsController < ApplicationController
     redirect_to(@incident)
 
   end
-  
-  def populate_location_id
-    @incidents = Incident.all
-    @incidents.each do |incident|
-     @incident = Incident.find(incident.id)
-     @location = Location.where(["lower(name) = ?", incident.location.downcase]).first
-     @incident.update_attributes({:location_id => @location.id})
-    end
-  end
+
   
   # GET /incidents/new
   # GET /incidents/new.json
@@ -114,6 +106,7 @@ class IncidentsController < ApplicationController
       end
     end
   end
+  
   def deletereport
     @incident = Incident.find(params[:id])
     

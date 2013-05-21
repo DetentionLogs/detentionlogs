@@ -1,1 +1,0 @@
-{"klass":"Taps::Push","database_url":"postgres://127.0.0.1/detentionlogs_development?encoding=utf8","remote_url":"http://heroku:osui59a24am79x@taps19.heroku.com","session_uri":"/sessions/6640709088","stream_state":{},"completed_tables":[],"table_filter":"(^incidents$)","local_tables_info":{"incidents":7632}}
