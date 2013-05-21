@@ -263,7 +263,7 @@ vendor
 ## To Do
 
 + establish urls
-  + to incidents, to statics.
+  + to statics.
   + date/incidents redirect?
 
 + Find and replace Minor Major and Critical in the sumary and location details fields with “minor “ etc. uncapitalising and adding a space after. localhost:3000/data/incidents/43030 .
@@ -272,14 +272,12 @@ vendor
 
 + add download data as .cvs
 
-+ Filters	
-	+ add the logic for automatically adding the :start_date and :end_date params
-	+	example
-		:	localhost:3000/incidents?incident_type=&location=&start_date=&end_date=&has_detail_report=true
-	+ order by
-	+ Sticky head_row
-	+ results url box
-	+ fix the browser font-size difference
++ Incident-Exporer
+	+ Filters	
+		+ add the logic for automatically adding the :start_date and :end_date params
+		+	example = localhost:3000/incidents?incident_type=&location=&start_date=&end_date=&has_detail_report=true
+			+ order by
+			+ Sticky head_row
 
 + Model
 	+ investigations
