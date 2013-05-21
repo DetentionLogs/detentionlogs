@@ -697,6 +697,7 @@ input:-ms-input-placeholder { color: #555;}
 		input {
 			border: 1px $fade solid;
 			padding: .25rem;
+			color: #555;
 		}
 }
 
@@ -981,11 +982,10 @@ input {
 		font-weight: bold;
 	}
 	select {
-/*
-		font-size: 18px;
- 		font-size: $scale-1;
- 
-*/		max-width: 100%;
+		font-size: 16px;
+ 		font-size: 1rem;
+ 		width: 100%;
+ 		-webkit-appearance: menulist-button;
 	}
 	fieldset {
 		float: none;
@@ -1017,8 +1017,8 @@ input {
 		}
 	}
 	input[role="button"] {
-		margin-top: 12px;
-		margin-top: .75rem;
+		margin-top: 16px;
+		margin-top: 1rem;
 		border: 0;
 		font-weight: bold;
 		text-transform: uppercase;
@@ -1077,7 +1077,11 @@ input {
 	display:none;
 }
 
-
+.floatingHeader {
+  position: fixed;
+  top: 0;
+  visibility: hidden;
+}
 
 
 /* @end Tools */
@@ -1141,15 +1145,14 @@ input {
 			width: 50%;
 			select {
 				max-width: 95%;
+				font-size: $scale-n1;
 			}
 		}
 		.start-date,
 		.end-date {
-			select {
-	/*
-			font-size: 12px;
-				font-size: $scale-n2;
-*/
+			input {	
+			font-size: 14px;
+			font-size: $scale-n1;
 			}
 		}
 		.has-detail-report {
@@ -1580,6 +1583,8 @@ legend {
 	}
 }
 .incident-item {
+	border-top: none;
+	border-bottom: 1px $contrast solid;
 	clear: both;
 	float: none;
 	overflow: hidden;
@@ -1587,7 +1592,6 @@ legend {
 	transition: all .3s ease;
 	&:hover,
 	&:focus {
-		border-top: 1px darken($contrast, 10%) solid;
 		color: #111;
 	}
 	> * {
@@ -1679,15 +1683,25 @@ legend {
 	padding: 1rem;
 	margin: 0 -1rem;
 	fieldset {
-		width: 40%;
+		float: left;
+		clear: none;
+		padding-right: 1rem;
+		select {
+			font-size: $scale-n1;
+		}
+	}
+	.type,
+	.location {
+		width: 30%;
 	}
 	.start-date {
-		clear: left;
+		clear: none;
 	}
 	.start-date,
 	.end-date {
-		select {
-/* 			font-size: $scale-1; */
+		width: 20%;
+		input {
+  			font-size: $scale-n1;	
 		}
 	}
 }
@@ -1714,12 +1728,15 @@ legend {
 		float: left;
 		clear: none;
 		width: auto;
-		padding-right: 8px;
-		padding-right: .5rem;
+		padding-right: 16px;
+		padding-right: 1rem;
 	}
 	.type,
 	.location {
-		width: 20%;
+		width: 30%;
+	}
+	.start-date,
+	.end-date {
 	}
 	.start-date {
 		clear: none;
