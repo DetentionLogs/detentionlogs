@@ -1,3 +1,7 @@
+<nav class="breadcrumbs supporting main">
+	<p><!-- <a href="http://detentionlogs.com.au/data/">Data</a> &gt;  --><a href="http://detentionlogs.com.au/data/incidents/" title="Explore incident records from Australia's immigration detention network">Incidents</a> &gt; <a href="<%=  url_for @incident %>" title="Page for Incident <%= @incident.incident_number %>"><%= @incident.incident_number %></a> &gt; <a href="<%= url_for(@incident) %>/adopt" title="help get more information about this incident">Adopt</a></p>
+</nav>
+
 <article class="main reading">
 	<a href="https://www.righttoknow.org.au/new/diac/?title=FOI%20Request%20for%20Detail%20Incident%20Report%20<%= @incident.incident_number %>;body=To%20the%20Department%20of%20Immigration%20and%20Citizenship%2C%0A%0ADear%20Sir%2FMadam%2C%0A%0AUnder%20the%20Freedom%20of%20Information%20Act%201982%20(Cth)%20I%20request%20the%20following%20document%3A%0A%0AIncident%20Detail%20Report%20<%= @incident.incident_number %>%20from%20the%20Department%27s%20Compliance%2C%20Case%20Management%2C%20Detention%20and%20Settlement%20Portal.%20I%20also%20request%20any%20documents%20attached%20to%20the%20detailed%20report.%0A%0AKind%20Regards%2C%0A%0A****ADD%20YOUR%20NAME%20HERE%20BEFORE%20SENDING%20REQUEST****">Make a public FOI request</a>
 </article>
