@@ -269,6 +269,8 @@ vendor
   	+ /about/glossary
   	+ /about/resources
   	
+  + 404 page
+  	
   + date/incidents redirect **this needs to be checked on the live site, seems to have issue leaving first "/" off before "data".
 
 + Find and replace Minor Major and Critical in the sumary and location details fields with “minor “ etc. uncapitalising and adding a space after. localhost:3000/data/incidents/43030 .
@@ -284,6 +286,7 @@ vendor
 		+ add url params to the form so people can link to results.
 			+ order by
 			+ Sticky head_row
+		+ Return incidents by defaul newset first, currently oldest first.
 
 + Model
 	+ investigations
@@ -303,6 +306,7 @@ vendor
 + Authentication
 
 + Incidents
+	+ Incident uploader seems to be broken
 	+ add links to the type and date for seeing all incidents from those cats.
 	+ add previous and next incident links
 	
