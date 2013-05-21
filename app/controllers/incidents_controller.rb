@@ -106,6 +106,7 @@ class IncidentsController < ApplicationController
       end
     end
   end
+  
   def deletereport
     @incident = Incident.find(params[:id])
     
