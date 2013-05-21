@@ -3,12 +3,18 @@ require 'test_helper'
 class IncidentsControllerTest < ActionController::TestCase
   setup do
     @incident = incidents(:one)
+    @request.env['HTTP_AUTHORIZATION'] = ActionController::HttpAuthentication::Basic.encode_credentials('aaa', 'bbb')
   end
 
   test "should get index" do
     get :index
     assert_response :success
     assert_not_nil assigns(:incidents)
+  end
+
+  test "should get all" do
+    get :all, :format => :json
+    assert_response :success
   end
 
   test "should get new" do

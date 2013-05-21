@@ -18,6 +18,14 @@ class IncidentsController < ApplicationController
     end
   end
 
+
+  # GET /incidents.json
+  def all
+    respond_to do |format|
+      format.json { render json: Incident.all }
+    end
+  end
+
   # GET /incidents/1
   # GET /incidents/1.json
   def show
