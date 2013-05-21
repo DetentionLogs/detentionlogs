@@ -544,9 +544,6 @@ input:-ms-input-placeholder { color: #555;}
 			content: " :";
 		}
 	}
-	dd {
-		margin: 0 0 $scale-1;
-	}
 	.incident-primary {
 		padding-bottom: 1em;
 		margin-bottom: 1em;
@@ -554,6 +551,9 @@ input:-ms-input-placeholder { color: #555;}
 		border-bottom: .07rem $contrast solid;
 		dt {
 			line-height: 1;
+		}
+		dd {
+		margin: 0 0 $scale-1;
 		}
 	}
 	.related-signpost {
@@ -1338,6 +1338,9 @@ body {
 	.editors-additional,
 	.box {
 		clear: both;
+	}
+	dd {
+		margin: 0 0 $scale-1;
 	}
 	.box {
 		border-left-width: 2px;
