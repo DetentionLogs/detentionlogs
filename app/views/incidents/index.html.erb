@@ -34,41 +34,42 @@
 	<dt class="">Link for these results</dt>
 		<dd><input value="<%= "#{request.protocol}#{request.host_with_port}#{request.fullpath}" %>" title="url to share or bookmark these results" readonly></dd>
 </dl>
-
-<ul class="header-row supporting">
-	<li class="incident-occured-on">Occured On</li>
-	<li class="incident-type">Type</li>
-	<li class="incident-location">Location</li>
-	<li class="incident-summary">Summary</li>
-	<li class="incident-secondary">
-		<div class="incident-location-details">Location Details</div>
-		<div class="incident-number">Incident Number</div>
-	</li>			
-</ul>
-<ul class="incident-list">
-	<% @incidents.each do |incident| %>
-
-	<li class="supporting">
-		<article class="incident-item <% if incident.detailed_report.path %>has-detailed-report<% end %>">
-
-			<section class="incident-primary">
-				<span class="field-label">Occured On</span><time class="incident-occured-on"><%= incident.occured_on.strftime("%d %b %Y %H:%M") %></time>
-				<span class="field-label">Type</span><section class="incident-type"><%= incident.incident_type %></section>
-				<span class="field-label">Location</span><section class="incident-location"><%= incident.location.name %></section>
-			</section>
-			<section class="incident-body">
-				<span class="field-label incident-summary-label">Incident Summary</span><section class="incident-summary discrete"><p><%= incident.summary %></p></section>
-			</section>
-			<section class="incident-secondary">
-				<span class="field-label">Location Details</span><section class="incident-location-details"><p><%= incident.location_details %></p></section>
-				<span class="field-label"><abbr title="Incident">In.</abbr> Number</span><a href="<%= incident.id %>" class="incident-number" title="Get more information about Incident <%= incident.incident_number %>"><%= incident.incident_number %> <span class="incident-link">see&nbsp;details<i> &rarr;</i></span></a>
-			</section>
-		</article>
-	</li>
-
-	<% end %>
+<section class="incident-table">
+	<ul class="header-row supporting">
+		<li class="incident-occured-on">Occured On</li>
+		<li class="incident-type">Type</li>
+		<li class="incident-location">Location</li>
+		<li class="incident-summary">Summary</li>
+		<li class="incident-secondary">
+			<div class="incident-location-details">Location Details</div>
+			<div class="incident-number">Incident Number</div>
+		</li>			
+	</ul>
+	<ul class="incident-list">
+		<% @incidents.each do |incident| %>
 	
-</ul>
+		<li class="supporting">
+			<article class="incident-item <% if incident.detailed_report.path %>has-detailed-report<% end %>">
+	
+				<section class="incident-primary">
+					<span class="field-label">Occured On</span><time class="incident-occured-on"><%= incident.occured_on.strftime("%d %b %Y %H:%M") %></time>
+					<span class="field-label">Type</span><section class="incident-type"><%= incident.incident_type %></section>
+					<span class="field-label">Location</span><section class="incident-location"><%= incident.location.name %></section>
+				</section>
+				<section class="incident-body">
+					<span class="field-label incident-summary-label">Incident Summary</span><section class="incident-summary discrete"><p><%= incident.summary %></p></section>
+				</section>
+				<section class="incident-secondary">
+					<span class="field-label">Location Details</span><section class="incident-location-details"><p><%= incident.location_details %></p></section>
+					<span class="field-label"><abbr title="Incident">In.</abbr> Number</span><a href="<%=  url_for incident %>" class="incident-number" title="Get more information about Incident <%= incident.incident_number %>"><%= incident.incident_number %> <span class="incident-link">see&nbsp;details<i> &rarr;</i></span></a>
+				</section>
+			</article>
+		</li>
+	
+		<% end %>
+		
+	</ul>
+</section>
 <div class="pagination-details"><%=  page_entries_info @incidents %></div>
 <%= paginate @incidents %>
 </section>
