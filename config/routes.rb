@@ -33,7 +33,6 @@ Detentionlogs::Application.routes.draw do
   match 'incidents' => redirect('data/incidents/')
   match 'incidents/:id' => redirect('data/incidents/:id') 
 
-  match 'populate_location_id' => 'incidents#populate_location_id'
   
   
   
