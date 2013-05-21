@@ -20,6 +20,7 @@ Detentionlogs::Application.routes.draw do
   resources :subscriptions
 
   match 'data/incidents/' => 'incidents#index'
+  match 'data/incidents/incident_number/:incident_number' => 'incidents#show_by_incident_number'
   match 'data/incidents/:id' => 'incidents#show', :as => :incident
   match 'data/incidents/:id/edit' => 'incidents#edit', :as => :edit_incident
   match 'data/incidents/:id/update' => 'incidents#update'
@@ -33,6 +34,7 @@ Detentionlogs::Application.routes.draw do
   match 'incidents' => redirect('data/incidents/')
   match 'incidents/:id' => redirect('data/incidents/:id') 
 
+  match 'populate_location_id' => 'incidents#populate_location_id'
   
   
   
