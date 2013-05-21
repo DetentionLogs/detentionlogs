@@ -949,19 +949,21 @@ input {
 	label,
 	input,
 	select {
-		font-size: 14px;
-		font-size: $scale-n1;
-		display: block;		
+		display: block;
 	}
 	label {
-		margin-top: 8px;
-		margin-top: .5rem;
+		font-size: 14px;
+		font-size: $scale-n1;		
+		margin-top: 12px;
+		margin-top: .75rem;
 		font-weight: bold;
 	}
 	select {
+/*
 		font-size: 18px;
  		font-size: $scale-1;
- 		max-width: 100%;
+ 
+*/		max-width: 100%;
 	}
 	fieldset {
 		float: none;
@@ -981,8 +983,10 @@ input {
 		}
 	}
 	.has-detail-report {
-		float: left;
-		clear: left;
+		margin-top: 4px;
+		margin-top: .25rem;
+		float: none;
+		clear: both;
 		input, label {
 			display: inline-block;
 		}
@@ -991,13 +995,16 @@ input {
 		}
 	}
 	input[role="button"] {
+		margin-top: 12px;
+		margin-top: .75rem;
 		border: 0;
 		font-weight: bold;
 		text-transform: uppercase;
 		font-size: $scale-1;
-		padding: .25rem .75rem;
-		clear: right;
-		float: right;
+		width: 100%;
+		padding: .5rem .75rem;
+		clear: both;
+		float: none;
 	}
 }
 
@@ -1117,8 +1124,10 @@ input {
 		.start-date,
 		.end-date {
 			select {
-				font-size: 12px;
+	/*
+			font-size: 12px;
 				font-size: $scale-n2;
+*/
 			}
 		}
 		.has-detail-report {
@@ -1128,8 +1137,8 @@ input {
 		input[role="button"] {
 			float: none;
 			clear: both;
-			margin-top: 8px;
-			margin-top: .5rem;
+			width: auto;
+			padding: .25rem .5rem;
 		}
 	}
 /* @end Forms */
@@ -1656,7 +1665,7 @@ legend {
 	.start-date,
 	.end-date {
 		select {
-			font-size: $scale-1;
+/* 			font-size: $scale-1; */
 		}
 	}
 }
