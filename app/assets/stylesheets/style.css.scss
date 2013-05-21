@@ -287,6 +287,19 @@ input:-ms-input-placeholder { color: #555;}
 	}
 }
 
+::-webkit-input-placeholder {
+   color: #a9a9a9;
+}
+:-moz-placeholder { /* Firefox 18- */
+   color: #a9a9a9;  
+}
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #a9a9a9;  
+}
+:-ms-input-placeholder {  
+   color: #a9a9a9;
+}
+
 /* @end Colours */
 /* @group Typography */
 
