@@ -19,6 +19,14 @@
     <%= f.label :geoloc %><br />
     <%= f.text_field :geoloc %>
   </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :location_group %><br />
+   <%= collection_select(:location, :location_group_id, LocationGroup.all, :id, :name) %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

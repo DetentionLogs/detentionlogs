@@ -2,16 +2,20 @@ class IncidentsController < ApplicationController
  
   http_basic_authenticate_with :name => "aaa", :password => "bbb"
   
+  has_scope :by_incident_type, :as => :incident_type
+  has_scope :by_location, :as => :location
   
   # GET /incidents
   # GET /incidents.json
   def index
-
     
-    @incidents = Kaminari.paginate_array(Incident.all).page(params[:page]).per(50)
 
-
-
+    @incidents =  apply_scopes(Incident).page(params[:page]).per(50)
+    
+    @location_groups = LocationGroup.all
+    
+    @incident_types = Incident.uniq.pluck(:incident_type)
+    logger.debug @incident_types
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @incidents }
@@ -21,7 +25,7 @@ class IncidentsController < ApplicationController
   # GET /incidents/1
   # GET /incidents/1.json
   def show
- 
+    
     @incident = Incident.find(params[:id])
 
     respond_to do |format|
@@ -47,7 +51,15 @@ class IncidentsController < ApplicationController
 
   end
   
-
+  def populate_location_id
+    @incidents = Incident.all
+    @incidents.each do |incident|
+     @incident = Incident.find(incident.id)
+     @location = Location.where(["lower(name) = ?", incident.location.downcase]).first
+     @incident.update_attributes({:location_id => @location.id})
+    end
+  end
+  
   # GET /incidents/new
   # GET /incidents/new.json
   def new
@@ -59,6 +71,13 @@ class IncidentsController < ApplicationController
     end
   end
 
+  def all
+        @incidents = Incident.all
+        respond_to do |format|
+          format.html {}
+          format.json { render json: @incidents }
+        end
+  end 
   # GET /incidents/1/edit
   def edit
     @incident = Incident.find(params[:id])
