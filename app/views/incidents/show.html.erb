@@ -44,6 +44,14 @@
 	                <dd class="incident-location-details"><%= @incident.location_details %></dd>
 	    </dl>
 
+	    <!--
+<nav class="sideways-nav supporting main">
+		    <ul>
+			    <li class="next"><a href="" title="to the next incident report">Next incident report</a></li>
+	    	    <li class="previous"><a href="" title="to the previous incident report">Pevious incident report</a></li>
+		    </ul>
+	    </nav>
+-->
 <!-- 	    If there are related documents or investigations  or editors notes -->
 	    <section class="discrete editors-additional main" id="editors-additions">
 	    	<h2 class="discrete">Detention Logs&rsquo; additions</h2>
@@ -93,12 +101,5 @@
 			
 			<p>If you have any issues, concerns or questions regarding this data please <a href="&#x6d;&#97;&#105;&#x6c;&#x74;&#x6f;&#x3a;&#100;&#101;&#x74;&#x65;&#x6e;&#x74;&#105;&#x6f;&#x6e;&#108;&#111;&#x67;&#x73;&#64;&#103;&#x6d;&#97;&#x69;&#x6c;&#x2e;&#x63;&#x6f;&#x6d;">&#99;&#x6f;&#110;&#x74;&#x61;&#99;&#x74; &#117;&#x73;</a>.</p>
 	     </section>
-			
-		<nav class="sideways-nav supporting main">
-		    <ul>
-			    <li class="next"><a href="" title="to the next incident report">Next incident report</a></li>
-	    	    <li class="previous"><a href="" title="to the previous incident report">Pevious incident report</a></li>
-		    </ul>
-	    </nav>
 	</article>
 <!-- edit --><div style="text-align:center;text-transform:uppercase"><%= link_to 'Edit', edit_incident_path(@incident) %></div>
