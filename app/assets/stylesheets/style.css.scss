@@ -167,7 +167,11 @@ body {
 	span {
 		color: $regular-text;
 	}
+	.subheading {
+		color: $regular-text;
+	}
 }
+
 
 a {
 		color: $primary;
@@ -315,6 +319,10 @@ input:-ms-input-placeholder { color: #555;}
 	span {
 		line-height: 0;
 		font-size: $scale-n1;	
+	}
+	.subheading {
+		font-weight: normal;
+		margin: .25rem 0 0;
 	}
 }
 .lede,
