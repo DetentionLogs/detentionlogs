@@ -17,6 +17,9 @@ Detentionlogs::Application.routes.draw do
   resources :subscriptions
 
   match 'data/incidents' => 'incidents#index'
+  scope :format => true, :constraints => { :format => 'json'  } do
+    get 'data/incidents/all' => 'incidents#all'
+  end
   match 'data/incidents/:id' => 'incidents#show', :as => :incident
   match 'data/incidents/:id/edit' => 'incidents#edit', :as => :edit_incident
   match 'data/incidents/:id/update' => 'incidents#update'
