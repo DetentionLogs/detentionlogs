@@ -264,7 +264,12 @@ vendor
 
 + establish urls
   + to statics.
-  + date/incidents redirect?
+  	+ /about
+  	+ /about/principles
+  	+ /about/glossary
+  	+ /about/resources
+  	
+  + date/incidents redirect **this needs to be checked on the live site, seems to have issue leaving first "/" off before "data".
 
 + Find and replace Minor Major and Critical in the sumary and location details fields with “minor “ etc. uncapitalising and adding a space after. localhost:3000/data/incidents/43030 .
 
@@ -276,6 +281,7 @@ vendor
 	+ Filters	
 		+ add the logic for automatically adding the :start_date and :end_date params
 		+	example = localhost:3000/incidents?incident_type=&location=&start_date=&end_date=&has_detail_report=true
+		+ add url params to the form so people can link to results.
 			+ order by
 			+ Sticky head_row
 
@@ -298,6 +304,7 @@ vendor
 
 + Incidents
 	+ add links to the type and date for seeing all incidents from those cats.
+	+ add previous and next incident links
 	
 + design about
 + design resources
