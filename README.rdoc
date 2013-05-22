@@ -269,6 +269,9 @@ vendor
 - [ ] template home
 
 - [ ] Authentication
+- [ ] Fill out glossary with basic terms.
+
+- [ ] Project to Detention Logs github account.
 
 
 === establish urls
