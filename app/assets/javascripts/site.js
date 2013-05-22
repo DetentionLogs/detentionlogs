@@ -1,7 +1,7 @@
 /* Glossary replacer  */
 		$(document).ready(function(){
 			
-		    $(".incident-item, .incident, .glossary").each(
+		    $(".incident-item, .incident").each(
 				
 				function(){
 					var redacted = $(this).html();
