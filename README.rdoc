@@ -264,12 +264,13 @@ vendor
 
 - [ ] Check detail report uploader is working, seems to be failing.
 
-- [ ] template about
-- [ ] template resources
-- [ ] template home
+- [ ] template about //
+- [x] template home //
 
 - [ ] Authentication
-- [ ] Fill out glossary with basic terms.
+- [ ] Fill out glossary with basic terms. //
+
+- [ ] replace placeholder link to example of detail report doc in incident/adpot text with a real link.
 
 - [ ] Project to Detention Logs github account.
 
