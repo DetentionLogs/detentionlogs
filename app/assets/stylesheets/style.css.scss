@@ -458,8 +458,11 @@ input:-ms-input-placeholder { color: #555;}
 	padding-right: 5%;
 }
 
-.site-header {
+body {
 	padding-top: $scale-4;
+}
+
+.site-header {
 	padding-bottom: $scale-4;
 }
 
@@ -1238,7 +1241,10 @@ body {
 		font-size: 18px;
 		font-size: 1.125rem; /* 18px */
 		line-height: 1.625rem; /* 26px */
-	}
+}
+.home .logo {
+		font-size: $scale-4;
+}
 .site-intro .logo {
 	font-size: 48px;
 	font-size: 3rem;
@@ -1546,7 +1552,14 @@ legend {
 
 @media all and (min-width: 50em) {
 /* @group Page Structure */
-
+body {
+	&.home {
+		padding-top: 8rem;		
+	}
+}
+.reading > * {
+	max-width: 38rem;
+	}
 .site-intro {
 	padding-top: 3rem;
 }
@@ -1558,6 +1571,9 @@ legend {
 	margin-right: auto;
 	padding-left: 0;
 	padding-right: 0;
+}
+.home .site-footer {
+	margin-top: 10rem;
 }
 
 /* @group Incidents list */
