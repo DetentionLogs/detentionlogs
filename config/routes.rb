@@ -19,13 +19,12 @@ Detentionlogs::Application.routes.draw do
   
   resources :subscriptions
 
-  match 'data/incidents/' => 'incidents#index'
+  namespace :data do
+    resources :incidents
+  end
+  
   match 'data/incidents/incident_number/:incident_number' => 'incidents#show_by_incident_number'
-  match 'data/incidents/:id' => 'incidents#show', :as => :incident
-  match 'data/incidents/:id/edit' => 'incidents#edit', :as => :edit_incident
-  match 'data/incidents/:id/update' => 'incidents#update'
-  match 'data/incidents/:id/create' => 'incidents#create'
-  match 'data/incidents/:id/destroy' => 'incidents#destroy'
+
   match 'data/incidents/:id/adopt' => 'incidents#adopt'
   match 'data/incidents/' => 'incidents#index'
   match 'incidents/all.:format' => 'incidents#all'  
