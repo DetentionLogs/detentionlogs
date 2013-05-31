@@ -15,27 +15,19 @@ Detentionlogs::Application.routes.draw do
   match 'subscriptions/create' => 'subscriptions#create'  
   match 'subscriptions/thankyou' => 'subscriptions#thankyou'
   
-  match 'incidents/:id/deletereport' => 'incidents#deletereport'
-  
   resources :subscriptions
 
-  namespace :data do
-    resources :incidents
-  end
-  
+  match 'data/incidents/incident_number/:incident_number/adopt' => 'incidents#adopt_by_incident_number'
   match 'data/incidents/incident_number/:incident_number' => 'incidents#show_by_incident_number'
+  match 'data/incidents/all.:format' => 'incidents#all'  
+  match 'populate_location_id' => 'data/incidents#populate_location_id'
 
-  match 'data/incidents/:id/adopt' => 'incidents#adopt'
-  match 'data/incidents/' => 'incidents#index'
-  match 'incidents/all.:format' => 'incidents#all'  
-
-  match 'data' => redirect('data/incidents/')
-  match 'incidents' => redirect('data/incidents/')
-  match 'incidents/:id' => redirect('data/incidents/:id') 
-
-  match 'populate_location_id' => 'incidents#populate_location_id'
-  
-  
+  scope :path => '/data' do
+    resources :incidents do
+      delete 'deletereport'
+      get 'adopt'
+    end
+  end
   
   #resources :incidents
 

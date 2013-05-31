@@ -35,7 +35,7 @@ class IncidentsController < ApplicationController
   end
   
   def adopt
-    @incident = Incident.find(params[:id])
+    @incident = Incident.find(params[:incident_id])
 
     respond_to do |format|
       format.html # adopt.html.erb
@@ -51,6 +51,12 @@ class IncidentsController < ApplicationController
 
   end
 
+  def adopt_by_incident_number
+ 
+    @incident = Incident.where(["incident_number = ?", params[:incident_number]]).first
+    redirect_to(incident_adopt_path(@incident))
+
+  end
   
   # GET /incidents/new
   # GET /incidents/new.json
@@ -108,7 +114,7 @@ class IncidentsController < ApplicationController
   end
   
   def deletereport
-    @incident = Incident.find(params[:id])
+    @incident = Incident.find(params[:incident_id])
     
     @incident.detailed_report = nil
     respond_to do |format|
