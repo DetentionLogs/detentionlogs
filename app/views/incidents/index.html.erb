@@ -8,33 +8,33 @@
 	<p><a href="" class="docs-icon csv-link">Download the complete data in .csv format</a></p>
 
 </section>
-<%= form_tag do %>
+<%= form_tag incidents_path, :method => :get do %>
 	<legend>Filter Incident List</legend>
 	<fieldset class="type">
 		<label for="incident_type">Type</label>
-		<%= select_tag(:incident_type, options_from_collection_for_select(@incident_types, 'to_s', 'to_s'), {:include_blank => "Select one category"}) %>
+		<%= select_tag(:incident_type, options_from_collection_for_select(@incident_types, 'to_s', 'to_s', params[:incident_type]), {:include_blank => "Select one category"}) %>
 	</fieldset>
 
 	<fieldset class="location">
 		<label for="location">Location</label>
-		<%= select_tag(:location, option_groups_from_collection_for_select(@location_groups, :locations, :name, :id, :name), {:include_blank => "Select one category"}) %>
+		<%= select_tag(:location, option_groups_from_collection_for_select(@location_groups, :locations, :name, :id, :name, params[:location]), {:include_blank => "Select one category"}) %>
 	</fieldset>
 	<fieldset class="start-date">
 		<label>Start Date</label>
-			<input type="date" id="start_date" name="start_date" placeholder="dd.mm.yyyy" min="2009-10-03" max="2011-05-26">
+    <input type="date" id="by_period_start_date" name="by_period[start_date]" value="<%=@start_date%>" min="2009-10-03" max="2011-05-26">
 	</fieldset>
 	<fieldset class="end-date">
 		<label>End Date</label>
-			<input type="date" id="start_date" name="start_date" placeholder="dd.mm.yyyy" min="2009-10-03" max="2011-05-26">
+    <input type="date" id="by_period_end_date" name="by_period[end_date]" value="<%=@end_date%>" min="2009-10-03" max="2011-05-26">
 	</fieldset>
 	<fieldset class="has-detail-report">
-		<label for="has_detail_report">Has detail report</label>
-			<input type="checkbox" id="has_detail_report" />
+		<label for="by_detailed_report">Has detail report</label>
+    <%=check_box_tag :by_detailed_report, 'true', !!params[:by_detailed_report] %>
 	</fieldset>
 	<input class="btn" type="submit" role="button" value="Go"/>
 <% end %>
 <h2 class="supporting-heading">Results:</h2>
-<h3 class="distinct query-results-description" id="#results"><strong class="query-count"><%= @incidents.total_count %></strong> <% if params[:incident_type] %><strong class="type"><%= params[:incident_type] %></strong><% end %> incident reports <% if params[:location] %><strong class="location"><%= params[:location] %></strong><% end %> between <strong class="start-date"><% params[:start_date] %></strong> and <strong class="end-date"><% params[:end_date] %>.</strong></h1>
+<h3 class="distinct query-results-description" id="#results"><strong class="query-count"><%= @incidents.total_count %></strong> <% if params[:incident_type] %><strong class="type"><%= params[:incident_type] %></strong><% end %> incident reports <% if params[:location] %><strong class="location"><%= params[:location] %></strong><% end %> between <strong class="start-date"><%=@start_date %></strong> and <strong class="end-date"><%=@end_date %>.</strong></h1>
 
 <dl class="page-link supporting">
 	<dt class="">Link for these results</dt>

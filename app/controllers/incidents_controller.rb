@@ -1,18 +1,22 @@
 class IncidentsController < ApplicationController
  
-  http_basic_authenticate_with :name => "aaa", :password => "bbb"
-  
   has_scope :by_incident_type, :as => :incident_type
   has_scope :by_location, :as => :location
+  has_scope :by_period, :using => [:start_date, :end_date]
+  has_scope :by_detailed_report, :type => :boolean
   
   # GET /incidents
   # GET /incidents.json
   def index
-    
 
     @incidents =  apply_scopes(Incident).page(params[:page]).per(50)
     
     @location_groups = LocationGroup.all
+
+    @start_date = params[:by_period].try(:[], :start_date).try(:to_date) ||
+      Incident.default_period_range.first
+    @end_date = params[:by_period].try(:[], :end_date).try(:to_date) || 
+      Incident.default_period_range.end
     
     @incident_types = Incident.uniq.pluck(:incident_type)
     logger.debug @incident_types
