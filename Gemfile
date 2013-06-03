@@ -6,6 +6,7 @@ gem "paperclip", "~> 3.0"
 gem 'aws-sdk'
 gem 'devise'
 gem 'has_scope'
+gem 'high_voltage'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 

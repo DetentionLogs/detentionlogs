@@ -4,6 +4,7 @@ class IncidentsController < ApplicationController
   has_scope :by_location, :as => :location
   has_scope :by_period, :using => [:start_date, :end_date]
   has_scope :by_detailed_report, :type => :boolean
+  http_basic_authenticate_with :name => "detentionlogs", :password => "Kf4C9axBHv"
   
   # GET /incidents
   # GET /incidents.json
