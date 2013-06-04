@@ -1,10 +1,10 @@
 class Incident < ActiveRecord::Base
-  attr_accessible :incident_number, :incident_type, :level, :location_id,  :location_details, :occured_on, :summary, :detailed_report
+  attr_accessible :incident_number, :incident_type, :level, :location_details, :occured_on, :summary, :detailed_report
   has_attached_file :detailed_report
   belongs_to :location
   
   scope :by_incident_type, lambda { |incident_type| where(:incident_type => incident_type) unless incident_type.blank? }
-  scope :by_location, lambda { |location| where(:location => location) unless location.blank? }
+  scope :by_location, lambda { |location| where(:location_id => location) unless location.blank? }
   scope :by_period, lambda { |start_on, end_on|
     start_on = default_period_range.first unless start_on.present?
     end_on = default_period_range.end unless end_on.present?

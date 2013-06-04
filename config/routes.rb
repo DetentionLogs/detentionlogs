@@ -2,6 +2,7 @@ Detentionlogs::Application.routes.draw do
   
   
   
+  get '/principles' => 'high_voltage/pages#show', :id => 'principles'
   
   resources :location_groups
 
