@@ -1,7 +1,7 @@
 <section class="main incident-explorer" role="">
 <h1>Incident Explorer</h1>
 <section class="discrete">
-	<p>An “incident” in this context is an event in one of Australia’s immigration detention facilities which has been recorded by the facility’s staff. The private contractors that run the detention network, including companies <a href="http://detentionlogs.com.au/about/glossary/#serco">Serco</a>, <a href="http://detentionlogs.com.au/about/glossary/#IHMS">IHMS</a> and <a href="http://detentionlogs.com.au/about/glossary/#G4S">G4S</a>, are required to file incident reports to the <a href="http://detentionlogs.com.au/about/glossary/#DIAC">Australian Government Department of immigration and Citizenship (DIAC)</a>, where they are archived in a centralised database.</p>
+	<p>An “incident” in this context is an event in one of Australia’s immigration detention facilities which has been recorded by the facility’s staff. The private contractors that run the detention network, including companies <a href="/about/glossary/#serco">Serco</a>, <a href="/about/glossary/#IHMS">IHMS</a> and <a href="/about/glossary/#G4S">G4S</a>, are required to file incident reports to the <a href="/about/glossary/#DIAC">Australian Government Department of immigration and Citizenship (DIAC)</a>, where they are archived in a centralised database.</p>
 			
 	<p>DIAC are ultimately responsible for the welfare of people held in the detention network. They use these incident reports as one way to understand and track occurrences and conditions in their facilities.</p>
 	<p>Explore the incident reports with the filters below.</p>
@@ -11,12 +11,12 @@
 	<legend>Filter Incident List</legend>
 	<fieldset class="type">
 		<label for="incident_type">Type</label>
-		<%= select_tag(:incident_type, options_from_collection_for_select(@incident_types, 'to_s', 'to_s', params[:incident_type]), {:include_blank => "Select one category"}) %>
+		<%= select_tag(:incident_type, options_from_collection_for_select(@incident_types, 'to_s', 'to_s', params[:incident_type]), :prompt => "All") %>
 	</fieldset>
 
 	<fieldset class="location">
 		<label for="location">Location</label>
-		<%= select_tag(:location, option_groups_from_collection_for_select(@location_groups, :locations, :name, :id, :name, params[:location]), {:include_blank => "Select one category"}) %>
+		<%= select_tag(:location, option_groups_from_collection_for_select(@location_groups, :locations, :name, :id, :name, params[:location]), :prompt => "All") %>
 	</fieldset>
 	<fieldset class="start-date">
 		<label>Start Date</label>
