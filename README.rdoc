@@ -282,7 +282,7 @@ vendor
 - [ ] /about/glossary
 - [ ] /about/resources
 - [ ] 404 page
-- [ ] /data/incidents redirect **this needs to be checked on the live site, seems to have issue leaving first "/" off before "data", e.g. http://detentionlogs.com.au/incidents/
+- [ ] /data/incidents redirect **this needs to be checked on the live site, seems to have issue leaving first "/" off before "data", e.g. http://detentionlogs.com.au/data/incidents/
 
 
 === data

@@ -20,7 +20,7 @@
 					<dd class="incident-occured-on"><time><%= @incident.occured_on.strftime("%d %b %Y %H:%M") %></time><!-- <a href="" class="supporting">see incidents on this day</a>--></dd>
 				<dt class="incident-location">Location</dt>
 					<dd class="incident-location"><%= @incident.location.name %>
-					<strong class="add-details">info</strong>
+					<!--<strong class="add-details">info</strong> -->
 					<div class="additional-info discrete box note collapsible-content-collapsed">
 						<h2>About <%= @incident.location.name %></h2>
 						<%= raw(@incident.location.description) %>
@@ -97,4 +97,3 @@
 			<p>If you have any issues, concerns or questions regarding this data please <a href="&#x6d;&#97;&#105;&#x6c;&#x74;&#x6f;&#x3a;&#100;&#101;&#x74;&#x65;&#x6e;&#x74;&#105;&#x6f;&#x6e;&#108;&#111;&#x67;&#x73;&#64;&#103;&#x6d;&#97;&#x69;&#x6c;&#x2e;&#x63;&#x6f;&#x6d;">&#99;&#x6f;&#110;&#x74;&#x61;&#99;&#x74; &#117;&#x73;</a>.</p>
 	     </section>
 	</article>
-<!-- edit --><div style="text-align:center;text-transform:uppercase"><%= link_to 'Edit', edit_incident_path(@incident) %></div>
