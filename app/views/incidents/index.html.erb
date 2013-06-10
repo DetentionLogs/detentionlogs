@@ -57,7 +57,7 @@
 			<article class="incident-item <% if incident.detailed_report.path %>has-detailed-report<% end %>">
 	
 				<section class="incident-primary">
-					<span class="field-label">Occured On</span><time class="incident-occured-on"><%= incident.occured_on.strftime("%d %b %Y %H:%M") %></time>
+					<span class="field-label">Occured On</span><time class="incident-occured-on"><% if incident.occured_on %><%= incident.occured_on.strftime("%d %b %Y %H:%M") %><% end %></time>
 					<span class="field-label">Type</span><section class="incident-type"><%= incident.incident_type %></section>
 					<span class="field-label">Location</span><section class="incident-location"><%= incident.location.name %></section>
 				</section>
