@@ -4,7 +4,7 @@ class IncidentsController < ApplicationController
   has_scope :by_location, :as => :location
   has_scope :by_period, :using => [:start_date, :end_date]
   has_scope :by_detailed_report, :type => :boolean
-  http_basic_authenticate_with :name => "detentionlogs", :password => "Kf4C9axBHv", :only => [:edit, :update, :create, :new]
+ 
   
   # GET /incidents
   # GET /incidents.json
@@ -66,12 +66,12 @@ class IncidentsController < ApplicationController
   # GET /incidents/new
   # GET /incidents/new.json
   def new
-    @incident = Incident.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @incident }
-    end
+  #  @incident = Incident.new
+  #
+  #  respond_to do |format|
+   #   format.html # new.html.erb
+  #    format.json { render json: @incident }
+  #  end
   end
 
   def all
@@ -83,7 +83,7 @@ class IncidentsController < ApplicationController
   end 
   # GET /incidents/1/edit
   def edit
-    @incident = Incident.find(params[:id])
+   # @incident = Incident.find(params[:id])
   end
 
   # POST /incidents
@@ -105,17 +105,17 @@ class IncidentsController < ApplicationController
   # PUT /incidents/1
   # PUT /incidents/1.json
   def update
-    @incident = Incident.find(params[:id])
+#    @incident = Incident.find(params[:id])
 
-    respond_to do |format|
-      if @incident.update_attributes(params[:incident])
-        format.html { redirect_to @incident, notice: 'Incident was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @incident.errors, status: :unprocessable_entity }
-      end
-    end
+   # respond_to do |format|
+    #  if @incident.update_attributes(params[:incident])
+   #     format.html { redirect_to @incident, notice: 'Incident was successfully updated.' }
+   #     format.json { head :no_content }
+   #   else
+   #     format.html { render action: "edit" }
+    #    format.json { render json: @incident.errors, status: :unprocessable_entity }
+    #  end
+   # end
   end
   
   def deletereport

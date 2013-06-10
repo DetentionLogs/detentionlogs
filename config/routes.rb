@@ -5,13 +5,13 @@ Detentionlogs::Application.routes.draw do
   get '/principles' => 'high_voltage/pages#show', :id => 'principles'
   get '/glossary' => 'high_voltage/pages#show', :id => 'glossary' 
   
-  resources :location_groups
+  #resources :location_groups
 
 
-  resources :attachments
+  #resources :attachments
 
 
-  resources :locations
+  #resources :locations
 
 
   match 'subscriptions/create' => 'subscriptions#create'  
