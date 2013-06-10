@@ -4,7 +4,8 @@ Detentionlogs::Application.routes.draw do
   get '/investigations' => 'high_voltage/pages#show', :id => 'investigations' 
   get '/principles' => 'high_voltage/pages#show', :id => 'principles'
   get '/glossary' => 'high_voltage/pages#show', :id => 'glossary' 
-  
+  get '/about' => 'high_voltage/pages#show', :id => 'about'   
+  get '/contribute' => 'high_voltage/pages#show', :id => 'contribute'   
   #resources :location_groups
 
 
