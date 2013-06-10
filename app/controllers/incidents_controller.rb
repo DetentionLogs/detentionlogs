@@ -10,7 +10,7 @@ class IncidentsController < ApplicationController
   # GET /incidents.json
   def index
 
-    @incidents =  apply_scopes(Incident).page(params[:page]).per(50)
+    @incidents =  apply_scopes(Incident).order("occured_on").page(params[:page]).per(50)
     
     @location_groups = LocationGroup.all
 
