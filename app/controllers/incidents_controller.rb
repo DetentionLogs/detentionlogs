@@ -5,7 +5,7 @@ class IncidentsController < ApplicationController
   has_scope :by_period, :using => [:start_date, :end_date]
   has_scope :by_detailed_report, :type => :boolean
  
-  
+  before_filter :authenticate_admin!, :only => [:edit]
   # GET /incidents
   # GET /incidents.json
   def index
@@ -83,7 +83,8 @@ class IncidentsController < ApplicationController
   end 
   # GET /incidents/1/edit
   def edit
-   # @incident = Incident.find(params[:id])
+
+    @incident = Incident.find(params[:id])
   end
 
   # POST /incidents

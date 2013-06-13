@@ -1,6 +1,8 @@
 Detentionlogs::Application.routes.draw do
   
   
+  devise_for :admins
+
   get '/investigations' => 'high_voltage/pages#show', :id => 'investigations' 
   get '/principles' => 'high_voltage/pages#show', :id => 'principles'
   get '/glossary' => 'high_voltage/pages#show', :id => 'glossary' 
