@@ -22,7 +22,7 @@ Detentionlogs::Application.routes.draw do
   
   resources :subscriptions
   
-  match 'incidents/:id/deletereport' => 'incidents#deletereport'
+  match 'data/incidents/:incident_id/deletereport' => 'incidents#deletereport'
   match 'data/incidents/incident_number/:incident_number/adopt' => 'incidents#adopt_by_incident_number'
   match 'data/incidents/incident_number/:incident_number' => 'incidents#show_by_incident_number'
   match 'data/incidents/all.:format' => 'incidents#all'  
