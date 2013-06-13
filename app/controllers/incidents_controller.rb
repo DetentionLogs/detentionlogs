@@ -6,6 +6,8 @@ class IncidentsController < ApplicationController
   has_scope :by_detailed_report, :type => :boolean
  
   before_filter :authenticate_admin!, :only => [:edit, :update]
+  
+  
   # GET /incidents
   # GET /incidents.json
   def index
