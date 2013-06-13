@@ -1,7 +1,11 @@
 Detentionlogs::Application.routes.draw do
   
   
-  devise_for :admins
+  devise_for :admins, :skip => [:registrations] 
+  as :admins do
+    get 'admins/edit' => 'devise/registrations#edit', :as => 'edit_admin_registration'
+    put 'admins' => 'devise/registrations#update', :as => 'admin_registration'
+  end
 
   get '/investigations' => 'high_voltage/pages#show', :id => 'investigations' 
   get '/principles' => 'high_voltage/pages#show', :id => 'principles'

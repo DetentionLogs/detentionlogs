@@ -106,17 +106,17 @@ class IncidentsController < ApplicationController
   # PUT /incidents/1
   # PUT /incidents/1.json
   def update
-#    @incident = Incident.find(params[:id])
+    @incident = Incident.find(params[:id])
 
-   # respond_to do |format|
-    #  if @incident.update_attributes(params[:incident])
-   #     format.html { redirect_to @incident, notice: 'Incident was successfully updated.' }
-   #     format.json { head :no_content }
-   #   else
-   #     format.html { render action: "edit" }
-    #    format.json { render json: @incident.errors, status: :unprocessable_entity }
-    #  end
-   # end
+    respond_to do |format|
+      if @incident.update_attributes(params[:incident])
+        format.html { redirect_to @incident, notice: 'Incident was successfully updated.' }
+        format.json { head :no_content }
+      else
+        format.html { render action: "edit" }
+        format.json { render json: @incident.errors, status: :unprocessable_entity }
+      end
+    end
   end
   
   def deletereport
