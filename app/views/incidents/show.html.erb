@@ -8,6 +8,10 @@
 	        <h1>Incident <%= @incident.incident_number %></h1>
 	        
 	        <% if @incident.detailed_report.path %><em class="detail-report-link"><a href="<%= @incident.detailed_report.url %>" title="Download the Incident Detail Report for this incident to find more information" class="docs-icon discrete distinct-download">See Incident Detail Report [PDF]</a></em>
+          <% elsif !@incident.foi_requests.empty? %>
+            <% @incident.foi_requests.each do |foi_request| %>
+            <em class="detail-report-link"><%=link_to_right_to_know(foi_request) %></em>
+	          <% end %>
 	        <% else %><em class="detail-report-link"><a href="<%= url_for @incident %>/adopt" title="help get more information about this incident" class="discrete distinct-download">Adopt this incident</a></em>
 	        <% end %>
 	        

@@ -28,8 +28,15 @@ gem 'kaminari'
 
 gem 'jquery-rails'
 
+gem 'rest-client'
+
 group :development do
    gem 'taps', :require => false
+end
+
+group :development, :test do
+  gem 'rspec-rails', '~> 2.0'
+  gem 'factory_girl_rails'
 end
 
 # To use ActiveModel has_secure_password
