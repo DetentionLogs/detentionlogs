@@ -1,0 +1,72 @@
+{
+    "awaiting_description": false, 
+    "created_at": "2013/06/15 10:18:18 +1000", 
+    "described_state": "waiting_response", 
+    "display_status": "Awaiting response.", 
+    "id": 224, 
+    "info_request_events": [
+        {
+            "calculated_state": "waiting_response", 
+            "comment_id": null, 
+            "created_at": "2013/06/18 10:18:19 +1000", 
+            "described_state": "waiting_response", 
+            "display_status": "Clarification", 
+            "event_type": "sent", 
+            "id": 1182, 
+            "incoming_message_id": null, 
+            "last_described_at": "2013/06/18 10:18:19 +1000", 
+            "outgoing_message_id": 456
+        }
+    ], 
+    "law_used": "foi", 
+    "prominence": "normal", 
+    "public_body": {
+        "created_at": "2012/10/15 19:41:00 +1100", 
+        "home_page": "http://www.immi.gov.au", 
+        "id": 786, 
+        "name": "Department of Immigration and Citizenship", 
+        "notes": "", 
+        "publication_scheme": "http://www.immi.gov.au/about/foi/info-publication-scheme.htm", 
+        "short_name": "DIAC", 
+        "tags": [
+            [
+                "immigration_&_citizenship", 
+                null
+            ], 
+            [
+                "oaic_report_2011_2012", 
+                null
+            ], 
+            [
+                "directory_gov_au", 
+                null
+            ], 
+            [
+                "foi_yes", 
+                null
+            ]
+        ], 
+        "updated_at": "2013/06/06 23:36:01 +1000", 
+        "url_name": "diac"
+    }, 
+    "tags": [
+        [
+            "incident-number", 
+            "1-48686B"
+        ], 
+        [
+            "detentionlogs", 
+            null
+        ]
+    ], 
+    "title": "FOI Request for Detail Incident Report 1-48686B", 
+    "updated_at": "2013/06/17 10:18:19 +1000", 
+    "url_title": "foi_request_for_detail_incident_92", 
+    "user": {
+        "about_me": "", 
+        "ban_text": "", 
+        "id": 242, 
+        "name": "B.J. Rossiter", 
+        "url_name": "bj_rossiter"
+    }
+}

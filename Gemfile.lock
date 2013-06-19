@@ -169,6 +169,7 @@ DEPENDENCIES
   high_voltage
   jquery-rails
   kaminari
+  nokogiri
   paperclip (~> 3.0)
   pg
   rails (= 3.2.12)

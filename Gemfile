@@ -29,6 +29,7 @@ gem 'kaminari'
 gem 'jquery-rails'
 
 gem 'rest-client'
+gem 'nokogiri'
 
 group :development do
    gem 'taps', :require => false
