@@ -74,12 +74,12 @@ class IncidentsController < ApplicationController
   #  end
   end
 
-  def all
-        @incidents = Incident.all
-        respond_to do |format|
-          format.html {}
-          format.json { render json: @incidents }
-        end
+  def foi_summary
+     @incidents = Incident.foi_summary
+     respond_to do |format|
+       format.html {}
+       format.json { render json: @incidents }
+     end
   end 
   # GET /incidents/1/edit
   def edit

@@ -24,7 +24,7 @@ Detentionlogs::Application.routes.draw do
 
   match 'data/incidents/incident_number/:incident_number/adopt' => 'incidents#adopt_by_incident_number'
   match 'data/incidents/incident_number/:incident_number' => 'incidents#show_by_incident_number'
-  match 'data/incidents/all.:format' => 'incidents#all'  
+  match 'data/incidents/foi_summary.:format' => 'incidents#foi_summary'  
   match 'populate_location_id' => 'data/incidents#populate_location_id'
 
   scope :path => '/data' do

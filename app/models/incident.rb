@@ -17,4 +17,18 @@ class Incident < ActiveRecord::Base
     # TODO: pull from db
     ('2009-10-03'.to_date)..('2011-05-26'.to_date)
   end
+
+  # Returns a summary of the FOI data for each incident. This should provide
+  # enough info to know if an FOI request has already been made or if
+  # detailed info has already been obtained
+  def self.foi_summary
+    columns = [arel_table[:incident_number], arel_table[:detailed_report_file_name], arel_table[:occured_on]]
+    reqs = FoiRequest.arel_table
+    req_count = Arel::Nodes::NamedFunction.new('string_agg', [reqs[:url_title], ','], 'requests')
+         
+    select([columns, req_count])
+      .joins(Arel::Nodes::OuterJoin.new(reqs, Arel::Nodes::On.new(reqs[:incident_id].eq(arel_table[:id]))))
+      .group(columns)
+  end
+
 end
