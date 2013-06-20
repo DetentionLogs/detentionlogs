@@ -18,11 +18,16 @@ module IncidentsHelper
   end
 
   # Creates a link to the Right To Know request
-  def link_to_right_to_know(foi_request)
-    link_to(
-      "FOI Request: #{foi_request.display_status}", 
-      "https://www.righttoknow.org.au/request/#{foi_request.url_title}",
-      { class: "discrete distinct-download"}
-    )
+  def link_to_right_to_know(incident)
+    if (incident.foi_requests.count == 1)
+      foi_request = incident.foi_requests.first
+      text = "FOI Request: #{foi_request.display_status}"
+      link = "https://www.righttoknow.org.au/request/#{foi_request.url_title}"
+    else
+      statuses = incident.foi_requests.map(&:display_status).uniq
+      text = "#{incident.foi_requests.length} FOI Requests: #{statuses.to_sentence.gsub('.', '')}"
+      link = "https://www.righttoknow.org.au/search/#{incident.incident_number}"
+    end
+    link_to text, link, { class: "discrete distinct-download"}
   end
 end
