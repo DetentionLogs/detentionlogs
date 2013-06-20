@@ -22,7 +22,7 @@ module Api
       links = doc.css('.request_listing .head a')
       links.each do |link|
         update_request_from_json link['href']
-        sleep(2)
+        sleep(5)
       end
       next_link = doc.css('a.next_page').first
       if next_link
@@ -32,6 +32,7 @@ module Api
 
     def self.update_request_from_json(url)
       json_url = @@domain + url.gsub(/#.*/, '') + '.json'
+      Rails.logger.info "Attempting to get request info from #{json_url}"
       response = RestClient.get json_url, {accept: :json}
       foi_info = JSON.parse response
       id = extract_id_from_tags foi_info
