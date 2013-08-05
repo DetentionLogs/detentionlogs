@@ -2,6 +2,7 @@
 
 <table>
   <tr>
+    <th>ID</th>
     <th>Name</th>
     <th>Geoloc</th>
     <th>Description</th>
@@ -12,6 +13,7 @@
 
 <% @locations.each do |location| %>
   <tr>
+    <td><%= location.id %></td>
     <td><%= location.name %></td>
     <td><%= location.geoloc %></td>
     <td><%= location.description %></td>
