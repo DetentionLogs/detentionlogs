@@ -40,9 +40,14 @@ natcomms@immi.gov.au. You can also download a spreadsheet of the data <a href="h
 	<input class="btn" type="submit" role="button" value="Go"/>
 <% end %>
 <h2 class="supporting-heading">Results:</h2>
-<h3 class="distinct query-results-description" id="#results"><strong class="query-count"><%= @incidents.total_count %></strong> <% if params[:incident_type] %><strong class="type"><%= params[:incident_type] %></strong><% end %> incident reports <% if params[:location] %><strong class="location"><%= params[:location] %></strong><% end %> between <strong class="start-date"><%=@start_date %></strong> and <strong class="end-date"><%=@end_date %>.</strong></h1>
+<h3 class="distinct query-results-description" id="#results"><strong class="query-count"><%= @incidents.total_count %></strong> <% if params[:incident_type] %><strong class="type"><%= params[:incident_type] %></strong><% end %> incident reports <% if params[:location] %> from <strong class="location">
+<%= p = params[:location]
+	x = Location.find(p)
+	x.name
+ %>
+</strong><% end %> between <strong class="start-date"><%=@start_date %></strong> and <strong class="end-date"><%=@end_date %>.</strong></h1>
 
-<p><a href="<%= "#{request.protocol}#{request.host_with_port}#{request.fullpath}" %>" title="url to share or bookmark these results" class="page-link supporting">permalink for these results</a></p>
+<p><a href="<%= "#{request.protocol}#{request.host_with_port}#{request.fullpath}" %>" title="url to share or bookmark these results" class="page-link supporting">Permalink for these results</a></p>
 
 <section class="incident-table">
 	<ul class="header-row supporting">
