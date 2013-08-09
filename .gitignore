@@ -2,3 +2,4 @@
 /mockups/css/style.css
 /log/development.log
 .DS_Store
+/tmp/pids/server.pid
