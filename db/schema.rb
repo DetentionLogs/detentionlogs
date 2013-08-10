@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130613010531) do
+ActiveRecord::Schema.define(:version => 20130617050948) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -41,24 +41,16 @@ ActiveRecord::Schema.define(:version => 20130613010531) do
     t.datetime "updated_at",       :null => false
   end
 
-  create_table "event_types", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+  create_table "foi_requests", :force => true do |t|
+    t.integer  "incident_id"
+    t.string   "described_state"
+    t.string   "display_status"
+    t.string   "url_title"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
 
-  create_table "events", :force => true do |t|
-    t.string   "name"
-    t.integer  "venue_id"
-    t.datetime "starts_at"
-    t.text     "description"
-    t.integer  "event_type_id"
-    t.integer  "event_subtype_id"
-    t.integer  "organiser_id"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
-    t.integer  "approved"
-  end
+  add_index "foi_requests", ["incident_id"], :name => "index_foi_requests_on_incident_id"
 
   create_table "incidents", :force => true do |t|
     t.string   "incident_number"
@@ -96,28 +88,10 @@ ActiveRecord::Schema.define(:version => 20130613010531) do
     t.integer  "location_group_id"
   end
 
-  create_table "organisers", :force => true do |t|
-    t.string   "name"
-    t.string   "description"
-    t.string   "contact_number"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
-  end
-
   create_table "subscriptions", :force => true do |t|
     t.string   "email"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-  end
-
-  create_table "venues", :force => true do |t|
-    t.string   "name"
-    t.text     "address"
-    t.string   "contact_number"
-    t.text     "description"
-    t.string   "suburb"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
   end
 
 end

@@ -5,7 +5,9 @@ class IncidentsController < ApplicationController
   has_scope :by_period, :using => [:start_date, :end_date]
   has_scope :by_detailed_report, :type => :boolean
  
-  before_filter :authenticate_admin!, :only => [:edit]
+  before_filter :authenticate_admin!, :only => [:edit, :update]
+  
+  
   # GET /incidents
   # GET /incidents.json
   def index
@@ -74,12 +76,12 @@ class IncidentsController < ApplicationController
   #  end
   end
 
-  def all
-        @incidents = Incident.all
-        respond_to do |format|
-          format.html {}
-          format.json { render json: @incidents }
-        end
+  def foi_summary
+     @incidents = Incident.foi_summary
+     respond_to do |format|
+       format.html {}
+       format.json { render json: @incidents }
+     end
   end 
   # GET /incidents/1/edit
   def edit
@@ -106,17 +108,17 @@ class IncidentsController < ApplicationController
   # PUT /incidents/1
   # PUT /incidents/1.json
   def update
-#    @incident = Incident.find(params[:id])
+    @incident = Incident.find(params[:id])
 
-   # respond_to do |format|
-    #  if @incident.update_attributes(params[:incident])
-   #     format.html { redirect_to @incident, notice: 'Incident was successfully updated.' }
-   #     format.json { head :no_content }
-   #   else
-   #     format.html { render action: "edit" }
-    #    format.json { render json: @incident.errors, status: :unprocessable_entity }
-    #  end
-   # end
+    respond_to do |format|
+      if @incident.update_attributes(params[:incident])
+        format.html { redirect_to @incident, notice: 'Incident was successfully updated.' }
+        format.json { head :no_content }
+      else
+        format.html { render action: "edit" }
+        format.json { render json: @incident.errors, status: :unprocessable_entity }
+      end
+    end
   end
   
   def deletereport
