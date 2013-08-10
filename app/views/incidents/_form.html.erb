@@ -24,14 +24,6 @@
     <%= f.text_field :level %>
   </div>
   <div class="field">
-    <%= f.label :location %><br />
-    <%= f.text_field :location %>
-  </div>
-  <div class="field">
-    <%= f.label :location_details %><br />
-    <%= f.text_field :location_details %>
-  </div>
-  <div class="field">
     <%= f.label :summary %><br />
     <%= f.text_area :summary %>
   </div>
@@ -44,7 +36,7 @@
 
 	<%= f.file_field :detailed_report %>
 	<% if @incident.detailed_report.path %>	<a href="<%= @incident.detailed_report.url %>">DETAILED REPORT</a>
-	<a href='/incidents/<%= @incident.id %>/deletereport'>Delete detailed report</a>
+	<a href='/data/incidents/<%= @incident.id %>/deletereport'>Delete detailed report</a>
 	<% end %>
   </div>
   <div class="actions">

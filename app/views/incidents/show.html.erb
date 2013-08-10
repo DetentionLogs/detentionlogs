@@ -1,12 +1,16 @@
 	
 	<nav class="breadcrumbs supporting main">
-		<p><a href="http://detentionlogs.com.au/data/">Data</a> &gt; <a href="http://detentionlogs.com.au/data/incidents/">Incidents</a> &gt; <%= @incident.incident_number %></p>
+		<p><!-- <a href="http://detentionlogs.com.au/data/">Data</a> &gt;  --><a href="http://detentionlogs.com.au/data/incidents/" title="Explore incident records from Australia's immigration detention network">Incidents</a> &gt; <a href="<%=  url_for @incident %>" title="Page for Incident <%= @incident.incident_number %>"><%= @incident.incident_number %></a></p>
 	</nav>
+
 	<article class="incident" role="">
 	    <section class="incident-primary main">
 	        <h1>Incident <%= @incident.incident_number %></h1>
 	        
 	        <% if @incident.detailed_report.path %><em class="detail-report-link"><a href="<%= @incident.detailed_report.url %>" title="Download the Incident Detail Report for this incident to find more information" class="docs-icon discrete distinct-download">See Incident Detail Report [PDF]</a></em>
+          <% elsif !@incident.foi_requests.empty? %>
+            <em class="detail-report-link"><%=link_to_right_to_know(@incident) %></em>
+	        <% else %><em class="detail-report-link"><a href="<%= url_for @incident %>/adopt" title="help get more information about this incident" class="discrete distinct-download">Adopt this incident</a></em>
 	        <% end %>
 	        
 	        
@@ -17,19 +21,11 @@
 				<dt class="incident-occured-on">Occured On</dt>
 					<dd class="incident-occured-on"><time><%= @incident.occured_on.strftime("%d %b %Y %H:%M") %></time><!-- <a href="" class="supporting">see incidents on this day</a>--></dd>
 				<dt class="incident-location">Location</dt>
-					<dd class="incident-location"><%= @incident.location %>
-					<strong class="add-details">info</strong>
-					<div class="additional-info discrete box note">
-						<h2>About <%= @incident.location %></h2>
-						<p>Villawood Immigrations Detention Centre (IDC), managed by <a href="http://www.serco-ap.com.au/">Serco Australia Pty Ltd</a> (Australian branch of the UK based multinational <a href="http://www.serco.com/">Serco Group</a>), is located in western Sydney at <a href="https://maps.google.com.au/maps/ms?msid=201451526145055160953.00049f30e3d60e94e64f7&amp;msa=0&amp;ll=-33.874406,151.165695&amp;spn=0.488001,0.889206&amp;iwloc=00049f311be096c3099bf">15 Birmingham Avenue, Villawood NSW 2163</a>, and has an operating capacity of 379 detainees and a contingency capacity of 480 (as of <a href="http://www.immi.gov.au/managing-australias-borders/detention/facilities/capacity/">29th April 2013</a>).</p>
-
-<p>Villawood IDC has 3 main sections:</p>
-
-<ul>
-<li><p>Blaxland (aka Stage 1)</p></li>
-<li><p>Hughes (aka Stage 2), contains female-only area Banksia</p></li>
-<li><p>Fowler (aka Stage 3), for “high risk detainees – people at high risk to others or themselves,” according to <a href="http://www.abc.net.au/4corners/stories/2011/10/20/3344543.htm">ABC’s Four Corners program Asylum (October, 2011)</a></p></li>
-</ul>
+					<dd class="incident-location"><%= @incident.location.name %>
+					<!--<strong class="add-details">info</strong> -->
+					<div class="additional-info discrete box note collapsible-content-collapsed">
+						<h2>About <%= @incident.location.name %></h2>
+						<%= raw(@incident.location.description) %>
 						<p><strong><a href="link to location search" title="index of available incidents from this locations">See all available incident records from <%= @incident.location %></a></strong></p>
 					</div>
 					</dd>
@@ -51,45 +47,55 @@
 	                <dd class="incident-location-details"><%= @incident.location_details %></dd>
 	    </dl>
 
-		    <% if @incident.detailed_report $! %><a class="discrete" href="http://detentionlogs.com.au/adopt-an-incident">Help get more information about this incident</a>
-	        <% end %>
-
-<!-- 	    If there are related documents or investigations  or editors notes -->
-	    <section class="discrete editors-additional main" id="editors-additions">
-	    	<h2 class="discrete">Detention Logs&rsquo; additions</h2>
-	<!-- 	    	If there are notes -->
-		    <h3 id="editors-notes">Editor&rsquo;s Notes</h3>
-		    	<p><p>Kogi try-hard pork belly iphone, pour-over vegan bushwick skateboard wayfarers pug.  Disrupt master cleanse authentic, before they sold out wolf mlkshk food truck hella direct trade  fanny pack etsy carles +1.  Irony cardigan bespoke quinoa brunch tumblr.</p>
-		    	<p>Four loko pop-up vice ennui stumptown, brunch before they sold out small batch vinyl.  Ethnic irony selvage organic hashtag.  Pickled polaroid ugh mumblecore wayfarers.  Ugh pickled thundercats chillwave.</p></p>
-	<!-- 	    end if -->
-	<!-- 	    If there are related documents -->
-		    <h3 class="related-documents" id="attachments">Related Documents</h3>
-		    <ul>
-		    	<li class="related-documents"><a href=""><cite>Coroner's Report</cite></a></li>
-		    </ul>
-	<!-- 	    end if -->		    
-	<!-- 	    If there are investigations -->
-		    <h3 class="related-investigations" id="related-investigations">Related Investigations</h3>
-		    <ul>
-		    	<li class="related-investigations"><a href=""><cite>Removals Story</cite></a></li>
-		    </ul>
-	    </section>
-    <!-- 	    end if -->
-<!-- 	    end if -->
-	     <section class="note box main" id="about">
-			<h2>About this information</h2>
-			<p></p>
-			<p><em><a href="http://detentionlogs.com.au/about/glossary" title="Detention Logs Glossary">Find definitions of terms in the glossary</a></em></p>
-			
-			<h3>Disclaimer</h3>
-			<p>The data published here has been provided by THIS IS HOLDING TEXT the Department of immigration and citizenship under the freedom of information act 1982.  Detention logs has only altered data that contains defamatory imputations or may be in contempt of legal proceedings.</p>
-			<p>If you see anything that is defamatory or in contempt of court please contact us.</p>
-		 </section>
- 	     <nav class="sideways-nav supporting main">
+	    <!--
+<nav class="sideways-nav supporting main">
 		    <ul>
 			    <li class="next"><a href="" title="to the next incident report">Next incident report</a></li>
 	    	    <li class="previous"><a href="" title="to the previous incident report">Pevious incident report</a></li>
 		    </ul>
 	    </nav>
+-->
+<!-- 	    If there are related documents or investigations  or editors notes
+	    <section class="discrete editors-additional main" id="editors-additions">
+	    	<h2 class="discrete">Detention Logs&rsquo; additions</h2>
+		    <h3 id="editors-notes">Editor&rsquo;s Notes</h3>
+		    	<p><p>Kogi try-hard pork belly iphone, pour-over vegan bushwick skateboard wayfarers pug.  Disrupt master cleanse authentic, before they sold out wolf mlkshk food truck hella direct trade  fanny pack etsy carles +1.  Irony cardigan bespoke quinoa brunch tumblr.</p>
+		    	<p>Four loko pop-up vice ennui stumptown, brunch before they sold out small batch vinyl.  Ethnic irony selvage organic hashtag.  Pickled polaroid ugh mumblecore wayfarers.  Ugh pickled thundercats chillwave.</p></p>
+		    <h3 class="related-documents" id="attachments">Related Documents</h3>
+		    <ul>
+		    	<li class="related-documents"><a href=""><cite>Coroner's Report</cite></a></li>
+		    </ul>
+		    <h3 class="related-investigations" id="related-investigations">Related Investigations</h3>
+		    <ul>
+		    	<li class="related-investigations"><a href=""><cite>Removals Story</cite></a></li>
+		    </ul>
+	    </section> -->
+
+	     <section class="note box main" id="about">
+			<h2 id="aboutthisinformation">About this information</h2>
+			
+			<h3 id="whatisanincident">What is an ‘incident’?</h3>
+			
+			<p>An “incident” in this context is an event in one of Australia’s immigration detention facilities which has been recorded by the facility’s staff. The private contractors that run the detention network, including companies <a href="http://detentionlogs.com.au/about/glossary/#serco">Serco</a>, <a href="http://detentionlogs.com.au/about/glossary/#IHMS">IHMS</a> and <a href="http://detentionlogs.com.au/about/glossary/#G4S">G4S</a>, are required to file incident reports to the <a href="http://detentionlogs.com.au/about/glossary/#DIAC">Australian Government Department of immigration and Citizenship (DIAC)</a>, where they are archived in a centralised database.</p>
+			
+			<p>DIAC are ultimately responsible for the welfare of people held in the detention network. They use these incident reports as one way to understand and track occurrences and conditions in their facilities.</p>
+			
+			<p>The types of incidents described in the reports collected by Detention Logs include births, deaths, illnesses, accidents/injuries, self-harms, complaints, escapes, media presence, protests and more. <a href="http://detentionlogs.com.au/data/incidents">You can browse the reports with our Incident Explorer</a>.</p>
+			
+			<p>The summary incident data and any attached Incident Detail Reports have been provided by the Department of Immigration and Citizenship, released under the <a href="http://www.oaic.gov.au/foi-portal/about_foi.html">Freedom of Information Act 1982 (Cth)</a>. The Freedom of Information (FOI) system allows any member of the public to lawfully access government information.</p>
+			
+			<h2 id="descriptionoffields">Description of fields</h2>
+			<dl>
+			<dt>Incident Number</dt>
+			<dd>The unique string of characters used by DIAC to identify a single incident.</dd>
+			
+			<dt>Occurred On</dt>
+			<dd>The date and time that the incident described in the report was to recorded to have occurred at.</dd>
+			</dl>
+			
+			
+			<h2 id="flaganissue">Flag an issue</h2>
+			
+			<p>If you have any issues, concerns or questions regarding this data please <a href="&#x6d;&#97;&#105;&#x6c;&#x74;&#x6f;&#x3a;&#100;&#101;&#x74;&#x65;&#x6e;&#x74;&#105;&#x6f;&#x6e;&#108;&#111;&#x67;&#x73;&#64;&#103;&#x6d;&#97;&#x69;&#x6c;&#x2e;&#x63;&#x6f;&#x6d;">&#99;&#x6f;&#110;&#x74;&#x61;&#99;&#x74; &#117;&#x73;</a>.</p>
+	     </section>
 	</article>
-<!-- edit --><div style="text-align:center;text-transform:uppercase"><%= link_to 'Edit', edit_incident_path(@incident) %></div>

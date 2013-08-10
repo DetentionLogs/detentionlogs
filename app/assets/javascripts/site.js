@@ -1,7 +1,7 @@
 /* Glossary replacer  */
 		$(document).ready(function(){
 			
-		    $(".incident-item, .incident, .glossary").each(
+		    $(".incident-item, .incident").each(
 				
 				function(){
 					var redacted = $(this).html();
@@ -32,89 +32,131 @@
 			
  		});
 
-	 /* Collapsable content */
+/* Collapsable content */
+
+/*
+ * --------------------------------------------------------------------
+ * jQuery collapsible plugin
+ * Author: Scott Jehl, scott@filamentgroup.com
+ * Copyright (c) 2009 Filament Group 
+ * licensed under MIT (filamentgroup.com/examples/mit-license.txt)
+ * --------------------------------------------------------------------
+ * 
+ * Arrow-key and collapsed to begin additions by James Frank, 2011
+ * 
+ * --------------------------------------------------------------------
+ */
+
+$.fn.collapsible = function(collapsed){
+	return $(this).each(function(){
 	
-		/*
-		 * --------------------------------------------------------------------
-		 * jQuery collapsible plugin
-		 * Author: Scott Jehl, scott@filamentgroup.com
-		 * Copyright (c) 2009 Filament Group 
-		 * licensed under MIT (filamentgroup.com/examples/mit-license.txt)
-		 * --------------------------------------------------------------------
-		 * 
-		 * Arrow-key and collapsed to begin additions by James Frank, 2011
-		 * 
-		 * --------------------------------------------------------------------
-		 */
+		//define
+		var collapsibleHeading = $(this);
+		var collapsibleContent = collapsibleHeading.next();
 		
-		$.fn.collapsible = function(collapsed){
-			return $(this).each(function(){
+		//modify markup & attributes
+		collapsibleHeading.addClass('collapsible-heading')
+			.prepend('<span class="collapsible-heading-status"></span>')
+			.wrapInner('<a href="#" class="collapsible-heading-toggle"></a>');
 			
-				//define
-				var collapsibleHeading = $(this);
-				var collapsibleContent = collapsibleHeading.next();
-				
-				//modify markup & attributes
-				collapsibleHeading.addClass('collapsible-heading')
-					.prepend('<span class="collapsible-heading-status"></span>')
-					.wrapInner('<a href="#" class="collapsible-heading-toggle"></a>');
-					
-				collapsibleContent.addClass('collapsible-content');
-				
-				//events
-				collapsibleHeading	
-					.bind('collapse', function(){
-						$(this)
-							.addClass('collapsible-heading-collapsed')
-							.find('.collapsible-heading-status').text('Show ');
-												
-						collapsibleContent.slideUp(function(){
-							$(this).addClass('collapsible-content-collapsed').removeAttr('style').attr('aria-hidden',true);
-						});
-					})
-					.bind('expand', function(){
-						$(this)
-							.removeClass('collapsible-heading-collapsed')
-							.find('.collapsible-heading-status').text('Hide ');
-												
-						collapsibleContent
-							.slideDown(function(){
-								$(this).removeClass('collapsible-content-collapsed').removeAttr('style').attr('aria-hidden',false);
-							});
-					})
-					.click(function(){ 
-						if( $(this).is('.collapsible-heading-collapsed') ){
-							$(this).trigger('expand'); 
-						}	
-						else {
-							$(this).trigger('collapse'); 
-						}
-						return false;
-					})
-					.keydown(function(e){ 
-						var code = (e.keyCode ? e.keyCode : e.which);
-						switch (code) {
-							case 13:
-								$(this).click(); 
-								break;
-							case 39:
-								$(this).trigger('expand'); 
-								break;
-							case 37:
-								$(this).trigger('collapse'); 
-								break;	
-							default:
-								return true;
-								break;
-						}
-						return false;
+		collapsibleContent.addClass('collapsible-content');
+		
+		//events
+		collapsibleHeading	
+			.bind('collapse', function(){
+				$(this)
+					.addClass('collapsible-heading-collapsed')
+					.find('.collapsible-heading-status').text('Show ');
+										
+				collapsibleContent.slideUp(function(){
+					$(this).addClass('collapsible-content-collapsed').removeAttr('style').attr('aria-hidden',true);
+				});
+			})
+			.bind('expand', function(){
+				$(this)
+					.removeClass('collapsible-heading-collapsed')
+					.find('.collapsible-heading-status').text('Hide ');
+										
+				collapsibleContent
+					.slideDown(function(){
+						$(this).removeClass('collapsible-content-collapsed').removeAttr('style').attr('aria-hidden',false);
 					});
-				
-				if(collapsed)
-					collapsibleHeading.trigger('collapse');
-			});	
-			
-		};
-		$(document).ready(function(){
-			$('.add-details').collapsible(true);
-		});
+			})
+			.click(function(){ 
+				if( $(this).is('.collapsible-heading-collapsed') ){
+					$(this).trigger('expand'); 
+				}	
+				else {
+					$(this).trigger('collapse'); 
+				}
+				return false;
+			})
+			.keydown(function(e){ 
+				var code = (e.keyCode ? e.keyCode : e.which);
+				switch (code) {
+					case 13:
+						$(this).click(); 
+						break;
+					case 39:
+						$(this).trigger('expand'); 
+						break;
+					case 37:
+						$(this).trigger('collapse'); 
+						break;	
+					default:
+						return true;
+						break;
+				}
+				return false;
+			});
+		
+		if(collapsed)
+			collapsibleHeading.trigger('collapse');
+	});	
+	
+};
+$(document).ready(function(){
+	$('.add-details').collapsible(true);
+});
+
+/*
+function UpdateTableHeaders() {
+   $(".incident-table").each(function() {
+   
+       var el             = $(this),
+           offset         = el.offset(),
+           scrollTop      = $(window).scrollTop(),
+           floatingHeader = $(".floatingHeader", this)
+       
+       if ((scrollTop > offset.top) && (scrollTop < offset.top + el.height())) {
+           floatingHeader.css({
+            "visibility": "visible"
+           });
+       } else {
+           floatingHeader.css({
+            "visibility": "hidden"
+           });      
+       };
+   });
+}
+
+// DOM Ready      
+$(function() {
+
+   var clonedHeaderRow;
+
+   $(".incident-table").each(function() {
+       clonedHeaderRow = $(".header-row", this);
+       clonedHeaderRow
+         .before(clonedHeaderRow.clone())
+         .css("width", clonedHeaderRow.width())
+         .addClass("floatingHeader");
+         
+   });
+   
+   $(window)
+    .scroll(UpdateTableHeaders)
+    .trigger("scroll");
+   
+});
+*/

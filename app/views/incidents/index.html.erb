@@ -1,171 +1,88 @@
 <section class="main incident-explorer" role="">
-<form class="incident-filter" action="#">
-	<legend>Find Incidents</legend>
-	<label for="incident_type">Type</label>
-		<select id="incident_type">
-			<option selected="selected">All</option>
-Abusive/Aggressive Behaviour</option>
-			<option>Accident/Injury - Serious</option>
-			<option>Assault - Minor</option>
-			<option>Assault - Not OBH</option>
-			<option>Assault - Serious</option>
-			<option>Barricade/Sit-In</option>
-			<option>Birth of a child</option>
-			<option>Clinical Depression</option>
-			<option>Complaint - re Crit Incident</option>
-			<option>Complaint - re MajorIncident</option>
-			<option>Complaint - re MinorIncident</option>
-			<option>Complaint Unresolved in time</option>
-			<option>Contamination/Infection</option>
-			<option>Contraband brought by Visitor</option>
-			<option>Contraband found</option>
-			<option>Damage - Minor</option>
-			<option>Damage - Serious</option>
-			<option>Death</option>
-			<option>Demonstration - Offsite</option>
-			<option>Demonstration - Onsite</option>
-			<option>Disturbance - Major</option>
-			<option>Disturbance - Minor</option>
-			<option>Emergency - medical - offsite</option>
-			<option>Escape</option>
-			<option>Escape - Attempted</option>
-			<option>Escape - Mass Breakout</option>
-			<option>Failure - IT Systems</option>
-			<option>Failure - Power</option>
-			<option>Failure - Security System</option>
-			<option>Food poisoning</option>
-			<option>Industrial Action - Minor</option>
-			<option>Industrial Action - No Labour</option>
-			<option>Media - Approach staff/clients</option>
-			<option>Media - Incident of interest</option>
-			<option>Media - Unauthorised presence</option>
-			<option>Notification by Welfare Auth</option>
-			<option>Property - Missing</option>
-			<option>Property - Missing Money</option>
-			<option>Public Health Risk - L/Serious</option>
-			<option>Public Health Risk - Serious</option>
-			<option>Removal - Aborted</option>
-			<option>Riot</option>
-			<option>Self Harm - Actual</option>
-			<option>Self Harm - Threatened</option>
-			<option>Self Harm-Attpted Serious</option>
-			<option>Substance abuse</option>
-			<option>Theft</option>
-			<option>Threat-Bomb Biologic Chem</option>
-			<option>Transfer btwn facilities</option>
-			<option>Transfer to APOD</option>
-			<option>Use of Emergency Equip</option>
-			<option>Use of Force</option>
-			<option>Use of Observation Rm > 24 hrs</option>
-			<option>Use of Restraints</option>
-			<option>Use of Restraints-Unplnd</option>
-			<option>Use of weaponry by a Client</option>
-			<option>Visitor-Client denied</option>
-			<option>Visitor-HP refused access</option>
-			<option>Visitor-Other refused</option>
-			<option>Voluntary Starvation - End of</option>
-			<option>Voluntary starvation (<24 hrs)</option>
-			<option>Voluntary starvation (>24 hrs)</option>
-			<option>Voluntary starvation by Minor</option>
-			<option>Weapon - Client in possession</option>
-			<!-- 		 end -->
-		</select>
-	<label for="location">Location</label>
-<!-- 		 @incidents.incident_location  -->
-		<select id="location">
-			<option selected="selected">All</option>
-			<optgroup label="Chistmas Island">
-				<option>Christmas Island</option>
-				<option>Construction Camp APOD</option>
-				<option>Lilac Aqua</option>
-				<option>North West Point Immigration Facility</option>
-				<option>Phosphate Hill APOD</option>
-				<option>Phosphate Hill B Compound</option>
-			</optgroup>
-			<optgroup label="New South Wales">
-				<option>Sydney IRH</option>
-				<option>Villawood IDC</option>
-			</optgroup>
-			<optgroup label="Northern Territory">
-				<option>Berrimah Accommodation Facility</option>
-				<option>Darwin Airport Lodge</option>
-				<option>Northern IDC</option>
-			</optgroup>
-			<optgroup label="Queensland">
-				<option>Brisbane ITA</option>
-				<option>Scherger IDC</option>
-				<option>Virginia Palms Motel</option>		
-			</optgroup>
-			<optgroup label="South Australia">
-				<option>Inverbrackie APOD</option>
-				<option>Port Augusta IRH</option>
-				<option>SA Detention Operations</option>
-			</optgroup>
-			<optgroup label="Victoria">
-				<option>Maribyrnong IDC</option>
-				<option>Melbourne ITA</option>	
-			</optgroup>
-			<optgroup label="Western Australia">
-				<option>Curtin IDC</option>
-				<option>Gwalia Lodge</option>
-				<option>Jandakot APOD</option>
-				<option>Leonora APOD</option>
-				<option>Leonora Lodge</option>
-				<option>Perth IDC</option>
-				<option>Perth IRH</option>
-			</optgroup>
-<!-- 		 end -->
-		</select>
-	<label>First Date</label>
-		<%= date_select("incident", "start_date") %>
-	<label>Last Date</label>
-		<%= date_select("incident", "end_date") %>
-	<label for="has_detail_report">Has detail report</label>
-		<input type="checkbox" id="has_detail_report" />
-	<input class="btn" type="submit" role="button" value="Go"/>
-</form>
+<h1>Incident Explorer</h1>
+<section class="discrete">
+	<p>An “incident” in this context is an event in one of Australia’s immigration detention facilities which has been recorded by the facility’s staff. The private contractors that run the detention network, including companies <a href="/about/glossary/#serco">Serco</a>, <a href="/about/glossary/#IHMS">IHMS</a> and <a href="/about/glossary/#G4S">G4S</a>, are required to file incident reports to the <a href="/about/glossary/#DIAC">Australian Government Department of immigration and Citizenship (DIAC)</a>, where they are archived in a centralised database.</p>
+			
+	<p>DIAC are ultimately responsible for the welfare of people held in the detention network. They use these incident reports as one way to understand and track occurrences and conditions in their facilities.</p>
+	<p>The incident data published here has been provided by the Department of
+Immigration and Citizenship, released under the Freedom of Information Act
+1982 (Cth). The Freedom of Information (FOI) system allows any member of
+the public to lawfully access government information. The logs record
+details of incidents at all detention facilities from October 2009 to May
+2011. To request a copy of the original PDF summary log contact DIAC at
+natcomms@immi.gov.au. You can also download a spreadsheet of the data <a href="https://s3.amazonaws.com/detention_logs/Dataset+for+incident+database.csv">here</a>.</p>
+	<p>Explore the incident reports with the filters below.</p>
 
-<h1 class="distinct query-results-description" id="#results"><strong class="query-count"><%= @incidents.total_count %></strong><% if params[:incident_type] %><strong class="type"><%= params[:incident_type] %></strong><% end %> incident reports <% if params[:location] %><strong class="location"><%= params[:location] %></strong><% end %> between <strong class="start-date"><% params[:start_date] %></strong> and <strong class="end-date"><% params[:end_date] %>.</strong></h1>
+</section>
+<%= form_tag incidents_path, :method => :get do %>
+	<legend>Filter Incident List</legend>
+	<fieldset class="type">
+		<label for="incident_type">Type</label>
+		<%= select_tag(:incident_type, options_from_collection_for_select(@incident_types, 'to_s', 'to_s', params[:incident_type]), :prompt => "All") %>
+	</fieldset>
+
+	<fieldset class="location">
+		<label for="location">Location</label>
+		<%= select_tag(:location, option_groups_from_collection_for_select(@location_groups, :locations, :name, :id, :name, params[:location]), :prompt => "All") %>
+	</fieldset>
+	<fieldset class="start-date">
+		<label>Start Date</label>
+    <input type="date" id="by_period_start_date" name="by_period[start_date]" value="<%=@start_date%>" min="2009-10-03" max="2011-05-26">
+	</fieldset>
+	<fieldset class="end-date">
+		<label>End Date</label>
+    <input type="date" id="by_period_end_date" name="by_period[end_date]" value="<%=@end_date%>" min="2009-10-03" max="2011-05-26">
+	</fieldset>
+	<fieldset class="has-detail-report">
+		<label for="by_detailed_report">Has detail report</label>
+    <%=check_box_tag :by_detailed_report, 'true', !!params[:by_detailed_report] %>
+	</fieldset>
+	<input class="btn" type="submit" role="button" value="Go"/>
+<% end %>
+<h2 class="supporting-heading">Results:</h2>
+<h3 class="distinct query-results-description" id="#results"><strong class="query-count"><%= @incidents.total_count %></strong> <% if params[:incident_type] %><strong class="type"><%= params[:incident_type] %></strong><% end %> incident reports <% if params[:location] %><strong class="location"><%= params[:location] %></strong><% end %> between <strong class="start-date"><%=@start_date %></strong> and <strong class="end-date"><%=@end_date %>.</strong></h1>
 
 <dl class="page-link supporting">
 	<dt class="">Link for these results</dt>
-		<dd><input value="<%= "#{request.protocol}#{request.host_with_port}#{request.fullpath}" %>" title="url to share or bookmark these results" readonly></dd>
+		<dd><input value="<%= "#{request.protocol}#{request.host_with_port}#{request.fullpath}" %>" title="url to share or bookmark these results"></dd>
 </dl>
-
-<ul class="header-row supporting">
-	<li class="incident-occured-on">Occured On</li>
-	<li class="incident-type">Type</li>
-	<li class="incident-location">Location</li>
-	<li class="incident-summary">Summary</li>
-	<li class="incident-secondary">
-		<div class="incident-location-details">Location Details</div>
-		<div class="incident-number">Incident Number</div>
-	</li>			
-</ul>
-<ul class="incident-list">
-	<% @incidents.each do |incident| %>
-
-	<li class="supporting">
-		<article class="incident-item <% if incident.detailed_report.path %>has-detailed-report<% end %>">
-
-			<section class="incident-primary">
-				<span class="field-label">Occured On</span><time class="incident-occured-on"><%= incident.occured_on.strftime("%d %b %Y %H:%M") %></time>
-				<span class="field-label">Type</span><section class="incident-type"><%= incident.incident_type %></section>
-				<span class="field-label">Location</span><section class="incident-location"><%= incident.location %></section>
-			</section>
-			<section class="incident-body">
-				<span class="field-label incident-summary-label">Incident Summary</span><section class="incident-summary discrete"><p><%= incident.summary %></p></section>
-			</section>
-			<section class="incident-secondary">
-				<span class="field-label">Location Details</span><section class="incident-location-details"><p><%= incident.location_details %></p></section>
-				<span class="field-label"><abbr title="Incident">In.</abbr> Number</span><a href="/incidents/<%= incident.id %>" class="incident-number" title="Get more information about Incident <%= incident.incident_number %>"><%= incident.incident_number %> <span class="incident-link">see&nbsp;details<i> &rarr;</i></span></a>
-			</section>
-		</article>
-	</li>
-
-	<% end %>
+<section class="incident-table">
+	<ul class="header-row supporting">
+		<li class="incident-occured-on">Occured On</li>
+		<li class="incident-type">Type</li>
+		<li class="incident-location">Location</li>
+		<li class="incident-summary">Summary</li>
+		<li class="incident-secondary">
+			<div class="incident-location-details">Location Details</div>
+			<div class="incident-number">Incident Number</div>
+		</li>			
+	</ul>
+	<ul class="incident-list">
+		<% @incidents.each do |incident| %>
 	
-</ul>
+		<li class="supporting">
+			<article class="incident-item <% if incident.detailed_report.path %>has-detailed-report<% end %>">
+	
+				<section class="incident-primary">
+					<span class="field-label">Occured On</span><time class="incident-occured-on"><% if incident.occured_on %><%= incident.occured_on.strftime("%d %b %Y %H:%M") %><% end %></time>
+					<span class="field-label">Type</span><section class="incident-type"><%= incident.incident_type %></section>
+					<span class="field-label">Location</span><section class="incident-location"><%= incident.location.name %></section>
+				</section>
+				<section class="incident-body">
+					<span class="field-label incident-summary-label">Incident Summary</span><section class="incident-summary discrete"><p><%= incident.summary %></p></section>
+				</section>
+				<section class="incident-secondary">
+					<span class="field-label">Location Details</span><section class="incident-location-details"><p><%= incident.location_details %></p></section>
+					<span class="field-label"><abbr title="Incident">In.</abbr> Number</span><a href="<%=  url_for incident %>" class="incident-number" title="Get more information about Incident <%= incident.incident_number %>"><%= incident.incident_number %> <span class="incident-link">see&nbsp;details<i> &rarr;</i></span></a>
+					<% if incident.detailed_report.path %><a href="<%= incident.detailed_report.url %>" title="Download the Incident Detail Report for this incident to find more information" class="docs-icon supporting distinct-download">Detail Report</a><% end %>
+				</section>
+			</article>
+		</li>
+	
+		<% end %>
+		
+	</ul>
+</section>
 <div class="pagination-details"><%=  page_entries_info @incidents %></div>
 <%= paginate @incidents %>
 </section>

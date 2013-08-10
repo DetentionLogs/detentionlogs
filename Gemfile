@@ -5,6 +5,8 @@ gem 'rails', '3.2.12'
 gem "paperclip", "~> 3.0"
 gem 'aws-sdk'
 gem 'devise'
+gem 'has_scope'
+gem 'high_voltage'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
@@ -26,8 +28,16 @@ gem 'kaminari'
 
 gem 'jquery-rails'
 
+gem 'rest-client'
+gem 'nokogiri'
+
 group :development do
    gem 'taps', :require => false
+end
+
+group :development, :test do
+  gem 'rspec-rails', '~> 2.0'
+  gem 'factory_girl_rails'
 end
 
 # To use ActiveModel has_secure_password

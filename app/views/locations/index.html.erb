@@ -1,9 +1,10 @@
-<h1>Listing locations</h1>
+ <h1>Listing locations</h1>
 
 <table>
   <tr>
     <th>Name</th>
     <th>Geoloc</th>
+    <th>Description</th>
     <th></th>
     <th></th>
     <th></th>
@@ -13,6 +14,7 @@
   <tr>
     <td><%= location.name %></td>
     <td><%= location.geoloc %></td>
+    <td><%= location.description %></td>
     <td><%= link_to 'Show', location %></td>
     <td><%= link_to 'Edit', edit_location_path(location) %></td>
     <td><%= link_to 'Destroy', location, method: :delete, data: { confirm: 'Are you sure?' } %></td>

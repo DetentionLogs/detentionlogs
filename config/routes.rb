@@ -1,39 +1,39 @@
 Detentionlogs::Application.routes.draw do
   
   
-  
-  
-  resources :attachments
+  devise_for :admins, :skip => [:registrations] 
+
+  get '/investigations' => 'high_voltage/pages#show', :id => 'investigations' 
+  get '/principles' => 'high_voltage/pages#show', :id => 'principles'
+  get '/glossary' => 'high_voltage/pages#show', :id => 'glossary' 
+  get '/about' => 'high_voltage/pages#show', :id => 'about'   
+  get '/contribute' => 'high_voltage/pages#show', :id => 'contribute'   
+  #resources :location_groups
+  root :to => 'high_voltage/pages#show', :id => 'home' 
+
+  #resources :attachments
 
 
-  resources :locations
+  #resources :locations
 
 
   match 'subscriptions/create' => 'subscriptions#create'  
   match 'subscriptions/thankyou' => 'subscriptions#thankyou'
   
-  match 'incidents/:id/deletereport' => 'incidents#deletereport'
-  
   resources :subscriptions
-
-  match 'data/incidents' => 'incidents#index'
-  match 'data/incidents/:id' => 'incidents#show', :as => :incident
-  match 'data/incidents/:id/edit' => 'incidents#edit', :as => :edit_incident
-  match 'data/incidents/:id/update' => 'incidents#update'
-  match 'data/incidents/:id/create' => 'incidents#create'
-  match 'data/incidents/:id/destroy' => 'incidents#destroy'
-  match 'data/incidents/:id/adopt' => 'incidents#adopt'
   
-    
+  match 'data/incidents/:incident_id/deletereport' => 'incidents#deletereport'
+  match 'data/incidents/incident_number/:incident_number/adopt' => 'incidents#adopt_by_incident_number'
   match 'data/incidents/incident_number/:incident_number' => 'incidents#show_by_incident_number'
+  match 'data/incidents/foi_summary.:format' => 'incidents#foi_summary'  
+  match 'populate_location_id' => 'data/incidents#populate_location_id'
 
-  match 'data' => redirect('data/incidents')
-  match 'incidents' => redirect('data/incidents')
-  match 'incidents/:id' => redirect('data/incidents/:id') 
- 
-  
-  
-  
+  scope :path => '/data' do
+    resources :incidents do
+      delete 'deletereport'
+      get 'adopt'
+    end
+  end
   
   #resources :incidents
 
@@ -87,7 +87,7 @@ Detentionlogs::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-   root :to => 'gateway#index'
+ 
 
   # See how all your routes lay out with "rake routes"
 
