@@ -16,8 +16,10 @@ class IncidentsController < ApplicationController
     
     @location_groups = LocationGroup.all
 
+	if params[:location] && params[:location] > ""
     location = Location.find(params[:location])
     @location_name = location.name
+	end
 
     @start_date = params[:by_period].try(:[], :start_date).try(:to_date) ||
       Incident.default_period_range.first
