@@ -3,3 +3,5 @@
 /log/development.log
 .DS_Store
 /tmp/pids/server.pid
+.orig
+index.html.erb.orig
