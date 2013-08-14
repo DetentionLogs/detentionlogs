@@ -5,7 +5,7 @@ class IncidentsController < ApplicationController
   has_scope :by_period, :using => [:start_date, :end_date]
   has_scope :by_detailed_report, :type => :boolean
  
-  before_filter :authenticate_admin!, :only => [:edit, :update]
+  before_filter :authenticate_admin!, :only => [:edit, :update, :destroy, :deletereport]
   
   
   # GET /incidents
