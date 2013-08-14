@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(:version => 20130617050948) do
   end
 
   add_index "foi_requests", ["incident_id"], :name => "index_foi_requests_on_incident_id"
+  add_index "foi_requests", ["url_title"], :name => "index_foi_requests_on_url_title", :unique => true
 
   create_table "incidents", :force => true do |t|
     t.string   "incident_number"
