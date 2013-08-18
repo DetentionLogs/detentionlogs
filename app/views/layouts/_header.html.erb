@@ -11,20 +11,22 @@
         <meta name="author" content="Detention Logs">
         <meta name="description" content="We publish databases, documents and investigations that reveal new perspectives on conditions and events in Australia’s immigration detention network.">
         <meta name="viewport" content="width=device-width">
-		<meta name="google-site-verification" content="UyFaPbUx_nMcjSfI1G-dkYcTZljC0-do61HPxvESXic" />
+	    <%= stylesheet_link_tag    "style", :media => "all" %>
+	    <%= csrf_meta_tag %>
 
-	    <link href="/assets/style.css?body=1" media="all" rel="stylesheet" type="text/css" />
     </head>
     <body class="principles">
 	<header class="site-header">
-    	<h1 class="logo"><a href="http://detentionlogs.com.au" rel="home">Detention Logs</a></h1>
+    	<h1 class="logo"><a href="/" rel="home">Detention&nbsp;Logs<span> beta</span></a> 
+    	<p class="subheading discrete">Inside Australia's immigration detention</p>
+    	</h1>
     	<nav class="main-nav">
     		<a href="#navigation" class="menu-btn">Menu</a>
 			<ul class="primary-nav">
 				<li><a href="/data/incidents">Data</a></li>
 				<li><a href="/investigations">Investigations</a></li>
 				<li><a href="/about">About</a></li>
-				<li><a href="/contribute">Contribute</a></li>
+				<li><a href="/contribute">Contribute</a></li>	
 			</ul>
 		</nav>
     </header>
