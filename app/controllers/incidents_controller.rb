@@ -5,7 +5,7 @@ class IncidentsController < ApplicationController
   has_scope :by_period, :using => [:start_date, :end_date]
   has_scope :by_detailed_report, :type => :boolean
  
-  before_filter :authenticate_admin!, :only => [:edit, :update]
+  before_filter :authenticate_admin!, :only => [:edit, :update, :destroy, :deletereport]
   
   
   # GET /incidents
@@ -15,6 +15,11 @@ class IncidentsController < ApplicationController
     @incidents =  apply_scopes(Incident).order("occured_on").page(params[:page]).per(50)
     
     @location_groups = LocationGroup.all
+
+	if params[:location] && params[:location] > ""
+    location = Location.find(params[:location])
+    @location_name = location.name
+	end
 
     @start_date = params[:by_period].try(:[], :start_date).try(:to_date) ||
       Incident.default_period_range.first
