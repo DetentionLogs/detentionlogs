@@ -21,7 +21,7 @@
 	
 	<h3 id="what-to-expect">What to expect</h3>
 	
-	<p>Lodging a freedom of information request is easy. There is no application fee so all you need to do is <%=link_to_right_to_know_form(@incident, "follow the ‘submit a request’ link") %>, where you’ll find a pre-written request for the detailed report of the incident summary you were just exploring (Incident [incident:number]).</p>
+	<p>Lodging a freedom of information request is easy. There is no application fee so all you need to do is <%=link_to_right_to_know_form(@incident, "follow the ‘submit a request’ link") %>, where you’ll find a pre-written request for the detailed report of the incident summary you were just exploring (<%= link_to( "Incident #{@incident.incident_number}" , @incident, :title => "Go back to the summary of Incident #{@incident.incident_number}")  %>).</p>
 	
 	<p>The work of communicating back and forth with your FOI decision maker gets handled through the Right to Know website, a fantastic tool that makes it easy to use Australia’s FOI system. At Right To Know requests are listed publicly which means that others can help you with your request if anything comes up, and once released, the documents you request go public straight away. We’ll add those documents to the incident reports on our site so everyone can access this public information.</p>
 	
