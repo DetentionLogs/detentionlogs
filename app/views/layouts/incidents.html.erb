@@ -1,31 +1,4 @@
-<!DOCTYPE html>
-<html class="no-js">
-<head>
-    <meta charset="utf-8">
-    <title>
-	    | Detention Logs
-    </title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
-    <%= stylesheet_link_tag    "style", :media => "all" %>
-    <%= csrf_meta_tag %>
-
-</head>
-<body>
-	<header class="site-header">
-    	<h1 class="logo"><a href="/" rel="home">Detention&nbsp;Logs<span> beta</span></a> 
-    	<p class="subheading discrete">Inside Australia's immigration detention</p>
-    	</h1>
-    	<nav class="main-nav">
-    		<a href="#navigation" class="menu-btn">Menu</a>
-			<ul class="primary-nav">
-				<li><a href="/data/incidents">Data</a></li>
-				<li><a href="/investigations">Investigations</a></li>
-				<li><a href="/about">About</a></li>
-				<li><a href="/contribute">Contribute</a></li>	
-			</ul>
-		</nav>
-    </header>
+<%= render 'layouts/header' %>
 
     <%= yield %>
 
