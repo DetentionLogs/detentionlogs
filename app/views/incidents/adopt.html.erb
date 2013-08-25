@@ -1,3 +1,6 @@
+<% title "Adopt Incident #{@incident.incident_number}" %>
+<% description "Help bring to light more information about incident #{@incident.incident_number} by submitting a Freedom of Information Request for its Detailed Incident Report" %>
+
 <nav class="breadcrumbs supporting main">
 	<p><!-- <a href="/data/">Data</a> &gt;  --><a href="/data/incidents/" title="Explore incident records from Australia's immigration detention network">Incidents</a> &gt; <a href="<%=  url_for @incident %>" title="Page for Incident <%= @incident.incident_number %>"><%= @incident.incident_number %></a> &gt; <a href="<%= url_for(@incident) %>/adopt" title="help get more information about this incident">Adopt</a></p>
 </nav>
