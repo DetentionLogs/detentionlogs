@@ -134,6 +134,8 @@ GEM
     sequel (3.20.0)
     sinatra (1.0)
       rack (>= 1.0)
+    sitemap_generator (4.2.0)
+      builder
     sprockets (2.2.2)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -176,5 +178,6 @@ DEPENDENCIES
   rest-client
   rspec-rails (~> 2.0)
   sass-rails (~> 3.2.3)
+  sitemap_generator
   taps
   uglifier (>= 1.0.3)
