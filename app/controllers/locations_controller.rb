@@ -1,4 +1,6 @@
 class LocationsController < ApplicationController
+
+  before_filter :authenticate_admin!, :only => [:index, :create, :new, :edit, :update, :destroy, :show]
   # GET /locations
   # GET /locations.json
   def index
