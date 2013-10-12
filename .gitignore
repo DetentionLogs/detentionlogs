@@ -5,3 +5,4 @@
 /tmp/pids/server.pid
 .orig
 index.html.erb.orig
+tmp
