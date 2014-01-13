@@ -1,48 +1,17 @@
 <% title incidentexplorer_results %>
 <% description "Explore an index of 'incident reports' recorded by staff at Australia’s immigration detention facilities." %>
 <section class="main incident-explorer" role="main">
+
 <h1>Incident Explorer</h1>
-<section class="discrete">
-	<p>An “incident” in this context is an event in one of Australia’s immigration detention facilities which has been recorded by the facility’s staff. The private contractors that run the detention network, including companies <a href="/about/glossary/#serco">Serco</a>, <a href="/about/glossary/#IHMS">IHMS</a> and <a href="/about/glossary/#G4S">G4S</a>, are required to file incident reports to the <a href="/about/glossary/#DIAC">Australian Government Department of immigration and Citizenship (DIAC)</a>, where they are archived in a centralised database.</p>
-			
-	<p>DIAC are ultimately responsible for the welfare of people held in the detention network. They use these incident reports as one way to understand and track occurrences and conditions in their facilities.</p>
-	<p>The incident data published here has been provided by the Department of
-Immigration and Citizenship, released under the Freedom of Information Act
-1982 (Cth). The Freedom of Information (FOI) system allows any member of
-the public to lawfully access government information. The logs record
-details of incidents at all detention facilities from October 2009 to May
-2011. To request a copy of the original PDF summary log contact DIAC at
-natcomms@immi.gov.au. You can also download a spreadsheet of the data <a href="https://s3.amazonaws.com/detention_logs/Dataset+for+incident+database.csv">here</a>.</p>
-	<p>Explore the incident reports with the filters below.</p>
 
+<section class="filters">
+	<p class="lede">Incident Reports are records of events that occur in immigration detention, recorded by detention centre staff for the Australian Government. <%= link_to 'About Incident Reports.', page_path('data/incidents/about'), title: "Read more information about Incident Reports and where this data came from." %></p>
+
+	<%= render 'layouts/incident_filters' %>
 </section>
-<%= form_tag incidents_path, :method => :get do %>
-	<legend>Filter Incident List</legend>
-	<fieldset class="type">
-		<label for="incident_type">Type</label>
-		<%= select_tag(:incident_type, options_from_collection_for_select(@incident_types, 'to_s', 'to_s', params[:incident_type]), :prompt => "All") %>
-	</fieldset>
-
-	<fieldset class="location">
-		<label for="location">Location</label>
-		<%= select_tag(:location, option_groups_from_collection_for_select(@location_groups, :locations, :name, :id, :name, params[:location]), :prompt => "All") %>
-	</fieldset>
-	<fieldset class="start-date">
-		<label>Start Date</label>
-    <input type="date" id="by_period_start_date" name="by_period[start_date]" value="<%=@start_date%>" min="2009-10-03" max="2011-05-26">
-	</fieldset>
-	<fieldset class="end-date">
-		<label>End Date</label>
-    <input type="date" id="by_period_end_date" name="by_period[end_date]" value="<%=@end_date%>" min="2009-10-03" max="2011-05-26">
-	</fieldset>
-	<fieldset class="has-detail-report">
-		<label for="by_detailed_report">Has detail report</label>
-    <%=check_box_tag :by_detailed_report, 'true', !!params[:by_detailed_report] %>
-	</fieldset>
-	<input class="btn" type="submit" role="button" value="Go"/>
-<% end %>
-<h2 class="supporting-heading">Results:</h2>
-<h3 class="distinct query-results-description" id="#results"><strong class="query-count"><%= @incidents.total_count %></strong> <% if params[:incident_type] %><strong class="type"><%= params[:incident_type] %></strong><% end %> incident reports <% if @location_name %>from <strong class="location"><%= @location_name %></strong><% end %> between <strong class="start-date"><%=@start_date.strftime("%d %b %Y") %></strong> and <strong class="end-date"><%=@end_date.strftime("%d %b %Y") %>.</strong></h1>
+<h2 class="distinct query-results-description" id="results">
+	<strong class="query-count"><%= @incidents.total_count %></strong> <% if params[:incident_type] %><strong class="type"><%= params[:incident_type] %></strong><% end %> incident reports <% if params[:by_detailed_report] %>with attatched <strong>Incident Detail Reports</strong> <% end %><% if @location_name %>from <strong class="location"><%= @location_name %></strong><% end %> between <strong class="start-date"><%= @start_date.strftime("%d %b %Y") %></strong> and <strong class="end-date"><%=@end_date.strftime("%d %b %Y") %>.</strong>
+</h2>
 
 <p><a href="<%= "#{request.protocol}#{request.host_with_port}#{request.fullpath}" %>" title="url to share or bookmark these results" class="page-link supporting">Permalink for these results</a></p>
 
@@ -55,14 +24,15 @@ natcomms@immi.gov.au. You can also download a spreadsheet of the data <a href="h
 		<li class="incident-secondary">
 			<div class="incident-location-details">Location Details</div>
 			<div class="incident-number">Incident Number</div>
-		</li>			
+		</li>
 	</ul>
+
 	<ul class="incident-list">
 		<% @incidents.each do |incident| %>
-	
+
 		<li class="supporting">
 			<article class="incident-item <% if incident.detailed_report.path %>has-detailed-report<% end %>">
-	
+
 				<section class="incident-primary">
 					<span class="field-label">Occured On</span><time class="incident-occured-on"><% if incident.occured_on %><%= incident.occured_on.strftime("%d %b %Y %H:%M") %><% end %></time>
 					<span class="field-label">Type</span><section class="incident-type"><%= incident.incident_type %></section>
@@ -78,9 +48,8 @@ natcomms@immi.gov.au. You can also download a spreadsheet of the data <a href="h
 				</section>
 			</article>
 		</li>
-	
+
 		<% end %>
-		
 	</ul>
 </section>
 <div class="pagination-details"><%=  page_entries_info @incidents %></div>

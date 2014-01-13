@@ -1,0 +1,26 @@
+<%= form_tag incidents_path, :method => :get do %>
+	<legend>Filter Incident List</legend>
+	<fieldset class="type">
+		<label for="incident_type">Type</label>
+		<%= select_tag(:incident_type, options_from_collection_for_select(@incident_types, 'to_s', 'to_s', params[:incident_type]), :prompt => "All") %>
+	</fieldset>
+	
+	<fieldset class="location">
+		<label for="location">Location</label>
+		<%= select_tag(:location, option_groups_from_collection_for_select(@location_groups, :locations, :name, :id, :name, params[:location]), :prompt => "All") %>
+	</fieldset>
+	<fieldset class="start-date">
+		<label>Start Date</label>
+	<input type="date" id="by_period_start_date" name="by_period[start_date]" value="<%=@start_date%>" min="2009-10-03" max="2011-05-26">
+	</fieldset>
+	<fieldset class="end-date">
+		<label>End Date</label>
+	<input type="date" id="by_period_end_date" name="by_period[end_date]" value="<%=@end_date%>" min="2009-10-03" max="2011-05-26">
+	</fieldset>
+	<fieldset class="has-detail-report">
+		<label for="by_detailed_report">Has detail report</label>
+	<%=check_box_tag :by_detailed_report, 'true', !!params[:by_detailed_report] %>
+	</fieldset>
+	
+	<input class="btn" type="submit" role="button" value="Go"/>
+<% end %>
