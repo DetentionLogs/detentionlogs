@@ -3,18 +3,21 @@ Detentionlogs::Application.routes.draw do
   
   devise_for :admins, :skip => [:registrations] 
 
+  HighVoltage.route_drawer = HighVoltage::RouteDrawers::Root
+
   get '/investigations' => 'high_voltage/pages#show', :id => 'investigations' 
   get '/principles' => 'high_voltage/pages#show', :id => 'principles'
   get '/glossary' => 'high_voltage/pages#show', :id => 'glossary' 
   get '/about' => 'high_voltage/pages#show', :id => 'about'   
-  get '/contribute' => 'high_voltage/pages#show', :id => 'contribute'   
+  get '/contribute' => 'high_voltage/pages#show', :id => 'contribute'
+  get '/data/incidents/about' => 'high_voltage/pages#show', :id => 'about_incidents'
   #resources :location_groups
   root :to => 'high_voltage/pages#show', :id => 'home' 
 
   #resources :attachments
 
 
-  #resources :locations
+  resources :locations
 
 
   match 'subscriptions/create' => 'subscriptions#create'  
