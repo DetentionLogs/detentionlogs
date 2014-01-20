@@ -1,8 +1,7 @@
 /mockups/css/.sass-cache/
 /mockups/css/style.css
-/log/development.log
 .DS_Store
-/tmp/pids/server.pid
 .orig
 index.html.erb.orig
 tmp/
+log/
