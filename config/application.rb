@@ -32,9 +32,9 @@ module Detentionlogs
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
-    
+
     config.autoload_paths += %W["#{config.root}/lib/validators/"]
-    
+
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"
 
@@ -60,5 +60,11 @@ module Detentionlogs
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    # https://devcenter.heroku.com/articles/rails-asset-pipeline#troubleshooting
+    # > The most common cause of failures in assets:precompile is an app that relies on having its environment present to boot. Your app’s config vars are not present in the environment during slug compilation, so you should take steps to handle the nil case for config vars (and add-on resources) in your initializers.
+
+    # > In Rails 3.x, you can prevent initializing your application and connecting to the database by ensuring that the following line is in your config/application.rb:
+    config.assets.initialize_on_precompile = false
   end
 end
