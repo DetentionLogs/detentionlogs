@@ -1,18 +1,20 @@
 Detentionlogs::Application.routes.draw do
-  
-  
-  devise_for :admins, :skip => [:registrations] 
+
+
+  devise_for :admins, :skip => [:registrations]
 
   HighVoltage.route_drawer = HighVoltage::RouteDrawers::Root
 
-  get '/investigations' => 'high_voltage/pages#show', :id => 'investigations' 
+  get '/investigations' => 'high_voltage/pages#show', :id => 'investigations'
+  get '/investigations/recipe' => 'high_voltage/pages#show', :id => 'investigations_recipe'
   get '/principles' => 'high_voltage/pages#show', :id => 'principles'
-  get '/glossary' => 'high_voltage/pages#show', :id => 'glossary' 
-  get '/about' => 'high_voltage/pages#show', :id => 'about'   
+  get '/glossary' => 'high_voltage/pages#show', :id => 'glossary'
+  get '/about' => 'high_voltage/pages#show', :id => 'about'
   get '/contribute' => 'high_voltage/pages#show', :id => 'contribute'
   get '/data/incidents/about' => 'high_voltage/pages#show', :id => 'about_incidents'
+
   #resources :location_groups
-  root :to => 'high_voltage/pages#show', :id => 'home' 
+  root :to => 'high_voltage/pages#show', :id => 'home'
 
   #resources :attachments
 
@@ -20,15 +22,15 @@ Detentionlogs::Application.routes.draw do
   resources :locations
 
 
-  match 'subscriptions/create' => 'subscriptions#create'  
+  match 'subscriptions/create' => 'subscriptions#create'
   match 'subscriptions/thankyou' => 'subscriptions#thankyou'
-  
+
   resources :subscriptions
-  
+
   match 'data/incidents/:incident_id/deletereport' => 'incidents#deletereport'
   match 'data/incidents/incident_number/:incident_number/adopt' => 'incidents#adopt_by_incident_number'
   match 'data/incidents/incident_number/:incident_number' => 'incidents#show_by_incident_number'
-  match 'data/incidents/foi_summary.:format' => 'incidents#foi_summary'  
+  match 'data/incidents/foi_summary.:format' => 'incidents#foi_summary'
   match 'populate_location_id' => 'data/incidents#populate_location_id'
 
   scope :path => '/data' do
@@ -37,7 +39,7 @@ Detentionlogs::Application.routes.draw do
       get 'adopt'
     end
   end
-  
+
   #resources :incidents
 
 
@@ -45,7 +47,7 @@ Detentionlogs::Application.routes.draw do
   # first created -> highest priority.
 
   # Sample of regular route:
- 
+
   # Keep in mind you can assign values other than :controller and :action
 
   # Sample of named route:
@@ -90,7 +92,7 @@ Detentionlogs::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
- 
+
 
   # See how all your routes lay out with "rake routes"
 
