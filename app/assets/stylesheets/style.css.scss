@@ -106,7 +106,7 @@ abbr {
 	text-decoration: none;
     letter-spacing: 1px;
     letter-spacing: 0.0625rem;
-	border-bottom: 1px #aaa dashed; 
+	border-bottom: 1px #aaa dashed;
 	cursor: help;
 }
 	.glossary dt abbr {
@@ -126,7 +126,7 @@ nav {
 	ul {
 		list-style: none;
 		padding: 0;
-		margin: 0;	
+		margin: 0;
 
 	}
 	li {
@@ -144,6 +144,13 @@ input {
 	padding-left: .14rem;
 	padding-right: 2px;
 	padding-right: .14rem;
+}
+
+.page-about {
+	dt {
+		font-weight: bold;
+		margin-top: 1em;
+	}
 }
 /* @end Elements */
 
@@ -287,7 +294,7 @@ input:-ms-input-placeholder { color: #555;}
 	}
 	&:active {
 		background-color: $regular-text;
-		color: $note;	
+		color: $note;
 	}
 }
 
@@ -295,12 +302,12 @@ input:-ms-input-placeholder { color: #555;}
    color: #a9a9a9;
 }
 :-moz-placeholder { /* Firefox 18- */
-   color: #a9a9a9;  
+   color: #a9a9a9;
 }
 ::-moz-placeholder {  /* Firefox 19+ */
-   color: #a9a9a9;  
+   color: #a9a9a9;
 }
-:-ms-input-placeholder {  
+:-ms-input-placeholder {
    color: #a9a9a9;
 }
 
@@ -318,7 +325,7 @@ input:-ms-input-placeholder { color: #555;}
 	}
 	span {
 		line-height: 0;
-		font-size: $scale-n1;	
+		font-size: $scale-n1;
 	}
 	.subheading {
 		font-weight: normal;
@@ -346,7 +353,7 @@ input:-ms-input-placeholder { color: #555;}
 .supporting,
 .discrete {
 	font-size: 14px;
-	font-size: .875rem; /* 14px */	
+	font-size: .875rem; /* 14px */
 }
 .discrete {
 	li {
@@ -361,7 +368,7 @@ input:-ms-input-placeholder { color: #555;}
 	.end-date {
 		display: inline-block;
 	}
-	
+
 }
 .redacted {
     text-transform: uppercase;
@@ -407,7 +414,7 @@ input:-ms-input-placeholder { color: #555;}
 	dd {
 		margin: 0 0 1rem;
 		p {
-			margin-top: 0;	
+			margin-top: 0;
 		}
 	}
 }
@@ -419,7 +426,7 @@ input:-ms-input-placeholder { color: #555;}
 .editors-additional {
 	h2 {
 		text-align: center;
-		margin-bottom: 1rem;		
+		margin-bottom: 1rem;
 	}
 	h3 {
 		font-weight: bold;
@@ -518,24 +525,24 @@ body {
 	margin: 0 0 0;
 	padding: 0;
 }
-	.share-item {
-		display: inline-block;
-		text-align: left;
-		width: 32%;
-		min-width: 6rem;
-		margin-top: 1em;
-		.share-item + .share-item {
-			margin-left: 1%;
-		}
-		a {
-			display: block;
-			text-decoration: none;
-			padding: .875rem 1.2rem .875rem .5rem;
-			font-size: 1rem;
-			width: 100%;
-		}
-	}
 
+.share-item {
+	display: inline-block;
+	text-align: left;
+	width: 32%;
+	min-width: 6rem;
+	margin-top: 1em;
+	.share-item + .share-item {
+		margin-left: 1%;
+	}
+	a {
+		display: block;
+		text-decoration: none;
+		padding: .875rem 1.2rem .875rem .5rem;
+		font-size: 1rem;
+		width: 100%;
+	}
+}
 
 
 /* @group Incidents */
@@ -589,7 +596,7 @@ body {
 		}
 		dd {
 			display: inline-block;
-			margin-bottom: 0;		
+			margin-bottom: 0;
 		}
 		dd + dt {
 			margin-left: .25rem;
@@ -651,11 +658,11 @@ body {
 	}
 	.incident-additional {
 		overflow: hidden;
-		dt {			
+		dt {
 			float: left;
 			clear: left;
 			padding-right: 1rem;
-		}	
+		}
 	}
 
 /* @end Incidents */
@@ -710,7 +717,7 @@ body {
 }
 .page-link {
 		dt {
-			color: $fade;	
+			color: $fade;
 			display: inline-block;
 			font-size: $scale-n2;
 			&:after {
@@ -752,7 +759,7 @@ header .primary-nav {
 	padding-top: $scale-1;
 	li {
 		margin: 0 0 $scale-n2;
-		a {	
+		a {
 			padding: .5rem 0;
 		}
 	}
@@ -768,7 +775,7 @@ header .primary-nav {
 	}
 	li + li {
 		padding-left: 1rem;
-	}	
+	}
 }
 */
 .footer-nav {
@@ -790,7 +797,7 @@ header .primary-nav {
 			&:active {
 				background: $primary;
 				color: white;
-				padding-left: .5rem;				
+				padding-left: .5rem;
 			}
 		}
 	}
@@ -850,7 +857,7 @@ header .primary-nav {
 		padding-left: 1.5rem;
 		text-decoration: none;
 	}
-	
+
 }
 .docs-icon {
 	background-image: url(doc-small.png);
@@ -871,7 +878,7 @@ header .primary-nav {
 	background-position: left center;
 	background-repeat: no-repeat;
 	padding-left: 1.25rem;
-	width: 0;	
+	width: 0;
 }
 /* @end Icons */
 
@@ -930,7 +937,7 @@ tbody tr:hover td {
 
 
 /* @group Forms */
-	
+
 .mail-list,
 .mail-list input {
 	display: block;
@@ -950,7 +957,7 @@ input {
 	box-shadow: inset 1px 1px 3px rgba(0,0,0,0.1);
 	box-shadow: inset 0.07rem 0.07rem 0.1875rem rgba(0,0,0,0.1);
 	:focus {
-		border: .0625rem #aaa solid;		
+		border: .0625rem #aaa solid;
 	}
 }
 
@@ -1004,7 +1011,7 @@ input {
 	}
 	label {
 		font-size: 14px;
-		font-size: $scale-n1;		
+		font-size: $scale-n1;
 		margin-top: 12px;
 		margin-top: .75rem;
 		font-weight: bold;
@@ -1059,7 +1066,7 @@ input {
 }
 
 .page-link input {
-	
+
 }
 
 /* @end Forms */
@@ -1132,7 +1139,7 @@ input {
 }
 
 .page-link {
-		dt { 
+		dt {
 			display: inline-block;
 		}
 		dd {
@@ -1178,7 +1185,7 @@ input {
 		}
 		.start-date,
 		.end-date {
-			input {	
+			input {
 			font-size: 14px;
 			font-size: $scale-n1;
 			}
@@ -1206,7 +1213,7 @@ nav {
 	ul {
 		list-style: none;
 		padding: 0;
-		margin: 0;	
+		margin: 0;
 
 	}
 	li {
@@ -1234,7 +1241,7 @@ nav {
 	background-color: transparent;
 	&:hover,
 	&:focus {
-		color: #fff;	
+		color: #fff;
 	}
 }
 .has-detailed-report {
@@ -1246,8 +1253,8 @@ nav {
 		background-color: transparent;
 		&:hover,
 		&:focus {
-			color: #fff;	
-		}	
+			color: #fff;
+		}
 	}
 }
 
@@ -1338,7 +1345,7 @@ body {
 	padding: 1.5rem 1.5rem .5rem;
 }
 .box.verification-msg {
-	padding: 24px 24px 8px;	
+	padding: 24px 24px 8px;
 	padding: .5rem 1.5rem .5rem;
 }
 /* @group header */
@@ -1381,7 +1388,7 @@ body {
 	}
 }
 .incident-additional {
-	dt {			
+	dt {
 		float: left;
 		clear: none;
 		padding-right: .25rem;
@@ -1420,7 +1427,7 @@ body {
 		&:before,
 		&:after {
 			content: "";
-			display: table;			
+			display: table;
 		}
 		&:after {
 			clear: both;
@@ -1434,7 +1441,7 @@ body {
 	}
 	.incident-occured-on,
 	.incident-type,
-	.incident-location {			
+	.incident-location {
 	}
 	.incident-body {
 		float: right;
@@ -1448,7 +1455,7 @@ body {
 		clear: right;
 	}
 */
-	
+
 	.incident-secondary {
 		float: right;
 		clear: right;
@@ -1459,7 +1466,7 @@ body {
 	}
 	.incident-link {
 		font-weight: bold;
-	}	
+	}
 }
 .page-link {
 	dl {
@@ -1519,7 +1526,7 @@ header .primary-nav {
 	}
 	a {
 		margin-top: 0;
-	}	
+	}
 }
 
 
@@ -1572,7 +1579,7 @@ legend {
 /* @group Page Structure */
 body {
 	&.home {
-		padding-top: 8rem;		
+		padding-top: 8rem;
 	}
 }
 .reading > * {
@@ -1681,7 +1688,7 @@ body {
 	}
 	.incident-summary {
 	/* 	margin-top: -.14rem;  *//* corrention of line height */
-	
+
 		p {
 			margin: 0;
 		}
@@ -1747,7 +1754,7 @@ body {
 	.end-date {
 		width: 20%;
 		input {
-  			font-size: $scale-n1;	
+  			font-size: $scale-n1;
 		}
 	}
 }
@@ -1984,8 +1991,8 @@ body {
 		}
 	}
 
-/* @end Incidents list */	
-	
+/* @end Incidents list */
+
 /* @end Page Structure */
 
 /* @group Navigation */
