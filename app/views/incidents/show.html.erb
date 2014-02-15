@@ -1,7 +1,7 @@
 <% title "Incident #{@incident.incident_number}, #{@incident.incident_type} at #{@incident.location.name}, #{@incident.occured_on.strftime('%d %b %Y')}" %>
 
 <% description "#{@incident.summary}" %>
-	
+
 	<nav class="breadcrumbs supporting main">
 		<p><!-- <a href="http://detentionlogs.com.au/data/">Data</a> &gt;  --><a href="/data/incidents/" title="Explore incident records from Australia's immigration detention network">Incident Reports</a> &gt; <a href="<%=  url_for @incident %>" title="Page for Incident <%= @incident.incident_number %>"><%= @incident.incident_number %></a></p>
 	</nav>
@@ -9,7 +9,7 @@
 	<article class="incident" role="main">
 	    <section class="incident-primary main">
 	        <h1>Incident <%= @incident.incident_number %></h1>
-	        
+
 	        <% if @incident.detailed_report.path %>
 	        	<em class="detail-report-link"><a href="<%= @incident.detailed_report.url %>" title="Download the Incident Detail Report for this incident to find more information" class="docs-icon discrete distinct-download">See Incident Detail Report [PDF]</a></em>
             <% elsif !@incident.foi_requests.empty? %>
@@ -17,7 +17,7 @@
 	        <% else %>
 	        	<em class="detail-report-link"><a href="<%= url_for @incident %>/adopt" title="help get more information about this incident" class="discrete distinct-download">Adopt this incident</a></em>
 	        <% end %>
-	        
+
 	        <%= link_to 'What is an incident report?', page_path('data/incidents/about'), class: "supporting help", title: "About Incident Reports." %>
 			<dl class="incident-primary-meta">
 				<dt class="incident-type">Type</dt>
@@ -50,11 +50,7 @@
 	            <dt class="incident-location-details">Location Details</dt>
 	                <dd class="incident-location-details"><%= @incident.location_details %></dd>
 	    </dl>
-
-	     <section class="note box main" id="about">
-			
-			<h2 id="flaganissue">Flag an issue</h2>
-			
-			<p>If you have any issues, concerns or questions regarding this data please <a href="&#x6d;&#97;&#105;&#x6c;&#x74;&#x6f;&#x3a;&#100;&#101;&#x74;&#x65;&#x6e;&#x74;&#105;&#x6f;&#x6e;&#108;&#111;&#x67;&#x73;&#64;&#103;&#x6d;&#97;&#x69;&#x6c;&#x2e;&#x63;&#x6f;&#x6d;">&#99;&#x6f;&#110;&#x74;&#x61;&#99;&#x74; &#117;&#x73;</a>.</p>
-	     </section>
+	    <div class="main note">
+			<p class="discrete">If you have any issues, concerns, questions or suggestions regarding this data please <a href="/about/#contact" title="Contact Detention Logs">contact Detention&nbsp;Logs</a>.</p>
+		</div>
 	</article>
