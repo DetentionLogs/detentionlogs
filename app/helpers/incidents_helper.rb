@@ -4,8 +4,8 @@ module IncidentsHelper
   # with incident specific details. It also populates the form with tags that
   # can later be used for tracking requests
   def link_to_right_to_know_form(incident, text=nil)
-    url = "https://www.righttoknow.org.au/new/diac/?title=FOI%20Request%20for%20Detail%20Incident%20Report%20#{incident.incident_number};" + 
-      "body=To%20the%20Department%20of%20Immigration%20and%20Citizenship%2C%0A%0ADear%20Sir%2FMadam" + 
+    url = "https://www.righttoknow.org.au/new/diac/?title=FOI%20Request%20for%20Detail%20Incident%20Report%20#{incident.incident_number};" +
+      "body=To%20the%20Department%20of%20Immigration%20and%20Border%20Protection%2C%0A%0ADear%20Sir%2FMadam" +
       "%2C%0A%0AUnder%20the%20Freedom%20of%20Information%20Act%201982%20(Cth)%20I%20request%20the%20" +
       "following%20document%3A%0A%0AIncident%20Detail%20Report%20#{ incident.incident_number }%20" +
       "from%20the%20Department%27s%20Compliance%2C%20Case%20Management%2C%20Detention%20and%20" +
