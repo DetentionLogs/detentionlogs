@@ -1,56 +1,51 @@
-<% title "Incident #{@incident.incident_number}, #{@incident.incident_type} at #{@incident.location.name}, #{@incident.occured_on.strftime('%d %b %Y')}" %>
+<%
+  title "Incident #{@incident.incident_number}, #{@incident.incident_type} at #{@incident.location.name}, #{@incident.occured_on.strftime('%d %b %Y')}"
 
-<% description "#{@incident.summary}" %>
+  description "#{@incident.summary}"
+%>
 
-	<nav class="breadcrumbs supporting main">
-		<p><!-- <a href="http://detentionlogs.com.au/data/">Data</a> &gt;  --><a href="/data/incidents/" title="Explore incident records from Australia's immigration detention network">Incident Reports</a> &gt; <a href="<%=  url_for @incident %>" title="Page for Incident <%= @incident.incident_number %>"><%= @incident.incident_number %></a></p>
-	</nav>
+<%= render 'layouts/sub-nav', :breadcrumbs => true %>
 
-	<article class="incident" role="main">
-	    <section class="incident-primary main">
-	        <h1>Incident <%= @incident.incident_number %></h1>
+<div class="body-container">
+  <article class="incident incident-show-body" role="main">
+    <section class="incident-show-body-primary">
+      <h1 class="page-title p-name">Incident <%= @incident.incident_number %></h1>
 
-	        <% if @incident.detailed_report.path %>
-	        	<em class="detail-report-link"><a href="<%= @incident.detailed_report.url %>" title="Download the Incident Detail Report for this incident to find more information" class="docs-icon discrete distinct-download">See Incident Detail Report [PDF]</a></em>
-            <% elsif !@incident.foi_requests.empty? %>
-                <em class="detail-report-link"><%=link_to_right_to_know(@incident) %></em>
-	        <% else %>
-	        	<em class="detail-report-link"><a href="<%= url_for @incident %>/adopt" title="help get more information about this incident" class="discrete distinct-download">Adopt this incident</a></em>
-	        <% end %>
+      <%= render 'incidents/detail-report-link' %>
 
-	        <%= link_to 'What is an incident report?', page_path('data/incidents/about'), class: "supporting help", title: "About Incident Reports." %>
-			<dl class="incident-primary-meta">
-				<dt class="incident-type">Type</dt>
-					<dd class="incident-type"><%= @incident.incident_type %><!-- <a href="" class="supporting">see all incidents like this</a> --></dd>
-				<dt class="incident-occured-on">Occured On</dt>
-					<dd class="incident-occured-on"><time><%= @incident.occured_on.strftime("%d %b %Y %H:%M") %></time><!-- <a href="" class="supporting">see incidents on this day</a>--></dd>
-				<dt class="incident-location">Location</dt>
-					<dd class="incident-location"><%= @incident.location.name %>
-					<!--<strong class="add-details">info</strong> -->
-					<div class="additional-info discrete box note collapsible-content-collapsed">
-						<h2>About <%= @incident.location.name %></h2>
-						<%= raw(@incident.location.description) %>
-						<p><strong><a href="link to location search" title="index of available incidents from this locations">See all available incident records from <%= @incident.location %></a></strong></p>
-					</div>
-					</dd>
-			</dl>
-	    	<dl class="incident-summary">
-	    		<dt>Incident Summary</dt>
-		 	   		<dd class="distinct"><%= @incident.summary %></dd>
-	    	</dl>
-	    	<p></p>
-	    </section>
-	    <dl class="discrete main incident-additional">
-                <dt class="incident-informed-by">Informed By</dt>
-	            	<dd class="incident-informed-by"><%= @incident.informed_by %></dd>
-	            <dt class="incident-level"><abbr title="The level of incident is tied to the type, not decided by the detention facility staff who reported the incident.">Level</abbr></dt>
-	                <dd class="incident-level critical"><%= @incident.level %></dd>
-   	            <dt class="incident-number">Incident Number</dt>
-	                <dd class="incident-number"><%= @incident.incident_number %></dd>
-	            <dt class="incident-location-details">Location Details</dt>
-	                <dd class="incident-location-details"><%= @incident.location_details %></dd>
-	    </dl>
-	    <div class="main note">
-			<p class="discrete">If you have any issues, concerns, questions or suggestions regarding this data please <a href="/about/#contact" title="Contact Detention Logs">contact Detention&nbsp;Logs</a>.</p>
-		</div>
-	</article>
+      <%= link_to "What is an incident report?", "/data/incidents/about", :class => "supporting help" %>
+
+      <dl class="incident-data-list incident-primary-meta">
+        <dt class="incident-field-label incident-type">Type</dt>
+          <dd class="incident-field-value incident-type"><%= @incident.incident_type %></dd>
+
+        <dt class="incident-field-label incident-occurred-on">Occurred On</dt>
+          <dd class="incident-field-value incident-occurred-on"><time datetime="<%= @incident.occured_on %>"><%= @incident.occured_on.strftime("%d %b %Y %H:%M") %></time></dd>
+
+        <dt class="incident-field-label incident-location">Location</dt>
+          <dd class="incident-field-value incident-location"><%= @incident.location.name %></dd>
+      </dl>
+
+      <dl class="incident-summary">
+        <dt class="incident-field-label incident-summary">Incident Summary</dt>
+          <dd class="incident-field-value incident-summary"><%= @incident.summary %></dd>
+      </dl>
+    </section>
+
+    <dl class="incident-secondary">
+      <dt class="incident-field-label incident-informed-by">Informed By</dt>
+        <dd class="incident-field-value incident-informed-by"><%= @incident.informed_by %></dd>
+
+      <dt class="incident-field-label incident-level">Level</dt>
+        <dd class="incident-field-value incident-level"><%= @incident.level %></dd>
+
+      <dt class="incident-field-label incident-number">Incident Number</dt>
+        <dd class="incident-field-value incident-number"><%= @incident.incident_number %></dd>
+
+      <dt class="incident-field-label incident-location-details">Location Details</dt>
+        <dd class="incident-field-value incident-location-details"><%= @incident.location_details %></dd>
+    </dl>
+
+    <p class="msg msg-information">If you have any issues, concerns, questions or suggestions regarding this data please <a href="/about/#contact" title="Contact Detention Logs">contact Detention&nbsp;Logs</a>.</p>
+  </article>
+</div>
