@@ -1,0 +1,7 @@
+<li><%= link_to "Incident Explorer", :incidents, :title => "Explore incident records from Australia's immigration detention network" %></li>
+
+<li><%= link_to "Incident Report #{@incident.incident_number}", @incident %></li>
+
+<% if current_page?(incident_adopt_path(@incident)) %>
+<li><%= link_to "Adopt", incident_adopt_path(@incident) %></li>
+<% end %>

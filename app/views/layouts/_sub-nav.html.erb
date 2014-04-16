@@ -1,0 +1,27 @@
+<div class="sub-nav">
+  <% if breadcrumbs %>
+  <nav class="breadcrumbs" id="breadcrumbs">
+    <ul>
+      <% if controller.controller_name == 'incidents' && current_page?(incident_path(@incident)) || current_page?(incident_adopt_path(@incident)) %>
+
+      <%= render 'incidents/breadcrumbs' %>
+
+      <% end %>
+    </ul>
+  </nav>
+  <% end %>
+
+  <nav class="section-nav">
+    <ul>
+      <% if controller.controller_name == 'incidents' %>
+
+      <%= render 'incidents/section-nav' %>
+
+      <% else %>
+
+      <%= render 'layouts/section-nav' %>
+
+      <% end %>
+    </ul>
+  </nav>
+</div>
