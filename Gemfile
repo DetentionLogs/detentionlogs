@@ -10,6 +10,7 @@ gem 'high_voltage'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
+# postgreSQL
 gem 'pg'
 
 # Gems used only for assets and not required
@@ -24,6 +25,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+# pagination
 gem 'kaminari'
 
 gem 'jquery-rails'
@@ -40,6 +42,7 @@ group :development, :test do
   gem 'factory_girl_rails'
 end
 
+# Generates a sitemap for google
 gem 'sitemap_generator'
 
 # To use ActiveModel has_secure_password
