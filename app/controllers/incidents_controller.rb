@@ -11,21 +11,18 @@ class IncidentsController < ApplicationController
   # GET /incidents
   # GET /incidents.json
   def index
-
     @incidents =  apply_scopes(Incident).order("occured_on").page(params[:page]).per(50)
-
     @location_groups = LocationGroup.all
 
-	if params[:location] && params[:location] > ""
-    location = Location.find(params[:location])
-    @location_name = location.name
-	end
+  	if params[:location] && params[:location] > ""
+      location = Location.find(params[:location])
+      @location_name = location.name
+  	end
 
     @start_date = params[:by_period].try(:[], :start_date).try(:to_date) ||
       Incident.default_period_range.first
     @end_date = params[:by_period].try(:[], :end_date).try(:to_date) ||
       Incident.default_period_range.end
-
     @incident_types = Incident.uniq.pluck(:incident_type)
     logger.debug @incident_types
     respond_to do |format|
@@ -37,7 +34,6 @@ class IncidentsController < ApplicationController
   # GET /incidents/1
   # GET /incidents/1.json
   def show
-
     @incident = Incident.find(params[:id])
 
     respond_to do |format|
@@ -57,17 +53,13 @@ class IncidentsController < ApplicationController
 
 
   def show_by_incident_number
-
     @incident = Incident.where(["incident_number = ?", params[:incident_number]]).first
     redirect_to(@incident)
-
   end
 
   def adopt_by_incident_number
-
     @incident = Incident.where(["incident_number = ?", params[:incident_number]]).first
     redirect_to(incident_adopt_path(@incident))
-
   end
 
   # GET /incidents/new
@@ -88,9 +80,9 @@ class IncidentsController < ApplicationController
        format.json { render json: @incidents }
      end
   end
+
   # GET /incidents/1/edit
   def edit
-
     @incident = Incident.find(params[:id])
   end
 
@@ -139,8 +131,8 @@ class IncidentsController < ApplicationController
         format.json { render json: @incident.errors, status: :unprocessable_entity }
       end
     end
-
   end
+
   # DELETE /incidents/1
   # DELETE /incidents/1.json
   def destroy
