@@ -11,33 +11,39 @@
     <header class="article-header">
       <h1>Reporting Recipe</h1>
     </header>
-    <nav class="toc">
-        <h2>Contents</h2>
-        <ol>
-            <li><a href="#introduction">Introduction</a></li>
-            <li><a href="#approaching-incident-reports">Approaching detention centre incident reports</a>
-                <ol>
-                    <li><a href="#far-view">The far view</a></li>
-                    <li><a href="#cear-view">The near view</a></li>
-                </ol>
-            </li>
 
-            <li><a href="#casestudies">Case studies in detention: How can the data be used as part of a larger investigation or case study?</a></li>
-            <li><a href="#policies-and-procedures">Policies and procedures in detention centres</a></li>
-            <li><a href="#foi">Beyond the incident reports: how can FOI requests be lodged effectively to the Immigration Department?</a></li>
-            <li><a href="looking-forward">Looking forward</a></li>
+    <nav class="toc">
+      <h2>Contents</h2>
+      <ol>
+        <li><a href="#introduction">Introduction</a></li>
+
+        <li><a href="#approaching-incident-reports">Approaching detention centre incident reports</a>
+          <ol>
+            <li><a href="#far-view">The far view</a></li>
+
+            <li><a href="#cear-view">The near view</a></li>
+          </ol>
+        </li>
+
+        <li><a href="#casestudies">Case studies in detention: How can the data be used as part of a larger investigation or case study?</a></li>
+
+        <li><a href="#policies-and-procedures">Policies and procedures in detention centres</a></li>
+
+        <li><a href="#foi">Beyond the incident reports: how can FOI requests be lodged effectively to the Immigration Department?</a></li>
+
+        <li><a href="looking-forward">Looking forward</a></li>
       </ol>
     </nav>
 
     <h2 id="introduction">Introduction</h2>
 
-    <p>Detention Logs launched in June 2013, releasing <a href="http://detentionlogs.com.au/data/incidents" title="Explore incident reports from immigration detention facilities">over 7000 incident reports</a> from Australia’s immigration detention centres. These reports are the centre managers’ own recordings of events in detention; from <a href="/data/incidents?incident_type=Failure+-+IT+Systems" title=" 219 Failure - IT Systems incident reports between 03 Oct 2009 and 26 May 2011. ">IT failures</a> to <a href="/data/incidents?incident_type=Riot" title="2 Riot incident reports between 03 Oct 2009 and 26 May 2011.">riots</a>; from <a href="/data/incidents?&incident_type=Self+Harm+-+Actual" title="336 Self Harm - Actual incident reports between 03 Oct 2009 and 26 May 2011.">self-harm</a> to <a href="/data/incidents?incident_type=Birth+of+a+child" title="28 Birth of a child incident reports between 03 Oct 2009 and 26 May 2011.">births</a> to <a href="/data/incidents?incident_type=Media+-+Unauthorised+presence" title="86 Media - Unauthorised presence incident reports between 03 Oct 2009 and 26 May 2011.">unauthorised media access</a>.</p>
+    <p>Detention Logs launched in June 2013, releasing <%= link_to "over 7000 incident reports", incidents_path, title: 'Explore incident reports from immigration detention facilities' %> from Australia’s immigration detention centres. These reports are the centre managers’ own recordings of events in detention; from <%= link_to "IT failures", incidents_path(incident_type: 'Failure - IT Systems') %> to <%= link_to "riots", incidents_path(incident_type: 'Riot') %>; from <%= link_to "self-harm", incidents_path(incident_type: 'Self Harm - Actual') %> to <%= link_to "births", incidents_path(incident_type: 'Birth of a child') %> to <%= link_to "unauthorised media access", incidents_path(incident_type: 'Media - Unauthorised presence') %>.</p>
 
-    <p>Since then, journalists have been drawing on the incident reports as an information source in their <a href="/investigations" title="See investigations that draw on data published by Detention Logs or relate to the project.">investigations</a>. They&#8217;ve come from a range of publications, covered a range of detention issues, and used the reports in both small ways, to add detail and facts, and large ways, to raise questions and support insight into the immigration detention network.</p>
+    <p>Since then, journalists have been drawing on the incident reports as an information source in their <%= link_to "investigations", :investigations, title: 'See investigations that draw on data published by Detention Logs or relate to the project.' %>. They&#8217;ve come from a range of publications, covered a range of detention issues, and used the reports in both small ways, to add detail and facts, and large ways, to raise questions and support insight into the immigration detention network.</p>
 
     <p>These investigations have only scratched the surface. They are the starting point for many more stories to come. We want to encourage and assist people using Detention Logs resources in reporting, research, investigation and in ways we can’t yet imagine. We strongly believe that deeper insight into Australia’s immigration detention system is in the public interest.</p>
 
-    <p>In line with our <a href="/principles" title="Our reporting and design principles.">project principles</a>, and inspired by <a href="http://www.propublica.org/article/reporting-recipe-four-stories-using-free-the-files" title="Reporting Recipe: Four Stories You Can Write Using Free the Files, at ProPublica">ProPublica&#8217;s lead</a>, we are providing this guide, a <em>reporting recipe</em>. It walks through methods used by reporters to find insights in Detention Logs data and suggests some new approaches for the future. We aim to expand this guide over time, <a href="/about/#contact" title="contact Detention Logs.">ideas and contributions are very well</a>.</p>
+    <p>In line with our <%= link_to "project principles", :principles, title: 'Our reporting and design principles.' %>, and inspired by <a href="http://www.propublica.org/article/reporting-recipe-four-stories-using-free-the-files" title="Reporting Recipe: Four Stories You Can Write Using Free the Files, at ProPublica">ProPublica&#8217;s lead</a>, we are providing this guide, a <em>reporting recipe</em>. It walks through methods used by reporters to find insights in Detention Logs data and suggests some new approaches for the future. We aim to expand this guide over time, <%= link_to "ideas and contributions are very well", about_path(anchor: 'contact'), title: 'contact Detention Lgos' %>.</p>
 
     <!-- Why report on immigration detention?
 
@@ -47,11 +53,11 @@
 
     <h2 id="approaching-incident-reports">Approaching detention centre incident reports</h2>
 
-    <p>First thing, you’ll want to <a href="/data/incidents/about" title="An introduction to Incident Reports">read about the Incident Report data</a> and <a href="/data/incidents/" title="Explore incident reports from immigration detention facilities">familiarise yourself by exploring</a>. Once that&#8217;s done, one approach to analysing and finding stories in data is by taking <em>near</em> and <em>far</em> views.</p>
+    <p>First thing, you’ll want to <%= link_to "read about the Incident Report data", id: 'about_incidents', title: 'An introduction to incident reports' %> and <%= link_to "familiarise yourself by exploring", incidents_path, title: 'Explore incident reports from immigration detention facilities' %>. Once that&#8217;s done, one approach to analysing and finding stories in data is by taking <em>near</em> and <em>far</em> views.</p>
 
     <h3 id="far-view">The far view</h3>
 
-    <p>When we take the “far view” approach, we’re looking at the data in aggregate, collections such as; all available reports from <a href="/data/incidents?location=20" title="782 incident reports from Curtin IDC between 03 Oct 2009 and 26 May 2011.">Curtin Immigration Detention Centre</a>; <a href="/data/incidents?utf8=%E2%9C%93&incident_type=Assault+-+Serious&location=&by_period[start_date]=2010-01-01&by_period[end_date]=2011-01-01" title="22 Assault - Serious incident reports between 01 Jan 2010 and 01 Jan 2011.">every "serious" assault recorded across all centres in 2010</a> or, <a href="https://s3.amazonaws.com/detention_logs/Dataset+for+incident+database.csv" title="Spreadsheet of all the incident data.">every available incident [1.7 MB .csv]</a>. We’re trying to make comparisons between different variable such as time, location or incident type. Are there trends or patterns that emerge?</p>
+    <p>When we take the “far view” approach, we’re looking at the data in aggregate, collections such as; all available reports from <%= link_to "Curtin Immigration Detention Centre", incidents_path(location: 20) %>; <%= link_to "every \"serious\" assault recorded across all centres in 2010", incidents_path( incident_type: 'Assault - Serious',:by_period => { :start_date => '2010-01-01', :end_date => '2011-01-01' } ) %> or, <a href="https://s3.amazonaws.com/detention_logs/Dataset+for+incident+database.csv" title="Spreadsheet of all the incident data.">every available incident [1.7 MB .csv]</a>. We’re trying to make comparisons between different variable such as time, location or incident type. Are there trends or patterns that emerge?</p>
 
     <p>You’ll want to quickly get your head around the basic analysis tools in Excel, Google Spreadsheets or <a href="http://openrefine.org/" title="A free, open source, powerful tool for working with messy data">Open Refine</a>. Don&#8217;t be intimidated by spreadsheets, you’ll quickly pick up the basic skills you need.</p>
 
@@ -92,9 +98,9 @@
 
     <p>A good way to start is to do a text search of the <a href="https://s3.amazonaws.com/detention_logs/Dataset+for+incident+database.csv" title="Spreadsheet of all the incident data.">the raw incident reports spreadsheet [1.7 MB .csv]</a>.</p>
 
-    <p>When we searched “asbestos”, Excel returned an <a href="http://detentionlogs.com.au/data/incidents/50572" title="Incident 1-2WZXX1, Contamination/infection at Villawood IDC, 14 Dec 2009.">incident report from 2009 in which a contractor had found asbestos in the mess area at Villawood Detention Centre</a>. Further research into asbestos suggested a follow-up <a href="http://www.oaic.gov.au/freedom-of-information/about-freedom-of-information">Freedom of Information</a> request be lodged for <a href="http://180e445fd106594d67fa-90838519251340c11e390e671a4748ab.r95.cf1.rackcdn.com/uploads/2012-Villawood-Asbestos-Register.pdf">the hazardous materials register for the centre</a>. After recieving that document, The Detention Logs team published <a href="http://www.theglobalmail.org/feature/toxic-villawood-government-warned-of-continuing-asbestos-risk/604/">a report with The Global Mail about the high levels of contaminations</a> which led to <a href="http://www.theglobalmail.org/feature/villawood-contamination-police-threaten-boycott/607/">calls by the NSW Police Association for the safety of the facility to be investigated</a>.</p>
+    <p>When we searched “asbestos”, Excel returned an <%= link_to 'incident report from 2009 in which a contractor had found asbestos in the mess area at Villawood Detention Centre', incident_path(50572), title: 'Incident 1-2WZXX1, Contamination/infection at Villawood IDC, 14 Dec 2009.' %>. Further research into asbestos suggested a follow-up <a href="http://www.oaic.gov.au/freedom-of-information/about-freedom-of-information">Freedom of Information</a> request be lodged for <a href="http://180e445fd106594d67fa-90838519251340c11e390e671a4748ab.r95.cf1.rackcdn.com/uploads/2012-Villawood-Asbestos-Register.pdf">the hazardous materials register for the centre</a>. After recieving that document, The Detention Logs team published <a href="http://www.theglobalmail.org/feature/toxic-villawood-government-warned-of-continuing-asbestos-risk/604/">a report with The Global Mail about the high levels of contaminations</a> which led to <a href="http://www.theglobalmail.org/feature/villawood-contamination-police-threaten-boycott/607/">calls by the NSW Police Association for the safety of the facility to be investigated</a>.</p>
 
-    <p>Freedom of Information (FOI) requests are an essential tool for accessing government documents. We used FOI requests to get the <a href="http://detentionlogs.com.au/data/incidents">full incident report dataset</a>, and many of the <em>Incident Detail Reports</em> that provide more information on individual incidents.</p>
+    <p>Freedom of Information (FOI) requests are an essential tool for accessing government documents. We used FOI requests to get the <%= link_to "full incident report dataset", incidents_path %>, and many of the <em>Incident Detail Reports</em> that provide more information on individual incidents.</p>
 
     <p>If you would like to get more information out about an incident, you can easily submit a FOI request for its Incident Detail Report by clicking the “Adopt this incident” link near the heading on the incident page.</p>
 
@@ -104,7 +110,7 @@
 
     <h2 id="casestudies">Case studies in detention: How can the data be used as part of a larger investigation or case study?</h2>
 
-    <p>One of the first incident reports that caught our eye reads, <a href="http://detentionlogs.com.au/data/incidents/43084" title="Incident 1-7AFG2G, Self Harm - Actual at Villawood IDC, 25 May 2011">&ldquo;Client REDACTED attempted actual self harm in SKSA holding rooms&rdquo;</a>.</p>
+    <p>One of the first incident reports that caught our eye reads, <%= link_to(raw("&ldquo;Client REDACTED attempted actual self harm in SKSA holding rooms&rdquo;"), incident_path(43084), title: 'Incident 1-7AFG2G, Self Harm - Actual at Villawood IDC, 25 May 2011') %>.</p>
 
     <p>SKSA stands for Sydney Kingsford Smith Airport (Sydney International Airport). What did it mean “attempted <em>actual</em> self harm”? What had  really happened? What were the procedures around detainee transportation and how had they failed? What duty of care does the immigration department and detention centre staff have to people being detained? The incident summary does not provide answers.</p>
 
@@ -122,7 +128,7 @@
 
     <p>What does the incident report data reveal about how day to day operations at detention centres compare with official procedures and policies? The information in the reports has been used to question statements made by the Immigration Department, revealing inaccuracies, false claims and at times, what seems like an intent to mislead the public.</p>
 
-    <p>A strong example is Daniel Flitton’s story in The Age, <a href="http://www.smh.com.au/national/officials-admit-sedative-used-in-detention-20130615-2oavo.html">Officials admit sedative used in detention</a>. It’s been a longstanding policy of both the Immigration Department and <a href="http://detentionlogs.com.au/glossary/#Serco">Serco</a> that detainees are not to be forcefully medicated or sedated. The incident reports show two clear instances where detainees on Christmas Island had been pinned down and injected with tranquilizers, incidents <a href="http://detentionlogs.com.au/data/incidents/49309">1-4FKOKY</a> and <a href="http://detentionlogs.com.au/data/incidents/43903">1-6ZY2JS</a>.</p>
+    <p>A strong example is Daniel Flitton’s story in The Age, <a href="http://www.smh.com.au/national/officials-admit-sedative-used-in-detention-20130615-2oavo.html">Officials admit sedative used in detention</a>. It’s been a longstanding policy of both the Immigration Department and <%= link_to "Serco", glossary_path(anchor: 'Serco') %> that detainees are not to be forcefully medicated or sedated. The incident reports show two clear instances where detainees on Christmas Island had been pinned down and injected with tranquilizers, incidents <%= link_to "1-4FKOKY", incident_path(49309) %> and <%= link_to "1-6ZY2JS", incident_path(43903) %>.</p>
 
     <p><a href="https://twitter.com/NatalieJourno">Natalie O’Brien</a> produced a report on sexual assaults in mainland detention centres, <a href="http://www.smh.com.au/national/assault-gang-rape-claims-in-detention-rise-20130727-2qrl7.html">Assault, gang rape claims in detention rise</a>, for The Sydney Morning Herald following <a href="http://www.sbs.com.au/dateline/story/about/id/601700/n/Manus-Whistleblower">SBS Dateline’s program on assaults at Manus Island immigration facilities</a>. For the investigation O’Brien submitted an FOI request for documents relating to sexual assaults in mainland facilities. In response she received a small number of documents which had already been made publicly available at a 2011 Senate hearing, and nothing else. This was fairly remarkable because a quick scan of the incident reports data at Detention Logs revealed a number of incidents of sexual assault allegations. The Department’s own search of their records in responding to O’Brien’s request, was clearly incomplete.</p>
 
@@ -138,7 +144,7 @@
 
     <p>One of the key insights from the data is that the recording of incidents in detention is haphazard, incomplete and prone to error. Always be skeptical of claims made in reports, and consider what may not have been recorded. Understand that these records are made by staff, on the ground, in stressful situations, and that a minority of them are reviewed by managers. Follow up and draw out more information into the public record so that facilities become more transparent to investigation and historical analysis.</p>
 
-    <p><a href="/about/#contact" title="contact Detention Logs.">Contact Detention Logs</a> if you have any questions or suggestions. You can also get us on Twitter with <a href="http://twitter.com/detentionlogs" title="Detention Logs on Twitter">@detentionlogs</a>.</p>
+    <p><%= link_to "Contact Detention Logs", about_path(anchor: 'contact') %> if you have any questions or suggestions. You can also get us on Twitter with <a href="http://twitter.com/detentionlogs" title="Detention Logs on Twitter">@detentionlogs</a>.</p>
 
     <p>We hope to expand this guide as the resource grows and is used in new ways over time.</p>
   </article>
