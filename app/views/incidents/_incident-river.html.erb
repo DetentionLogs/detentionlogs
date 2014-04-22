@@ -1,0 +1,22 @@
+<section class="incident-river">
+  <ol class="incident-river-header-row">
+    <li class="incident-occurred-on">Occurred</li>
+    <li class="incident-type">Type</li>
+    <li class="incident-location">Location</li>
+    <li class="incident-summary">Summary</li>
+    <li class="incident-location-details">Location Details</li>
+    <li class="incident-number">Number</li>
+  </ol>
+
+  <ol class="incident-river-body">
+    <% @incidents.each do |incident| %>
+    <li>
+      <%= render 'incident-river-item' %>
+    </li>
+    <% end %>
+  </ol>
+</section>
+
+<div class="pagination-details"><%=  page_entries_info @incidents %></div>
+
+<%= paginate @incidents %>
