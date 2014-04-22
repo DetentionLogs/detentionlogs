@@ -1,10 +1,10 @@
-<%= form_tag incidents_path, :method => :get do %>
+<%= form_tag incidents_path, :method => :get, :class => 'incident-filters', :id => 'filters' do %>
 	<legend>Filter Incident List</legend>
 	<fieldset class="type">
 		<label for="incident_type">Type</label>
 		<%= select_tag(:incident_type, options_from_collection_for_select(@incident_types, 'to_s', 'to_s', params[:incident_type]), :prompt => "All") %>
 	</fieldset>
-	
+
 	<fieldset class="location">
 		<label for="location">Location</label>
 		<%= select_tag(:location, option_groups_from_collection_for_select(@location_groups, :locations, :name, :id, :name, params[:location]), :prompt => "All") %>
@@ -21,6 +21,6 @@
 		<label for="by_detailed_report">Has detail report</label>
 	<%=check_box_tag :by_detailed_report, 'true', !!params[:by_detailed_report] %>
 	</fieldset>
-	
+
 	<input class="btn" type="submit" role="button" value="Go"/>
 <% end %>
