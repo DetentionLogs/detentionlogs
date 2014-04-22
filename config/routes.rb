@@ -11,7 +11,7 @@ Detentionlogs::Application.routes.draw do
   get '/glossary' => 'high_voltage/pages#show', :id => 'glossary'
   get '/about' => 'high_voltage/pages#show', :id => 'about'
   get '/contribute' => 'high_voltage/pages#show', :id => 'contribute'
-  get '/data/incidents/about' => 'high_voltage/pages#show', :id => 'about_incidents'
+#  get '/data/incidents/about' => 'high_voltage/pages#show', :id => 'about_incidents'
   get '/copyright' => 'high_voltage/pages#show', :id => 'copyright'
 
   #resources :location_groups
@@ -33,6 +33,15 @@ Detentionlogs::Application.routes.draw do
   match 'data/incidents/incident_number/:incident_number' => 'incidents#show_by_incident_number'
   match 'data/incidents/foi_summary.:format' => 'incidents#foi_summary'
   match 'populate_location_id' => 'data/incidents#populate_location_id'
+
+  # provides route for the 'about' incidents action.
+  scope '/data' do
+    resources :incidents do
+      collection do
+        get 'about'
+      end
+    end
+  end
 
   scope :path => '/data' do
     resources :incidents do

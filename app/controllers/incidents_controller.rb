@@ -144,4 +144,8 @@ class IncidentsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def about
+
+  end
 end
