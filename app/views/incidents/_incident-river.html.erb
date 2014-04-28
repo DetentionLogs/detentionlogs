@@ -50,7 +50,8 @@
         <dl class="incident-secondary-linkgroup">
           <dt class="incident-field-label incident-number"><abbr title="Incident">In.</abbr> Number</dt>
             <dd class="incident-field-value incident-number">
-              <%= link_to "Incident #{incident.incident_number}", @incident, title: 'Get more information about Incident #{incident.incident_number}' do %>
+              <%= link_to incident, title: 'Get more information about Incident #{incident.incident_number}' do %>
+                <%= incident.incident_number %>
                 <span class="incident-link btn">see&nbsp;details<i> &rarr;</i></span>
               <% end %>
               <% if incident.detailed_report.path %><a href="<%= incident.detailed_report.url %>" title="Download the Incident Detail Report for this incident to find more information" class="docs-icon supporting distinct-download">Detail Report</a><% end %>
