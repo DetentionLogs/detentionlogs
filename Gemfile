@@ -45,6 +45,14 @@ end
 # Generates a sitemap for google
 gem 'sitemap_generator'
 
+# CSS related gems
+gem "sass", "~>3.3.2"
+gem "compass", "~>1.0.0.alpha.17"
+gem "compass-rails"
+gem "singularitygs", "~>1.2.0"
+gem "modular-scale", "~>2.0.4"
+
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
