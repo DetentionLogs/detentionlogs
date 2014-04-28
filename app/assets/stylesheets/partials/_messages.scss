@@ -1,0 +1,25 @@
+.msg {
+    @include rem(padding, ms(-5), ms(-5), ms(-3));
+    @include rem(border-top-width, ms(-3));
+    border-top-style: solid;
+}
+
+.msg-error {
+    background-color: lighten($color-error, 20%);
+    border-top-color: $color-error;
+}
+
+.msg-valid {
+    background-color: lighten($color-valid, 40%);
+    border-top-color: $color-valid;
+}
+
+.msg-note {
+    background-color: $color-salient-light-2;
+    border-top-color: $color-warning;
+}
+
+.msg-information {
+    background-color: lighten($color-information, 20%);
+    border-top-color: $color-information;
+}

@@ -1,0 +1,52 @@
+
+.incident-adopt-action {
+    @include rem(padding, ms(-3), ms(-3));
+    @include rem(margin-top, ms(2));
+    text-align: center;
+    background-color: $color-salient-light-2;
+    clear: both;
+    display: block;
+
+    h1 {
+        @extend .loud;
+        float: none;
+        margin: 0;
+        margin-top: 0;
+        width: auto;
+        font-weight: normal;
+    }
+
+    .incident-adopt-body & {
+        @include breakpoint($bp-m) {
+            @include rem(margin-top, ms(6));
+            @include rem(margin-bottom, ms(6));
+            @include rem(padding, ms(1), ms(3));
+            // @include grid-span(9, 2);
+            // float: none;
+            // clear: both;
+        }
+
+        @include breakpoint($bp-l) {
+            margin-right: auto;
+            margin-left: auto;
+            max-width: column-span(8, 2, 9);
+        }
+
+        @include breakpoint($bp-xxl) {
+            @include rem(margin-top, ms(10));
+            @include rem(margin-bottom, ms(10));
+            max-width: column-span(7, 3, 9);
+            // @include grid-span(7, 3);
+            // float: none;
+            // clear: both;
+        }
+    }
+}
+
+.incident-adopt-body {
+    > * {
+        @extend %default-text-block;
+        margin-right: auto;
+        margin-left: auto;
+    }
+}

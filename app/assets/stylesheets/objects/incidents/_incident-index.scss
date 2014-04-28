@@ -1,0 +1,333 @@
+.incident-index {
+    .page-header,
+    .page-header + .incident-filters,
+    .incident-filters + h2.supporting,
+    .incident-index-results-description {
+        @include breakpoint($bp-xxl) {
+            @include grid-span(9, 2);
+            float: none;
+            clear: both;
+        }
+    }
+
+    .page-title {
+        @extend h2;
+
+        @media (max-width: $bp-s) {
+            margin-top: 0;
+        }
+
+        + p {
+            margin-top: 0;
+        }
+    }
+
+    .lede-sub-link {
+        @include breakpoint($bp-m) {
+            display: none;
+        }
+    }
+}
+
+.incident-river {
+    clear: both;
+    float: none;
+
+    ol {
+        list-style: none;
+
+        @include breakpoint(50em) {
+            margin-top: 0;
+        }
+    }
+
+    li {
+        margin-top: 0;
+    }
+}
+
+.incident-river-header-row {
+    display: none;
+
+    @include breakpoint(50em) {
+        @include rem(padding, ms(-3), ms(-10));
+        @include rem(font-size, ms(0));
+        @include clearfix;
+        display: block;
+        margin-bottom: 0;
+        background-color: $color-grey-light;
+    }
+}
+
+.incident-river-header-row .incident-occurred-on {
+    @include breakpoint(50em) {
+        @include isolation-span(1, 1, none, $grid: 8);
+    }
+
+    @include breakpoint(70em) {
+        @include isolation-span(1, 1, none, $grid: 10);
+    }
+}
+
+.incident-river-header-row .incident-type {
+    @include breakpoint(50em) {
+        @include isolation-span(1, 2, none, $grid: 8);
+    }
+
+    @include breakpoint(70em) {
+        @include isolation-span(1, 2, none, $grid: 10);
+    }
+}
+
+.incident-river-header-row .incident-location {
+    @include breakpoint(50em) {
+        @include isolation-span(1, 3, none, $grid: 8);
+    }
+
+    @include breakpoint(70em) {
+        @include isolation-span(1, 3, none, $grid: 10);
+    }
+}
+
+.incident-river-header-row .incident-summary {
+    @include breakpoint(50em) {
+        @include isolation-span(4, 4, none, $grid: 8);
+    }
+
+    @include breakpoint(70em) {
+        @include isolation-span(4, 4, none, $grid: 10);
+    }
+}
+
+.incident-river-header-row .incident-location-details {
+    display: none;
+
+    @include breakpoint(70em) {
+        display: block;
+        @include isolation-span(2, 8, none, $grid: 10);
+    }
+}
+
+.incident-river-header-row .incident-number {
+    @include breakpoint(50em) {
+        @include isolation-span(1, 8, right, $grid: 8);
+    }
+
+    @include breakpoint(70em) {
+        @include isolation-span(1, 10, right, $grid: 10);
+    }
+}
+
+.incident-river-body {
+    padding: 0;
+}
+
+.incident-river-item-title {
+    @include visuallyhidden;
+}
+
+.incident-river-item {
+    @include clearfix;
+    @include rem(font-size, ms(0));
+    @include rem(padding, ms(0), 0);
+    border-bottom: 1px $color-grey-light solid;
+
+    @include breakpoint($bp-m) {
+        &:nth-child(2n+2) {
+            background-color: $color-grey-light-3;
+        }
+    }
+
+    dl { margin-top: 0; }
+
+    dd { @include rem(margin-bottom, ms(-5)); }
+
+    .incident-field-label {
+        @include rem(margin-right, ms(-7));
+        font-size: 90%;
+        float: left;
+        clear: left;
+
+        @include breakpoint(50em) {
+            @include visuallyhidden;
+        }
+    }
+
+    .incident-primary-meta {
+        @include breakpoint($bp-s) {
+            @include isolation-span(4, 1, left, $grid: 8);
+        }
+
+        @include breakpoint(41.2em) {
+            @include isolation-span(3, 1, left, $grid: 8);
+        }
+
+        @include breakpoint(50em) {
+            @include isolation-span(3, 1, left, $grid: 8);
+
+            .incident-field-value {
+                font-weight: normal;
+            }
+        }
+
+        @include breakpoint(70em) {
+            @include isolation-span(3, 1, none, $grid: 10);
+        }
+    }
+
+    .incident-field-value.incident-occurred-on {
+        @include breakpoint(50em) {
+           @include isolation-span(1, 1, left, $grid: 3);
+        }
+
+        @include breakpoint(70em) {
+            @include isolation-span(1, 1, left, $grid: 3);
+        }
+    }
+    .incident-field-value.incident-type {
+        @include breakpoint(50em) {
+            @include isolation-span(1, 2, none, $grid: 3);
+        }
+
+        @include breakpoint(70em) {
+            @include isolation-span(1, 2, none, $grid: 3);
+        }
+    }
+    .incident-field-value.incident-location {
+        @include breakpoint(50em) {
+            @include isolation-span(1, 3, right, $grid: 3);
+        }
+
+        @include breakpoint(70em) {
+            @include isolation-span(1, 3, right, $grid: 3);
+        }
+    }
+
+    .incident-main {
+        @include clearfix;
+        clear: both;
+
+        @include breakpoint($bp-s) {
+            @include isolation-span(4, 5, right, $grid: 8);
+        }
+
+        @include breakpoint(41.2em) {
+            @include isolation-span(5, 4, right, $grid: 8);
+        }
+
+        @include breakpoint(50em) {
+            @include isolation-span(4, 4, none, $grid: 8);
+        }
+
+        @include breakpoint(70em) {
+            @include isolation-span(4, 4, none, $grid: 10);
+        }
+    }
+
+    .incident-summary,
+    .incident-location-details {
+        display: inline;
+        float: none;
+        clear: both;
+    }
+
+    .incident-secondary,
+    .incident-secondary-linkgroup {
+        @include rem(margin-top, ms(-5));
+
+        @include breakpoint($bp-s) {
+            @include isolation-span(4, 5, right, $grid: 8);
+        }
+
+        @include breakpoint(41.2em) {
+            @include isolation-span(5, 4, right, $grid: 8);
+        }
+
+        @include breakpoint(50em) {
+            margin-top: 0;
+        }
+    }
+
+    .incident-secondary {
+        @include breakpoint(50em) {
+            @include visuallyhidden;
+        }
+
+        @include breakpoint(70em) {
+            @include isolation-span(2, 8, none, $grid: 10);
+            position: relative;
+            height: auto;
+        }
+    }
+
+    .incident-secondary-linkgroup {
+        @include breakpoint(50em) {
+            @include isolation-span(1, 8, right, $grid: 8);
+        }
+
+        @include breakpoint(70em) {
+            @include isolation-span(1, 10, right, $grid: 10);
+        }
+    }
+
+    .incident-link {
+        @include rem(margin-top, ms(-5));
+        float: right;
+        clear: right;
+
+        @include breakpoint(50em) {
+            display: block;
+            float: none;
+            clear: none;
+            padding: 0;
+            background-color: transparent;
+
+            &:hover,
+            &:focus {
+                color: $color-black;
+            }
+
+            i {
+                display: none;
+            }
+        }
+    }
+}
+
+.has-detailed-report {
+    a.incident-number {
+        color: $color-salient;
+
+        @include breakpoint($bp-s) {
+            color: darken($color-salient, 25%);
+        }
+    }
+
+    .incident-link {
+        background-color: $color-salient;
+        color: $color-black;
+
+        &:hover,
+        &:focus {
+            background-color: $color-black;
+            color: #fff;
+        }
+
+        @include breakpoint($bp-s) {
+            background-color: transparent;
+            color: darken($color-salient, 25%);
+
+            &:hover,
+            &:focus {
+                color: $color-black;
+            }
+        }
+    }
+}
+
+.requestmore-incidents {
+    @include rem(margin-top, ms(2));
+    display: block;
+    width: 100%;
+    text-align: center;
+}

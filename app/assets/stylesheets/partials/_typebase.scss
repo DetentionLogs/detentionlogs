@@ -1,0 +1,146 @@
+.typebase {
+    @include rem(font-size, ms(1) );
+    line-height: ms(4);
+
+    @include breakpoint($bp-xl) {
+        @include rem(font-size, ms(2) );
+    }
+}
+
+body {
+    @extend .typebase;
+    background-color: $color-white;
+    color: $color-black;
+    font-family: $font;
+}
+
+p {
+    @include rem(margin-top, ms(2));
+}
+
+h1 {
+    @include rem(font-size, ms(4));
+    @include rem(margin, ms(6), 0, 0);
+    font-weight: bold;
+
+    @include breakpoint($bp-m) {
+        @include rem(font-size, ms(6));
+    }
+
+    @include breakpoint($bp-xxl) {
+        @include rem(margin, ms(9), 0, 0);
+        @include rem(font-size, ms(8));
+    }
+
+    @include breakpoint($bp-xxxl) {
+        @include rem(margin, ms(11), 0, 0);
+
+    }
+}
+
+h2 {
+    @include rem(font-size, ms(3));
+    @include rem(margin, ms(6), 0, 0);
+    font-weight: bold;
+
+    @include breakpoint($bp-xxl) {
+        @include rem(font-size, ms(4));
+        @include rem(margin, ms(8), 0, 0);
+    }
+}
+
+h3 {
+    @extend .typebase;
+    @include rem(margin, ms(5), 0, 0);
+    font-style: bold;
+    text-transform: uppercase;
+    letter-spacing: .125em;
+}
+
+h4 {
+    @extend .typebase;
+    @include rem(margin, ms(2), 0, 0);
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+h5 {
+    @include rem(margin, ms(2), 0, 0);
+}
+
+h6 {
+    @include rem(margin, ms(2), 0, 0);
+}
+
+strong { font-weight: bold; }
+
+cite,
+em {
+    font-style: italic;
+}
+
+abbr {
+    @include rem(letter-spacing, 0.0625);
+    border-bottom: 1px #aaa dashed;
+    text-decoration: none;
+    cursor: help;
+}
+
+code {
+    font-family: monospace;
+}
+
+blockquote {
+    @include rem(margin-top, ms(2));
+    @include rem(padding-left, ms(2));
+    @include rem(border-left-width, ms(-3));
+    border-left-color: $color-grey-light;
+    border-left-style: solid;
+    font-style: italic;
+
+    @include breakpoint($bp-s) {
+        @include rem(padding-left, ms(6));
+    }
+}
+
+div[aria-hidden="true"]  { display:none; }
+div[aria-hidden="false"] { display:block; }
+
+.supporting {
+    @include rem(font-size, ms(0) );
+
+    // @include breakpoint($bp-xl) {
+    //     @include rem(font-size, ms(1) );
+    // }
+}
+
+.loud {
+    @include rem(font-size, ms(2) );
+
+    @include breakpoint($bp-l) {
+        @include rem(font-size, ms(3) );
+    }
+}
+
+.lede {
+    @extend .loud;
+    line-height: ms(3);
+}
+
+.lede-sub-link {
+    @extend .supporting;
+    display: inline-block;
+}
+
+.article-header + p {
+    @include rem(font-size, ms(2) );
+}
+
+
+.body-container :target {
+    background-color: $color-salient-light;
+}
+
+.page-title {
+    display: inline-block;
+}

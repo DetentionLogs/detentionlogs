@@ -1,0 +1,106 @@
+
+//Colors
+
+// http://color.hailpixel.com/#ffffff,333333
+$color-white : #ffffff;
+$color-black : #333333;
+
+// http://color.hailpixel.com/#467719,5F942E,2A480F
+$color-primary : #467719;
+$color-primary-light : #5F942E;
+$color-primary-dark : #2A480F;
+
+// http://color.hailpixel.com/#EEB73F,F6DCA2,FBEFD6,A27410
+$color-salient : #EEB73F;
+$color-salient-light : #F6DCA2;
+$color-salient-light-2 : #FBEFD6;
+$color-salient-dark : #A27410;
+
+$color-dim : rgba(0,0,0,0.5);
+
+// http://color.hailpixel.com/#9a9a9a,eaeaea,eeeeee,dddddd,666666,333333,131313
+$color-grey : #9a9a9a;
+$color-grey-light : #eaeaea;
+$color-grey-light-2 : #eee;
+$color-grey-light-3 : #fafafa;
+$color-grey-med : #959595;
+$color-grey-dark : #444;
+$color-grey-dark-2 : #222;
+
+// http://color.hailpixel.com/#ff0000,467719,fff664,009DD6
+$color-error : #CD3737;
+$color-valid : $color-primary;
+$color-submit : #009DD6;
+$color-submit-dark : #1A65A2;
+$color-warning : $color-salient-light;
+$color-information : $color-grey;
+
+    // patternlab
+    .sg-swatch--white {
+        background: $color-white;
+    }
+
+    .sg-swatch--black {
+        background: $color-black;
+    }
+
+    .sg-swatch--primary {
+        background: $color-primary;
+    }
+
+    .sg-swatch--salient {
+        background: $color-salient;
+    }
+
+    .sg-swatch--grey {
+        background: $color-grey;
+    }
+
+//Typefaces
+$font : "Open Sans", verdana, "HelveticaNeue", "Helvetica", "Arial", sans-serif;
+
+//Modular Scale
+
+$ms-base: 0.875 1.125 1.625;
+$ms-ratio: $phi;
+
+@debug ms-list(-10, 10, $ms-base, $ms-ratio);
+
+//Breakpoints
+$bp-xxs:  20em;
+$bp-xs:  30em;
+$bp-s: 35em;
+$bp-m: 43em;
+$bp-l:  55em;
+$bp-xl: 65em;
+$bp-xxl: 75em;
+$bp-xxxl: 85em;
+
+// Grids
+@include add-grid(2);
+@include add-gutter( ms(-13) );
+
+@include breakpoint($bp-s) {
+    @include add-grid(8);
+    @include add-gutter( ms(-8));
+}
+
+@include breakpoint($bp-m) {
+    @include add-grid(11);
+    @include add-gutter( ms(-7));
+}
+
+@include breakpoint($bp-xxl) {
+    @include add-gutter( ms(-7));
+}
+
+// @include add-grid(8 at $bp-m);
+// @include add-gutter( ms(-13) at $bp-m );
+
+// $grids: add-grid(9 at $l);
+// $gutters: add-gutter(.2 at $l);
+
+// $grids: add-grid(13 at $xxl);
+// $gutters: add-gutter(.2 at $xxl);
+
+// @include grid-toggle;

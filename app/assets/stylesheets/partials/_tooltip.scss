@@ -1,0 +1,42 @@
+.tooltip-container {
+display: inline-block;
+position: relative;
+
+&:hover {
+.tooltip {
+display: block;
+}
+}
+}
+
+.tooltip-link {
+background: $color-grey-light;
+}
+
+.tooltip {
+position: absolute;
+top: 1.5em;
+left: 0;
+width: 18em;
+padding: 1em;
+background: $color-white;
+border: 1px solid $color-grey;
+box-shadow: 0.3em 0.3em 1em 0 rgba(0,0,0,0.2);
+
+h2 {
+margin-top: 0;
+}
+
+@media all and (min-width: $bp-xxs) {
+width: 22em;
+}
+
+@media all and (min-width: $bp-xs) {
+width: 27em;
+}
+
+@media all and (min-width: $bp-s) {
+width: 30em;
+}
+}
+

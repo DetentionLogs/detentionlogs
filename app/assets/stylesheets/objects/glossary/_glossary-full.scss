@@ -1,0 +1,5 @@
+
+.glossary-letter {
+    @include rem(font-size, ms(8) );
+    text-decoration: none;
+}

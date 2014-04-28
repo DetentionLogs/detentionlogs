@@ -1,0 +1,25 @@
+
+.collapsible-header {
+    cursor:pointer;
+}
+
+.collapsible-header-collapsed {
+}
+
+.collapsible-header-toggle {
+    text-decoration:none;
+    color:#333;
+}
+
+.collapsible-header-status {
+    position:absolute;
+    left:-99999px;
+}
+
+.collapsible-content {
+}
+
+.collapsible-content-collapsed {
+    overflow:hidden;
+    display:none;
+}

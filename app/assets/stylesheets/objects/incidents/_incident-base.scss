@@ -1,0 +1,14 @@
+.incident-field-label {
+    @include rem(font-size, ms(0));
+    color: $color-grey-med;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+// .incident-field-value {}
+
+.incident-primary-meta {
+    .incident-field-value {
+        font-weight: bold;
+    }
+}
