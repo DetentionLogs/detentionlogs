@@ -2,15 +2,23 @@
 .incident-filters {
     @include rem(padding, ms(1));
     @include clearfix;
+    @include rem(border-top-width, ms(-3));
     background-color: $color-grey-light;
+    border-top-style: solid;
+    border-top-color: $color-information;
+    border-bottom-right-radius: .5em;
+    border-bottom-left-radius: .5em;
+
 
     @include breakpoint(45em) {
         @include rem(font-size, ms(0));
-        border-radius: .5em;
     }
 
     @include breakpoint(87em) {
         @include rem(padding-bottom, ms(2));
+    }
+
+    @include breakpoint(98em) {
         @include rem(font-size, ms(1));
     }
 
