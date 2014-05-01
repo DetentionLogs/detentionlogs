@@ -20,11 +20,6 @@ Detentionlogs::Application.routes.draw do
 
   resources :locations
 
-  match 'subscriptions/create' => 'subscriptions#create'
-  match 'subscriptions/thankyou' => 'subscriptions#thankyou'
-
-  resources :subscriptions
-
   match 'data/incidents/:incident_id/deletereport' => 'incidents#deletereport'
   match 'data/incidents/incident_number/:incident_number/adopt' => 'incidents#adopt_by_incident_number'
   match 'data/incidents/incident_number/:incident_number' => 'incidents#show_by_incident_number'
