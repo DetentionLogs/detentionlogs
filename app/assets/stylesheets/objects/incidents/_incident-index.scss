@@ -191,6 +191,8 @@
         }
     }
     .incident-field-value.incident-type {
+        word-wrap: break-word;
+
         @include breakpoint(50em) {
             @include isolation-span(1, 2, none, $grid: 3);
         }
@@ -200,6 +202,8 @@
         }
     }
     .incident-field-value.incident-location {
+        word-wrap: break-word;
+
         @include breakpoint(50em) {
             @include isolation-span(1, 3, right, $grid: 3);
         }
