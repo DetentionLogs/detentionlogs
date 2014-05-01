@@ -3,7 +3,7 @@
 nav {
     ul {
         margin: 0;
-            padding: 0;
+        padding: 0;
         list-style: none;
     }
 
@@ -34,7 +34,7 @@ nav {
     }
 
     a {
-        @include rem(padding-top, ms(0) );
+        @include rem(padding-top, ms(0));
         @include rem(padding-bottom, ms(0));
         @include rem(border-top-width, ms(-10));
         display: block;
@@ -49,7 +49,7 @@ nav {
 
         @include breakpoint($bp-l) {
             @include rem(padding, ms(0), ms(1));
-            border: none;
+            border: 0;
             background-color: transparent;
             color: $color-primary;
             // font-weight: bold;
@@ -98,8 +98,8 @@ nav {
         text-decoration: none;
 
         @include breakpoint($bp-l) {
-             @include rem(padding, ms(0), ms(1));
-             border: none;
+            @include rem(padding, ms(0), ms(1));
+            border: none;
         }
 
         &:hover,
@@ -110,16 +110,16 @@ nav {
     }
 }
 
-.pagination {
-   text-align: center;
+.pagination-block {
+    text-align: center;
 }
 
-.pagination-list {
+.pagination {
     margin-top: 0;
     padding: 0;
     list-style: none;
 
-    li {
+    .page {
         @include rem(padding, ms(-2));
         display: inline-block;
         font-weight: bold;
@@ -134,8 +134,8 @@ nav {
     }
 
     ol ol {
-       @include rem(margin-top, ms(-3));
-       list-style: lower-alpha;
+        @include rem(margin-top, ms(-3));
+        list-style: lower-alpha;
     }
 
     li {

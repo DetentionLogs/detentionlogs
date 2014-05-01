@@ -8,7 +8,7 @@
     margin-top: 0;
 
     @include breakpoint($bp-xs) {
-        @include rem(font-size, ms(3) );
+        @include rem(font-size, ms(3));
     }
 
     @include breakpoint($bp-m) {
@@ -17,7 +17,7 @@
 
     @include breakpoint($bp-l) {
         @include rem(margin-bottom, ms(10));
-        @include rem(font-size, ms(6) );
+        @include rem(font-size, ms(6));
     }
 }
 

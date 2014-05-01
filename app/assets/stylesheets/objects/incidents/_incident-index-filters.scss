@@ -39,8 +39,7 @@
         }
     }
 
-    select
-     {
+    select {
         @include breakpoint(45em) {
             @include rem(margin-top, ms(-1));
         }
@@ -63,6 +62,7 @@
             @include grid-span(2, 1);
         }
     }
+
     fieldset.location {
         clear: right;
 
@@ -118,7 +118,7 @@
         }
 
         @include breakpoint($bp-l) {
-            @include rem(margin-right, gutter-span() );
+            @include rem(margin-right, gutter-span());
             float: left;
             clear: right;
             width: auto;
