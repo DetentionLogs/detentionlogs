@@ -55,7 +55,13 @@
         @include clearfix;
         display: block;
         margin-bottom: 0;
-        background-color: $color-grey-light;
+        font-weight: bold;
+        color: $color-grey-dark;
+        border-color: $color-grey-light;
+        border-style: solid;
+        @include rem(border-top-width, ms(-15));
+        @include rem(border-bottom-width, ms(-15));
+
     }
 }
 
