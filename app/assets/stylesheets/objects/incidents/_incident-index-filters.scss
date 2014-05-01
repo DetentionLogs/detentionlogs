@@ -148,7 +148,7 @@
         }
 
         @include breakpoint(68em) {
-            @include rem(margin-top, 2);
+            @include rem(margin-top, 2.3);
             @include rem(margin-right, ms(2));
             float: left;
             clear: none;
