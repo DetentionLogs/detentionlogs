@@ -24,18 +24,22 @@
 .incident-index-results-reference {
     vertical-align: bottom;
 
-    .pagination {
+    .pagination-block {
         display: none;
 
         @include breakpoint($bp-m) {
-            @include isolation-span(7, 2, right, $grid: 8);
+            // @include isolation-span(7, 2, right, $grid: 8);
             @include rem(font-size, ms(0));
+            @include rem(margin-bottom, ms(1));
             display: block;
+            width: auto;
             text-align: right;
+            clear: right;
 
             .pagination-details,
-            .pagination-list {
+            .pagination {
                 display: inline-block;
+                text-align: right;
             }
 
             .pagination-details {
@@ -64,7 +68,7 @@
     clear: right;
 
     @include breakpoint(43em) {
-        @include rem(padding, ms(-2), ms(-2), ms(-2), 0);
+        @include rem(padding, ms(-2), 0, ms(-2), 0);
         clear: none;
     }
 }
