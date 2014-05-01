@@ -194,7 +194,7 @@
         clear: both;
         width: 100%;
 
-        @include breakpoint(45em) {
+        @include breakpoint(35em) {
             width: auto;
             float: right;
             clear: right;
