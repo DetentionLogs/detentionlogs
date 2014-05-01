@@ -2,7 +2,7 @@ module ApplicationHelper
 	def title(page_title)
 	  content_for :title, page_title.to_s
 	end
-	
+
 	def description(page_description)
 	  content_for :description, page_description.to_s
 	end
@@ -15,7 +15,7 @@ module ApplicationHelper
       title = pluralize(@incidents.total_count, type_of_incident)
       title += " from #{@location_name}" if @location_name
       title += " between "
-      title += [@start_date, @end_date].map{|d| d.strftime("%d %b %Y") }.to_sentence
+      title += [@start_date, @end_date].map{|d| d.strftime("%e %b %Y") }.to_sentence
 	end
-	
+
 end
