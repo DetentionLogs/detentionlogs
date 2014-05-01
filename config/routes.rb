@@ -11,7 +11,6 @@ Detentionlogs::Application.routes.draw do
   get '/glossary' => 'high_voltage/pages#show', :id => 'glossary'
   get '/about' => 'high_voltage/pages#show', :id => 'about'
   get '/contribute' => 'high_voltage/pages#show', :id => 'contribute'
-#  get '/data/incidents/about' => 'high_voltage/pages#show', :id => 'about_incidents'
   get '/copyright' => 'high_voltage/pages#show', :id => 'copyright'
 
   #resources :location_groups
@@ -19,9 +18,7 @@ Detentionlogs::Application.routes.draw do
 
   #resources :attachments
 
-
   resources :locations
-
 
   match 'subscriptions/create' => 'subscriptions#create'
   match 'subscriptions/thankyou' => 'subscriptions#thankyou'
