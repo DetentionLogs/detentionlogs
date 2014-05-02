@@ -1,10 +1,10 @@
 source 'https://rubygems.org'
-ruby "1.9.2"
+ruby '1.9.2'
 
 gem 'rails', '3.2.12'
 
 # uploads and attachments
-gem "paperclip", "~> 3.0"
+gem 'paperclip', '~> 3.0'
 
 gem 'aws-sdk'
 
@@ -56,15 +56,15 @@ end
 gem 'sitemap_generator'
 
 # CSS related gems
-gem "sass", "~>3.3.2"
+gem 'sass', '~>3.3.2'
 
-gem "compass", "~>1.0.0.alpha.17"
+gem 'compass', '~>1.0.0.alpha.17'
 
-gem "compass-rails"
+gem 'compass-rails'
 
-gem "singularitygs", "~>1.2.0"
+gem 'singularitygs', '~>1.2.0'
 
-gem "modular-scale", "~>2.0.4"
+gem 'modular-scale', '~>2.0.4'
 
 
 # To use ActiveModel has_secure_password
