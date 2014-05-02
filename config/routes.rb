@@ -1,27 +1,47 @@
 Detentionlogs::Application.routes.draw do
-  devise_for :admins, :skip => [:registrations]
+  root :to => 'high_voltage/pages#show', :id => 'home'
+
+  # devise_for :admins, :skip => [:registrations]
+
+  devise_for :admins, :skip => [:registrations] do
+    delete 'logout' => 'sessions#destroy', :as => :destroy_admin_session
+    get 'login' => 'devise/sessions#new'
+  end
+
+  controller :sessions do
+    delete 'sign_out' => :destroy
+  end
 
   HighVoltage.route_drawer = HighVoltage::RouteDrawers::Root
 
   get '/investigations' => 'high_voltage/pages#show', :id => 'investigations'
+
   get '/investigations/recipe' => 'high_voltage/pages#show', :id => 'investigations_recipe'
+
   get '/principles' => 'high_voltage/pages#show', :id => 'principles'
+
   get '/glossary' => 'high_voltage/pages#show', :id => 'glossary'
+
   get '/about' => 'high_voltage/pages#show', :id => 'about'
+
   get '/contribute' => 'high_voltage/pages#show', :id => 'contribute'
+
   get '/copyright' => 'high_voltage/pages#show', :id => 'copyright'
 
   #resources :location_groups
-  root :to => 'high_voltage/pages#show', :id => 'home'
 
   #resources :attachments
 
   resources :locations
 
   match 'data/incidents/:incident_id/deletereport' => 'incidents#deletereport'
+
   match 'data/incidents/incident_number/:incident_number/adopt' => 'incidents#adopt_by_incident_number'
+
   match 'data/incidents/incident_number/:incident_number' => 'incidents#show_by_incident_number'
+
   match 'data/incidents/foi_summary.:format' => 'incidents#foi_summary'
+
   match 'populate_location_id' => 'data/incidents#populate_location_id'
 
   # provides route for the 'about' incidents action.
