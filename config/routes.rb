@@ -1,6 +1,4 @@
 Detentionlogs::Application.routes.draw do
-
-
   devise_for :admins, :skip => [:registrations]
 
   HighVoltage.route_drawer = HighVoltage::RouteDrawers::Root
