@@ -17,12 +17,4 @@
 </head>
 
 <body class="principles">
-
-  <% if admin_signed_in? %>
-    <nav class="admin-bar" id="admin-bar">
-      <p>Signed in as <%= current_admin.email %></p>
-      <%= link_to "logout", destroy_session_path(:admin), class: 'admin-logout-link' %>
-    </nav>
-  <% end %>
-
   <%= render 'layouts/site-header' %>

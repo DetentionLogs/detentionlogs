@@ -9,7 +9,7 @@ gem 'paperclip', '~> 3.0'
 gem 'aws-sdk'
 
 # administration handeling
-gem 'devise'
+# gem 'devise'
 
 gem 'has_scope'
 

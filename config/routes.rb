@@ -3,10 +3,10 @@ Detentionlogs::Application.routes.draw do
 
   # devise_for :admins, :skip => [:registrations]
 
-  devise_for :admins, :skip => [:registrations] do
-    delete 'logout' => 'sessions#destroy', :as => :destroy_admin_session
-    get 'login' => 'devise/sessions#new'
-  end
+  # devise_for :admins, :skip => [:registrations] do
+  #   delete 'logout' => 'sessions#destroy', :as => :destroy_admin_session
+  #   get 'login' => 'devise/sessions#new'
+  # end
 
   controller :sessions do
     delete 'sign_out' => :destroy
