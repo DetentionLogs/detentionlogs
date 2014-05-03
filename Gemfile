@@ -13,9 +13,8 @@ gem 'devise'
 
 gem 'has_scope'
 
+# Managing static pages
 gem 'high_voltage'
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 # postgreSQL
 gem 'pg'
