@@ -1,7 +1,7 @@
 Detentionlogs::Application.routes.draw do
   devise_for :admins, :skip => :registrations
 
-  # root :to => 'high_voltage/pages#show', :id => 'home'
+  root :to => 'high_voltage/pages#show', :id => 'home'
 
   # controller :sessions do
   #   delete 'sign_out' => :destroy
@@ -22,6 +22,7 @@ Detentionlogs::Application.routes.draw do
   get '/contribute' => 'high_voltage/pages#show', :id => 'contribute'
 
   get '/copyright' => 'high_voltage/pages#show', :id => 'copyright'
+
 
   #resources :location_groups
 
