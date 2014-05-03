@@ -1,4 +1,6 @@
 class LocationGroupsController < ApplicationController
+  before_filter :authenticate_admin!
+
   # GET /location_groups
   # GET /location_groups.json
   def index

@@ -1,5 +1,7 @@
 # Controller for detention facility locations, currentyl admin access only.
 class LocationsController < ApplicationController
+  before_filter :authenticate_admin!
+
   # GET /locations
   # GET /locations.json
   def index
