@@ -1,4 +1,6 @@
 Detentionlogs::Application.routes.draw do
+  devise_for :admins, :skip => :registrations
+
   root :to => 'high_voltage/pages#show', :id => 'home'
 
   # devise_for :admins, :skip => [:registrations]
