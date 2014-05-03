@@ -1,12 +1,18 @@
 class IncidentsController < ApplicationController
+  skip_before_filter :authenticate_admin!, only: [
+      :index,
+      :show,
+      :adopt,
+      :show_by_incident_number,
+      :adopt_by_incident_number,
+      :foi_summary,
+      :about
+    ]
 
   has_scope :by_incident_type, :as => :incident_type
   has_scope :by_location, :as => :location
   has_scope :by_period, :using => [:start_date, :end_date]
   has_scope :by_detailed_report, :type => :boolean
-
-  before_filter :authenticate_admin!, :only => [:edit, :update, :destroy, :deletereport]
-
 
   # GET /incidents
   # GET /incidents.json
