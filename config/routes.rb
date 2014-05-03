@@ -1,8 +1,5 @@
 Detentionlogs::Application.routes.draw do
-  devise_for :admins, :skip => [:registrations] do
-    delete 'logout' => 'sessions#destroy', :as => :destroy_admin_session
-    get 'login' => 'devise/sessions#new'
-  end
+  devise_for :admins, :skip => :registrations
 
   root :to => 'high_voltage/pages#show', :id => 'home'
 
