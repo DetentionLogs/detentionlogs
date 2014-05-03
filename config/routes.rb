@@ -1,18 +1,14 @@
 Detentionlogs::Application.routes.draw do
-  devise_for :admins, :skip => :registrations
+  devise_for :admins, :skip => [:registrations] do
+    delete 'logout' => 'sessions#destroy', :as => :destroy_admin_session
+    get 'login' => 'devise/sessions#new'
+  end
 
   root :to => 'high_voltage/pages#show', :id => 'home'
 
-  # devise_for :admins, :skip => [:registrations]
-
-  # devise_for :admins, :skip => [:registrations] do
-  #   delete 'logout' => 'sessions#destroy', :as => :destroy_admin_session
-  #   get 'login' => 'devise/sessions#new'
+  # controller :sessions do
+  #   delete 'sign_out' => :destroy
   # end
-
-  controller :sessions do
-    delete 'sign_out' => :destroy
-  end
 
   HighVoltage.route_drawer = HighVoltage::RouteDrawers::Root
 
