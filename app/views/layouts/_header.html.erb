@@ -17,4 +17,8 @@
 </head>
 
 <body class="principles">
+  <% if notice %>
+    <p class="msg msg-notice"><%= notice %></p>
+  <% end %>
+
   <%= render 'layouts/site-header' %>
