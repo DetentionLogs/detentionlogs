@@ -1,3 +1,4 @@
+# Controller for detention facility locations, currentyl admin access only.
 class LocationsController < ApplicationController
 
   before_filter :authenticate_admin!, :only => [:index, :create, :new, :edit, :update, :destroy, :show]
