@@ -14,7 +14,7 @@ gem 'devise'
 gem 'has_scope'
 
 # Managing static pages
-gem 'high_voltage'
+gem 'high_voltage', '~> 2.1.0'
 
 # postgreSQL
 gem 'pg'

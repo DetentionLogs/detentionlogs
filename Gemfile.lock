@@ -82,7 +82,7 @@ GEM
       railties (>= 3.0.0)
     ffi (1.9.3)
     has_scope (0.5.1)
-    high_voltage (1.2.2)
+    high_voltage (2.1.0)
     hike (1.2.3)
     i18n (0.6.9)
     journey (1.0.4)
@@ -209,7 +209,7 @@ DEPENDENCIES
   devise
   factory_girl_rails
   has_scope
-  high_voltage
+  high_voltage (~> 2.1.0)
   jquery-rails
   kaminari
   modular-scale (~> 2.0.4)
