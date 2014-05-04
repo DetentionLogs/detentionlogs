@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/tablexi/patternlab.git
+  revision: 59d572cb5f76630c4374c6ef3ed916ff0ad9a335
+  submodules: true
+  specs:
+    patternlab (0.0.1)
+      rake
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -215,6 +223,7 @@ DEPENDENCIES
   modular-scale (~> 2.0.4)
   nokogiri
   paperclip (~> 3.0)
+  patternlab!
   pg
   rails (= 3.2.12)
   rest-client

@@ -65,6 +65,11 @@ gem 'singularitygs', '~>1.2.0'
 
 gem 'modular-scale', '~>2.0.4'
 
+# Pattern Lab for rails
+# [Pattern Lab](http://patternlab.io/) is a framework for building design pattern libraries
+# See https://github.com/tablexi/patternlab for info on this Ruby base wrapper for it
+
+gem 'patternlab', :github => 'tablexi/patternlab', :submodules => true
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
