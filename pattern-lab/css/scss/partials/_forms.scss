@@ -1,0 +1,46 @@
+form {
+    @include rem(margin-top, ms(2));
+}
+
+label {
+    @include rem(margin-top, ms(2));
+    display: block;
+    font-weight: bold;
+}
+
+input,
+textarea {
+    @include rem(margin-top, ms(-5));
+    @include rem(padding, ms(-5), ms(-5));
+    // @include rem(font-size, ms(1));
+    display: block;
+    outline: medium none;
+    border: 1px $color-grey solid;
+    background-color: $color-white;
+    color: #0C2347;
+    font-family: $font;
+}
+
+select {
+    display: block;
+    @include rem(margin-top, ms(-5));
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    display: inline-block;
+    vertical-align: none;
+    @include rem(margin-right, ms(-5));
+}
+
+.options {
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    li {
+        @include rem(margin-top, ms(-5));
+    }
+}

@@ -1,24 +1,18 @@
-<div class="page" id="page">
-	{{> organisms-header }}
-	<div role="main">
-		<div class="l-two-col">
-			<div class="l-main">
-				<article class="article">
-					<header class="article-header">
-						<h1>Article Headline Lorem ipsum dolor sit aweofij</h1>
-						{{> molecules-byline }}
-					</header>
-					{{> organisms-article-body }}
-				</article><!--end .article-->
-				{{> molecules-social-share }}
-				{{> organisms-comment-thread }}
-			</div><!--end l-main-->
+{{> organisms-header }}
 
-			<div class="l-sidebar">
-				{{> organisms-related-posts }}
-				{{> organisms-recent-tweets }}
-			</div><!--end l-sidebar-->
-		</div><!--end l-two-col-->	
-	</div><!--End role=main-->
-	{{> organisms-footer }}
-</div>
+{{> organisms-sub-navigation(breadcrumbs: true) }}
+
+<section class="body-container" id="content" role="main">
+    <article class="main-reading h-entry">
+        <header class="article-header">
+            <h1 class="p-name">Reporting Recipe</h1>
+        </header>
+        <section class="e-content article-body text-block">
+            {{> molecules-contents-block }}
+
+            {{> organisms-article-body }}
+        </section>
+    </article>
+</section>
+
+{{> organisms-footer }}

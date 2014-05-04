@@ -55,15 +55,17 @@ end
 gem 'sitemap_generator'
 
 # CSS related gems
-gem 'sass', '~>3.3.2'
+  gem 'sass', '~>3.3.2'
 
-gem 'compass', '~>1.0.0.alpha.17'
+  gem 'compass', '~>1.0.0.alpha.17'
 
-gem 'compass-rails'
+  gem 'compass-rails'
 
-gem 'singularitygs', '~>1.2.0'
+  # Compass extension for css grids
+  gem 'singularitygs', '~>1.2.0'
 
-gem 'modular-scale', '~>2.0.4'
+  # Compass extension for typographic scale
+  gem 'modular-scale', '~>2.0.4'
 
 # Pattern Lab for rails
 # [Pattern Lab](http://patternlab.io/) is a framework for building design pattern libraries

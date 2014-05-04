@@ -43,8 +43,8 @@
 			"lasti": "K"
 		},
 		"year": {
-			"long": "2013",
-			"short": "13"
+			"long": "2010",
+			"short": "10"
 		},
 		"month": {
 			"long": "January",
@@ -70,7 +70,26 @@
 			"long": "20",
 			"short": "20"
 		},
-		"seconds": "31"
+		"seconds": "31",
+		"incident": {
+			"filter-results" : "<strong class=\"query-count\">110</strong> <strong class=\"type\">Use of Observation Rm &gt; 24 hrs</strong> incident reports from <strong class=\"location\">Villawood IDC</strong> between <strong class=\"start-date\">03 Oct 2009</strong> and <strong class=\"end-date\">26 May 2011.</strong>",
+			"detail-report-state" : "detail-report-pending",
+			"type": "Self Harm - Threatened",
+			"location": "North West Point Immigration Facility",
+			"summary": "Six Sri Lankan nationals threatened self harm as a result of a negative decision on their case management. One of the nationals climbed a floodlight pole and the five others positioned theemselves around the base of the pole refusing to disperse.",
+			"location_details": "Floodlight pole outside of Green Two compound centre of NWP IDC",
+			"number": "1-2P43C9",
+			"informed_by":"Service Provider Staff",
+			"level":"Major"
+		},
+		"glossary-item" : {
+			"letter" : "a",
+			"abbreviation" : "AFP",
+			"definition" : {
+				"full-name" : "Australian Federal Police",
+				"description" : "<p>Australian Federal Police is the policing agency of the Commonwealth of Australia. The role of the AFP is to enforce Commonwealth criminal law and protect the Commonwealth from crime overseas and in Australia.</p>"
+			}
+		}
 	},
 	"2": {
 		"title": "Veggies sunt bona vobis, proinde vos postulo",
@@ -116,8 +135,8 @@
 			"lasti": "H"
 		},
 		"year": {
-			"long": "2013",
-			"short": "13"
+			"long": "2009",
+			"short": "09"
 		},
 		"month": {
 			"long": "February",
@@ -143,7 +162,25 @@
 			"long": "20",
 			"short": "20"
 		},
-		"seconds": "31"
+		"seconds": "31",
+		"incident": {
+			"filter-results" : "<strong class=\"query-count\">178</strong> <strong class=\"type\"></strong> incident reports from <strong class=\"location\">Curtin IDC</strong> between <strong class=\"start-date\">03 Oct 2010</strong> and <strong class=\"end-date\">04 Feb 2011.</strong>",
+			"type": "Self Harm - Actual",
+			"location": "Perth IDC",
+			"summary": "The client presented to serco staff at 0930hrs with a 6cm superficial laceration on the left forearm.",
+			"location_details": "Dorm 10 short stay",
+			"number": "1-2PDPVF",
+			"informed_by":"Service Provider Staff",
+			"level":"Critical"
+		},
+		"glossary-item" : {
+			"letter" : "b",
+			"abbreviation" : "Banksia Compound",
+			"definition" : {
+				"full-name" : "Banksia Compound",
+				"description" : "<p>Banksia Compound is a small female only part of Hughes which is one of three accommodation sections at <a href=\"#\">Villawood Immigration Detention Centre</a></p>"
+			}
+		}
 	},
 	"3": {
 		"title": "Bacon ipsum dolor sit amet turducken strip steak beef ribs shank",
@@ -189,8 +226,8 @@
 			"lasti": "R"
 		},
 		"year": {
-			"long": "2013",
-			"short": "13"
+			"long": "2011",
+			"short": "11"
 		},
 		"month": {
 			"long": "March",
@@ -216,7 +253,26 @@
 			"long": "45",
 			"short": "45"
 		},
-		"seconds": "11"
+		"seconds": "11",
+		"incident": {
+			"filter-results" : "<strong class=\"query-count\">0</strong> <strong class=\"type\">Demonstration - Onsite</strong> incident reports with attatched <strong>Incident Detail Reports</strong> from <strong class=\"location\">North West Point Immigration Facility</strong> between <strong class=\"start-date\">03 Oct 2009</strong> and <strong class=\"end-date\">04 Feb 2011.</strong>",
+			"detail-report-state" : "detail-report-pending",
+			"type": "Property - Missing",
+			"location": "Villawood IDC",
+			"summary": "Client Lost black backpacker bag",
+			"location_details": "VIDC",
+			"number": "1-7BNYUR",
+			"informed_by":"Service Provider Staff",
+			"level":"Minor"
+		},
+		"glossary-item" : {
+			"letter" : "f",
+			"abbreviation" : "Fowler",
+			"definition" : {
+				"full-name" : "Fowler",
+				"description" : "Fowler Compound, is an accommodation area at Villawood IDC. According to ABC&srquols Four Corners program Asylum (October, 2011), Fowler Compound is used to house, &dlquo;high risk detainees – people at high risk to others or themselves.&qrquo;"
+			}
+		}
 	},
 	"4": {
 		"title": "Whatever swag accusamus occupy, gentrify butcher tote bag",
@@ -262,8 +318,8 @@
 			"lasti": "W"
 		},
 		"year": {
-			"long": "2013",
-			"short": "13"
+			"long": "2009",
+			"short": "09"
 		},
 		"month": {
 			"long": "April",
@@ -289,7 +345,25 @@
 			"long": "14",
 			"short": "14"
 		},
-		"seconds": "52"
+		"seconds": "52",
+		"incident": {
+			"filter-results" : "<strong class=\"query-count\">9</strong> <strong class=\"type\"></strong> incident reports from <strong class=\"location\">Berrimah Accommodation Facility</strong> between <strong class=\"start-date\">03 Oct 2009</strong> and <strong class=\"end-date\">27 Mar 2011.</strong>",
+			"type": "Voluntary starvation (>24 hrs)",
+			"location": "Maribyrnong IDC",
+			"summary": "Vol starvation",
+			"location_details": "Client transferred to Zone C after self harm attempt, placed on constant watch at 1802hrs on 16-11-09. Client has declined offers of food since placement in Zone C. It is unclear if client had lunch prior to placement. Food has and is been continuously offered to the client but he has declined all offers. However he is taking fluids including fruit juices. Client is communicating with personal Officer. The client has been observed spending extensive time reading the bible which given his self harm attempts, is concerning.",
+			"number": "1-2RX3T9",
+			"informed_by":"Service Provider Staff",
+			"level":"Major"
+		},
+		"glossary-item" : {
+			"letter" : "i",
+			"abbreviation" : "Incident",
+			"definition" : {
+				"full-name" : "Incident",
+				"description" : "<p>An “incident” in this context is an event in one of Australia’s immigration detention facilities which has been recorded by the facility’s staff. The private contractors that run the detention network, including companies <a href=\"/about/glossary/#serco\">Serco</a>, <a href=\"/about/glossary/#IHMS\">IHMS</a> and <a href=\"/about/glossary/#G4S\">G4S</a>, are required to file incident reports to the <a href=\"/about/glossary/#DIAC\">Australian Government Department of immigration and Citizenship (DIAC)</a>, where they are archived in a centralised database.</p><p>DIAC are ultimately responsible for the welfare of people held in the detention network. They use these incident reports as one way to understand and track occurrences and conditions in their facilities.</p><p>The types of incidents described in the reports collected by Detention Logs include births, deaths, illnesses, accidents/injuries, self-harms, complaints, escapes, media presence, protests and more. <a href=\"/data/incidents\">You can browse the reports with our Incident Explorer</a>.</p>"
+			}
+		}
 	},
 	"5": {
 		"title": "Marshall McLuhan Colbert bump backpack journalist vast wasteland Romenesko CPM",
@@ -335,8 +409,8 @@
 			"lasti": "K"
 		},
 		"year": {
-			"long": "2013",
-			"short": "13"
+			"long": "2010",
+			"short": "10"
 		},
 		"month": {
 			"long": "May",
@@ -362,7 +436,25 @@
 			"long": "37",
 			"short": "37"
 		},
-		"seconds": "24"
+		"seconds": "24",
+		"incident": {
+			"filter-results" : "<strong class=\"query-count\">7632</strong> incident reports between <strong class=\"start-date\">03 Oct 2009</strong> and <strong class=\"end-date\">26 May 2011.</strong>",
+			"type": "Disturbance - Minor",
+			"location": "Berrimah Accommodation Facility",
+			"summary": "A member of the public accidently reversed his vehicle into the side of a stationary NIDC escort vehicle with 1 client and 2 escort officers on board causing Minordamage to NIDC vehicle. NIL injuries to any persons involved",
+			"location_details": "Royal Darwin Public Hospital car park.",
+			"number": "1-2TB9HT",
+			"informed_by":"Service Provider Staff",
+			"level":"Minor"
+		},
+		"glossary-item" : {
+			"letter" : "m",
+			"abbreviation" : "MIDC",
+			"definition" : {
+				"full-name" : "Maribyrnong Immigration Detention Centre",
+				"description" : "Maribyrnong Immigration Detention Centre or MIDC is a single-level detention facility constructed in the early 1980s and opened in 1983. It was extended and refurbished in 2005. It is located in Maidstone, 8 km from the CBS in the northwest suburbs of Melbourne. According to DIAC, MIDC has an regular capacity of 56 people and a ‘contingent’ capacity of 99. Full contact details and address can be found at <a href=\"http://goo.gl/maps/5ecBU\">53 Hampstead Road</a>, Maidstone, Vic. 3012."
+			}
+		}
 	},
 	"6": {
 		"title": "Thunder, thunder, thundercats, Ho!",
@@ -408,8 +500,8 @@
 			"lasti": "A"
 		},
 		"year": {
-			"long": "2013",
-			"short": "13"
+			"long": "2009",
+			"short": "09"
 		},
 		"month": {
 			"long": "June",
@@ -435,7 +527,25 @@
 			"long": "37",
 			"short": "37"
 		},
-		"seconds": "33"
+		"seconds": "33",
+		"incident": {
+			"filter-results" : "<strong class=\"query-count\">21</strong> <strong class=\"type\">Voluntary starvation (&gt;24 hrs)</strong> incident reports from <strong class=\"location\">Maribyrnong IDC</strong> between <strong class=\"start-date\">03 Oct 2009</strong> and <strong class=\"end-date\">27 Mar 2011.</strong>",
+			"type": "Removal - Aborted",
+			"location": "Perth IDC",
+			"summary": "Removal of Client aborted due to Court action.",
+			"location_details": "Perth International Airport",
+			"number": "1-2RIU6K",
+			"informed_by":"Service Provider Staff",
+			"level":"Major"
+		},
+		"glossary-item" : {
+			"letter" : "o",
+			"abbreviation" : "OBS",
+			"definition" : {
+				"full-name" : "Observation Room",
+				"description" : "Observation Room is a room where detainees are locked for the purposes of being kept under observation."
+			}
+		}
 	},
 	"7": {
 		"title": "Yeah, I like animals better than people sometimes",
@@ -481,8 +591,8 @@
 			"lasti": "A"
 		},
 		"year": {
-			"long": "2013",
-			"short": "13"
+			"long": "2009",
+			"short": "09"
 		},
 		"month": {
 			"long": "July",
@@ -508,7 +618,25 @@
 			"long": "12",
 			"short": "12"
 		},
-		"seconds": "47"
+		"seconds": "47",
+		"incident": {
+			"filter-results" : "<strong class=\"query-count\">88</strong> <strong class=\"type\"></strong> incident reports with attatched <strong>Incident Detail Reports</strong>  between <strong class=\"start-date\">03 Oct 2009</strong> and <strong class=\"end-date\">26 May 2011.</strong>",
+			"type": "Escape - Attempted",
+			"location": "Perth IDC",
+			"summary": "client had attempted to to break into a run from Escorting officers He was successfully stopped and returned to the escort vehicle",
+			"location_details": "Beach Road Girrawheen WA 6064",
+			"number": "1-2RITXH",
+			"informed_by":"Service Provider Staff",
+			"level":"Major"
+		},
+		"glossary-item" : {
+			"letter" : "p",
+			"abbreviation" : "Phosphate Hill",
+			"definition" : {
+				"full-name" : "Phosphate Hill",
+				"description" : "<p>Phosphate Hill is a temporary immigration facility situated approximately 5kms from the settled areas of Christmas Island, and is adjacent to the Christmas Island Recreation Centre and across the road from the <a href=\"#Christmas-Island-Construction-Camp\">Christmas Island Construction Camp</a>. It’s designated as an <a href=\"#APOD\">Alternative Place of Detention</a> and was first opened in 2001. It is made up of two areas. The Human Rights Commission was critical of Phosphate Hill in its 2011 Report at <a href=\"https://www.humanrights.gov.au/publications/2010-immigration-detention-christmas-island#Heading742\">17.2</a>. Photos are included in that report.</p><p>In 2009, single men were accommodated in tents on the site which took up most of the available open space. The available small bedrooms contained only a bed and had bars on them.</p><p>In its 2011 report, the Human Rights Commission found of three facilities on Christmas Island, Phosphate Hill had the &lsquo;lowest amenity.&rdquo;</p><p>In May 2013, DIAC claims that accommodation in areas in the Alpha and Charlie compounds are suitable for’ single women, unaccompanied minors, families, or vulnerable clients’. The area has capacity for up to 150 people depending on family composition.</p><p>Within Phosphate Hill, a separate compound call Bravo has been constructed to hold up to 168 adults</p>"
+			}
+		}
 	},
 	"8": {
 		"title": "Webtwo ipsum dolor sit amet, eskobo chumby doostang bebo",
@@ -554,8 +682,8 @@
 			"lasti": "H"
 		},
 		"year": {
-			"long": "2013",
-			"short": "13"
+			"long": "2011",
+			"short": "11"
 		},
 		"month": {
 			"long": "August",
@@ -581,7 +709,26 @@
 			"long": "42",
 			"short": "42"
 		},
-		"seconds": "21"
+		"seconds": "21",
+		"incident": {
+			"filter-results" : "<strong class=\"query-count\">7632</strong> incident reports between <strong class=\"start-date\">03 Oct 2009</strong> and <strong class=\"end-date\">26 May 2011.</strong>",
+			"detail-report-state" : "has-detail-report",
+			"type": "Escape",
+			"location": "Brisbane ITA",
+			"summary": "On Sunday, 1st November 2009 at approximately 0930 hrs DSO Coleman was conducting the morning headcount . DSO Coleman could not locate Client ith the assistance of the following officers DSO'S Renata, Bainbridge, Sherrit, Phillips",
+			"location_details": "with the assistance of the following officers DSO'S Renata, Bainbridge, Sherrit, Phillips did a complete check of the BITA . At approximately 0943 hrs I received a phone from DSO Bainbridge to say they could not locate the client.",
+			"number": "1-2PK97X",
+			"informed_by":"Service Provider Staff",
+			"level":"Critical"
+		},
+		"glossary-item" : {
+			"letter" : "r",
+			"abbreviation" : "RRT",
+			"definition" : {
+				"full-name" : "Refugee Review Tribunal",
+				"description" : ""
+			}
+		}
 	},
 	"9": {
 		"title": "Rebel Mission to Ord Mantell",
@@ -627,8 +774,8 @@
 			"lasti": "S"
 		},
 		"year": {
-			"long": "2013",
-			"short": "13"
+			"long": "2011",
+			"short": "11"
 		},
 		"month": {
 			"long": "September",
@@ -654,7 +801,25 @@
 			"long": "04",
 			"short": "4"
 		},
-		"seconds": "37"
+		"seconds": "37",
+		"incident": {
+			"filter-results" : "<strong class=\"query-count\">147</strong> <strong class=\"type\">Use of Force</strong> incident reports  between <strong class=\"start-date\">03 Oct 2009</strong> and <strong class=\"end-date\">26 May 2011.</strong>",
+			"type": "Abusive/Aggressive Behaviour",
+			"location": "Port Augusta IRH",
+			"summary": "On early morning beam test, zone 3 did not activate. Wiped and cleaned but still did not activate. Flinders Solutions contacted to rectify at 0625hours.",
+			"location_details": "Port augusta IRH",
+			"number": "1-77GA9V",
+			"informed_by":"Service Provider Staff",
+			"level":"Major"
+		},
+		"glossary-item" : {
+			"letter" : "s",
+			"abbreviation" : "Serco",
+			"definition" : {
+				"full-name" : "Serco Group plc",
+				"description" : "<p>Serco Group plc is a British government services company based in Hook, North Hampshire in the United Kingdom. It is listed on the London Stock Exchange and is a constituent of the FTSE 100 Index. Among its operations are public and private transport and traffic control, electronic monitoring,aviation, military and nuclear weapons contracts, detention centres and prisons, and schools. Serco’s contract with the Immigration Department to supply detention services ends on 28 June 2014.</p><p>Information from <a href=\"DIAC\">DIAC</a>:</p><blockquote><p>On 29 June 2009, DIAC entered into a five-year contract with Serco Australia Pty Ltd (Serco) to provide services at immigration facilities. Serco took responsibility for detention service provision through a staged approach beginning on Christmas Island on 1 October 2009. The transition from the previous detention service provider to Serco was completed on 31 January 2010 when Serco took responsibility for managing all immigration detention facilities on Christmas Island and mainland Australia.</p></blockquote><ul><li><a href=\"http://www.serco.com/\">Serco company website</a></li><li><a href=\"http://bluecabinet.info/wiki/Main_Page\">BlueCabinet’s backgrounder on Serco.</a></li><li>New Matilda&rsquo;s 2011 stories <a href=\"http://newmatilda.com/2011/11/09/exclusive-our-contract-serco\">revealing</a> the Serco contract.</li></ul>"
+			}
+		}
 	},
 	"10": {
 		"title": "Help, help, I'm being repressed!",
@@ -700,8 +865,8 @@
 			"lasti": "S"
 		},
 		"year": {
-			"long": "2013",
-			"short": "13"
+			"long": "2010",
+			"short": "10"
 		},
 		"month": {
 			"long": "October",
@@ -727,7 +892,25 @@
 			"long": "51",
 			"short": "51"
 		},
-		"second": "19"
+		"second": "19",
+		"incident": {
+			"filter-results" : "<strong class=\"query-count\">336</strong> <strong class=\"type\">Self Harm - Actual</strong> incident reports  between <strong class=\"start-date\">03 Oct 2009</strong> and <strong class=\"end-date\">26 May 2011.</strong>",
+			"type": "Abusive/Aggressive Behaviour",
+			"location": "North West Point Immigration Facility",
+			"summary": "during IR s. 47F(1) se of force was used on detainee s. 47F(1)",
+			"location_details": "Education 1 compound",
+			"number": "1-77G00W",
+			"informed_by":"Service Provider Staff",
+			"level":"Critical"
+		},
+		"glossary-item" : {
+			"letter" : "c",
+			"abbreviation" : "Code Purple",
+			"definition" : {
+				"full-name" : "Code Purple",
+				"description" : "Fire"
+			}
+		}
 	},
 	"11": {
 		"title": "Danish danish candy canes bonbon cheesecake danish marzipan",
@@ -800,7 +983,25 @@
 			"long": "55",
 			"short": "55"
 		},
-		"seconds": "12"
+		"seconds": "12",
+		"incident": {
+			"filter-results" : "<strong class=\"query-count\">7632</strong> incident reports between <strong class=\"start-date\">03 Oct 2009</strong> and <strong class=\"end-date\">26 May 2011.</strong>",
+			"type": "Failure - Security System",
+			"location": "Curtin IDC",
+			"summary": "Electrified fence would not re-arm after being dis-armed for routine maintainence.",
+			"location_details": "Delta compound.",
+			"number": "1-7BBIDK",
+			"informed_by":"Service Provider Staff",
+			"level":"Major"
+		},
+		"glossary-item" : {
+			"letter" : "c",
+			"abbreviation" : "Code Black",
+			"definition" : {
+				"full-name" : "Code Black",
+				"description" : "Officer needs assistance"
+			}
+		}
 	},
 	"12": {
 		"title": "Cottage cheese brie lancashire. Boursin when the cheese comes out.",
@@ -846,8 +1047,8 @@
 			"lasti": "A"
 		},
 		"year": {
-			"long": "2013",
-			"short": "13"
+			"long": "2012",
+			"short": "12"
 		},
 		"month": {
 			"long": "December",
@@ -873,6 +1074,25 @@
 			"long": "34",
 			"short": "34"
 		},
-		"seconds": "56"
+		"seconds": "56",
+		"incident": {
+			"filter-results" : "<strong class=\"query-count\">7632</strong> incident reports between <strong class=\"start-date\">03 Oct 2009</strong> and <strong class=\"end-date\">26 May 2011.</strong>",
+	        "detail-report-state" : "has-detail-report",
+			"type": "Disturbance - Minor",
+			"location": "North West Point Immigration Facility",
+			"summary": "s. 47F(1) came downstairs from C Block naked",
+			"location_details": "Blue 1 Compound, C Block Upper Level NWP IDF CI",
+			"number": "1-7BCBSK",
+			"informed_by":"Service Provider Staff",
+			"level":"Minor"
+		},
+		"glossary-item" : {
+			"letter" : "c",
+			"abbreviation" : "Code Yellow",
+			"definition" : {
+				"full-name" : "Code Yellow",
+				"description" : "Internal emergency"
+			}
+		}
 	}
 }

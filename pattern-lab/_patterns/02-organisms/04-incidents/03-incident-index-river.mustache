@@ -1,0 +1,20 @@
+<section class="incident-river">
+    <ol class="incident-river-header-row">
+        <li class="incident-occurred-on">Occurred</li>
+        <li class="incident-type">Type</li>
+        <li class="incident-location">Location</li>
+        <li class="incident-summary">Summary</li>
+        <li class="incident-location-details">Location Details</li>
+        <li class="incident-number">Number</li>
+    </ol>
+
+    <ol class="incident-river-body">
+        {{#listItems.twelve}}
+        <li>
+            {{> molecules-incident-index-row }}
+        </li>
+        {{/listItems.twelve}}
+    </ol>
+
+    {{> molecules-pagination }}
+</section>

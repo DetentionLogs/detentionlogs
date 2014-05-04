@@ -1,0 +1,34 @@
+<article class="incident-river-item incident" id="1-20GQKD">
+    <h3 class="incident-river-item-title">Incident 1-20GQKD</h3>
+
+    <dl class="incident-primary-meta">
+        <dt class="incident-field-label incident-occurred-on">Occurred On</dt>
+            <dd class="incident-field-value incident-occurred-on">
+                <time datetime="">{{ day.long }} {{ month.short }} {{ year.long }} {{ hour.long }}:{{ minute.long }}</time>
+            </dd>
+
+        <dt class="incident-field-label incident-type">Type</dt>
+            <dd class="incident-field-value incident-type">{{ incident.type }}</dd>
+
+        <dt class="incident-field-label incident-location">Location</dt>
+            <dd class="incident-field-value incident-location">{{ incident.location }}</dd>
+
+    </dl>
+
+    <dl class="incident-main">
+        <dt class="incident-field-label incident-summary">Incident Summary</dt>
+            <dd class="incident-field-value incident-summary">{{ incident.summary }}</dd>
+    </dl>
+
+    <dl class="incident-secondary">
+        <dt class="incident-field-label incident-location-details">Location Details</dt>
+            <dd class="incident-field-value incident-location-details">{{ incident.location_details }}</dd>
+    </dl>
+
+    <dl class="incident-secondary-linkgroup">
+        <dt class="incident-field-label incident-number"><abbr title="Incident">In.</abbr> Number</dt>
+            <dd class="incident-field-value incident-number">
+                <a href="{{ link.templates-incident-show }}" title="Get more information about Incident 1-2OGQKD">{{ incident.number }} <span class="incident-link btn">see&nbsp;details<i> &rarr;</i></span></a>
+            </dd>
+    </dl>
+</article>

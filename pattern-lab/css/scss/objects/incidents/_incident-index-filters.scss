@@ -1,0 +1,226 @@
+
+.incident-filters {
+    @include rem(padding, ms(1));
+    @include clearfix;
+    @include rem(border-top-width, ms(-3));
+    background-color: $color-grey-light;
+    border-top-style: solid;
+    border-top-color: $color-information;
+    border-bottom-right-radius: .5em;
+    border-bottom-left-radius: .5em;
+
+
+    @include breakpoint(45em) {
+        @include rem(font-size, ms(0));
+    }
+
+    @include breakpoint(87em) {
+        @include rem(padding-bottom, ms(2));
+    }
+
+    @include breakpoint(98em) {
+        @include rem(font-size, ms(1));
+    }
+
+    h2 {
+        @include rem(font-size, ms(1));
+        margin-top: 0;
+        display: inline-block;
+    }
+
+    select,
+    .start-date input,
+    .end-date input {
+        width: 100%;
+        max-width: 100%;
+
+        @include breakpoint($bp-s) {
+            width: auto;
+        }
+
+        @include breakpoint(45em) {
+            width: 100%;
+        }
+
+        @include breakpoint($bp-l) {
+            // width: 100;
+        }
+    }
+
+    select {
+        @include breakpoint(45em) {
+            @include rem(margin-top, ms(-1));
+        }
+    }
+
+    div.collapsiblecontent {
+        @include clearfix;
+    }
+
+    fieldset.type {
+        @include breakpoint(45em) {
+            @include isolation-span(2, 1, left, $grid: 8);
+        }
+
+        @include breakpoint($bp-l) {
+            @include grid-span(3, 1);
+        }
+
+        @include breakpoint(68em) {
+            @include grid-span(2, 1);
+        }
+    }
+
+    fieldset.location {
+        clear: right;
+
+        @include breakpoint(45em) {
+            @include isolation-span(2, 3, none, $grid: 8);
+        }
+
+        @include breakpoint($bp-l) {
+            @include grid-span(3, 4);
+        }
+
+        @include breakpoint(68em) {
+            @include grid-span(2, 3);
+        }
+    }
+
+    fieldset.start-date,
+    fieldset.end-date {
+        display: inline-block;
+
+        @include breakpoint(45em) {
+            display: block;
+        }
+    }
+
+    fieldset.start-date {
+        @include rem(margin-right, ms(2));
+
+        @include breakpoint(45em) {
+            @include isolation-span(2, 5, none, $grid: 8);
+        }
+
+        @include breakpoint($bp-l) {
+            @include grid-span(2, 7);
+            @include rem(margin-right, ms(2));
+            width: auto;
+        }
+
+        @include breakpoint(68em) {
+            @include grid-span(2, 5);
+            @include rem(margin-right, ms(2));
+            width: auto;
+        }
+
+        // @include breakpoint(90em) {
+        //     @include isolation-span(1, 5, none, $grid: 8);
+        // }
+    }
+
+    fieldset.end-date {
+        @include breakpoint(45em) {
+            @include isolation-span(2, 7, right, $grid: 8);
+        }
+
+        @include breakpoint($bp-l) {
+            @include rem(margin-right, gutter-span());
+            float: left;
+            clear: right;
+            width: auto;
+            margin-left: 0;
+        }
+
+        @include breakpoint(68em) {
+            @include rem(margin-right, ms(2));
+        }
+
+        // @include breakpoint(90em) {
+        //     @include isolation-span(1, 6, none, $grid: 8);
+        // }
+    }
+
+    fieldset.has-detail-report {
+        @include breakpoint(45em) {
+            @include isolation-span(2, 1, left, $grid: 8);
+        }
+
+        @include breakpoint(68em) {
+            @include rem(margin-top, 2.3);
+            @include rem(margin-right, ms(2));
+            float: left;
+            clear: none;
+            margin-left: 0;
+            width: auto;
+        }
+
+        @include breakpoint($bp-xxl) {
+            clear: none;
+        }
+
+        // @include breakpoint(90em) {
+        //     @include isolation-span(1, 7, none, $grid: 8);
+        // }
+    }
+
+    // fieldset.order-by {
+    //     label {
+    //         font-weight: normal;
+    //     }
+
+    //     @include breakpoint(45em) {
+    //         @include isolation-span(2, 3, none, $grid: 8);
+    //     }
+
+    //     @include breakpoint(68em) {
+    //         @include rem(margin-top, 2);
+    //         float: left;
+    //         clear: right;
+    //         width: auto;
+    //         margin-left: 0;
+    //         margin-right: 0;
+    //     }
+
+    //     // @include breakpoint(90em) {
+    //     //     @include isolation-span(1, 7, left, $grid: 8);
+    //     // }
+    // }
+
+    input[type="submit"] {
+        @include rem(margin-top, ms(4));
+        display: block;
+        clear: both;
+        width: 100%;
+
+        @include breakpoint(35em) {
+            width: auto;
+            float: right;
+            clear: right;
+        }
+
+        @include breakpoint(68em) {
+            @include rem(margin-top, ms(7));
+            clear: right;
+        }
+
+        @include breakpoint(79em) {
+            clear: right;
+        }
+
+        // @include breakpoint(90em) {
+        //     @include isolation-span(1, 8, right, $grid: 8);
+        // }
+    }
+
+    .incident-filters-toggle {
+        @include rem(font-size, ms(0));
+        float: right;
+        clear: right;
+    }
+}
+
+.incident-filters-collapsible {
+    @include clearfix;
+}

@@ -1,9 +1,33 @@
-<ol class="pagination">
-	<li class="current"><a href="{{ url }}">1</a></li>
-	<li><a href="{{ url }}">2</a></li>
-	<li><a href="{{ url }}">3</a></li>
-	<li><a href="{{ url }}">4</a></li>
-	<li><a href="{{ url }}">5</a></li>
-	<li><a href="{{ url }}">6</a></li>
-	<li><a href="{{ url }}">7</a></li>
-</ol>
+<section class="pagination-block">
+  <p class="pagination-details">Displaying incidents <strong>1&nbsp;-&nbsp;50</strong> of <strong>7632</strong> in total</p>
+
+  <nav class="pagination">
+    <span class="page current"> 1 </span>
+
+    <span class="page">
+      <a href="/data/incidents?page=2" rel="next">2</a>
+    </span>
+
+    <span class="page">
+      <a href="/data/incidents?page=3">3</a>
+    </span>
+
+    <span class="page">
+      <a href="/data/incidents?page=4">4</a>
+    </span>
+
+    <span class="page">
+      <a href="/data/incidents?page=5">5</a>
+    </span>
+
+    <span class="page gap">…</span>
+
+    <span class="next">
+      <a href="/data/incidents?page=2" rel="next">Next ›</a>
+    </span>
+
+    <span class="last">
+      <a href="/data/incidents?page=153">Last »</a>
+    </span>
+  </nav>
+</section>

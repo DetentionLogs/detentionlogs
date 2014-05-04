@@ -1,39 +1,67 @@
-/*------------------------------------*\
-    $FOOTER
-\*------------------------------------*/
-.footer {
-	clear: both;
-	overflow: hidden;
-	background: $gray-dark-2;
-	color: $white;
-	line-height: 1.2;
+.site-footer {
+    @include rem(margin-top, ms(2));
+    @include clearfix;
 
-	a {
-		color: $gray-light;
-	}
+    @include breakpoint($bp-m) {
+        @include rem(margin-top, ms(10));
+    }
+
+    .primary-nav {
+        @include breakpoint($bp-s) {
+            @include rem(font-size, ms(2));
+        }
+    }
+
+    .secondary-nav,
+    .contact-nav {
+        @include rem(font-size, ms(1));
+    }
+
+    .contact-nav {
+        @include breakpoint($bp-l) {
+            text-align: right;
+            float: right;
+            clear: right;
+            width: 30%;
+        }
+    }
 }
 
-//Footer Nav
-.nav-footer {
-	margin: (-$pad) (-$pad) $space;
-
-	li {
-		border-bottom: 1px solid $gray-dark;
-
-		@media all and (min-width: $bp-med) {
-			border: 0;
-			float: left;
-		}
-	}
-
-	a {
-		display: block;
-		padding: $pad;
-	}
+.footer-nav {
+    @include breakpoint($bp-l) {
+        float: left;
+        clear: left;
+        width: 70%;
+    }
 }
 
-.copyright {
-	@media all and (min-width: $bp-med) {
-		float: right;
-	}
+.top-link {
+    @include rem(padding, ms(-3));
+    @include rem(font-size, ms(0));
+    display: block;
+    color: $color-grey-med;
+    text-align: right;
+    text-transform: uppercase;
+
+    @include breakpoint($bp-xl) {
+        @include rem(padding, ms(-2), ms(0));
+        @include rem(width, ms(10));
+        display: block;
+        margin-left: auto;
+        border-radius: .2em;
+        background-color: $color-grey-light;
+        text-decoration: none;
+
+        &:hover,
+        &:focus {
+            background-color: $color-black;
+            color: $color-white;
+        }
+    }
+
+    @include breakpoint($bp-xxl) {
+       margin-right: auto;
+        margin-left: auto;
+        text-align: center;
+    }
 }
