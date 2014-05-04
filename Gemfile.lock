@@ -211,6 +211,7 @@ PLATFORMS
 
 DEPENDENCIES
   aws-sdk
+  breakpoint (~> 2.4.0)
   coffee-rails (~> 3.2.1)
   compass (~> 1.0.0.alpha.17)
   compass-rails

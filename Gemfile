@@ -62,6 +62,9 @@ gem 'compass', '~>1.0.0.alpha.17'
 
 gem 'compass-rails'
 
+# Compass extension for simple media queries
+gem "breakpoint", "~>2.4.0"
+
 # Compass extension for css grids
 gem 'singularitygs', '~>1.2.0'
 
