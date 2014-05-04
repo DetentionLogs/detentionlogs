@@ -5,3 +5,4 @@
 index.html.erb.orig
 tmp/
 log/
+*.sublime-workspace
