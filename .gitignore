@@ -6,3 +6,5 @@
 .orig
 index.html.erb.orig
 tmp/
+
+*.sublime-workspace
