@@ -1,9 +1,15 @@
-/mockups/css/.sass-cache/
-/mockups/css/style.css
 .DS_Store
+
 .orig
-index.html.erb.orig
+
 tmp/
+
 log/
 
 *.sublime-workspace
+
+.sass-cache
+
+node_modules
+
+.npm-debug.log
