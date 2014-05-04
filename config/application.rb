@@ -61,6 +61,10 @@ module Detentionlogs
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
 
+    # http://guides.rubyonrails.org/asset_pipeline.html
+    # > Fingerprinting is enabled by default for production and disabled for all other environments. You can enable or disable it in your configuration through the config.assets.digest option.
+    config.assets.digest = true
+
     # https://devcenter.heroku.com/articles/rails-asset-pipeline#troubleshooting
     # > The most common cause of failures in assets:precompile is an app that relies on having its environment present to boot. Your app’s config vars are not present in the environment during slug compilation, so you should take steps to handle the nil case for config vars (and add-on resources) in your initializers.
 
