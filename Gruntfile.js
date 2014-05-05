@@ -199,7 +199,7 @@ TO DO: minify svg css
             },
 
             css: {
-                files: ['app/assets/stylesheets/'],
+                files: ['app/assets/**/*'],
                 tasks: ['compass', 'autoprefixer', 'cssmin', 'jshint', 'concat', 'uglify'],
                 options: {
                     spawn: false
