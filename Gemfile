@@ -35,6 +35,7 @@ end
 # pagination
 gem 'kaminari', '~> 0.15.1'
 
+# jquery for rails
 gem 'jquery-rails', '~> 3.1.0'
 
 gem 'rest-client'
