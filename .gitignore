@@ -13,3 +13,9 @@ log/
 node_modules
 
 .npm-debug.log
+
+# ignore files that are steps in the build process
+
+app/assets/stylesheets/build/
+
+app/assets/javascripts/concat/
