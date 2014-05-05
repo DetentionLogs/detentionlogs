@@ -199,11 +199,10 @@ TO DO: minify svg css
             },
 
             css: {
-                files: ['app/assets/stylesheets/']
+                files: ['app/assets/stylesheets/'],
                 tasks: ['compass'],
-
                 options: {
-                    spawn: false,
+                    spawn: false
                 }
             }
         }
