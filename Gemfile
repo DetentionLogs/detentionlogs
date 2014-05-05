@@ -33,7 +33,7 @@ group :assets do
 end
 
 # pagination
-gem 'kaminari'
+gem 'kaminari', '~> 0.15.1'
 
 gem 'jquery-rails', '~> 3.1.0'
 
