@@ -214,7 +214,7 @@ DEPENDENCIES
   breakpoint (~> 2.4.0)
   coffee-rails (~> 3.2.1)
   compass (~> 1.0.0.alpha.17)
-  compass-rails
+  compass-rails (~> 1.1.7)
   devise
   factory_girl_rails
   has_scope

@@ -1,6 +1,10 @@
   <%= render 'layouts/site-footer' %>
 
-  <%= javascript_include_tag :application %>
+  <%= javascript_include_tag 'jquery.min', 'global.min' %>
+
+  <% if admin_signed_in? %>
+      <%= javascript_include_tag 'jquery_ujs.min.js' %>
+  <% end %>
 
 	</body>
 </html>

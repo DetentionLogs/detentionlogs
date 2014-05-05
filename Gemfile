@@ -60,7 +60,7 @@ gem 'sass', '~>3.3.2'
 # Compass, a Sass extension
 gem 'compass', '~>1.0.0.alpha.17'
 
-gem 'compass-rails'
+gem 'compass-rails', '~> 1.1.7'
 
 # Compass extension for simple media queries
 gem "breakpoint", "~>2.4.0"

@@ -62,7 +62,7 @@ module.exports = function(grunt) {
                     expand: true,
                     cwd: 'app/assets/images/icons/svg/build',
                     src: '*.svg',
-                    dest: 'public/assets/images/icons/svg/'
+                    dest: 'public/images/icons/svg/'
                 }]
             }
         },
@@ -81,7 +81,7 @@ module.exports = function(grunt) {
             multiple_files: {
                 expand: true,
                 flatten: true,
-                src: 'app/assets/stylesheets/build/',
+                src: 'app/assets/stylesheets/build/style.css',
                 dest: 'app/assets/stylesheets/build/prefixed/'
             }
         },
@@ -99,10 +99,10 @@ TO DO: minify svg css
  * -------------------------------------------------------------------------------*/
 
         cssmin: {
-            combine: {
+            minify: {
                 files: {
                     'app/assets/stylesheets/build/min/style.min.css': ['app/assets/stylesheets/build/prefixed/style.css'],
-                    'public/assets/stylesheets/style.min.css': ['app/assets/stylesheets/build/prefixed/style.css']
+                    'public/stylesheets/style.min.css': ['app/assets/stylesheets/build/prefixed/style.css']
                 }
             }
         },
@@ -168,22 +168,22 @@ TO DO: minify svg css
         uglify: {
             global: {
                 src: 'app/assets/javascripts/concat/global.js',
-                dest: 'public/assets/javascripts/global.min.js'
+                dest: 'public/javascripts/global.min.js'
             },
 
             polyfill: {
                 src: 'app/assets/javascripts/concat/polyfill.js',
-                dest: 'public/assets/javascripts/polyfill.min.js'
+                dest: 'public/javascripts/polyfill.min.js'
             },
 
             jquery: {
                 src: 'app/assets/javascripts/concat/jquery.js',
-                dest: 'public/assets/javascripts/jquery.min.js'
+                dest: 'public/javascripts/jquery.min.js'
             },
 
             jquery_ujs: {
                 src: 'app/assets/javascripts/concat/jquery_ujs.js',
-                dest: 'public/assets/javascripts/jquery_ujs.min.js'
+                dest: 'public/javascripts/jquery_ujs.min.js'
             }
         },
 
@@ -200,7 +200,7 @@ TO DO: minify svg css
 
             css: {
                 files: ['app/assets/stylesheets/'],
-                tasks: ['compass'],
+                tasks: ['compass', 'autoprefixer', 'cssmin', 'jshint', 'concat', 'uglify'],
                 options: {
                     spawn: false
                 }
@@ -214,6 +214,6 @@ TO DO: minify svg css
 
     require('load-grunt-tasks')(grunt);
 
-    grunt.registerTask('default', ['compass']);
+    grunt.registerTask('default', ['compass', 'autoprefixer', 'cssmin', 'jshint', 'concat', 'uglify']);
     grunt.registerTask('dev', ['watch']);
 };
