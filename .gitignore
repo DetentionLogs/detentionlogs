@@ -1,8 +1,21 @@
-/mockups/css/.sass-cache/
-/mockups/css/style.css
 .DS_Store
+
 .orig
-index.html.erb.orig
+
 tmp/
+
 log/
+
 *.sublime-workspace
+
+.sass-cache
+
+node_modules
+
+.npm-debug.log
+
+# ignore files that are steps in the build process
+
+app/assets/stylesheets/build/
+
+app/assets/javascripts/concat/
