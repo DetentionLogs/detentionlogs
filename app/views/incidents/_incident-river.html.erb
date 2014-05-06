@@ -64,5 +64,6 @@
 </section>
 
 <div class="pagination-details"><%=  page_entries_info @incidents %></div>
+    <%=  page_entries_info @incidents, :entry_name => 'Incident Reports' %>
 
 <%= paginate @incidents %>
