@@ -7,14 +7,6 @@
 		}
 	],
     "settings": {
-      "folder_exclude_patterns":
-        [
-          "node_modules",
-          "core/source",
-          "public/pattern-lab",
-          "git/objects",
-          "tmp"
-        ],
         "ensure_newline_at_eof_on_save": true,
         "tab_size": 2,
         "translate_tabs_to_spaces": true,
