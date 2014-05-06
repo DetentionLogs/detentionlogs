@@ -2,8 +2,9 @@
 //
 // .pagination-block
 // .incident-index-results-reference .pagination-block
-//   .pagination-details
 //   .pagination-details, .pagination
+//   .pagination-details
+//   .pagination
 // .pagination-details
 // .pagination
 //   .page
@@ -23,15 +24,19 @@
       text-align: right;
     }
 
-    .pagination-details {
-      margin-top: 0;
-    }
-
     .pagination-details,
     .pagination {
       @include rem(font-size, ms(0));
       display: inline-block;
       text-align: right;
+    }
+
+    .pagination-details {
+      margin-top: 0;
+    }
+
+    .pagination {
+      @include rem(padding-left, ms(0));
     }
   }
 }
