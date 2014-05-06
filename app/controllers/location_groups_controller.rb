@@ -15,11 +15,16 @@ class LocationGroupsController < ApplicationController
   # GET /location_groups/1
   # GET /location_groups/1.json
   def show
-    @location_group = LocationGroup.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @location_group }
+    begin
+      @location_group = LocationGroup.find(params[:id])
+    rescue
+      logger.error "Attempt to access unknown location group: #{params[:id]}"
+      redirect_to location_groups_url, notice: 'Sorry, invalid location group'
+    else
+      respond_to do |format|
+        format.html # show.html.erb
+        format.json { render json: @location_group }
+      end
     end
   end
 

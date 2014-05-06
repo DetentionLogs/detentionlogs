@@ -40,11 +40,16 @@ class IncidentsController < ApplicationController
   # GET /incidents/1
   # GET /incidents/1.json
   def show
-    @incident = Incident.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @incident }
+    begin
+      @incident = Incident.find(params[:id])
+    rescue
+      logger.error "Attempt to access unknown incident report #{params[:id]}"
+      redirect_to incidents_url, notice: 'Sorry, invalid Incident ID'
+    else
+      respond_to do |format|
+        format.html # show.html.erb
+        format.json { render json: @incident }
+      end
     end
   end
 

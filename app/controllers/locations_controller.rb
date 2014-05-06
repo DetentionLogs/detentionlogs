@@ -16,11 +16,16 @@ class LocationsController < ApplicationController
   # GET /locations/1
   # GET /locations/1.json
   def show
-    @location = Location.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @location }
+    begin
+      @location = Location.find(params[:id])
+    rescue
+      logger.error "Attempt to access unknown location: #{params[:id]}"
+      redirect_to locations_url, notice: 'Sorry, invalid location'
+    else
+      respond_to do |format|
+        format.html # show.html.erb
+        format.json { render json: @location }
+      end
     end
   end
 
