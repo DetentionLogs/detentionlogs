@@ -1,0 +1,44 @@
+.pagination-block {
+  text-align: center;
+}
+
+.pagination-details {
+  @include rem(font-size, ms(0));
+}
+
+.pagination {
+  margin-top: 0;
+  padding: 0;
+  list-style: none;
+
+  .page {
+    @include rem(padding, ms(-2));
+    display: inline-block;
+    font-weight: bold;
+  }
+}
+
+.incident-index-results-reference {
+  .pagination-block {
+    display: none;
+
+    @include breakpoint($bp-m) {
+      // @include isolation-span(7, 2, right, $grid: 8);
+      @include rem(margin-bottom, ms(1));
+      display: block;
+      width: auto;
+      text-align: right;
+      clear: right;
+
+      .pagination-details,
+      .pagination {
+        display: inline-block;
+        text-align: right;
+      }
+
+      .pagination-details {
+        margin-top: 0;
+      }
+    }
+  }
+}

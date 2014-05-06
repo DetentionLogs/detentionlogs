@@ -24,6 +24,7 @@
 @import "partials/tooltip";
 @import "partials/tables";
 @import "partials/navigation";
+@import "partials/pagination";
 @import "partials/sub-navigation";
 @import "partials/admin-bar";
 
@@ -69,5 +70,3 @@
     $COMPONENTS
 \*------------------------------------*/
 @import "objects/accordion";
-
-
