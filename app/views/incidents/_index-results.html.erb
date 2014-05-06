@@ -37,14 +37,10 @@
 </h1>
 
 <section class="incident-index-results-reference">
-  <%= link_to "Permalink", params, class: 'incident-index-permalink', title: 'url to share or bookmark these results' %>
+  <%= render 'incidents/pagination-block' %>
 
   <!-- <a class="incident-index-order-by" href="" title="Reorder the filter results, currently sorted by newest first, to see the oldest incident first.">See oldest first</a> -->
-    <nav class="pagination-block">
-      <p class="pagination-details">
-        <%=  page_entries_info @incidents, :entry_name => 'Incident Reports' %>
-      </p>
 
-      <%= paginate @incidents %>
-    </nav>
-  </section>
+
+  <%= link_to "Permalink", params, class: 'incident-index-permalink', title: 'url to share or bookmark these results' %>
+</section>
