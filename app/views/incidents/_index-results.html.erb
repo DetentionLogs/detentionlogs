@@ -37,10 +37,7 @@
 </h1>
 
 <section class="incident-index-results-reference">
-  <%= render 'incidents/pagination-block' %>
-
-  <!-- <a class="incident-index-order-by" href="" title="Reorder the filter results, currently sorted by newest first, to see the oldest incident first.">See oldest first</a> -->
-
-
   <%= link_to "Permalink", params, class: 'incident-index-permalink', title: 'url to share or bookmark these results' %>
+
+  <%= render 'incidents/pagination-block' %>
 </section>

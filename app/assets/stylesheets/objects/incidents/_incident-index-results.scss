@@ -34,11 +34,10 @@
   @include rem(padding, ms(-2), ms(-2), ms(-2), 0);
   float: left;
   clear: left;
+  display: inline-block;
 
   @include breakpoint(43em) {
-    @include isolation-span(1, 1, left, $grid: 8);
     @include rem(padding, ms(-2), ms(-2), ms(-2), 0);
-    display: block;
   }
 }
 
