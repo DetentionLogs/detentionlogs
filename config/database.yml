@@ -4,6 +4,7 @@ common: &common
 development:
   <<: *common
   database: detentionlogs_development
+  host: localhost
 
 test:
   <<: *common
