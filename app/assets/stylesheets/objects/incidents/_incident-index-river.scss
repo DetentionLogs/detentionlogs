@@ -1,0 +1,347 @@
+// Incident Index River
+// Styles to build the responsive table style layout of incident filter results.
+//
+// .incident-river
+//   ol
+//   li
+// .incident-river-header-row
+//   .incident-occurred-on
+//   .incident-type
+//   .incident-location
+//   .incident-summary
+//   .incident-location-deatils
+//   .incident-number
+// .incident-river-body
+// .incident-river-item-title
+// .incident-river-item
+//   dl
+//   dd
+//   .incident-field-label
+//   .incident-primary-meta
+//     .incident-field-value
+//   .incident-field-value.incident-occured-on
+//   .incident-field-value.incident-type
+//   .incident-field-value.incident-location
+//   .incident-main
+//   .incident-summary, incident-location-details
+//   .incident-secondary, .incident-secondary-linkgroup
+//   .incident-secondary
+//   .incident-secondary-linkgroup
+//   .incident-link
+//     &:hover, &:focus
+//     i
+// .has-detailed-report
+//   a.incident-number
+//   .incident-link
+//     &:hover, &:focus
+
+$table-bp-s: 41.2em;
+$table-bp-m: 50em;
+$table-bp-l: 70em;
+
+.incident-river {
+  clear: both;
+  float: none;
+
+  ol {
+    list-style: none;
+
+    @include breakpoint($table-bp-m) {
+      margin-top: 0;
+    }
+  }
+
+  li {
+    margin-top: 0;
+  }
+}
+
+.incident-river-header-row {
+  display: none;
+
+  @include breakpoint($table-bp-m) {
+    @include rem(border-top-width, ms(-15));
+    @include rem(border-bottom-width, ms(-15));
+    @include rem(padding, ms(-3), ms(-10));
+    @include rem(font-size, ms(0));
+    @include clearfix;
+    display: block;
+    margin-bottom: 0;
+    border-style: solid;
+    border-color: $color-grey-light;
+    color: $color-grey-dark;
+    font-weight: bold;
+  }
+
+  .incident-occurred-on {
+    @include breakpoint($table-bp-m) {
+      @include isolation-span(1, 1, none, $grid: 8);
+    }
+
+    @include breakpoint($table-bp-l) {
+      @include isolation-span(1, 1, none, $grid: 10);
+    }
+  }
+
+  .incident-type {
+    @include breakpoint($table-bp-m) {
+      @include isolation-span(1, 2, none, $grid: 8);
+    }
+
+    @include breakpoint($table-bp-l) {
+      @include isolation-span(1, 2, none, $grid: 10);
+    }
+  }
+
+  .incident-location {
+    @include breakpoint($table-bp-m) {
+      @include isolation-span(1, 3, none, $grid: 8);
+    }
+
+    @include breakpoint($table-bp-l) {
+      @include isolation-span(1, 3, none, $grid: 10);
+    }
+  }
+
+  .incident-summary {
+    @include breakpoint($table-bp-m) {
+      @include isolation-span(4, 4, none, $grid: 8);
+    }
+
+    @include breakpoint($table-bp-l) {
+      @include isolation-span(4, 4, none, $grid: 10);
+    }
+  }
+
+  .incident-location-details {
+    display: none;
+
+    @include breakpoint($table-bp-l) {
+      display: block;
+      @include isolation-span(2, 8, none, $grid: 10);
+    }
+  }
+
+  .incident-number {
+    @include breakpoint($table-bp-m) {
+      @include isolation-span(1, 8, right, $grid: 8);
+    }
+
+    @include breakpoint($table-bp-l) {
+      @include isolation-span(1, 10, right, $grid: 10);
+    }
+  }
+}
+
+.incident-river-body {
+  padding: 0;
+}
+
+.incident-river-item-title {
+  @include visuallyhidden;
+}
+
+.incident-river-item {
+  @include clearfix;
+  @include rem(font-size, ms(0));
+  @include rem(padding, ms(0), 0);
+  border-bottom: 1px $color-grey-light solid;
+
+  @include breakpoint($bp-m) {
+    &:nth-child(2n+2) {
+      background-color: $color-grey-light-3;
+    }
+  }
+
+  dl { margin-top: 0; }
+
+  dd { @include rem(margin-bottom, ms(-5)); }
+
+  .incident-field-label {
+    @include rem(margin-right, ms(-7));
+    font-size: 90%;
+    float: left;
+    clear: left;
+
+    @include breakpoint($table-bp-m) {
+      @include visuallyhidden;
+    }
+  }
+
+  .incident-primary-meta {
+    @include breakpoint($bp-s) {
+      @include isolation-span(4, 1, left, $grid: 8);
+    }
+
+    @include breakpoint($table-bp-s) {
+      @include isolation-span(3, 1, left, $grid: 8);
+    }
+
+    @include breakpoint($table-bp-m) {
+      @include isolation-span(3, 1, left, $grid: 8);
+
+      .incident-field-value {
+        font-weight: normal;
+      }
+    }
+
+    @include breakpoint($table-bp-l) {
+      @include isolation-span(3, 1, none, $grid: 10);
+    }
+  }
+
+  .incident-field-value.incident-occurred-on {
+    @include breakpoint($table-bp-m) {
+      @include isolation-span(1, 1, left, $grid: 3);
+    }
+
+    @include breakpoint($table-bp-l) {
+      @include isolation-span(1, 1, left, $grid: 3);
+    }
+  }
+
+  .incident-field-value.incident-type {
+    word-wrap: break-word;
+
+    @include breakpoint($table-bp-m) {
+      @include isolation-span(1, 2, none, $grid: 3);
+    }
+
+    @include breakpoint($table-bp-l) {
+      @include isolation-span(1, 2, none, $grid: 3);
+    }
+  }
+
+  .incident-field-value.incident-location {
+    word-wrap: break-word;
+
+    @include breakpoint($table-bp-m) {
+      @include isolation-span(1, 3, right, $grid: 3);
+    }
+
+    @include breakpoint($table-bp-l) {
+      @include isolation-span(1, 3, right, $grid: 3);
+    }
+  }
+
+  .incident-main {
+    @include clearfix;
+    clear: both;
+
+    @include breakpoint($bp-s) {
+      @include isolation-span(4, 5, right, $grid: 8);
+    }
+
+    @include breakpoint($table-bp-s) {
+      @include isolation-span(5, 4, right, $grid: 8);
+    }
+
+    @include breakpoint($table-bp-m) {
+      @include isolation-span(4, 4, none, $grid: 8);
+    }
+
+    @include breakpoint($table-bp-l) {
+      @include isolation-span(4, 4, none, $grid: 10);
+    }
+  }
+
+  .incident-summary,
+  .incident-location-details {
+    display: inline;
+    float: none;
+    clear: both;
+  }
+
+  .incident-secondary,
+  .incident-secondary-linkgroup {
+    @include rem(margin-top, ms(-5));
+
+    @include breakpoint($bp-s) {
+      @include isolation-span(4, 5, right, $grid: 8);
+    }
+
+    @include breakpoint($table-bp-s) {
+      @include isolation-span(5, 4, right, $grid: 8);
+    }
+
+    @include breakpoint($table-bp-m) {
+      margin-top: 0;
+    }
+  }
+
+  .incident-secondary {
+    @include breakpoint($table-bp-m) {
+      @include visuallyhidden;
+    }
+
+    @include breakpoint($table-bp-l) {
+      @include isolation-span(2, 8, none, $grid: 10);
+      position: relative;
+      height: auto;
+    }
+  }
+
+  .incident-secondary-linkgroup {
+    @include breakpoint($table-bp-m) {
+      @include isolation-span(1, 8, right, $grid: 8);
+    }
+
+    @include breakpoint($table-bp-l) {
+      @include isolation-span(1, 10, right, $grid: 10);
+    }
+  }
+
+  .incident-link {
+    @include rem(margin-top, ms(-5));
+    float: right;
+    clear: right;
+
+    @include breakpoint($table-bp-m) {
+      display: block;
+      float: none;
+      clear: none;
+      padding: 0;
+      background-color: transparent;
+
+      &:hover,
+      &:focus {
+        color: $color-black;
+      }
+
+      i {
+        display: none;
+      }
+    }
+  }
+}
+
+.has-detailed-report {
+  a.incident-number {
+    color: $color-salient;
+
+    @include breakpoint($bp-s) {
+      color: darken($color-salient, 25%);
+    }
+  }
+
+  .incident-link {
+    background-color: $color-salient;
+    color: $color-black;
+
+    &:hover,
+    &:focus {
+      background-color: $color-black;
+      color: #fff;
+    }
+
+    @include breakpoint($bp-s) {
+      background-color: transparent;
+      color: darken($color-salient, 25%);
+
+      &:hover,
+      &:focus {
+        color: $color-black;
+      }
+    }
+  }
+}
