@@ -1,3 +1,11 @@
+// Incident Index Results
+// The text results of incident queries, and surrounding content.
+//
+// .incident-index-resutls
+// .incident-index-results-description
+// .incident-index-permalink
+// .incident-index-order-by
+
 .incident-index-results {
   @include clearfix;
 }
@@ -25,6 +33,7 @@
   @extend .supporting;
   @include rem(padding, ms(-2), ms(-2), ms(-2), 0);
   float: left;
+  clear: left;
 
   @include breakpoint(43em) {
     @include isolation-span(1, 1, left, $grid: 8);
