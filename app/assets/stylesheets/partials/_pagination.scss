@@ -1,9 +1,47 @@
+// Pagination
+//
+// .pagination-block
+// .incident-index-results-reference .pagination-block
+//   .pagination-details
+//   .pagination-details, .pagination
+// .pagination-details
+// .pagination
+//   .page
+
 .pagination-block {
   text-align: center;
+
+  .incident-index-results-reference & {
+    display: none;
+
+    @include breakpoint(50em) {
+      @include rem(margin-bottom, ms(1));
+      display: inline-block;
+      float: right;
+      clear: right;
+      width: auto;
+      text-align: right;
+    }
+
+    .pagination-details {
+      margin-top: 0;
+    }
+
+    .pagination-details,
+    .pagination {
+      @include rem(font-size, ms(0));
+      display: inline-block;
+      text-align: right;
+    }
+  }
 }
 
 .pagination-details {
   @include rem(font-size, ms(0));
+
+  @include breakpoint($bp-m) {
+    @include rem(font-size, ms(1));
+  }
 }
 
 .pagination {
@@ -15,30 +53,5 @@
     @include rem(padding, ms(-2));
     display: inline-block;
     font-weight: bold;
-  }
-}
-
-.incident-index-results-reference {
-  .pagination-block {
-    display: none;
-
-    @include breakpoint($bp-m) {
-      // @include isolation-span(7, 2, right, $grid: 8);
-      @include rem(margin-bottom, ms(1));
-      display: block;
-      width: auto;
-      text-align: right;
-      clear: right;
-
-      .pagination-details,
-      .pagination {
-        display: inline-block;
-        text-align: right;
-      }
-
-      .pagination-details {
-        margin-top: 0;
-      }
-    }
   }
 }
