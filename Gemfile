@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby '1.9.2'
 
-gem 'rails', '3.2.12'
+gem 'rails', '3.2.18'
 
 # uploads and attachments
 gem 'paperclip', '~> 3.0'
