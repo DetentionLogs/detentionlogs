@@ -1,3 +1,4 @@
+# Controller for Incident Reports
 class IncidentsController < ApplicationController
   before_filter :authenticate_admin!, except: [
     :index,
@@ -20,10 +21,10 @@ class IncidentsController < ApplicationController
     @incidents =  apply_scopes(Incident).order("occured_on").page(params[:page]).per(50)
     @location_groups = LocationGroup.all
 
-  	if params[:location] && params[:location] > ""
+    if params[:location] && params[:location] > ""
       location = Location.find(params[:location])
       @location_name = location.name
-  	end
+    end
 
     @start_date = params[:by_period].try(:[], :start_date).try(:to_date) ||
       Incident.default_period_range.first
