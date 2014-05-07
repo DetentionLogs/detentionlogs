@@ -1,3 +1,7 @@
+//Typefaces
+$font : "Open Sans", verdana, "HelveticaNeue", "Helvetica", "Arial", sans-serif;
+
+
 .typebase {
   @include rem(font-size, ms(1));
   line-height: ms(4);

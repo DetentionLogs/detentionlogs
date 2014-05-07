@@ -5,7 +5,12 @@
 @import "modular-scale";
 
 @import "modules/mixins";
-@import "modules/variables";
+
+@import "modules/colours";
+@import "modules/modular-scale";
+@import "modules/breakpoints";
+@import "modules/grids";
+
 @import "modules/reset";
 @import "modules/fonts";
 @import "modules/utilities";
