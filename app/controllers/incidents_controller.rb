@@ -158,6 +158,6 @@ class IncidentsController < ApplicationController
   end
 
   def about
-
+    render layout: "layouts/pages"
   end
 end
