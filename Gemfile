@@ -32,6 +32,9 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+# breadcrumbs
+gem "gretel", '~> 3.0.6'
+
 # pagination
 gem 'kaminari', '~> 0.15.1'
 

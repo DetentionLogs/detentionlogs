@@ -87,6 +87,8 @@ GEM
       factory_girl (~> 4.4.0)
       railties (>= 3.0.0)
     ffi (1.9.3)
+    gretel (3.0.6)
+      rails (>= 3.2.0)
     has_scope (0.5.1)
     high_voltage (2.1.0)
     hike (1.2.3)
@@ -215,6 +217,7 @@ DEPENDENCIES
   compass-rails (~> 1.1.7)
   devise
   factory_girl_rails
+  gretel (~> 3.0.6)
   has_scope
   high_voltage (~> 2.1.0)
   jquery-rails (~> 3.1.0)
