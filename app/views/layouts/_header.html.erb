@@ -22,7 +22,7 @@
 
 </head>
 
-<body class="principles">
+<body class="<%= "#{params[:id]} #{controller.controller_name} #{controller.controller_name}-#{controller.action_name}" %>">
   <% if notice %>
     <p class="msg msg-notice"><%= notice %></p>
   <% end %>
