@@ -138,15 +138,10 @@ div[aria-hidden="false"] { display: block; }
   display: inline-block;
 }
 
-.article-header + p {
-  @include rem(font-size, ms(2));
+.page-title {
+  display: inline-block;
 }
-
 
 .body-container :target {
   background-color: $color-salient-light;
-}
-
-.page-title {
-  display: inline-block;
 }
