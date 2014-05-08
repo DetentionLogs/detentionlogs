@@ -1,6 +1,6 @@
-/*------------------------------------*\
-    $MIXINS
-\*------------------------------------*/
+// ------------------------------------
+//     $MIXINS
+// ------------------------------------
 
 // Rem Calculator
 // http://css-tricks.com/snippets/css/less-mixin-for-rem-font-sizing/
@@ -39,19 +39,19 @@
 //  Hide visually but show in screen-readers etc. */
 
 @mixin visuallyhidden {
-    position: absolute;
-    overflow: hidden;
-    clip: rect(0 0 0 0);
-    height: 1px; width: 1px;
-    margin: -1px; padding: 0; border: 0;
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px; width: 1px;
+  margin: -1px; padding: 0; border: 0;
 }
 
 // Beat *that* clearfix: [Thierry Koblentz](http://www.css-101.org/articles/clearfix/latest-new-clearfix-so-far.php)
 
 @mixin clearfix {
   &:after {
-    content:"";
-    display:table;
-    clear:both;
+    display: table;
+    clear: both;
+    content: "";
   }
 }

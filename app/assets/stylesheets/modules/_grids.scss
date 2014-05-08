@@ -1,18 +1,20 @@
 // Grids
+// Set up grid calculations
+// using the Singularitygs Compass extension
 
 @include add-grid(2);
-@include add-gutter( ms(-13) );
+@include add-gutter(ms(-13));
 
 @include breakpoint($bp-s) {
-    @include add-grid(8);
-    @include add-gutter( ms(-8));
+  @include add-grid(8);
+  @include add-gutter(ms(-8));
 }
 
 @include breakpoint($bp-m) {
-    @include add-grid(11);
-    @include add-gutter( ms(-7));
+  @include add-grid(11);
+  @include add-gutter(ms(-7));
 }
 
 @include breakpoint($bp-xxl) {
-    @include add-gutter( ms(-7));
+  @include add-gutter(ms(-7));
 }
