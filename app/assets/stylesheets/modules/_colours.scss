@@ -1,56 +1,57 @@
-//Colors
+//colors
 
-// http://color.hailpixel.com/#ffffff,333333
-$color-white : #ffffff;
-$color-black : #333333;
+// http://color.hailpixel.com/#ffffff,323232
+$color-white : #fff;
+$color-black : #323232;
 
-// http://color.hailpixel.com/#467719,5F942E,2A480F
+// http://color.hailpixel.com/#467719,5f942e,2a480f
 $color-primary : #467719;
-$color-primary-light : #5F942E;
-$color-primary-dark : #2A480F;
+$color-primary-light : #5f942e;
+$color-primary-dark : #2a480f;
 
-// http://color.hailpixel.com/#EEB73F,F6DCA2,FBEFD6,A27410
-$color-salient : #EEB73F;
-$color-salient-light : #F6DCA2;
-$color-salient-light-2 : #FBEFD6;
-$color-salient-dark : #A27410;
+// http://color.hailpixel.com/#eeb73f,f6dca2,fbefd6,a27410
+$color-salient : #eeb73f;
+$color-salient-light : #f6dca2;
+$color-salient-light-2 : #fbefd6;
+$color-salient-dark : #a27410;
 
-$color-dim : rgba(0,0,0,0.5);
+$color-dim : rgba(0, 0, 0, .5);
 
-// http://color.hailpixel.com/#9a9a9a,eaeaea,eeeeee,dddddd,666666,333333,131313
-$color-grey : #9a9a9a;
-$color-grey-light : #eaeaea;
-$color-grey-light-2 : #eee;
+// http://color.hailpixel.com/#fafafa,eeeeee,eaeaea,9a9a9a,959595,444444,222222
+
 $color-grey-light-3 : #fafafa;
-$color-grey-med : #959595;
-$color-grey-dark : #444;
-$color-grey-dark-2 : #222;
+$color-grey-light-2 : #eee;
+$color-grey-light : #eaeaea;
+$color-grey : #9a9a9a;
+$color-grey-dark : #959595;
+$color-grey-dark-2 : #444;
+$color-grey-dark-3 : #222;
 
-// http://color.hailpixel.com/#ff0000,467719,fff664,009DD6
-$color-error : #CD3737;
+// http://color.hailpixel.com/#ff0000,467719,fff664,009dd6
+$color-error : #cd3737;
 $color-valid : $color-primary;
-$color-submit : #009DD6;
-$color-submit-dark : #1A65A2;
+$color-submit : #009dd6;
+$color-submit-dark : #1a65a2;
 $color-warning : $color-salient-light;
 $color-information : $color-grey;
 
-    // patternlab
-    .sg-swatch--white {
-        background: $color-white;
-    }
+// patternlab
+.sg-swatch--white {
+  background: $color-white;
+}
 
-    .sg-swatch--black {
-        background: $color-black;
-    }
+.sg-swatch--black {
+  background: $color-black;
+}
 
-    .sg-swatch--primary {
-        background: $color-primary;
-    }
+.sg-swatch--primary {
+  background: $color-primary;
+}
 
-    .sg-swatch--salient {
-        background: $color-salient;
-    }
+.sg-swatch--salient {
+  background: $color-salient;
+}
 
-    .sg-swatch--grey {
-        background: $color-grey;
-    }
+.sg-swatch--grey {
+  background: $color-grey;
+}

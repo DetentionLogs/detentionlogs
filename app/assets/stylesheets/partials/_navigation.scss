@@ -113,7 +113,7 @@ nav {
 
 .toc {
   @extend %default-secondary-column;
-  @extend .supporting;
+  @extend %supporting;
 
   :first-child {
     margin-top: 0;

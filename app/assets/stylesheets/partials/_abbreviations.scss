@@ -1,14 +1,13 @@
-
 .redacted {
-    @include rem(padding, 0, ms(-5));
-    border-radius: .12em;
-    background-color: $color-grey-dark;
-    color: $color-grey-light-2;
-    text-transform: uppercase;
-    letter-spacing: .3em;
+  @include rem(padding, 0, ms(-5));
+  border-radius: .12em;
+  background-color: $color-grey-dark-2;
+  color: $color-grey-light-2;
+  text-transform: uppercase;
+  letter-spacing: .3em;
 }
 
 // overrides attr[title]
 abbr.redacted {
-    border: none;
+  border: 0;
 }

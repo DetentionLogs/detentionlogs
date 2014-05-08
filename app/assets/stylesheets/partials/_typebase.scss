@@ -2,7 +2,7 @@
 $font : "Open Sans", verdana, "HelveticaNeue", "Helvetica", "Arial", sans-serif;
 
 
-.typebase {
+%typbase {
   @include rem(font-size, ms(1));
   line-height: ms(4);
 
@@ -12,10 +12,11 @@ $font : "Open Sans", verdana, "HelveticaNeue", "Helvetica", "Arial", sans-serif;
 }
 
 body {
-  @extend .typebase;
+  @extend %typbase;
   background-color: $color-white;
   color: $color-black;
   font-family: $font;
+  text-rendering: optimizeLegibility;
 }
 
 p {
@@ -53,7 +54,7 @@ h2 {
 }
 
 h3 {
-  @extend .typebase;
+  @extend %typbase;
   @include rem(margin, ms(5), 0, 0);
   font-style: bold;
   text-transform: uppercase;
@@ -61,7 +62,7 @@ h3 {
 }
 
 h4 {
-  @extend .typebase;
+  @extend %typbase;
   @include rem(margin, ms(2), 0, 0);
   font-weight: bold;
   text-decoration: underline;
@@ -109,6 +110,7 @@ blockquote {
 div[aria-hidden="true"] { display: none; }
 div[aria-hidden="false"] { display: block; }
 
+%supporting,
 .supporting {
   @include rem(font-size, ms(0));
 
@@ -117,21 +119,22 @@ div[aria-hidden="false"] { display: block; }
   // }
 }
 
-.loud {
+%loud {
   @include rem(font-size, ms(2));
 
   @include breakpoint($bp-l) {
-      @include rem(font-size, ms(3));
+    @include rem(font-size, ms(3));
   }
 }
 
+%lede,
 .lede {
-  @extend .loud;
+  @extend %loud;
   line-height: ms(3);
 }
 
 .lede-sub-link {
-  @extend .supporting;
+  @extend %supporting;
   display: inline-block;
 }
 

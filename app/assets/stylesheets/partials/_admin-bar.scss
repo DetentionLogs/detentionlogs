@@ -1,10 +1,10 @@
 .admin-bar {
-  @extend .supporting;
+  @extend %supporting;
   margin-top: 0;
   @include rem(padding-top, ms(-8));
   @include rem(padding-bottom, ms(-8));
   @include clearfix;
-  background-color: $color-grey-dark;
+  background-color: $color-grey-dark-2;
   color: $color-grey-light-3;
 
   p {

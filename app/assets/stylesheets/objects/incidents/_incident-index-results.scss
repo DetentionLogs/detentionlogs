@@ -11,7 +11,7 @@
 }
 
 .incident-index-results-description {
-  @extend .lede;
+  @extend %lede;
   font-weight: normal;
   margin-top: 0;
 
@@ -30,7 +30,7 @@
 }
 
 .incident-index-permalink {
-  @extend .supporting;
+  @extend %supporting;
   @include rem(padding, ms(-2), ms(-2), ms(-2), 0);
   float: left;
   clear: left;
@@ -42,7 +42,7 @@
 }
 
 .incident-index-order-by {
-  @extend .supporting;
+  @extend %supporting;
   @include rem(padding, ms(-2), 0, ms(-2), ms(-2));
   float: right;
   clear: right;
