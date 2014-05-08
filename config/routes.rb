@@ -60,7 +60,14 @@ Detentionlogs::Application.routes.draw do
     end
   end
 
-  #resources :incidents
+# at the moment there is no other data than incidents,
+# so redirect to that
+get '/data', to: redirect('/data/incidents')
+
+# URL /incidents is probably looking for /data/incidents
+get '/incidents', to: redirect('/data/incidents')
+
+  # resources :incidents
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
