@@ -2,24 +2,24 @@ crumb :root do
   link "Home", root_path
 end
 
-# crumb :projects do
-#   link "Projects", projects_path
-# end
+crumb :incidents do
+  link "Incident Explorer", incidents_path, title: "Explore incident records from Australia's immigration detention network"
+end
 
-# crumb :project do |project|
-#   link project.name, project_path(project)
-#   parent :projects
-# end
+crumb :incident do |incident|
+  link "Incident Report #{incident.incident_number}", incident_path(incident)
+  parent :incidents
+end
 
-# crumb :project_issues do |project|
-#   link "Issues", project_issues_path(project)
-#   parent :project, project
-# end
+crumb :incident_adopt do |incident|
+  link "Adopt", incident_adopt_path(incident)
+  parent :incident, incident
+end
 
-# crumb :issue do |issue|
-#   link issue.title, issue_path(issue)
-#   parent :project_issues, issue.project
-# end
+crumb :about_incidents do
+  link "About Incident Reports", about_incidents_path
+  parent :incidents
+end
 
 # If you want to split your breadcrumbs configuration over multiple files, you
 # can create a folder named `config/breadcrumbs` and put your configuration

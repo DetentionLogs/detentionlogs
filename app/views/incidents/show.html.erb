@@ -2,9 +2,11 @@
   title "Incident #{@incident.incident_number}, #{@incident.incident_type} at #{@incident.location.name}, #{@incident.occured_on.strftime('%d %b %Y')}"
 
   description "#{@incident.summary}"
+
+  breadcrumb :incident, @incident
 %>
 
-<%= render 'layouts/sub-nav', :breadcrumbs => true %>
+<%= render 'layouts/sub-nav' %>
 
 <div class="body-container">
   <article class="incident incident-show-body" role="main">

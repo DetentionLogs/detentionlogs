@@ -1,14 +1,14 @@
 <div class="sub-nav">
-  <% if breadcrumbs %>
-  <nav class="breadcrumbs" id="breadcrumbs">
-    <ul>
-      <% if controller.controller_name == 'incidents' && current_page?(incident_path(@incident)) || current_page?(incident_adopt_path(@incident)) %>
 
-      <%= render 'incidents/breadcrumbs' %>
-
-      <% end %>
-    </ul>
-  </nav>
+  <% if breadcrumbs.any? %>
+    <nav class="breadcrumbs" id="breadcrumbs">
+      <%= breadcrumbs style: :ul,
+                      autoroot: false,
+                      link_current: true,
+                      class: "",
+                      id: "",
+                      semantic: true %>
+    </nav>
   <% end %>
 
   <nav class="section-nav">

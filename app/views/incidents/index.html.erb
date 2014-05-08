@@ -2,9 +2,11 @@
 	title incidentexplorer_results
 
 	description "Explore an index of 'incident reports' recorded by staff at Australia’s immigration detention facilities."
+
+	breadcrumb :incidents, @incidents
 %>
 
-<%= render 'layouts/sub-nav', :breadcrumbs => false %>
+<%= render 'layouts/sub-nav' %>
 
 <section class="body-container incident-index" id="content" role="main">
 

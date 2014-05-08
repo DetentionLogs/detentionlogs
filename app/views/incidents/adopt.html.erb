@@ -2,9 +2,11 @@
   title "Adopt Incident #{@incident.incident_number}"
 
   description "Help bring to light more information about incident #{@incident.incident_number} by submitting a Freedom of Information Request for its Detailed Incident Report"
+
+  breadcrumb :incident_adopt, @incident
 %>
 
-<%= render 'layouts/sub-nav', :breadcrumbs => true %>
+<%= render 'layouts/sub-nav' %>
 
 <article class="body-container main-reading incident-adopt-body" role="main">
   <%= render 'incidents/adopt-callout' %>
