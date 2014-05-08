@@ -78,6 +78,29 @@ body {
   }
 }
 
+%default-headline-block { // assumed child of %inset-page-container
+  @include breakpoint($bp-m) {
+    width: column-span(8, 1, 9);
+  }
+
+  @include breakpoint($bp-l) {
+    width: column-span(7, 1, 9);
+  }
+
+  @include breakpoint($bp-xl) {
+    width: column-span(6, 2, 9);
+  }
+
+  @include breakpoint($bp-xxxl) {
+    width: column-span(6, 3, 9);
+  }
+}
+
+
+.article-header {
+  @extend %default-headline-block;
+}
+
 %default-secondary-column {
   @include breakpoint($bp-l) {
     float: right;
