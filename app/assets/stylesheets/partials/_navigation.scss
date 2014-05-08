@@ -112,6 +112,7 @@ nav {
 }
 
 .toc {
+  @extend %default-secondary-column;
   @extend .supporting;
 
   :first-child {
