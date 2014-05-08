@@ -6,6 +6,16 @@
         @include rem(margin-top, ms(10));
     }
 
+    @include breakpoint($bp-l) {
+        padding-right: gutter-span();
+        padding-left: gutter-span();
+    }
+
+    @include breakpoint($bp-xxl) {
+        padding-right: gutter-span();
+        padding-left: gutter-span();
+    }
+
     .primary-nav {
         @include breakpoint($bp-s) {
             @include rem(font-size, ms(2));

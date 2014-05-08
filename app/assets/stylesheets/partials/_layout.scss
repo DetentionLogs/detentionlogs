@@ -36,23 +36,6 @@ body {
   @include clearfix;
 }
 
-.site-header,
-.sub-nav {
-  @extend %default-page-container;
-}
-
-.site-footer {
-  @include breakpoint($bp-l) {
-    padding-right: gutter-span();
-    padding-left: gutter-span();
-  }
-
-  @include breakpoint($bp-xxl) {
-    padding-right: gutter-span();
-    padding-left: gutter-span();
-  }
-}
-
 %inset-page-container {
   @include breakpoint($bp-xxl) {
     padding-right: (column-span(1, 1, 11) + gutter-span());

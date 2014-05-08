@@ -1,4 +1,5 @@
 .sub-nav {
+  @extend %default-page-container;
   @extend .supporting;
   @include rem(margin-top, ms(2));
   @include rem(margin-bottom, 0);
