@@ -49,19 +49,19 @@ body {
 
 %default-text-block { // assumed child of %inset-page-container
   @include breakpoint($bp-m) {
-    max-width: column-span(7, 1, 9);
+    width: column-span(7, 1, 9);
   }
 
   @include breakpoint($bp-l) {
-    max-width: column-span(6, 1, 9);
+    width: column-span(6, 1, 9);
   }
 
   @include breakpoint($bp-xl) {
-    max-width: column-span(5, 2, 9);
+    width: column-span(5, 2, 9);
   }
 
   @include breakpoint($bp-xxxl) {
-    max-width: column-span(5, 3, 9);
+    width: column-span(5, 3, 9);
   }
 }
 
@@ -80,19 +80,19 @@ body {
 
 %default-secondary-column {
   @include breakpoint($bp-l) {
-    max-width: column-span(3, 7, 9);
+    width: column-span(3, 7, 9);
   }
 
   @include breakpoint($bp-xl) {
-    max-width: column-span(4, 6, 9);
+    width: column-span(4, 6, 9);
   }
 
   @include breakpoint($bp-xxl) {
-    max-width: column-span(3, 7, 9);
+    width: column-span(3, 7, 9);
   }
 
   @include breakpoint($bp-xxxl) {
-    max-width: column-span(3, 7, 9);
+    width: column-span(3, 7, 9);
   }
 }
 
@@ -102,18 +102,18 @@ body {
 
 %wide-text-block { // assumed child of %default-page-container
   @include breakpoint($bp-m) {
-    max-width: column-span(8, 1, 11);
+    width: column-span(8, 1, 11);
   }
 
   @include breakpoint($bp-l) {
-    max-width: column-span(7, 1, 11);
+    width: column-span(7, 1, 11);
   }
 
   @include breakpoint($bp-xl) {
-    max-width: column-span(7, 2, 11);
+    width: column-span(7, 2, 11);
   }
 
   @include breakpoint($bp-xxxl) {
-    max-width: column-span(6, 3, 11);
+    width: column-span(6, 3, 11);
   }
 }
