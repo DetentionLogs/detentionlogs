@@ -1,0 +1,121 @@
+.home {
+  .lede,
+  .module {
+    @include breakpoint($bp-l) {
+      width: column-span(8, 1, 11);
+    }
+
+    @include breakpoint($bp-xl) {
+      width: column-span(8, 2, 11);
+    }
+
+    @include breakpoint($bp-xxxl) {
+      width: column-span(8, 3, 11);
+    }
+  }
+
+  .feature-block {
+    @include rem(margin-top, ms(8));
+    @include rem(padding-top, ms(4));
+    @include rem(padding-bottom, ms(4));
+    background-color: $color-black;
+    color: $color-grey-light-2;
+
+    @include breakpoint($bp-s) {
+      @include rem(padding-top, ms(6));
+      @include rem(padding-bottom, ms(6));
+    }
+
+    @include breakpoint($bp-m) {
+      @include rem(padding-top, ms(8));
+      @include rem(padding-bottom, ms(8));
+    }
+
+    @include breakpoint($bp-l) {
+      @include rem(margin-top, ms(8));
+      @include rem(padding-top, ms(8));
+      @include rem(padding-bottom, ms(8));
+    }
+
+    @include breakpoint($bp-xxl) {
+      @include rem(margin-top, ms(12));
+      @include rem(padding-top, ms(12));
+      @include rem(padding-bottom, ms(12));
+    }
+
+    @include breakpoint($bp-xxl) {
+
+    }
+
+    blockquote {
+      @include rem(font-size, ms(2));
+      margin-top: 0;
+      border: 0;
+      padding: 0;
+
+      @include breakpoint($bp-m) {
+        @include rem(font-size, ms(2));
+      }
+
+      @include breakpoint($bp-xl) {
+        @include rem(font-size, ms(3));
+      }
+
+      &:before {
+        @include rem(font-size, ms(8));
+        content: "\201C";
+        text-decoration: none;
+        font-family: georgia, serif;
+        line-height: 0;
+        vertical-align: middle;
+      }
+    }
+
+    figcaption {
+      @extend %supporting;
+      @include rem(margin-top, ms(0));
+      text-align: right;
+
+      @include breakpoint($bp-s) {
+        @include rem(padding-left, ms(10));
+        @include rem(margin-top, ms(1));
+      }
+
+      @include breakpoint($bp-l) {
+        padding-left: column-span(2, 1, 11);
+        width: column-span(8, 1, 11);
+      }
+
+      @include breakpoint($bp-xl) {
+        padding-left: column-span(2, 1, 11);
+        width: column-span(8, 2, 11);
+      }
+
+      @include breakpoint($bp-xxxl) {
+        padding-left: column-span(3, 1, 11);
+        width: column-span(8, 3, 11);
+      }
+
+      &:before {
+        content: "\2014";
+        text-decoration: none;
+      }
+    }
+
+    cite {
+      font-style: normal;
+    }
+
+    a {
+      color: $color-grey-light-2;
+    }
+  }
+
+  .site-footer {
+    margin-top: 0;
+
+    @include breakpoint($bp-l) {
+      @include rem(margin-top, ms(0));
+    }
+  }
+}
