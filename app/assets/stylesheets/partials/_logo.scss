@@ -1,22 +1,25 @@
+.logo {
+  color: $color-primary;
+}
+
 .banner {
-    display: inline-block;
-    text-decoration: none;
+  display: inline-block;
+  text-decoration: none;
 
-    .logo {
-        @include rem(font-size, ms(3));
-        margin-top: 0;
-        color: $color-primary;
+  .logo {
+    @include rem(font-size, ms(3));
+    margin-top: 0;
 
-        &:hover,
-        &:focus {
-            color: $color-black;
-            text-decoration: underline;
-        }
+    &:hover,
+    &:focus {
+      color: $color-black;
+      text-decoration: underline;
     }
+  }
 
-    .tagline {
-        @include rem(margin-top, 0);
-        @include rem(font-size, ms(0) );
-        color: $color-black;
-    }
+  .tagline {
+    @include rem(margin-top, 0);
+    @include rem(font-size, ms(0));
+    color: $color-black;
+  }
 }
