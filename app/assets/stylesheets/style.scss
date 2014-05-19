@@ -72,6 +72,12 @@
 @import "objects/incidents/incident-adopt";
 
 /*------------------------------------*\
+    $HOME
+\*------------------------------------*/
+
+@import "objects/home.scss";
+
+/*------------------------------------*\
     $COMPONENTS
 \*------------------------------------*/
 @import "objects/accordion";
