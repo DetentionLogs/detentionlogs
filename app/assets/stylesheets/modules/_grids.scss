@@ -3,18 +3,11 @@
 // using the Singularitygs Compass extension
 
 @include add-grid(2);
-@include add-gutter(ms(-13));
+@include add-gutter(ms(-12));
 
-@include breakpoint($bp-s) {
-  @include add-grid(8);
-  @include add-gutter(ms(-8));
-}
+@include add-grid(8 at $bp-s);
+@include add-gutter(.8 at $bp-s);
 
-@include breakpoint($bp-m) {
-  @include add-grid(11);
-  @include add-gutter(ms(-7));
-}
+@include add-grid(11 at $bp-m);
+@include add-gutter(.5 at $bp-m);
 
-@include breakpoint($bp-xxl) {
-  @include add-gutter(ms(-7));
-}
