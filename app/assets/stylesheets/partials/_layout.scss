@@ -32,6 +32,34 @@ body {
   @include clearfix;
 }
 
+%deep-outer-page-container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: gutter-span();
+  padding-left: gutter-span();
+
+
+  @include breakpoint($bp-s) {
+    padding-right: gutter-span();
+    padding-left: gutter-span();
+  }
+
+  @include breakpoint($bp-m) {
+    padding-right: gutter-span();
+    padding-left: gutter-span();
+  }
+
+  @include breakpoint($bp-xxl) {
+    padding-right: (column-span(1, 1, 11) + gutter-span() + gutter-span());
+    padding-left: (column-span(1, 11, 11) + gutter-span() + gutter-span());
+  }
+}
+
+.deep-body-container {
+  @extend %deep-outer-page-container;
+  @include clearfix;
+}
+
 %inset-page-container {
   @include breakpoint($bp-xxl) {
     padding-right: (column-span(1, 1, 11) + gutter-span());
