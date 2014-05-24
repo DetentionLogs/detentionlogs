@@ -1,7 +1,7 @@
 Detentionlogs::Application.routes.draw do
   devise_for :admins, :skip => :registrations
 
-  root :to => 'high_voltage/pages#show', :id => 'home'
+  root :to => 'home#frontpage', :id => 'home'
 
   # controller :sessions do
   #   delete 'sign_out' => :destroy
