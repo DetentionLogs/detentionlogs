@@ -30,7 +30,7 @@ class IncidentsController < ApplicationController
       Incident.default_period_range.first
     @end_date = params[:by_period].try(:[], :end_date).try(:to_date) ||
       Incident.default_period_range.end
-    @incident_types = Incident.uniq.pluck(:incident_type)
+    @incident_types = Incident.uniq.order("incident_type").pluck(:incident_type)
     logger.debug @incident_types
     respond_to do |format|
       format.html # index.html.erb
