@@ -6,7 +6,8 @@
     <!--     <a class="incident-filters-toggler"></a> -->
 
     <div class="incident-filters-collapsible">
-        <fieldset class="type">
+        <fieldset class="form-group-type">
+            <legend class="visuallyhidden">Select a type or category of incident report that you would like to find.</legend>
             <label for="incident_type">Incident Type</label>
 
             <select id="incident_type" name="incident_type">
@@ -79,8 +80,10 @@
             </select>
         </fieldset>
 
-        <fieldset class="location">
-            <label for="location">Incident Location</label>
+        <fieldset class="form-group-location">
+            <legend class="visuallyhidden">Select a to find incident reports from a specific detention facility, or from all facilities.</legend>
+
+            <label for="location">Detention Facility</label>
 
             <select id="location" name="location">
                 <option value="">All</option>
@@ -135,22 +138,27 @@
             </select>
         </fieldset>
 
-        <fieldset class="start-date datepicker">
-            <label>Start Date</label>
-            <input type="date" id="by_period_start_date" name="by_period[start_date]" value="2009-10-03" min="2009-10-03" max="2011-05-26">
+        <fieldset class="form-group-start-date datepicker">
+            <legend class="visuallyhidden">Set the start and end dates to find incident reports between.</legend>
+
+            <label for="by_period_start_date">Start Date</label>
+
+            <input type="date" id="by_period_start_date" name="by_period[start_date]" value="2009-10-03" placeholder="2009-10-03" min="2009-10-03" max="2011-05-26">
+
+            <label for="by_period_end_date">End date</label>
+
+            <input type="date" id="by_period_end_date" name="by_period[end_date]" value="2011-05-26" placeholder="2011-05-26" min="2009-10-03" max="2011-05-26">
         </fieldset>
 
-        <fieldset class="end-date datepicker">
-            <label>End Date</label>
-            <input type="date" id="by_period_end_date" name="by_period[end_date]" value="2011-05-26" min="2009-10-03" max="2011-05-26">
-        </fieldset>
-
-        <fieldset class="has-detail-report">
-            <label for="by_detailed_report"><input id="by_detailed_report" name="by_detailed_report" type="checkbox" value="true">Has detail report</label>
+        <fieldset class="form-group-has-detail-report">
+            <legend class="visuallyhidden">Some incident reports have an 'Incident Detail Report' attached. You may filter the results to only find incidents with these attachments.</legend>
+            <label for="by_detailed_report"><input id="by_detailed_report" name="by_detailed_report" type="checkbox" value="true">Has Detail Report attached</label>
         </fieldset>
 
         <input name="utf8" type="hidden" value="&#x2713;" />
 
-        <input class="btn btn-submit" type="submit" role="button" value="Find incident reports"/>
+        <fieldset class="form-action-group">
+            <input class="btn btn-submit" type="submit" role="button" value="Find incident reports"/>
+        </fieldset>
     </div>
 </form>

@@ -1,36 +1,46 @@
 <%= form_tag(incidents_path, :method => :get, :class => 'incident-filters', :id => 'filters', :role => 'form') do %>
-  <h2 class="incident-filters-title"><legend>Filter Incident List</legend></h2>
+  <h2 class="incident-filters-title">Filter Incident List</h2>
 
   <div class="incident-filters-inputs">
-    <fieldset class="type">
+    <fieldset class="form-group-type">
+      <legend class="visuallyhidden">Select a type or category of incident report that you would like to find.</legend>
+
       <label for="incident_type">Type</label>
+
       <%= select_tag(:incident_type, options_from_collection_for_select(@incident_types, 'to_s', 'to_s', params[:incident_type]), :prompt => "All") %>
     </fieldset>
 
-    <fieldset class="location">
-      <label for="location">Location</label>
+    <fieldset class="form-group-location">
+      <legend class="visuallyhidden">Select a to find incident reports from a specific detention facility, or from all facilities.</legend>
+
+      <label for="location">Detention Facility</label>
+
       <%= select_tag(:location, option_groups_from_collection_for_select(@location_groups, :locations, :name, :id, :name, params[:location]), :prompt => "All") %>
     </fieldset>
 
-    <fieldset class="start-date">
-      <label>Start Date</label>
-      <input type="date" id="by_period_start_date" name="by_period[start_date]" value="<%=@start_date%>" min="2009-10-03" max="2011-05-26">
+    <fieldset class="form-group-start-date datepicker">
+      <legend class="visuallyhidden">Set the start and end dates to find incident reports between.</legend>
+
+      <label for="by_period_start_date">Start date</label>
+
+      <input id="by_period_start_date" type="date" name="by_period[start_date]" value="<%=@start_date%>" placeholder="Earliest is <%=@start_date%>" min="2009-10-03" max="2011-05-26" required>
+
+      <label for="by_period_end_date">End date</label>
+
+      <input id="by_period_end_date" type="date" name="by_period[end_date]" value="<%=@end_date%>" placeholder="Most recent is <%=@end_date%>" min="2009-10-03" max="2011-05-26" required>
     </fieldset>
 
-    <fieldset class="end-date">
-      <label>End Date</label>
-      <input type="date" id="by_period_end_date" name="by_period[end_date]" value="<%=@end_date%>" min="2009-10-03" max="2011-05-26">
-    </fieldset>
+    <fieldset class="form-group-has-detail-report">
+      <legend class="visuallyhidden">Some incident reports have an 'Incident Detail Report' attached. You may filter the results to find only incidents with these attachments.</legend>
 
-    <fieldset class="has-detail-report">
       <label for="by_detailed_report">
         <%=check_box_tag :by_detailed_report, 'true', !!params[:by_detailed_report] %>
         Has detail report
       </label>
     </fieldset>
 
-    <input class="btn btn-submit" type="submit" role="button" value="Find incident reports"/>
-
-    <button class="btn-reset" type="reset" name="reset">reset</button>
+    <fieldset class="form-action-group">
+      <input class="btn btn-submit" type="submit" role="button" value="Find incident reports"/>
+    </fieldset>
   </div>
 <% end %>
