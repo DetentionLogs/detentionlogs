@@ -145,3 +145,8 @@ div[aria-hidden="false"] { display: block; }
 .body-container :target {
   background-color: $color-salient-light;
 }
+
+%visuallyhidden,
+.visuallyhidden {
+  @include visuallyhidden;
+}
