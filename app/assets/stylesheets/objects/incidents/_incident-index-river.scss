@@ -135,6 +135,13 @@ $table-bp-l: 70em;
 
 .incident-river-body {
   padding: 0;
+
+
+  li:nth-child(2n+2) {
+    @include breakpoint($bp-m) {
+      background-color: $color-grey-light-3;
+    }
+  }
 }
 
 .incident-river-item-title {
@@ -146,12 +153,6 @@ $table-bp-l: 70em;
   @include rem(font-size, ms(0));
   @include rem(padding, ms(0), 0);
   border-bottom: 1px $color-grey-light solid;
-
-  @include breakpoint($bp-m) {
-    &:nth-child(2n+2) {
-      background-color: $color-grey-light-3;
-    }
-  }
 
   dl { margin-top: 0; }
 
