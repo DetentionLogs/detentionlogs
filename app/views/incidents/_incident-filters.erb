@@ -18,16 +18,20 @@
       <%= select_tag(:location, option_groups_from_collection_for_select(@location_groups, :locations, :name, :id, :name, params[:location]), :prompt => "All") %>
     </fieldset>
 
-    <fieldset class="form-group-start-date datepicker">
+    <fieldset class="form-group-date datepicker">
       <legend class="visuallyhidden">Set the start and end dates to find incident reports between.</legend>
 
-      <label for="by_period_start_date">Start date</label>
+      <div class="form-group-start-date">
+        <label for="by_period_start_date">Start date</label>
 
-      <input id="by_period_start_date" type="date" name="by_period[start_date]" value="<%=@start_date%>" placeholder="Earliest is <%=@start_date%>" min="2009-10-03" max="2011-05-26" required>
+        <input id="by_period_start_date" type="date" name="by_period[start_date]" value="<%=@start_date%>" placeholder="Earliest is <%=@start_date%>" min="2009-10-03" max="2011-05-26" required>
+      </div>
 
-      <label for="by_period_end_date">End date</label>
+      <div class="form-group-end-date">
+        <label for="by_period_end_date">End date</label>
 
-      <input id="by_period_end_date" type="date" name="by_period[end_date]" value="<%=@end_date%>" placeholder="Most recent is <%=@end_date%>" min="2009-10-03" max="2011-05-26" required>
+        <input id="by_period_end_date" type="date" name="by_period[end_date]" value="<%=@end_date%>" placeholder="Most recent is <%=@end_date%>" min="2009-10-03" max="2011-05-26" required>
+      </div>
     </fieldset>
 
     <fieldset class="form-group-has-detail-report">
@@ -39,8 +43,6 @@
       </label>
     </fieldset>
 
-    <fieldset class="form-action-group">
-      <input class="btn btn-submit" type="submit" role="button" value="Find incident reports"/>
-    </fieldset>
+    <input class="btn btn-submit" type="submit" role="button" value="Find incident reports"/>
   </div>
 <% end %>
