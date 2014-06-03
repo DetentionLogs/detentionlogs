@@ -137,11 +137,11 @@ $table-bp-l: 70em;
   padding: 0;
 
 
-  li:nth-child(2n+2) {
-    @include breakpoint($bp-m) {
-      background-color: $color-grey-light-3;
-    }
-  }
+  // li:nth-child(2n+2) {
+  //   @include breakpoint($bp-m) {
+  //     background-color: $color-grey-light-3;
+  //   }
+  // }
 }
 
 .incident-river-item-title {
