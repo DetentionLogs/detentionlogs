@@ -1,3 +1,4 @@
+# Controller for grouping detention facility locations.
 class LocationGroupsController < ApplicationController
   before_filter :authenticate_admin!
 
