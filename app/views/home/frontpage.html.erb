@@ -11,17 +11,20 @@
       <p class="lede">We publish data, documents and investigations that reveal new perspectives on conditions and events inside Australia's immigration detention network. Detention Logs supports deeper community knowledge of and accountability for conditions in detention.</p>
 
       <section class="module">
-        <h2 class="module-heading"><a href="{{ link.templates-incident-index}}">Data</a></h2>
-        <p class="module-body">So far Detention Logs has published 7632 incident reports produced at Australia's onshore immigration detention facilities between 3 Oct 2009 and 26 May 2011.</p>
+        <h2 class="module-heading"><%= link_to "Data", :incidents %></h2>
+
+        <p class="module-body">So far Detention Logs has published 7632 incident reports produced by staff at Australia's onshore immigration detention facilities between 3 Oct 2009 and 26 May 2011.</p>
       </section>
 
       <section class="module">
-        <h2 class="module-heading"><a href="{{ link.templates-article }}">Investigations</a></h2>
+        <h2 class="module-heading"><%= link_to "investigations", :investigations %></h2>
+
         <p class="module-body">The information on this website is used in reporting on and research into detention.</p>
       </section>
 
       <section class="module">
-        <h2 class="module-heading"><a href="{{ link.templates-article }}">Contribute</a></h2>
+        <h2 class="module-heading"><%= link_to "Contribute", :contribute %></h2>
+
         <p class="module-body">Find out how you can help improve this resource and bring more information to light.</p>
       </section>
   </section>
