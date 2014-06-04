@@ -14,7 +14,9 @@
   }
 
   .front-matter .logo {
-    @include rem(margin, ms(2), 0, 0);
+    @include breakpoint(max-width $bp-l) {
+      @include rem(margin, ms(2), 0, 0);
+    }
   }
 
   .lede,
