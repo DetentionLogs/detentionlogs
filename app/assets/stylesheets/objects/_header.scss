@@ -1,5 +1,6 @@
 .site-header {
   @extend %default-page-container;
+  @include clearfix;
 
   @include breakpoint($bp-l) {
     @include rem(padding-top, ms(3));
@@ -10,6 +11,10 @@
   .banner {
     @include rem(margin-top, ms(-6));
     word-break: none;
+
+    @include breakpoint($bp-l) {
+      float: left;
+    }
   }
 
   .tagline {
@@ -35,7 +40,7 @@
 
     @include breakpoint($bp-l) {
       @include rem(margin-top, ms(-3));
-      display: block;
+      display: inline;
       float: right;
       clear: right;
 

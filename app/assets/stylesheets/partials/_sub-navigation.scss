@@ -18,11 +18,15 @@
     background-color: $color-grey-light-2;
   }
 
+  ul {
+    display: inline;
+  }
+
   .section-nav {
     display: none;
 
     @include breakpoint($bp-l) {
-      display: block;
+      display: inline;
     }
   }
 
@@ -37,7 +41,9 @@
 
 
 .breadcrumbs {
-  display: inline-block;
+  display: inline;
+  float: left;
+  clear: left;
 
   li {
     display: inline;
