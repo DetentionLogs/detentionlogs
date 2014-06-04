@@ -1,85 +1,79 @@
 .btn {
-    @include rem(padding, ms(-2), ms(0));
-    display: inline-block;
-    background-color: $color-grey-light;
-    text-decoration: none;
-    border-radius: .2em;
+  @include rem(padding, ms(-2), ms(0));
+  display: inline-block;
+  border-radius: .2em;
+  background-color: $color-grey-light;
+  text-decoration: none;
 
-    &:hover,
-    &:focus {
-        background-color: $color-black;
-        color: $color-white;
-    }
+  &:hover,
+  &:focus {
+    background-color: $color-black;
+    color: $color-white;
+  }
 }
 
 .btn-primary {
-    background-color: $color-primary;
-    color: $color-white;
-    box-shadow:
-        1px 2px darken($color-primary, 10%),
-    ;
+  background-color: $color-primary;
+  box-shadow: 1px 2px darken($color-primary, 10%);
+  color: $color-white;
 
-    &:hover,
-    &:focus {
-        background-color: $color-black;
-    }
+  &:hover,
+  &:focus {
+    background-color: $color-black;
+  }
 }
 
 .btn-menu {
-    background-color: $color-primary;
-    color: $color-white;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  background-color: $color-primary;
+  color: $color-white;
 
-    &:hover,
-    &:focus {
-        background-color: $color-black;
-    }
+  &:hover,
+  &:focus {
+    background-color: $color-black;
+  }
 }
 
 .btn-alt {
-    background-color: $color-salient-light;
-    color: $color-black;
-    box-shadow:
-        .08em .08em darken($color-salient-light, 10%),
-    ;
+  background-color: $color-salient-light;
+  box-shadow: .08em .08em darken($color-salient-light, 10%);
+  color: $color-black;
 
-    &:hover,
-    &:focus {
-        background-color: $color-black;
-        color: $color-white;
-        box-shadow:
-            .08em .08em darken($color-salient-light, 60%),
-        ;
-    }
+  &:hover,
+  &:focus {
+    background-color: $color-black;
+    box-shadow: .08em .08em darken($color-salient-light, 60%);
+    color: $color-white;
+  }
 }
 
 .btn-submit {
-    background-color: $color-submit;
-    background: linear-gradient(top, $color-submit,
-                darken($color-submit, 2%));
-    color: $color-white;
-    border-top: .1em lighten($color-submit, 5%) solid;
+  border-top: .1em lighten($color-submit, 5%) solid;
+  border-right: 0;
+  border-bottom: .1em $color-submit-dark solid;
+  border-left: .1em lighten($color-submit, 5%) solid;
+  background: linear-gradient(top, $color-submit,
+              darken($color-submit, 2%));
+  background-color: $color-submit;
+  box-shadow: .08em .08em $color-submit-dark;
+  color: $color-white;
+  text-shadow: .08em .08em darken($color-submit, 10%);
+
+  &:hover,
+  &:focus {
+    border-top: .1em lighten($color-submit-dark, 5%) solid;
     border-right: 0;
     border-bottom: .1em $color-submit-dark solid;
-    border-left: .1em lighten($color-submit, 5%) solid;
-    box-shadow: .08em .08em $color-submit-dark;
-    text-shadow: .08em .08em darken($color-submit, 10%);
-
-    &:hover,
-    &:focus {
-        background-color: $color-submit-dark;
-        border-top: .1em lighten($color-submit-dark, 5%) solid;
-        border-right: 0;
-        border-bottom: .1em $color-submit-dark solid;
-        border-left: .1em lighten($color-submit-dark, 5%) solid;
-        background: linear-gradient(
-                top,
-                $color-submit-dark,
-                darken($color-submit-dark, 3%)
-            );
-        color: $color-white;
-        text-shadow: .08em .08em darken($color-submit, 30%);
-        box-shadow: .12em .12em darken($color-submit-dark, 20%);
-    }
+    border-left: .1em lighten($color-submit-dark, 5%) solid;
+    background: linear-gradient(
+                  top,
+                  $color-submit-dark,
+                  darken($color-submit-dark, 3%)
+    );
+    background-color: $color-submit-dark;
+    box-shadow: .12em .12em darken($color-submit-dark, 20%);
+    color: $color-white;
+    text-shadow: .08em .08em darken($color-submit, 30%);
+  }
 }
