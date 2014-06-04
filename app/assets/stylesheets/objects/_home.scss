@@ -1,4 +1,22 @@
 .home {
+  .site-header {
+    @include breakpoint(max-width $bp-l) {
+      @include clearfix;
+    }
+  }
+
+  .banner {
+    display: none;
+
+    @include breakpoint($bp-l) {
+      display: inline-block;
+    }
+  }
+
+  .front-matter .logo {
+    @include rem(margin, ms(2), 0, 0);
+  }
+
   .lede,
   .module {
     @include breakpoint($bp-l) {
