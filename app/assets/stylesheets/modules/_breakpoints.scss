@@ -2,11 +2,11 @@
 // for use in media queries
 // in conjunction with the Breakpoint Compass extension
 
-$bp-xxs:  20em;
-$bp-xs:   30em;
-$bp-s:    35em;
-$bp-m:    43em;
-$bp-l:    55em;
-$bp-xl:   65em;
-$bp-xxl:  75em;
-$bp-xxxl: 85em;
+$bp-xxs:  "screen" 20em;
+$bp-xs:   "screen" 30em;
+$bp-s:    "screen" 35em;
+$bp-m:    "screen" 43em;
+$bp-l:    "screen" 55em;
+$bp-xl:   "screen" 65em;
+$bp-xxl:  "screen" 75em;
+$bp-xxxl: "screen" 85em;
