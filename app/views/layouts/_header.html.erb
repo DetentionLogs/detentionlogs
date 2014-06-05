@@ -16,7 +16,6 @@
   <%= stylesheet_link_tag "style.min.css", :media => "all" %>
 
   <%= csrf_meta_tag %>
-
 </head>
 <body class="<%= "#{params[:id]} #{controller.controller_name} #{controller.controller_name}-#{controller.action_name}" %>">
   <% if notice %>
