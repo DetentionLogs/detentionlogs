@@ -1,57 +1,27 @@
-<% title incidentexplorer_results %>
-<% description "Explore an index of 'incident reports' recorded by staff at Australia’s immigration detention facilities." %>
-<section class="main incident-explorer" role="main">
+<%
+	title incidentexplorer_results
 
-<h1>Incident Explorer</h1>
+	description "Explore an index of 'incident reports' recorded by staff at Australia’s immigration detention facilities."
 
-<section class="filters">
-	<p class="lede">Incident Reports are records of events that occur in immigration detention, recorded by detention centre staff for the Australian Government. <%= link_to 'About Incident Reports.', page_path('data/incidents/about'), title: "Read more information about Incident Reports and where this data came from." %></p>
+	breadcrumb :incidents, @incidents
+%>
 
-	<%= render 'layouts/incident_filters' %>
-</section>
-<h2 class="distinct query-results-description" id="results">
-	<strong class="query-count"><%= @incidents.total_count %></strong> <% if params[:incident_type] %><strong class="type"><%= params[:incident_type] %></strong><% end %> incident reports <% if params[:by_detailed_report] %>with attatched <strong>Incident Detail Reports</strong> <% end %><% if @location_name %>from <strong class="location"><%= @location_name %></strong><% end %> between <strong class="start-date"><%= @start_date.strftime("%d %b %Y") %></strong> and <strong class="end-date"><%=@end_date.strftime("%d %b %Y") %>.</strong>
-</h2>
+<%= render 'layouts/sub-nav' %>
 
-<p><a href="<%= "#{request.protocol}#{request.host_with_port}#{request.fullpath}" %>" title="url to share or bookmark these results" class="page-link supporting">Permalink for these results</a></p>
+<section class="body-container incident-index" id="content" role="main">
+	<a class="skip-link" href="#results">Skip to filter results</a>
 
-<section class="incident-table">
-	<ul class="header-row supporting">
-		<li class="incident-occured-on">Occured On</li>
-		<li class="incident-type">Type</li>
-		<li class="incident-location">Location</li>
-		<li class="incident-summary">Summary</li>
-		<li class="incident-secondary">
-			<div class="incident-location-details">Location Details</div>
-			<div class="incident-number">Incident Number</div>
-		</li>
-	</ul>
+	<header class="page-header">
+		<h1 class="page-title">Incident Explorer</h1>
 
-	<ul class="incident-list">
-		<% @incidents.each do |incident| %>
+    <p>Incident Reports are records of events that occur in immigration detention, produced by detention centre staff for the Australian Government. <%= link_to "About Incident Reports.", about_incidents_path, class: 'lede-sub-link', title: 'Read more information about Incident Reports and where this data came from.' %></p>
+	</header>
 
-		<li class="supporting">
-			<article class="incident-item <% if incident.detailed_report.path %>has-detailed-report<% end %>">
+	<%= render 'incident-filters' %>
 
-				<section class="incident-primary">
-					<span class="field-label">Occured On</span><time class="incident-occured-on"><% if incident.occured_on %><%= incident.occured_on.strftime("%d %b %Y %H:%M") %><% end %></time>
-					<span class="field-label">Type</span><section class="incident-type"><%= incident.incident_type %></section>
-					<span class="field-label">Location</span><section class="incident-location"><%= incident.location.name %></section>
-				</section>
-				<section class="incident-body">
-					<span class="field-label incident-summary-label">Incident Summary</span><section class="incident-summary discrete"><p><%= incident.summary %></p></section>
-				</section>
-				<section class="incident-secondary">
-					<span class="field-label">Location Details</span><section class="incident-location-details"><p><%= incident.location_details %></p></section>
-					<span class="field-label"><abbr title="Incident">In.</abbr> Number</span><a href="<%=  url_for incident %>" class="incident-number" title="Get more information about Incident <%= incident.incident_number %>"><%= incident.incident_number %> <span class="incident-link">see&nbsp;details<i> &rarr;</i></span></a>
-					<% if incident.detailed_report.path %><a href="<%= incident.detailed_report.url %>" title="Download the Incident Detail Report for this incident to find more information" class="docs-icon supporting distinct-download">Detail Report</a><% end %>
-				</section>
-			</article>
-		</li>
+	<%= render 'index-results' %>
 
-		<% end %>
-	</ul>
-</section>
-<div class="pagination-details"><%=  page_entries_info @incidents %></div>
-<%= paginate @incidents %>
+	<%= render 'incident-river'  %>
+
+  <%= render 'incidents/pagination-block' %>
 </section>

@@ -1,0 +1,21 @@
+{{> organisms-header }}
+{{> organisms-sub-navigation }}
+
+<section class="body-container incident-index" id="content" role="main">
+	<header class="page-header">
+		<h1 class="page-title">Incident Explorer</h1>
+
+        <p>Incident Reports are records of events that occur in immigration detention, recorded by detention centre staff for the Australian Government. <a class="lede-sub-link" href="/data/incidents/about" title="Read more information about Incident Reports and where this data came from.">About Incident Reports.</a></p>
+	</header>
+
+    {{> organisms-incident-index-filters }}
+
+    {{> organisms-incident-index-results }}
+
+  	{{> organisms-incident-index-river }}
+
+    {{> molecules-pagination }}
+
+</section><!--End role=main-->
+
+{{> organisms-footer }}

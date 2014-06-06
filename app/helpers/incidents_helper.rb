@@ -12,9 +12,9 @@ module IncidentsHelper
       "Settlement%20Portal.%20I%20also%20request%20any%20documents%20attached%20to%20the%20detailed" +
       "%20report.%0A%0AKind%20Regards%2C%0A%0A****ADD%20YOUR%20NAME%20HERE%20BEFORE%20SENDING%20REQUEST****" +
       "&tags=" + u("detentionlogs incident-number:#{incident.incident_number}")
-    text ||= "Submit a public FOI request for Detail Incident Report #{incident.incident_number}"
-    title =  "opens a prefilled Freedom of Information request using the Right To Know FOI tool"
-    link_to text, url, { title: title }
+    text ||= "Adopt Incident #{incident.incident_number}"
+    title =  "Opens a prefilled Freedom of Information request using the Right To Know FOI tool"
+    link_to text, url, { title: title, class: "btn btn-submit"}
   end
 
   # Creates a link to the Right To Know request

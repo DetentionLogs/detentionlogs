@@ -1,0 +1,27 @@
+<div class="sub-nav">
+
+  <% if breadcrumbs.any? %>
+    <nav class="breadcrumbs" id="breadcrumbs">
+      <%= breadcrumbs style: :ul,
+                      autoroot: false,
+                      link_current: true,
+                      class: nil,
+                      id: nil,
+                      semantic: true %>
+    </nav>
+  <% end %>
+
+  <nav class="section-nav">
+    <ul>
+      <% if controller.controller_name == 'incidents' %>
+
+      <%= render 'incidents/section-nav' %>
+
+      <% else %>
+
+      <%= render 'layouts/section-nav' %>
+
+      <% end %>
+    </ul>
+  </nav>
+</div>

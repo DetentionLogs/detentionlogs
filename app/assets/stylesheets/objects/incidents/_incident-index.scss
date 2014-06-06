@@ -1,0 +1,42 @@
+// Incident Index
+// Base styles for the incidents index page
+//
+// .incident-index
+//   .page-header
+//   .page-header + .incident-filters
+//   .incident-filters + h2.supporting
+//   .incident-index-results-description
+//   .page-title
+//   .lede-sub-link
+
+
+.incident-index {
+  .page-header,
+  .page-header + .incident-filters,
+  .incident-filters + h2.supporting,
+  .incident-index-results-description {
+    @include breakpoint($bp-xxl) {
+      @include grid-span(9, 2);
+      float: none;
+      clear: both;
+    }
+  }
+
+  .page-title {
+    @extend h2;
+
+    @media (max-width: $bp-s) {
+      margin-top: 0;
+    }
+
+    + p {
+      margin-top: 0;
+    }
+  }
+
+  .lede-sub-link {
+    @include breakpoint($bp-m) {
+      display: none;
+    }
+  }
+}

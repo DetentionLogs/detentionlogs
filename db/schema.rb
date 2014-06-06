@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130617050948) do
+ActiveRecord::Schema.define(:version => 20140503015210) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(:version => 20130617050948) do
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          :default => 0
+    t.integer  "sign_in_count",          :default => 0,  :null => false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
@@ -30,16 +30,6 @@ ActiveRecord::Schema.define(:version => 20130617050948) do
 
   add_index "admins", ["email"], :name => "index_admins_on_email", :unique => true
   add_index "admins", ["reset_password_token"], :name => "index_admins_on_reset_password_token", :unique => true
-
-  create_table "attachments", :force => true do |t|
-    t.string   "name"
-    t.text     "description"
-    t.string   "file"
-    t.datetime "publication_date"
-    t.datetime "update_date"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
-  end
 
   create_table "foi_requests", :force => true do |t|
     t.integer  "incident_id"
@@ -89,8 +79,12 @@ ActiveRecord::Schema.define(:version => 20130617050948) do
     t.integer  "location_group_id"
   end
 
-  create_table "subscriptions", :force => true do |t|
-    t.string   "email"
+  create_table "population_records", :force => true do |t|
+    t.date     "date"
+    t.integer  "men"
+    t.integer  "women"
+    t.integer  "children"
+    t.integer  "total"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

@@ -1,0 +1,11 @@
+//Modular Scale
+
+$ms-base: 0.875 1.125 1.625;
+$ms-ratio: $phi;
+
+@debug ms-list(
+  -10,
+  10,
+  $ms-base,
+  $ms-ratio
+);

@@ -1,0 +1,17 @@
+.article-header {
+  @include rem(margin-bottom, ms(7));
+}
+
+.article-body .toc {
+  @extend %default-secondary-column;
+
+  @include breakpoint($bp-l) {
+    float: right;
+  }
+
+  h2 {
+    @include breakpoint($bp-l) {
+      color: $color-grey-dark;
+    }
+  }
+}

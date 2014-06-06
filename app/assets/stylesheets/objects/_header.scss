@@ -1,0 +1,56 @@
+.site-header {
+  @extend %default-page-container;
+  @include clearfix;
+
+  @include breakpoint($bp-l) {
+    @include rem(padding-top, ms(3));
+    @include rem(padding-bottom, ms(3));
+    border-bottom: 1px $color-grey-light solid;
+  }
+
+  .banner {
+    @include rem(margin-top, ms(-6));
+    word-break: none;
+
+    @include breakpoint($bp-l) {
+      float: left;
+    }
+  }
+
+  .tagline {
+    display: none;
+
+    @include breakpoint($bp-s) {
+      display: block;
+    }
+  }
+
+  .btn-menu {
+    display: block;
+    float: right;
+    clear: right;
+
+    @include breakpoint($bp-l) {
+      display: none;
+    }
+  }
+
+  .primary-nav {
+    display: none;
+
+    @include breakpoint($bp-l) {
+      @include rem(margin-top, ms(-3));
+      display: inline;
+      float: right;
+      clear: right;
+
+      li:last-child a {
+        padding-right: 0;
+      }
+    }
+  }
+}
+
+.skip-link {
+  @include visuallyhidden;
+}

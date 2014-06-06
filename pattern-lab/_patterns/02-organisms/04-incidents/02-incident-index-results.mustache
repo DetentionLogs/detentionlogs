@@ -1,0 +1,17 @@
+<h2 class="supporting">Results</h2>
+
+<article class="incident-index-results" id="results">
+    <h1 class="incident-index-results-description">
+        {{# listItems.one }}
+        {{{ incident.filter-results }}}
+        {{/ listItems.one }}
+    </h1>
+
+    <section class="incident-index-results-reference">
+        <a class="incident-index-permalink" title="url to share or bookmark these results" href="http://detentionlogs.com.au/data/incidents?utf8=%E2%9C%93&amp;incident_type=Demonstration+-+Onsite&amp;location=&amp;by_period%5Bstart_date%5D=2009-10-03&amp;by_period%5Bend_date%5D=2011-05-26">Permalink</a>
+
+        <!--         <a class="incident-index-order-by" href="" title="Reorder the filter results, currently sorted by newest first, to see the oldest incident first.">See oldest first</a> -->
+
+        {{> molecules-pagination }}
+    </section>
+</article>

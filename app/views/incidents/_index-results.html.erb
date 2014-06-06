@@ -1,0 +1,41 @@
+<h2 class="supporting">Results</h2>
+
+<article class="incident-index-results" id="results">
+  <h1 class="incident-index-results-description">
+    <strong class="query-count"><%= @incidents.total_count %></strong>
+
+    <% if params[:incident_type] %>
+    <strong class="type">
+      <%= params[:incident_type] %>
+    </strong>
+    <% end %>
+
+    incident reports
+
+    <% if params[:by_detailed_report] %>
+      with attatched <strong>Incident Detail Reports</strong>
+    <% end %>
+
+    <% if @location_name %>
+      from <strong class="location"><%= @location_name %></strong>
+    <% end %>
+
+    between
+
+    <strong class="start-date">
+      <%= @start_date.strftime("%e %b %Y") %>
+    </strong>
+
+    and
+
+    <strong class="end-date">
+      <%=@end_date.strftime("%e %b %Y") %>.
+    </strong>
+  </h1>
+</article>
+
+<section class="incident-index-results-reference">
+  <%= link_to "Permalink", params, class: 'incident-index-permalink', title: 'url to share or bookmark these results' %>
+
+  <%= render 'incidents/pagination-block' %>
+</section>

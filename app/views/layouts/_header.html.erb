@@ -1,32 +1,33 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title><%= yield(:title) %> | Detention Logs</title>
+<html class="no-js" lang="en">
+<head>
+  <meta charset="utf-8">
 
-        <meta name="author" content="Detention Logs">
-        <meta name="description" content="<%= yield(:description)%>">
-        <meta name="viewport" content="width=device-width">
-	    <%= stylesheet_link_tag    "style", :media => "all" %>
-	    <%= csrf_meta_tag %>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-    </head>
-    <body class="principles">
-	<header class="site-header">
-    	<h1 class="logo"><a href="/" rel="home">Detention&nbsp;Logs<span> beta</span></a> 
-    	<p class="subheading discrete">Inside Australia's immigration detention</p>
-    	</h1>
-    	<nav class="main-nav">
-    		<a href="#navigation" class="menu-btn">Menu</a>
-			<ul class="primary-nav">
-				<li><a href="/data/incidents">Data</a></li>
-				<li><a href="/investigations">Investigations</a></li>
-				<li><a href="/about">About</a></li>
-				<li><a href="/contribute">Contribute</a></li>	
-			</ul>
-		</nav>
-    </header>
+  <title><%= yield(:title) %> | Detention Logs</title>
+
+  <meta name="author" content="Detention Logs">
+
+  <meta name="description" content="<%= yield(:description)%>">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <%= stylesheet_link_tag "style.min.css", :media => "all" %>
+
+  <%= csrf_meta_tag %>
+</head>
+<body class="<%= "#{params[:id]} #{controller.controller_name} #{controller.controller_name}-#{controller.action_name}" %>">
+  <% if notice %>
+    <p class="msg msg-notice"><%= notice %></p>
+  <% end %>
+
+  <% if admin_signed_in? %>
+    <nav class="admin-bar" id="admin-bar">
+      <p>Signed in as <%= current_admin.email %></p>
+
+      <%= link_to "logout",  destroy_admin_session_path, method: :delete, class: 'admin-logout-link' %>
+    </nav>
+  <% end %>
+
+  <%= render 'layouts/site-header' %>

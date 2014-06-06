@@ -1,0 +1,144 @@
+/*------------------------------------*\
+  $RESET
+\*------------------------------------*/
+
+* {
+  box-sizing: border-box;
+}
+
+// Set defaults
+
+html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, hgroup, menu, nav, section, time, mark, audio, video, details, summary {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  vertical-align: baseline;
+  font-size: 100%;
+}
+
+article, aside, figure, figcaption, footer, header, hgroup, nav, section, details, summary {
+  display: block;
+}
+
+img,
+object,
+embed {
+  max-width: 100%;
+}
+
+// Force a vertical scrollbar to prevent a jumpy page
+html {
+  overflow-y: scroll;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+a {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  vertical-align: baseline;
+  font-size: 100%;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+  border-bottom: 1px dotted #000; cursor: help;
+}
+
+// Tables still need cellspacing="0" in the markup
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+th {
+  vertical-align: bottom;
+  font-weight: bold;
+}
+td {
+  vertical-align: top;
+  font-weight: normal;
+}
+
+pre {
+  white-space: pre; // CSS2
+  white-space: pre-wrap; // CSS 2.1
+  white-space: pre-line; // CSS 3 (and 2.1 as well, actually)
+  word-wrap: break-word; // IE
+}
+
+input::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+// Make sure sup and sub don't screw with your line-heights
+// gist.github.com/413930
+sub,
+sup {
+  position: relative;
+  font-size: 75%;
+  line-height: 0;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+// Standardize any monospaced elements
+pre,
+code,
+kbd,
+samp {
+  font-family: menlo, monospace, sans-serif;
+}
+
+// Hand cursor on clickable elements
+.clickable,
+label,
+input[type=button],
+input[type=submit],
+input[type=file],
+button {
+  cursor: pointer;
+}
+
+// Webkit browsers add a 2px margin outside the chrome of form elements
+button,
+input,
+select,
+textarea {
+  margin: 0;
+  font-size: 100%;
+}
+
+// Make buttons play nice in IE
+button {
+  overflow: visible;
+  width: auto;
+}
+
+// Scale images in IE7 more attractively
+.ie7 img {
+  -ms-interpolation-mode: bicubic;
+}
+
+// Prevent BG image flicker upon hover
+.ie6 html {
+  filter: expression(document.execCommand("BackgroundImageCache", false, true));
+}
+
+.lt-ie9 {
+  zoom: 1;
+}

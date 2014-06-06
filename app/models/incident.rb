@@ -3,7 +3,7 @@ class Incident < ActiveRecord::Base
   has_attached_file :detailed_report
   belongs_to :location
   has_many :foi_requests
-  
+
   scope :by_incident_type, lambda { |incident_type| where(:incident_type => incident_type) unless incident_type.blank? }
   scope :by_location, lambda { |location| where(:location_id => location) unless location.blank? }
   scope :by_period, lambda { |start_on, end_on|
@@ -25,10 +25,9 @@ class Incident < ActiveRecord::Base
     columns = [arel_table[:incident_number], arel_table[:detailed_report_file_name], arel_table[:occured_on]]
     reqs = FoiRequest.arel_table
     req_count = Arel::Nodes::NamedFunction.new('string_agg', [reqs[:url_title], ','], 'requests')
-         
+
     select([columns, req_count])
       .joins(Arel::Nodes::OuterJoin.new(reqs, Arel::Nodes::On.new(reqs[:incident_id].eq(arel_table[:id]))))
       .group(columns)
   end
-
 end

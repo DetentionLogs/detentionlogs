@@ -1,0 +1,43 @@
+ <article class="incident incident-show-body" role="main">
+    <section class="incident-show-body-primary">
+        <h1 class="page-title">Incident {{ incident.number }}</h1>
+
+        <a class="btn btn-alt incident-detailreport-link" href="{{ link.templates-incident-adopt }}" title="Help get more information about this incident.">Adopt this incident</a></em>
+
+        <a class="supporting help" href="/data/incidents/about" title="About Incident Reports.">What is an incident report?</a>
+
+        <dl class="incident-data-list incident-primary-meta">
+            <dt class="incident-field-label incident-type">Type</dt>
+                <dd class="incident-field-value incident-type">{{ incident.type }}</dd>
+
+            <dt class="incident-field-label incident-occurred-on">Occurred On</dt>
+                <dd class="incident-field-value incident-occurred-on"><time>{{ day.long }} {{ month.short }} {{ year.long }} {{ hour.long }}:{{ minute.long }}</time></dd>
+
+            <dt class="incident-field-label incident-location">Location</dt>
+                <dd class="incident-field-value incident-location">{{ incident.location }}</dd>
+        </dl>
+
+        <dl class="incident-summary">
+            <dt class="incident-field-label incident-summary">Incident Summary</dt>
+            <dd class="incident-field-value incident-summary">{{ incident.summary }}</dd>
+        </dl>
+    </section>
+
+    <dl class="incident-secondary">
+        <dt class="incident-field-label incident-informed-by">Informed By</dt>
+            <dd class="incident-field-value incident-informed-by">{{ incident.informed_by }}</dd>
+
+        <dt class="incident-field-label incident-level">Level</dt>
+            <dd class="incident-field-value incident-level">{{ incident.level }}</dd>
+
+        <dt class="incident-field-label incident-number">Incident Number</dt>
+            <dd class="incident-field-value incident-number">{{ incident.number }}</dd>
+
+        <dt class="incident-field-label incident-location-details">Location Details</dt>
+            <dd class="incident-field-value incident-location-details">{{ incident.location_details }}</dd>
+    </dl>
+
+    <!-- Location information -->
+
+    <p class="msg msg-information">If you have any issues, concerns, questions or suggestions regarding this data please <a href="/about/#contact" title="Contact Detention Logs">contact Detention&nbsp;Logs</a>.</p>
+</article>

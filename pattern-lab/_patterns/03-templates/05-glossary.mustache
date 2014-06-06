@@ -1,0 +1,21 @@
+{{> organisms-header }}
+
+<section class="body-container" id="content" role="main">
+    <article class="glossary main-reading">
+    	<header>
+    		<h1>Glossary</h1>
+
+            <p class="lede">The government information we publish, much of it recorded by detention centre staff, is full of jargon and abbreviations. It can be hard to understand because it wasn't written with outsiders in mind. We hope the definitions you find here make Detention Logs more accessible and easier to approach.</p>
+
+            <p>If you think something is missing, incomplete or inaccurate, please let us know. Helping extend this glossary is an easy way to make this site more useful for everyone.</p>
+
+            {{> molecules-glossary-nav }}
+    	</header>
+
+        <section class="e-content article-body text-block">
+            {{#listItems.ten}}
+        	    {{> organisms-glossary-list }}
+            {{/listItems.ten}}
+    </article>
+</section><!--End role=main-->
+{{> organisms-footer }}

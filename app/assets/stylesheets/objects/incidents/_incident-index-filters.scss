@@ -1,0 +1,179 @@
+.incident-filters {
+  @include rem(padding, ms(1));
+  @include clearfix;
+  @include rem(border-top-width, ms(-3));
+  position: relative;
+  border-top-style: solid;
+  border-top-color: $color-information;
+  border-bottom-right-radius: .5em;
+  border-bottom-left-radius: .5em;
+  background-color: $color-grey-light;
+
+
+  @include breakpoint(45em) {
+    @include rem(font-size, ms(0));
+  }
+
+  @include breakpoint(62em) {
+    @include rem(padding, ms(3));
+  }
+
+  h2 {
+    @include rem(font-size, ms(1));
+    margin-top: 0;
+    display: inline-block;
+  }
+
+  select {
+    width: 100%;
+    max-width: 100%;
+
+    @include breakpoint($bp-s) {
+      width: auto;
+    }
+
+    @include breakpoint(45em) {
+      width: 100%;
+    }
+  }
+
+  select {
+    @include breakpoint(45em) {
+      @include rem(margin-top, ms(-1));
+    }
+  }
+
+  // div.collapsiblecontent {
+  //   @include clearfix;
+  // }
+
+  .form-group-type {
+    @include breakpoint(45em) {
+      padding-right: gutter-span();
+      float: left;
+      clear: left;
+      width: 25%;
+    }
+
+    @include breakpoint(62em) {
+      padding-right: gutter-span();
+      width: 20%;
+    }
+  }
+
+  .form-group-location {
+    @include breakpoint(45em) {
+      padding-right: gutter-span();
+      float: left;
+      width: 25%;
+    }
+
+    @include breakpoint(62em) {
+      padding-right: gutter-span();
+      width: 20%;
+    }
+  }
+
+  .form-group-date {
+    @include breakpoint(45em) {
+      float: right;
+      clear: right;
+      width: 50%;
+    }
+
+    @include breakpoint(62em) {
+      @include rem(width, 23);
+      float: left;
+      clear: none;
+    }
+
+    input {
+      max-width: 100%;
+
+      @include breakpoint(45em) {
+        width: 100%;
+      }
+
+      @include breakpoint($bp-l) {
+        width: auto;
+      }
+    }
+  }
+
+  .form-group-start-date,
+  .form-group-end-date {
+    display: inline-block;
+
+    @include breakpoint(45em) {
+      max-width: 10rem;
+    }
+  }
+
+  .form-group-start-date {
+    margin-right: gutter-span();
+
+    @include breakpoint(45em) {
+      margin-right: gutter-span() * 2;
+      // float: left;
+      width: column-span(2, 1, $grid: 4);
+    }
+
+    @include breakpoint($bp-l) {
+      width: auto;
+    }
+  }
+
+  .form-group-end-date {
+    @include breakpoint(45em) {
+      width: column-span(2, 3, $grid: 4);
+    }
+
+    @include breakpoint($bp-l) {
+      float: none;
+      width: auto;
+    }
+  }
+
+  .form-group-has-detail-report {
+    @include breakpoint(45em) {
+      @include rem(margin-top, ms(0));
+      @include rem(margin-right, ms(2));
+      float: left;
+      clear: right;
+    }
+
+    @include breakpoint(62em) {
+      @include rem(margin-top, ms(6));
+    }
+
+    @include breakpoint(95em) {
+      position: relative;
+      float: left;
+      clear: none;
+      margin-left: 0;
+      width: auto;
+    }
+  }
+
+  .btn-submit {
+    @include rem(margin-top, ms(4));
+    display: block;
+    clear: both;
+    width: 100%;
+
+    @include breakpoint(35em) {
+      width: auto;
+    }
+
+    @include breakpoint(45em) {
+      float: right;
+      clear: right;
+    }
+
+    @include breakpoint(62em) {
+      @include rem(margin-top, ms(7));
+      // float: right;
+      // clear: right;
+    }
+  }
+}

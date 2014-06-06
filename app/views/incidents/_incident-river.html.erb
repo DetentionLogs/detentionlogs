@@ -1,0 +1,64 @@
+<section class="incident-river">
+  <ol class="incident-river-header-row">
+    <li class="incident-occurred-on">Occurred</li>
+    <li class="incident-type">Type</li>
+    <li class="incident-location">Location</li>
+    <li class="incident-summary">Summary</li>
+    <li class="incident-location-details">Location Details</li>
+    <li class="incident-number">Number</li>
+  </ol>
+
+  <ol class="incident-river-body">
+    <% @incidents.each do |incident| %>
+    <li>
+      <article class="incident-river-item incident <% if incident.detailed_report.path %>has-detailed-report<% end %>" id="<%= incident.incident_number %>">
+        <h3 class="incident-river-item-title">Incident <%= incident.incident_number %></h3>
+
+        <dl class="incident-primary-meta">
+          <dt class="incident-field-label incident-occurred-on">Occurred On</dt>
+            <% if incident.occured_on %>
+            <dd class="incident-field-value incident-occurred-on">
+              <time datetime="<%= incident.occured_on %>"><%= incident.occured_on.strftime("%d %b %Y %H:%M") %></time>
+            </dd>
+            <% end %>
+
+          <dt class="incident-field-label incident-type">Type</dt>
+            <% if incident.incident_type %>
+            <dd class="incident-field-value incident-type"><%= incident.incident_type %></dd>
+            <% end %>
+
+          <dt class="incident-field-label incident-location">Location</dt>
+            <% if incident.location %>
+            <dd class="incident-field-value incident-location"><%= incident.location.name %></dd>
+            <% end %>
+        </dl>
+
+        <dl class="incident-main">
+          <dt class="incident-field-label incident-summary">Incident Summary</dt>
+            <% if incident.summary %>
+            <dd class="incident-field-value incident-summary"><%= incident.summary %></dd>
+            <% end %>
+        </dl>
+
+        <dl class="incident-secondary">
+          <dt class="incident-field-label incident-location-details">Location Details</dt>
+            <% if incident.location_details %>
+            <dd class="incident-field-value incident-location-details"><%= incident.location_details %></dd>
+            <% end %>
+        </dl>
+
+        <dl class="incident-secondary-linkgroup">
+          <dt class="incident-field-label incident-number"><abbr title="Incident">In.</abbr> Number</dt>
+            <dd class="incident-field-value incident-number">
+              <%= link_to incident, title: 'Get more information about Incident #{incident.incident_number}' do %>
+                <%= incident.incident_number %>
+                <span class="incident-link btn">see&nbsp;details<i> &rarr;</i></span>
+              <% end %>
+              <% if incident.detailed_report.path %><a href="<%= incident.detailed_report.url %>" title="Download the Incident Detail Report for this incident to find more information" class="docs-icon supporting distinct-download">Detail Report</a><% end %>
+            </dd>
+        </dl>
+      </article>
+    </li>
+    <% end %>
+  </ol>
+</section>

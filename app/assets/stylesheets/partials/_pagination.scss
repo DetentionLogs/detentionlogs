@@ -1,0 +1,62 @@
+// Pagination
+//
+// .pagination-block
+// .incident-index-results-reference .pagination-block
+//   .pagination-details, .pagination
+//   .pagination-details
+//   .pagination
+// .pagination-details
+// .pagination
+//   .page
+
+.pagination-block {
+  text-align: center;
+
+  .incident-index-results-reference & {
+    display: none;
+
+    @include breakpoint(50em) {
+      @include rem(margin-bottom, ms(1));
+      display: inline-block;
+      float: right;
+      clear: right;
+      width: auto;
+      text-align: right;
+    }
+
+    .pagination-details,
+    .pagination {
+      @include rem(font-size, ms(0));
+      display: inline-block;
+      text-align: right;
+    }
+
+    .pagination-details {
+      margin-top: 0;
+    }
+
+    .pagination {
+      @include rem(padding-left, ms(0));
+    }
+  }
+}
+
+.pagination-details {
+  @include rem(font-size, ms(0));
+
+  @include breakpoint($bp-m) {
+    @include rem(font-size, ms(1));
+  }
+}
+
+.pagination {
+  margin-top: 0;
+  padding: 0;
+  list-style: none;
+
+  .page {
+    @include rem(padding, ms(-2));
+    display: inline-block;
+    font-weight: bold;
+  }
+}
