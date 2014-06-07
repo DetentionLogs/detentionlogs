@@ -2,13 +2,15 @@
 SitemapGenerator::Sitemap.default_host = "http://detentionlogs.com.au"
 
 SitemapGenerator::Sitemap.create do
-
-SitemapGenerator::Sitemap.create do
   add '/about'
-  add '/investigations'
-  add '/glossary'
+  add '/investigations', :priority => 0.7
+  add '/investigations/recipe'
+  add '/glossary', :priority => 0.9
   add '/principles'
   add '/contribute'
+  add '/data/incidents', :priority => 0.9
+  add '/data/incidents/about', :priority => 0.9
+
   Incident.find_each do |incident|
     add incident_path(incident), :lastmod => incident.updated_at
   end
@@ -35,4 +37,3 @@ end
   #   Article.find_each do |article|
   #     add article_path(article), :lastmod => article.updated_at
   #   end
-end
