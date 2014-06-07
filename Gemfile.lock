@@ -181,7 +181,7 @@ GEM
     singularitygs (1.2.1)
       breakpoint (~> 2.4)
       sass (~> 3.3.0)
-    sitemap_generator (5.0.2)
+    sitemap_generator (5.0.4)
       builder
     sprockets (2.2.2)
       hike (~> 1.2)
@@ -233,6 +233,6 @@ DEPENDENCIES
   sass (~> 3.3.2)
   sass-rails (~> 3.2.3)
   singularitygs (~> 1.2.0)
-  sitemap_generator
+  sitemap_generator (~> 5.0.4)
   taps
   uglifier (>= 1.0.3)

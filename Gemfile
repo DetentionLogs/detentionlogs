@@ -55,8 +55,8 @@ group :development, :test do
   gem 'factory_girl_rails'
 end
 
-# Generates a sitemap for google et al
-gem 'sitemap_generator'
+# Generates a sitemap for search engines & other bots
+gem 'sitemap_generator', '~>5.0.4'
 
 # Sass
 gem 'sass', '~>3.3.2'
