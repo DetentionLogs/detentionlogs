@@ -21,8 +21,6 @@ Detentionlogs::Application.routes.draw do
 
   get '/contribute' => 'high_voltage/pages#show', :id => 'contribute'
 
-  get '/copyright' => 'high_voltage/pages#show', :id => 'copyright'
-
 
   #resources :location_groups
 
