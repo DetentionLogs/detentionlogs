@@ -126,7 +126,6 @@ TO DO: minify svg css
         concat: {
             global: {
                 src: [
-                    'vendor/assets/javascripts/*.js',
                     'app/assets/javascripts/*.js'
                ],
 
@@ -135,8 +134,8 @@ TO DO: minify svg css
 
             polyfill: {
                 src: [
-                    'vendor/assets/javascripts/html5shiv.min.js',
-                    'vendor/assets/javascripts/respond.min.js'
+                    'lib/assets/javascripts/html5shiv.js',
+                    'lib/assets/javascripts/respond.src.js'
                ],
 
                 dest: 'app/assets/javascripts/concat/polyfill.js',
