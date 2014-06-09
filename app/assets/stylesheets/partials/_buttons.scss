@@ -1,3 +1,4 @@
+%btn,
 .btn {
   @include rem(padding, ms(-2), ms(0));
   display: inline-block;
@@ -76,4 +77,10 @@
     color: $color-white;
     text-shadow: .08em .08em darken($color-submit, 30%);
   }
+}
+
+.btn-supporting {
+  @extend %supporting;
+  color: $color-grey-dark;
+  background-color: transparent;
 }
