@@ -2,10 +2,16 @@
   title 'About'
 
   description "About Detention Logs, a new independent project committed to transparency and accountability in Australia’s immigration detention network."
+
+  github_edit_url = "https://github.com/DetentionLogs/detentionlogs/blob/Development/app/views/pages/about.html.erb"
 %>
 
 <header class="article-header">
   <h1>About Detention Logs</h1>
+
+  <% if defined? github_edit_url %>
+    <%= link_to "Edit", github_edit_url, :class => "btn-supporting", :title => "Edit this page on Github." %>
+  <% end %>
 </header>
 
 <nav class="toc">

@@ -2,9 +2,17 @@
   title 'Glossary'
 
   description 'A glossary of terms and abbreviations used in Australian Government Department of immigration and Citizenship documents.'
+
+  github_edit_url = "https://github.com/DetentionLogs/detentionlogs/blob/Development/app/views/pages/glossary.html.erb"
 %>
 
-<h1>Glossary</h1>
+<header class="article-header">
+  <h1>Glossary</h1>
+
+  <% if defined? github_edit_url %>
+    <%= link_to "Edit", github_edit_url, :class => "btn-supporting", :title => "Edit this page on Github." %>
+  <% end %>
+</header>
 
 <p class="lede">The government information we publish, much of it recorded by detention centre staff, is full of jargon and abbreviations. It can be hard to understand because it wasn't written with outsiders in mind. We hope the definitions you find here make Detention&nbsp;Logs more accessible and easier to approach.</p>
 

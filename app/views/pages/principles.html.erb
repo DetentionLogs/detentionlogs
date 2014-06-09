@@ -2,8 +2,17 @@
   title 'Our Principles'
 
   description 'The principles that the Detention Logs project draws on to make journalistic, design and technology choices.'
+
+  github_edit_url = "https://github.com/DetentionLogs/detentionlogs/blob/Development/app/views/pages/principles.html.erb"
 %>
-<h1>Our Principles</h1>
+
+<header class="article-header">
+  <h1>Our Principles</h1>
+
+  <% if defined? github_edit_url %>
+    <%= link_to "Edit", github_edit_url, :class => "btn-supporting", :title => "Edit this page on Github." %>
+  <% end %>
+</header
 
 <p class="lede">The following principles inform our journalistic, design and technology choices.</p>
 

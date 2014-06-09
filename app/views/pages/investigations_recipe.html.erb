@@ -2,10 +2,16 @@
   title "Reporting Recipe"
 
   description "A guide to using the Detention Logs resource in reporting, research and investigation."
+
+  github_edit_url = "https://github.com/DetentionLogs/detentionlogs/blob/Development/app/views/pages/investigations_recipe.html.erb"
 %>
 
 <header class="article-header">
   <h1>Reporting Recipe</h1>
+
+  <% if defined? github_edit_url %>
+    <%= link_to "Edit", github_edit_url, :class => "btn-supporting", :title => "Edit this page on Github." %>
+  <% end %>
 </header>
 
 <nav class="toc">

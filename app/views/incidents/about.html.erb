@@ -4,10 +4,16 @@
   description 'Incident Reports are records of events that occur in immigration detention, recorded by detention centre staff for the Australian Government.'
 
   breadcrumb :about_incidents
+
+  github_edit_url = "https://github.com/DetentionLogs/detentionlogs/blob/Development/app/views/incidents/about.html.erb"
 %>
 
 <header class="article-header">
   <h1>About Incident Reports</h1>
+
+  <% if defined? github_edit_url %>
+    <%= link_to "Edit", github_edit_url, :class => "btn-supporting", :title => "Edit this page on Github." %>
+  <% end %>
 </header>
 
 <p class="lede">Incident Reports are records of events that occur in immigration detention, recorded by detention centre staff for the Australian Government.</p>

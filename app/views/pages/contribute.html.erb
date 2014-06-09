@@ -2,10 +2,16 @@
   title "Contribute"
 
   description "Find out how you can help improve and expand the Detention Logs project."
+
+  github_edit_url = "https://github.com/DetentionLogs/detentionlogs/blob/Development/app/views/pages/contribute.html.erb"
 %>
 
 <header class="article-header">
   <h1>How you can help</h1>
+
+  <% if defined? github_edit_url %>
+    <%= link_to "Edit", github_edit_url, :class => "btn-supporting", :title => "Edit this page on Github." %>
+  <% end %>
 </header>
 
 <h2 id="adopt-an-incident">Adopt an incident</h2>
