@@ -134,8 +134,8 @@ TO DO: minify svg css
 
             polyfill: {
                 src: [
-                    'lib/assets/javascripts/html5shiv.js',
-                    'lib/assets/javascripts/respond.src.js'
+                    'vendor/assets/javascripts/html5shiv.js',
+                    'vendor/assets/javascripts/respond.src.js'
                ],
 
                 dest: 'app/assets/javascripts/concat/polyfill.js',
@@ -143,7 +143,7 @@ TO DO: minify svg css
 
             jquery: {
                 src: [
-                    'lib/assets/javascripts/jquery.js'
+                    'vendor/assets/javascripts/jquery.js'
                ],
 
                 dest: 'app/assets/javascripts/concat/jquery.js',
@@ -151,7 +151,7 @@ TO DO: minify svg css
 
             jquery_ujs: {
                 src: [
-                    'lib/assets/javascripts/jquery_ujs.js'
+                    'vendor/assets/javascripts/jquery_ujs.js'
                ],
 
                 dest: 'app/assets/javascripts/concat/jquery_ujs.js',
