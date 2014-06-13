@@ -1,5 +1,7 @@
-
 ## About this project
+Detention Logs is a new independent project committed to transparency and accountability in Australia’s immigration detention network. We aim to support those reporting on and discussing these issues by breaking through misinformation and political spin.
+
+Immigration detention is one of the most hotly debated, contested and emotional topics in Australia, but journalists’ access to detention centres is limited and information from the inside is scarce. Public policy surrounding asylum seekers and immigration should be shaped by informed opinions, and our mission is to arm the public with those vital facts to raise the standard of discussion.
 
 The aims of the project are to:
 
