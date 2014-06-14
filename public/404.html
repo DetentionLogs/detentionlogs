@@ -1,26 +1,901 @@
 <!DOCTYPE html>
-<html>
+<html class="no-js" lang="en">
 <head>
-  <title>The page you were looking for doesn't exist (404)</title>
-  <style type="text/css">
-    body { background-color: #fff; color: #666; text-align: center; font-family: arial, sans-serif; }
-    div.dialog {
-      width: 25em;
-      padding: 0 4em;
-      margin: 4em auto 0 auto;
-      border: 1px solid #ccc;
-      border-right-color: #999;
-      border-bottom-color: #999;
-    }
-    h1 { font-size: 100%; color: #f00; line-height: 1.5em; }
-  </style>
-</head>
+  <meta charset="utf-8">
 
-<body>
-  <!-- This file lives in public/404.html -->
-  <div class="dialog">
-    <h1>The page you were looking for doesn't exist.</h1>
-    <p>You may have mistyped the address or the page may have moved.</p>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>404 | Detention Logs</title>
+
+  <meta name="author" content="Detention Logs">
+
+  <meta name="description" content="We could not find a page at the address supplied.">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!--
+  Review error page styleguide before remove styles https://github.com/styleguide/templates/2.0
+  -->
+  <style type="text/css" media="screen">
+    * {
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+
+    html,
+    body,
+    body div,
+    span,
+    h1,
+    h2,
+    h3,
+    p,
+    ol,
+    ul,
+    li,
+    article,
+    footer,
+    header,
+    nav,
+    section {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      background-color: transparent;
+      vertical-align: baseline;
+      font-size: 100%;
+    }
+
+    article
+    footer,
+    header,
+    nav,
+    section {
+      display: block;
+    }
+
+    html {
+      overflow-y: scroll;
+    }
+
+    a {
+      margin: 0;
+      padding: 0;
+      background: transparent;
+      vertical-align: baseline;
+      font-size: 100%;
+    }
+
+    @font-face {
+      font-family: 'Open Sans';
+      font-style: normal;
+      font-weight: 400;
+      src: local("Open Sans"), local("OpenSans"), url(http://themes.googleusercontent.com/static/fonts/opensans/v6/cJZKeOuBrn4kERxqtaUH3bO3LdcAZYWl9Si6vvxL-qU.woff) format("woff");
+    }
+
+    @font-face {
+      font-family: 'Open Sans';
+      font-style: normal;
+      font-weight: 700;
+      src: local("Open Sans Bold"), local("OpenSans-Bold"), url(http://themes.googleusercontent.com/static/fonts/opensans/v6/k3k702ZOKiLJc3WVjuplzKRDOzjiPcYnFooOUGCOsRk.woff) format("woff");
+    }
+
+    .wf-active body {
+      font-family: 'Open Sans', Verdana, sans-serif;
+      text-rendering: optimizeLegibility;
+    }
+
+body {
+  font-size: 16.06888px;
+  font-size: 1.00431rem;
+  line-height: 1.625;
+}
+
+@media screen and (min-width: 65em) {
+  body {
+    font-size: 18px;
+    font-size: 1.125rem;
+  }
+}
+
+body {
+  background-color: white;
+  color: #323232;
+  font-family: "Open Sans", verdana, "HelveticaNeue", "Helvetica", "Arial", sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+p {
+  margin-top: 18px;
+  margin-top: 1.125rem;
+}
+
+h1 {
+  font-size: 26px;
+  font-size: 1.625rem;
+  margin: 36.65248px 0px 0px;
+  margin: 2.29078rem 0rem 0rem;
+  font-weight: bold;
+}
+
+@media screen and (min-width: 43em) {
+  h1 {
+    font-size: 36.65248px;
+    font-size: 2.29078rem;
+  }
+}
+
+@media screen and (min-width: 75em) {
+  h1 {
+    margin: 59.30495px 0px 0px;
+    margin: 3.70656rem 0rem 0rem;
+    font-size: 47.12461px;
+    font-size: 2.94529rem;
+  }
+}
+
+@media screen and (min-width: 85em) {
+  h1 {
+    margin: 76.24923px 0px 0px;
+    margin: 4.76558rem 0rem 0rem;
+  }
+}
+
+h2 {
+  font-size: 22.65248px;
+  font-size: 1.41578rem;
+  margin: 36.65248px 0px 0px;
+  margin: 2.29078rem 0rem 0rem;
+  font-weight: bold;
+}
+
+@media screen and (min-width: 75em) {
+  h2 {
+    font-size: 26px;
+    font-size: 1.625rem;
+    margin: 47.12461px 0px 0px;
+    margin: 2.94529rem 0rem 0rem;
+  }
+}
+
+h3 {
+  margin: 29.12461px 0px 0px;
+  margin: 1.82029rem 0rem 0rem;
+  font-style: bold;
+  text-transform: uppercase;
+  letter-spacing: .125em;
+}
+
+strong {
+  font-weight: bold;
+}
+
+cite,
+em {
+  font-style: italic;
+}
+
+abbr {
+  letter-spacing: 1px;
+  letter-spacing: 0.0625rem;
+  border-bottom: 1px #aaa dashed;
+  text-decoration: none;
+  cursor: help;
+}
+
+div[aria-hidden="true"] {
+  display: none;
+}
+
+div[aria-hidden="false"] {
+  display: block;
+}
+
+.lede-sub-link,
+.toc,
+.sub-nav,
+.admin-bar,
+.supporting {
+  font-size: 14px;
+  font-size: 0.875rem;
+}
+
+.lede {
+  font-size: 18px;
+  font-size: 1.125rem;
+}
+
+@media screen and (min-width: 55em) {
+  .lede {
+    font-size: 22.65248px;
+    font-size: 1.41578rem;
+  }
+}
+
+.lede {
+  line-height: 1.41578;
+}
+
+.page-title {
+  display: inline-block;
+}
+
+.body-container :target {
+  background-color: #f6dca2;
+}
+
+.visuallyhidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+
+ul,
+ol {
+  margin-top: 18px;
+  margin-top: 1.125rem;
+  padding-left: 26px;
+  padding-left: 1.625rem;
+}
+
+@media screen and (min-width: 35em) {
+  ul,
+  ol {
+    padding-left: 36.65248px;
+    padding-left: 2.29078rem;
+  }
+}
+
+ul ul,
+ul ol,
+ol ul,
+ol ol {
+  margin-top: 0;
+}
+
+li {
+  margin-top: 18px;
+  margin-top: 1.125rem;
+}
+
+dl {
+  margin-top: 18px;
+  margin-top: 1.125rem;
+}
+
+dt {
+  font-weight: bold;
+  letter-spacing: .02em;
+}
+
+dt:after {
+  content: ':';
+}
+
+dd {
+  margin: 0px 0px 18px;
+  margin: 0rem 0rem 1.125rem;
+}
+
+.logo {
+  color: #467719;
+  font-weight: bold;
+}
+
+.banner {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.banner .logo {
+  font-size: 22.65248px;
+  font-size: 1.41578rem;
+  margin-top: 0;
+}
+
+.banner .logo:hover,
+.banner .logo:focus {
+  color: #323232;
+  text-decoration: underline;
+}
+
+.banner .tagline {
+  margin-top: 0px;
+  margin-top: 0rem;
+  font-size: 14px;
+  font-size: 0.875rem;
+  color: #323232;
+}
+
+a {
+  color: #467719;
+  text-decoration: underline;
+}
+
+a:hover,
+a:focus {
+  color: #000000;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  margin-top: 0;
+}
+
+nav li a {
+  display: block;
+}
+
+.primary-nav {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.primary-nav li {
+  margin-top: 0;
+}
+
+@media screen and (min-width: 55em) {
+  .primary-nav li {
+    display: inline-block;
+  }
+
+  .primary-nav li + li {
+    margin-left: 14px;
+    margin-left: 0.875rem;
+  }
+}
+
+.primary-nav a {
+  padding-top: 14px;
+  padding-top: 0.875rem;
+  padding-bottom: 14px;
+  padding-bottom: 0.875rem;
+  border-top-width: 2.62616px;
+  border-top-width: 0.16414rem;
+  display: block;
+  padding-right: 6.00005%;
+  padding-left: 6.00005%;
+  border-top-style: solid;
+  border-top-color: #5f942e;
+  background-color: #467719;
+  color: white;
+  text-decoration: none;
+}
+
+@media screen and (min-width: 55em) {
+  .primary-nav a {
+    padding: 14px 16.06888px;
+    padding: 0.875rem 1.00431rem;
+    border: 0;
+    background-color: transparent;
+    color: #467719;
+  }
+}
+
+.primary-nav a:hover,
+.primary-nav a:focus {
+  background-color: #323232;
+}
+
+@media screen and (min-width: 35em) {
+  .primary-nav a:hover,
+  .primary-nav a:focus {
+    background-color: transparent;
+    color: #2a480f;
+    text-decoration: underline;
+  }
+}
+
+.btn {
+  padding: 9.93112px 14px;
+  padding: 0.62069rem 0.875rem;
+  display: inline-block;
+  border-radius: .2em;
+  text-decoration: none;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: #323232;
+  color: white;
+}
+
+
+.btn-menu {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  background-color: #467719;
+  color: white;
+}
+
+.btn-menu:hover,
+.btn-menu:focus {
+  background-color: #323232;
+}
+
+.secondary-nav,
+.contact-nav {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.secondary-nav li,
+.contact-nav li {
+  margin: 0;
+}
+
+@media screen and (min-width: 55em) {
+  .secondary-nav li,
+  .contact-nav li {
+    display: inline-block;
+  }
+
+  .secondary-nav li + li,
+  .contact-nav li + li {
+    margin-left: 18px;
+    margin-left: 1.125rem;
+  }
+}
+
+.secondary-nav a,
+.contact-nav a {
+  padding-top: 14px;
+  padding-top: 0.875rem;
+  padding-bottom: 14px;
+  padding-bottom: 0.875rem;
+  border-top-width: 1.62306px;
+  border-top-width: 0.10144rem;
+  border-top-style: solid;
+  border-top-color: #eaeaea;
+  padding-right: 6.00005%;
+  padding-left: 6.00005%;
+  display: block;
+  text-decoration: none;
+}
+
+@media screen and (min-width: 55em) {
+  .secondary-nav a,
+  .contact-nav a {
+    padding: 14px 16.06888px;
+    padding: 0.875rem 1.00431rem;
+    border: 0;
+  }
+}
+
+.sub-nav {
+  margin-top: 18px;
+  margin-top: 1.125rem;
+  margin-bottom: 0px;
+  margin-bottom: 0rem;
+  padding-top: 6.13777px;
+  padding-top: 0.38361rem;
+  padding-bottom: 6.13777px;
+  padding-bottom: 0.38361rem;
+}
+
+.sub-nav:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+@media screen and (min-width: 55em) {
+  .sub-nav {
+    margin-top: 0;
+  }
+}
+
+@media screen and (min-width: 55em) {
+  .sub-nav {
+    font-size: 16.06888px;
+    font-size: 1.00431rem;
+    margin-bottom: 0;
+    border-bottom: 1px #eaeaea solid;
+    background-color: #eeeeee;
+  }
+}
+
+.sub-nav ul {
+  display: inline;
+}
+
+.sub-nav .section-nav {
+  display: none;
+}
+
+@media screen and (min-width: 55em) {
+  .sub-nav .section-nav {
+    display: inline;
+  }
+}
+
+@media screen and (min-width: 43em) {
+  .section-nav {
+    float: right;
+    text-align: right;
+  }
+}
+
+@media screen and (min-width: 65em) {
+  .section-nav {
+    float: right;
+    text-align: right;
+  }
+}
+
+@media screen and (min-width: 43em) {
+  .section-nav li {
+    margin-left: 26px;
+    margin-left: 1.625rem;
+    display: inline-block;
+  }
+}
+
+.section-nav a {
+  text-decoration: none;
+}
+
+.admin-bar {
+  margin-top: 0;
+  padding-top: 3.79335px;
+  padding-top: 0.23708rem;
+  padding-bottom: 3.79335px;
+  padding-bottom: 0.23708rem;
+  background-color: #444444;
+  color: #fafafa;
+}
+
+.admin-bar:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.admin-bar p {
+  margin: 0;
+  padding: 0 2em;
+  display: inline-block;
+}
+
+.admin-bar .admin-logout-link {
+  color: #fafafa;
+}
+
+body {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 115em;
+}
+
+.sub-nav,
+.body-container,
+.site-header {
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 6.00005%;
+  padding-left: 6.00005%;
+}
+
+@media screen and (min-width: 35em) {
+  .sub-nav,
+  .body-container,
+  .site-header {
+    padding-right: 5.88235%;
+    padding-left: 5.88235%;
+  }
+}
+
+@media screen and (min-width: 43em) {
+  .sub-nav,
+  .body-container,
+  .site-header {
+    padding-right: 3.125%;
+    padding-left: 3.125%;
+  }
+}
+
+@media screen and (min-width: 75em) {
+  .sub-nav,
+  .body-container,
+  .site-header {
+    padding-right: 3.125%;
+    padding-left: 3.125%;
+  }
+}
+
+.body-container:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+@media screen and (min-width: 75em) {
+  .main-reading {
+    padding-right: 9.375%;
+    padding-left: 9.375%;
+  }
+}
+
+@media screen and (min-width: 43em) {
+  .article-header {
+    width: 88.46154%;
+  }
+}
+
+@media screen and (min-width: 55em) {
+  .article-header {
+    width: 76.92308%;
+  }
+}
+
+@media screen and (min-width: 65em) {
+  .article-header {
+    width: 65.38462%;
+  }
+}
+
+@media screen and (min-width: 85em) {
+  .article-header {
+    width: 65.38462%;
+  }
+}
+
+.page-header:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+/*------------------------------------*\
+    $GLOBAL OBJECTS
+\*------------------------------------*/
+
+.site-header:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+@media screen and (min-width: 55em) {
+  .site-header {
+    padding-top: 22.65248px;
+    padding-top: 1.41578rem;
+    padding-bottom: 22.65248px;
+    padding-bottom: 1.41578rem;
+    border-bottom: 1px #eaeaea solid;
+  }
+}
+
+.site-header .banner {
+  margin-top: 5.34752px;
+  margin-top: 0.33422rem;
+  word-break: none;
+}
+
+@media screen and (min-width: 55em) {
+  .site-header .banner {
+    float: left;
+  }
+}
+
+.site-header .tagline {
+  display: none;
+}
+
+@media screen and (min-width: 35em) {
+  .site-header .tagline {
+    display: block;
+  }
+}
+
+.site-header .btn-menu {
+  display: block;
+  float: right;
+  clear: right;
+}
+
+@media screen and (min-width: 55em) {
+  .site-header .btn-menu {
+    display: none;
+  }
+}
+
+.site-header .primary-nav {
+  display: none;
+}
+
+@media screen and (min-width: 55em) {
+  .site-header .primary-nav {
+    margin-top: 8.65248px;
+    margin-top: 0.54078rem;
+    display: inline;
+    float: right;
+    clear: right;
+  }
+
+  .site-header .primary-nav li:last-child a {
+    padding-right: 0;
+  }
+}
+
+.skip-link {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+
+.site-footer {
+  margin-top: 18px;
+  margin-top: 1.125rem;
+}
+
+.site-footer:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+@media screen and (min-width: 43em) {
+  .site-footer {
+    margin-top: 68.06888px;
+    margin-top: 4.25431rem;
+  }
+}
+
+@media screen and (min-width: 55em) {
+  .site-footer {
+    margin-bottom: 16.06888px;
+    margin-bottom: 1.00431rem;
+    padding-right: 3.125%;
+    padding-left: 3.125%;
+  }
+}
+
+@media screen and (min-width: 75em) {
+  .site-footer {
+    padding-right: 3.125%;
+    padding-left: 3.125%;
+  }
+}
+
+@media screen and (min-width: 35em) {
+  .site-footer .primary-nav {
+    font-size: 18px;
+    font-size: 1.125rem;
+  }
+}
+
+.site-footer .secondary-nav,
+.site-footer .contact-nav {
+  font-size: 16.06888px;
+  font-size: 1.00431rem;
+}
+
+@media screen and (min-width: 55em) {
+  .site-footer .contact-nav {
+    text-align: right;
+    float: right;
+    clear: right;
+    width: 30%;
+  }
+}
+
+@media screen and (min-width: 55em) {
+  .footer-nav {
+    float: left;
+    clear: left;
+    width: 70%;
+  }
+}
+
+.article-header {
+  margin-bottom: 42.06888px;
+  margin-bottom: 2.62931rem;
+}
+  </style>
+
+  <meta content="authenticity_token" name="csrf-param" />
+  <meta content="0ERSr9sIzhgpDW+pJfnItWwk2tjkXozjMpqp5iBiahs=" name="csrf-token" />
+</head>
+<body class="404 pages pages-show">
+  <header class="site-header" id="top" role="banner">
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <a class="banner" href="http://detentionlogs.com.au/" rel="home">
+      <span class="logo">Detention Logs</span>
+      <p class="tagline">Inside Australia's immigration detention</p>
+    </a>
+
+    <a class="btn btn-menu" href="#navigation" title="To website navigation.">Menu</a>
+
+    <ul class="primary-nav">
+      <li><a href="/data/incidents">Data</a></li>
+      <li><a href="/investigations">Investigations</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/contribute">Contribute</a></li>
+    </ul>
+
+  </header>
+
+  <div class="sub-nav">
+    <nav class="section-nav">
+      <ul>
+        <li><a href="/glossary">Glossary</a></li>
+        <li><a href="/investigations/recipe">Reporting Recipe</a></li>
+      </ul>
+    </nav>
   </div>
-</body>
-</html>
+
+  <section class="body-container" id="main" role="main" >
+    <article class="main-reading">
+      <header class="article-header">
+        <h1>404 - file not found</h1>
+      </header>
+
+      <p class="lede">We could not find a page at the address supplied.</p>
+
+      <p>Looking for incident reports? Try the <a href="/data/incidents" title="Find incident reports">Incident Explorer</a>.</p>
+
+      <p>Looking to find out more about immigration detention related terms? Try the <a href="/glossary" title="A glossary of Australian immigration related terms.">glossary</a>.</p>
+
+      <p>Find out more about Detention Logs and contact us from the <a href="/about" title="About this project.">About page</a>.</p>
+    </article>
+  </section>
+
+  <footer class="site-footer" role="contentinfo">
+    <nav class="footer-nav" id="navigation" role="navigation">
+      <ul class="primary-nav">
+        <li><a href="/data/incidents">Data</a></li>
+        <li><a href="/investigations">Investigations</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contribute">Contribute</a></li>
+      </ul>
+
+      <ul class="secondary-nav">
+        <li><a href="/glossary">Glossary</a></li>
+        <li><a href="/investigations/recipe">Reporting Recipe</a></li>
+        <li><a href="/principles">Principles</a></li>
+      </ul>
+    </nav>
+
+    <ul class="contact-nav">
+      <li><a class="twitter" href="https://twitter.com/DetentionLogs/" title="Detention Logs on Twitter" rel="me">@detentionlogs</a></li>
+      <li><a class="github" href="https://github.com/DetentionLogs/" title="Detention Logs on Github" rel="me">GitHub</a></li>
+      <li><a class="email" href="/about/#contact" title="Contact Detention Logs.">Contact/PGP</a></li>
+    </ul>
+  </footer>
+
+  <!-- Include polyfills for < IE 9 -->
+  <!--[if lt IE 9]>
+    <script src="/javascripts/polyfill.min.js?1402349019" type="text/javascript"></script>
+    <![endif]-->
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-40270731-1', 'detentionlogs.com.au');
+      ga('send', 'pageview');
+    </script>
+  </body>
+  </html>
