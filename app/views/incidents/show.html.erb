@@ -9,7 +9,7 @@
 <%= render 'layouts/sub-nav' %>
 
 <div class="body-container">
-  <article class="incident incident-show-body" role="main">
+  <article class="incident incident-show-body h-event" role="main">
     <section class="incident-show-body-primary">
       <h1 class="page-title p-name">Incident <%= @incident.incident_number %></h1>
 
@@ -19,18 +19,18 @@
 
       <dl class="incident-data-list incident-primary-meta">
         <dt class="incident-field-label incident-type">Type</dt>
-          <dd class="incident-field-value incident-type"><%= @incident.incident_type %></dd>
+          <dd class="incident-field-value incident-type p-summary"><%= @incident.incident_type %></dd>
 
         <dt class="incident-field-label incident-occurred-on">Occurred On</dt>
-          <dd class="incident-field-value incident-occurred-on"><time datetime="<%= @incident.occured_on %>"><%= @incident.occured_on.strftime("%d %b %Y %H:%M") %></time></dd>
+          <dd class="incident-field-value incident-occurred-on"><time class="dt-start" datetime="<%= @incident.occured_on %>"><%= @incident.occured_on.strftime("%d %b %Y %H:%M") %></time></dd>
 
         <dt class="incident-field-label incident-location">Location</dt>
-          <dd class="incident-field-value incident-location"><%= @incident.location.name %></dd>
+          <dd class="incident-field-value incident-location p-location"><%= @incident.location.name %></dd>
       </dl>
 
       <dl class="incident-summary">
         <dt class="incident-field-label incident-summary">Incident Summary</dt>
-          <dd class="incident-field-value incident-summary"><%= @incident.summary %></dd>
+          <dd class="incident-field-value incident-summary p-description"><%= @incident.summary %></dd>
       </dl>
     </section>
 
