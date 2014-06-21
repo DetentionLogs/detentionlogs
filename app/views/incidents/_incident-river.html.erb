@@ -11,32 +11,32 @@
   <ol class="incident-river-body">
     <% @incidents.each do |incident| %>
     <li>
-      <article class="incident-river-item incident <% if incident.detailed_report.path %>has-detailed-report<% end %>" id="<%= incident.incident_number %>">
-        <h3 class="incident-river-item-title">Incident <%= incident.incident_number %></h3>
+      <article class="incident-river-item incident h-event <% if incident.detailed_report.path %>has-detailed-report<% end %>" id="<%= incident.incident_number %>">
+        <h3 class="incident-river-item-title p-name">Incident <%= incident.incident_number %></h3>
 
         <dl class="incident-primary-meta">
           <dt class="incident-field-label incident-occurred-on">Occurred On</dt>
             <% if incident.occured_on %>
             <dd class="incident-field-value incident-occurred-on">
-              <time datetime="<%= incident.occured_on %>"><%= incident.occured_on.strftime("%d %b %Y %H:%M") %></time>
+              <time class="dt-start" datetime="<%= incident.occured_on %>"><%= incident.occured_on.strftime("%d %b %Y %H:%M") %></time>
             </dd>
             <% end %>
 
           <dt class="incident-field-label incident-type">Type</dt>
             <% if incident.incident_type %>
-            <dd class="incident-field-value incident-type"><%= incident.incident_type %></dd>
+            <dd class="incident-field-value incident-type p-summary"><%= incident.incident_type %></dd>
             <% end %>
 
           <dt class="incident-field-label incident-location">Location</dt>
             <% if incident.location %>
-            <dd class="incident-field-value incident-location"><%= incident.location.name %></dd>
+            <dd class="incident-field-value incident-location p-location"><%= incident.location.name %></dd>
             <% end %>
         </dl>
 
         <dl class="incident-main">
           <dt class="incident-field-label incident-summary">Incident Summary</dt>
             <% if incident.summary %>
-            <dd class="incident-field-value incident-summary"><%= incident.summary %></dd>
+            <dd class="incident-field-value incident-summary p-description"><%= incident.summary %></dd>
             <% end %>
         </dl>
 
