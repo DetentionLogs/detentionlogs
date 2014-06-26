@@ -53,24 +53,24 @@ Detentionlogs::Application.configure do
 
   # Enable threaded mode
   # config.threadsafe!
-  
+
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation can not be found)
   config.i18n.fallbacks = true
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
-  
-  
+
+
   config.paperclip_defaults = {
     :storage => :s3,
     :s3_credentials => {
-      :bucket => 'detention_logs',
-      :access_key_id => 'AKIAJBTOM2DBBAPGCMAQ',
-      :secret_access_key => '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'
+      :bucket => ENV['S3_BUCKET']
+      :access_key_id => ENV['S3_ACCESS_KEY_ID']
+      :secret_access_key => ENV['S3_SECRET_ACCESS_KEY']
     }
   }
-  
+
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5

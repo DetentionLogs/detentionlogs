@@ -38,11 +38,6 @@ Detentionlogs::Application.configure do
 
   # configer paperclip for adding attachments to the server
   config.paperclip_defaults = {
-    :storage => :s3,
-    :s3_credentials => {
-      :bucket => 'detention_logs',
-      :access_key_id => 'AKIAJBTOM2DBBAPGCMAQ',
-      :secret_access_key => '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'
-    }
+    :storage => :filesystem
   }
 end

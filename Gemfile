@@ -3,6 +3,9 @@ ruby '1.9.3'
 
 gem 'rails', '3.2.18'
 
+# for environment vairables
+gem 'dotenv-rails', :groups => [:development, :test]
+
 # uploads and attachments
 gem 'paperclip', '~> 3.0'
 
