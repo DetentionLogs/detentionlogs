@@ -79,6 +79,11 @@ GEM
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
     diff-lcs (1.2.5)
+    dotenv (0.11.1)
+      dotenv-deployment (~> 0.0.2)
+    dotenv-deployment (0.0.2)
+    dotenv-rails (0.11.1)
+      dotenv (= 0.11.1)
     erubis (2.7.0)
     execjs (2.2.0)
     factory_girl (4.4.0)
@@ -94,7 +99,7 @@ GEM
     hike (1.2.3)
     i18n (0.6.9)
     journey (1.0.4)
-    jquery-rails (3.1.0)
+    jquery-rails (3.1.1)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
     json (1.8.1)
@@ -218,6 +223,7 @@ DEPENDENCIES
   compass (~> 1.0.0.alpha.17)
   compass-rails (~> 1.1.7)
   devise
+  dotenv-rails
   factory_girl_rails
   gretel (~> 3.0.6)
   has_scope
