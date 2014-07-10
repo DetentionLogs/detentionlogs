@@ -18,6 +18,21 @@
 
 <p class="lede">Incident Reports are records of events that occur in immigration detention, recorded by detention centre staff for the Australian Government.</p>
 
+<aside class="box secondary">
+  <h3>Published by Detention&nbsp;Logs</h3>
+
+  <dl>
+    <dt>Reports available</dt>
+      <dd><%= Incident.count %></dd>
+    <dt>Current available period</dt>
+      <dd><%= Incident.order('occured_on').first.occured_on.strftime("%e %b %Y") %> &ndash; <%= Incident.order('occured_on').last.occured_on.strftime("%e %b %Y") %></dd>
+
+    <dt>Current available Locations</dt>
+      <dd>All onshore detention facilities (includes those on Christmas Island) open during the period. Note that Nauru and Manus Island facilities were not operating between early 2008 and late 2012</dd>
+  </dl>
+</aside>
+
+
 <p>Each Incident Report is identified by a unique ‘Incident Number’. Examples include <%= link_to "Incident Report 1-4ELSKF", incident_path(49445), title: 'see Incident Report 1-4ELSKF Use of Observation Rm &gt; 24 hrs at Villawood IDC, 30 Jul 2010.'%>, <%= link_to "Incident Report 1-643EG4", incident_path(46264), title: 'see Incident Report 1-643EG4, Transfer between facilities at Northern IDC, 19 Feb 2011' %> and <%= link_to "Incident 1-3H0HFJ", incident_path(50281), title: 'see Incident Report 1-3H0HFJ, Use of Force at SA Detention Operations, 23 Mar 2010' %>.</p>
 
 <p>The reports cover a wide range of events that may be called an &quot;incident&quot;: from <%= link_to "births", incidents_path(incident_type: 'Birth of a child'), title: 'see 28 Birth of a child incident reports between 03 Oct 2009 and 26 May 2011.' %> and <%= link_to "deaths", incidents_path(incident_type: 'Death'), title: 'see 6 Death incident reports between 03 Oct 2009 and 26 May 2011.' %> to <%= link_to "IT failures", incidents_path(incident_type: 'Failure - IT Systems'), title: 'see 219 Failure - IT Systems incident reports between 03 Oct 2009 and 26 May 2011.' %>, <%= link_to "injuries", incidents_path(incident_type: 'Accident/Injury - Serious'), title: 'See 877 Accident/Injury - Serious incident reports between 03 Oct 2009 and 26 May 2011.' %>, <%= link_to "complaints", incidents_path(incident_type: 'Complaint - re MinorIncident'), title: 'see 308 Complaint - re MinorIncident incident reports between 03 Oct 2009 and 26 May 2011.' %>, <%= link_to "self-harm", incidents_path(incident_type: 'Self Harm - Actual'), title: '336 Self Harm - Actual incident reports between 03 Oct 2009 and 26 May 2011.' %>, and <%= link_to "escapes", incidents_path(incident_type: 'Escape'), title: '77 Escape incident reports between 03 Oct 2009 and 26 May 2011.' %>.</p>
