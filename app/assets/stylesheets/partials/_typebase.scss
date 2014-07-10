@@ -59,6 +59,10 @@ h3 {
   font-style: bold;
   text-transform: uppercase;
   letter-spacing: .125em;
+
+  &:first-child {
+    margin-top: 0;
+  }
 }
 
 h4 {
