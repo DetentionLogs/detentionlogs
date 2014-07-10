@@ -144,6 +144,14 @@ body {
   }
 }
 
+.secondary {
+  @extend %default-secondary-column;
+
+  @include breakpoint($bp-l) {
+    float: right;
+  }
+}
+
 .page-header {
   @include clearfix;
 }
