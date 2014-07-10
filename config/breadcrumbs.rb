@@ -3,7 +3,7 @@ crumb :root do
 end
 
 crumb :incidents do
-  link "Incident Explorer", incidents_path, title: "Explore incident records from Australia's immigration detention network"
+  link "Incident Reports", incidents_path, title: "Explore incident records from Australia's immigration detention network"
 end
 
 crumb :incident do |incident|
