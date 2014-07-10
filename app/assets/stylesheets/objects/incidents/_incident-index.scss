@@ -35,7 +35,7 @@
   }
 
   .lede-sub-link {
-    @include breakpoint($bp-m) {
+    @include breakpoint($bp-l) {
       display: none;
     }
   }
