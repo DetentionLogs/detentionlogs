@@ -23,3 +23,5 @@ app/assets/stylesheets/build/
 app/assets/javascripts/concat/
 
 /public/pattern-lab
+
+/public/system/
