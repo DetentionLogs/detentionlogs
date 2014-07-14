@@ -22,13 +22,13 @@
   <h3>Published by Detention&nbsp;Logs</h3>
 
   <dl>
-    <dt>Reports available</dt>
+    <dt>Incident Reports available</dt>
       <dd><%= Incident.count %></dd>
     <dt>Current available period</dt>
       <dd><%= Incident.order('occured_on').first.occured_on.strftime("%e %b %Y") %> &ndash; <%= Incident.order('occured_on').last.occured_on.strftime("%e %b %Y") %></dd>
 
     <dt>Current available Locations</dt>
-      <dd>All onshore detention facilities open during the period (includes those on Christmas Island). Note that Nauru and Manus Island facilities were not operating between early 2008 and late 2012 and would be considered &ldquo;offshore&rdquo;</dd>
+      <dd>All onshore detention facilities open during the period (includes those on Christmas Island). Note that Nauru and Manus Island facilities were not operating between early 2008 and late 2012 and would be considered &ldquo;offshore&rdquo; in Australian Government documents.</dd>
   </dl>
 </aside>
 
