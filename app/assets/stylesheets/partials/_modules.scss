@@ -5,9 +5,9 @@
   @include rem(border-top-width, ms(-3));
   position: relative;
   border-top-style: solid;
-  border-top-color: $color-information;
+  // border-top-color: $color-information;
   border-bottom-right-radius: .5em;
   border-bottom-left-radius: .5em;
-  background-color: $color-grey-light;
+  // background-color: $color-grey-light;
 }
 
