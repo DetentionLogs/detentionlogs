@@ -13,6 +13,22 @@ In pursuit of these aims we follow the principles set out on the project's [Prin
 
 Read more about the project on the [About page](http://detentionlogs.com.au/about).
 
+## Development
+
+### Setup
+
+You should have Ruby, Bundler, Git, and Postgres installed.
+
+Postgres should be configured to allow you to connect without a username and password. Setting your authentication method to `peer` in your `pg_hba.conf` file is really handy for local development (don't set this in production though!).
+
+Then:
+* Clone the repository - `git clone https://github.com/DetentionLogs/detentionlogs.git && cd detentionlogs`
+* Install Gems - `bundle install`
+* Copy dotenv configuration - `cp .env-example .env`
+* Setup databases - `bundle exec rake db:setup`
+* Run tests - `bundle exec rake`
+* Start server - `bundle exec rails server`
+
 ## Data
 
 ### Incident Reports
