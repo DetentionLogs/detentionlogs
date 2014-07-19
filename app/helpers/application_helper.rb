@@ -18,4 +18,7 @@ module ApplicationHelper
       title += [@start_date, @end_date].map{|d| d.strftime("%e %b %Y") }.to_sentence
   end
 
+  def date_display(date)
+    date && date.strftime("%e %b %Y") || 'N/A'
+  end
 end

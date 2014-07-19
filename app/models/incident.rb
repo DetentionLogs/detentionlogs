@@ -30,4 +30,12 @@ class Incident < ActiveRecord::Base
       .joins(Arel::Nodes::OuterJoin.new(reqs, Arel::Nodes::On.new(reqs[:incident_id].eq(arel_table[:id]))))
       .group(columns)
   end
+
+  def self.first_occured
+    order("occured_on").first.occured_on if order("occured_on").first
+  end
+
+  def self.last_occured
+    order("occured_on").last.occured_on if order("occured_on").first
+  end
 end

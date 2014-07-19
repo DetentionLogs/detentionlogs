@@ -159,8 +159,10 @@ class IncidentsController < ApplicationController
 
   # GET /incidents/about
   def about
-    render layout: "layouts/pages"
+    @total_incidents = Incident.count
+    @incidents_start_date = Incident.first_occured
+    @incidents_end_date = Incident.last_occured
 
-    @incidents =  Incident.order("occured_on")
+    render layout: "layouts/pages"
   end
 end
