@@ -157,7 +157,10 @@ class IncidentsController < ApplicationController
     end
   end
 
+  # GET /incidents/about
   def about
     render layout: "layouts/pages"
+
+    @incidents =  Incident.order("occured_on")
   end
 end

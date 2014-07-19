@@ -23,7 +23,7 @@
 
   <dl>
     <dt>Incident Reports available</dt>
-      <dd><%= Incident.count %></dd>
+      <dd><%= @incidents.count %></dd>
     <dt>Current available period</dt>
       <dd><%= Incident.order('occured_on').first.occured_on.strftime("%e %b %Y") %> &ndash; <%= Incident.order('occured_on').last.occured_on.strftime("%e %b %Y") %></dd>
 
