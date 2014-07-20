@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140622212144) do
+ActiveRecord::Schema.define(:version => 20140719061937) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -30,6 +30,44 @@ ActiveRecord::Schema.define(:version => 20140622212144) do
 
   add_index "admins", ["email"], :name => "index_admins_on_email", :unique => true
   add_index "admins", ["reset_password_token"], :name => "index_admins_on_reset_password_token", :unique => true
+
+  create_table "document_collections", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+    t.boolean  "published"
+    t.string   "short_description"
+    t.string   "slug"
+    t.string   "short_title"
+  end
+
+  create_table "document_versions", :force => true do |t|
+    t.integer  "document_id"
+    t.date     "date_created"
+    t.text     "description"
+    t.text     "source"
+    t.datetime "created_at",               :null => false
+    t.datetime "updated_at",               :null => false
+    t.string   "source_file_file_name"
+    t.string   "source_file_content_type"
+    t.integer  "source_file_file_size"
+    t.datetime "source_file_updated_at"
+  end
+
+  create_table "documents", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.datetime "created_at",               :null => false
+    t.datetime "updated_at",               :null => false
+    t.integer  "document_collection_id"
+    t.string   "source_file_file_name"
+    t.string   "source_file_content_type"
+    t.integer  "source_file_file_size"
+    t.datetime "source_file_updated_at"
+    t.boolean  "published"
+    t.string   "short_description"
+  end
 
   create_table "foi_requests", :force => true do |t|
     t.integer  "incident_id"
@@ -73,10 +111,11 @@ ActiveRecord::Schema.define(:version => 20140622212144) do
   create_table "locations", :force => true do |t|
     t.string   "name"
     t.string   "geoloc"
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
     t.text     "description"
     t.integer  "location_group_id"
+    t.integer  "incidents_count",   :default => 0
   end
 
 end
