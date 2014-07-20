@@ -13,7 +13,9 @@
       <section class="module">
         <h2 class="module-heading"><%= link_to "Data", :incidents %></h2>
 
-        <p class="module-body">So far Detention Logs has published <%= @incident_count %> incident reports produced by staff at Australia's onshore immigration detention facilities between <%= date_display(@incident_start_date) %> and <%= date_display(@incident_end_date) %>.</p>
+        <% if @incident_count != 0 %>
+          <p class="module-body">So far Detention Logs has published <%= @incident_count %> incident reports produced by staff at Australia's onshore immigration detention facilities between <%= date_display(@incident_start_date) %> and <%= date_display(@incident_end_date) %>.</p>
+        <% end %>
       </section>
 
       <section class="module">

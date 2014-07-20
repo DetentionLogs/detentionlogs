@@ -6,8 +6,6 @@ tmp/
 
 log/
 
-.env
-
 *.sublime-workspace
 
 .sass-cache
