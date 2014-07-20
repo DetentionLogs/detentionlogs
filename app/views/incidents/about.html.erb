@@ -27,7 +27,7 @@
 
     <% if @total_incidents != 0 %>
       <dt>Current available period</dt>
-        <dd><%= date_display(@incidents_start_date) %> &ndash; <%= date_display(@incidents_start_date) %></dd>
+        <dd><%= date_display(@incidents_start_date) %> &ndash; <%= date_display(@incidents_end_date) %></dd>
     <% end %>
 
     <dt>Current available Locations</dt>
@@ -58,7 +58,7 @@
 
 <figure class="figure-table">
   <table class="table-summary">
-    <legend>Number of Incident Reports <%= @start_date %> &ndash; <%= @end_date %></legend>
+    <legend>Number of Incident Reports from each available Location between<%= date_display(@incidents_start_date) %> &ndash; <%= date_display(@incidents_end_date) %></legend>
 
     <thead>
       <tr>
