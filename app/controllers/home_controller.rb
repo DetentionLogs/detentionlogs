@@ -4,7 +4,7 @@ class HomeController < ApplicationController
 
   def frontpage
     @incident_count = Incident.count
-    @incident_start_date = Incident.order("occured_on").first
-    @incident_end_date = Incident.order("occured_on").last
+    @incident_start_date = Incident.first_occured
+    @incident_end_date = Incident.last_occured
   end
 end
