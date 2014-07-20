@@ -74,3 +74,19 @@ tr td:first-child {
         }
     }
 }
+
+.table-summary {
+    @include breakpoint($bp-s) {
+        tbody tr:hover th,
+        tbody tr:hover td {
+            background-color: $color-grey-light-2;
+
+            .results-link:after {
+                margin-left: .5em;
+                display: inline-block;
+                color: $color-grey;
+                content: "(view reports)";
+            }
+        }
+    }
+}

@@ -51,3 +51,28 @@
 
 <p>The data we have managed to publish so far does not reflect the more up-to-date data held by the immigration department. If you would like to help us make more of this information accessible to the public, see the <%= link_to "contribute", contribute_path, title: 'How you can help.' %>.</p>
 
+<h2 id="locations">Locations</h2>
+
+<figure class="figure-table">
+  <table class="table-summary">
+    <legend>Number of Incident Reports <%= @start_date %> &ndash; <%= @end_date %></legend>
+
+    <thead>
+      <tr>
+        <th>Facility</th>
+        <th>Number of Incident Reports</th>
+        <th>Percentage of total</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @locations.each do |location| %>
+        <tr>
+          <th><%= location.name %></th>
+          <td><%= link_to location.incidents.size, incidents_path(location: location.id, anchor: 'results'), title: "View #{pluralize(location.incidents.size, 'Incident Report')} from #{location.name}.", class: 'results-link' %></td>
+          <td><%= '%.2f' % ((location.incidents.size.to_f / @total_incidents.to_f) * 100) %>%</td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</figure>
