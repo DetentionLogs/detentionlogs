@@ -146,9 +146,9 @@ div[aria-hidden="false"] { display: block; }
   display: inline-block;
 }
 
-.body-container :target {
-  background-color: $color-salient-light;
-}
+// .body-container :target {
+//   background-color: $color-salient-light;
+// }
 
 %visuallyhidden,
 .visuallyhidden {
