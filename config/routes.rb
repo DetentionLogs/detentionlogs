@@ -41,20 +41,12 @@ Detentionlogs::Application.routes.draw do
   # provides route for the 'about' incidents action.
   scope '/data' do
     resources :incidents do
+      delete 'deletereport'
+      get 'adopt'
+
       collection do
         get 'about'
       end
-    end
-  end
-
-  scope :path => '/data' do
-    resources :incidents do
-      delete 'deletereport'
-      get 'adopt'
-      # Following line could help caching of incident result pagination, but
-      # adds another url scheme to support going forward.
-      # needs consideration
-      # get 'page/:page', :action => :index, :on => :collection
     end
   end
 
