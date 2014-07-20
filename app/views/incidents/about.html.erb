@@ -24,8 +24,11 @@
   <dl>
     <dt>Incident Reports available</dt>
       <dd><%= @total_incidents %></dd>
-    <dt>Current available period</dt>
-      <dd><%= @start_date %> &ndash; <%= @end_date %></dd>
+
+    <% if @total_incidents != 0 %>
+      <dt>Current available period</dt>
+        <dd><%= date_display(@incidents_start_date) %> &ndash; <%= date_display(@incidents_start_date) %></dd>
+    <% end %>
 
     <dt>Current available Locations</dt>
       <dd>All onshore detention facilities open during the period (includes those on Christmas Island). Note that Nauru and Manus Island facilities were not operating between early 2008 and late 2012 and would be considered &ldquo;offshore&rdquo; in Australian Government documents.</dd>
