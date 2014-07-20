@@ -159,8 +159,18 @@ class IncidentsController < ApplicationController
 
   # GET /incidents/about
   def about
-    render layout: "layouts/pages"
-
     @incidents =  Incident.order("occured_on")
+
+    @start_date = @incidents.default_period_range.first.strftime("%e %b %Y")
+
+    @end_date = @incidents.default_period_range.end.strftime("%e %b %Y")
+
+    @total_incidents =  @incidents.count
+
+    @location_groups = LocationGroup.all
+
+    @locations = Location.order("incidents_count DESC")
+
+    render layout: "layouts/pages"
   end
 end
