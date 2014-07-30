@@ -20,7 +20,8 @@ module IncidentsHelper
   # Creates html class(s) for use in the display of
   # notices about the status of requests
   def foi_request_state_class(incident)
-    incident.foi_requests.map(&:described_state).uniq.join(" ")
+    state = incident.foi_requests.map(&:described_state).uniq.join(" foi_state_")
+    "foi_state_" + state
   end
 
   # Creates a link to the Right To Know request
