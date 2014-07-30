@@ -1,7 +1,7 @@
 <% if @incident.detailed_report.path %>
   <a class="btn btn-alt incident-detailreport-link" href="<%= @incident.detailed_report.url %>" title="Download the Incident Detail Report for this incident to find more information">See Incident Detail Report [PDF]</a>
 <% elsif !@incident.foi_requests.empty? %>
-  <a class="btn detail-report-link" href="#"><%= link_to_right_to_know(@incident) %></a>
+  <%= link_to_right_to_know(@incident) %>
 <% else %>
   <%= link_to "Adopt", incident_adopt_path(@incident), class: "btn btn-alt incident-detailreport-link", title: "help get more information about this incident" %>
 <% end %>
