@@ -17,6 +17,12 @@ module IncidentsHelper
     link_to text, url, { title: title, class: "btn btn-submit"}
   end
 
+  # Creates html class(s) for use in the display of
+  # notices about the status of requests
+  def foi_request_state_class(incident)
+    incident.foi_requests.map(&:described_state).uniq.join(" ")
+  end
+
   # Creates a link to the Right To Know request
   def link_to_right_to_know(incident)
     if (incident.foi_requests.count == 1)
@@ -28,6 +34,7 @@ module IncidentsHelper
       text = "#{incident.foi_requests.length} FOI Requests: #{statuses.to_sentence.gsub('.', '')}"
       link = "https://www.righttoknow.org.au/search/#{incident.incident_number}"
     end
-    link_to text, link, { class: "discrete distinct-download"}
+
+    link_to text, link, { class: "discrete distinct-download #{foi_request_state_class(incident)}"}
   end
 end
