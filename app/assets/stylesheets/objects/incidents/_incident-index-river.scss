@@ -170,6 +170,8 @@ $table-bp-l: 70em;
   }
 
   .incident-primary-meta {
+    font-weight: bold;
+
     @include breakpoint($bp-s) {
       @include isolation-span(4, 1, left, $grid: 8);
     }
