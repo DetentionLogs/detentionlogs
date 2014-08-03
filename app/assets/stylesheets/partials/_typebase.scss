@@ -40,6 +40,10 @@ h1 {
   @include breakpoint($bp-xxxl) {
     @include rem(margin, ms(11), 0, 0);
   }
+
+  &:first-child {
+    margin-top: 0;
+  }
 }
 
 h2 {

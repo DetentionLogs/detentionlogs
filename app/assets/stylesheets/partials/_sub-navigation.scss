@@ -7,15 +7,23 @@
   @include rem(padding-bottom, ms(-5));
   @include clearfix;
 
-  @include breakpoint($bp-l) {
-    margin-top: 0;
+  @include breakpoint($bp-m) {
+    @include rem(margin-bottom, ms(6));
   }
 
   @include breakpoint($bp-l) {
     @include rem(font-size, ms(1));
-    margin-bottom: 0;
+    margin-top: 0;
     border-bottom: 1px $color-grey-light solid;
     background-color: $color-grey-light-2;
+  }
+
+  @include breakpoint($bp-xxl) {
+    @include rem(margin-bottom, ms(9));
+  }
+
+  @include breakpoint($bp-xxxl) {
+    @include rem(margin-bottom, ms(11));
   }
 
   ul {

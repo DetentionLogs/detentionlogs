@@ -1,7 +1,19 @@
-.home {
+.home-frontpage {
   .site-header {
+    @include breakpoint($bp-m) {
+      @include rem(margin-bottom, ms(6));
+    }
+
     @include breakpoint(max-width $bp-l) {
       @include clearfix;
+    }
+
+    @include breakpoint($bp-xxl) {
+      @include rem(margin-bottom, ms(9));
+    }
+
+    @include breakpoint($bp-xxxl) {
+      @include rem(margin-bottom, ms(11));
     }
   }
 
