@@ -36,6 +36,6 @@ module IncidentsHelper
       link = "https://www.righttoknow.org.au/search/#{incident.incident_number}"
     end
 
-    link_to text, link, { class: "discrete distinct-download #{foi_request_state_class(incident)}"}
+    link_to text, link, { class: "discrete distinct-download"}
   end
 end
