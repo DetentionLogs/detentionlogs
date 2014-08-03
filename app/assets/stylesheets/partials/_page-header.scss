@@ -1,0 +1,14 @@
+.page-header {
+  @include clearfix;
+  width: 100%;
+  border-bottom: 1px $color-grey-light solid;
+
+  .page-title {
+    display: inline-block;
+  }
+}
+
+.page-nav {
+  @extend %default-secondary-column;
+  vertical-align: baseline;
+}
