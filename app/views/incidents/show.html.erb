@@ -8,16 +8,19 @@
 
 <%= render 'layouts/sub-nav' %>
 
-<div class="body-container">
-  <article class="incident incident-show-body h-event" role="main">
-    <section class="incident-show-body-primary">
+<main class="body-container" id="main" role="main">
+  <article class="main-reading text-block incident incident-show-body h-event" role="main">
+    <header class="page-header">
       <h1 class="page-title p-name">Incident <%= @incident.incident_number %></h1>
 
-      <%= render 'incidents/detail-report-link' %>
+      <nav class="page-nav">
+        <%= link_to "About Incident Reports", about_incidents_path, :class => "supporting help" %>
+        <%= render 'incidents/detail-report-link' %>
+      </nav>
+    </header>
 
-      <%= link_to "What is an incident report?", about_incidents_path, :class => "supporting help" %>
-
-      <dl class="incident-data-list incident-primary-meta">
+    <section class="incident-show-body">
+      <dl class="incident-data-list">
         <dt class="incident-field-label incident-type">Type</dt>
           <dd class="incident-field-value incident-type p-summary"><%= @incident.incident_type %></dd>
 
@@ -26,28 +29,27 @@
 
         <dt class="incident-field-label incident-location">Location</dt>
           <dd class="incident-field-value incident-location p-location"><%= @incident.location.name %></dd>
-      </dl>
 
-      <dl class="incident-summary">
         <dt class="incident-field-label incident-summary">Incident Summary</dt>
           <dd class="incident-field-value incident-summary p-description"><%= @incident.summary %></dd>
+
+        <dt class="incident-field-label incident-informed-by">Informed By</dt>
+          <dd class="incident-field-value incident-informed-by"><%= @incident.informed_by %></dd>
+
+        <dt class="incident-field-label incident-level">Level</dt>
+          <dd class="incident-field-value incident-level"><%= @incident.level %></dd>
+
+        <dt class="incident-field-label incident-number">Incident Number</dt>
+          <dd class="incident-field-value incident-number"><%= @incident.incident_number %></dd>
+
+        <dt class="incident-field-label incident-location-details">Location Details</dt>
+          <dd class="incident-field-value incident-location-details"><%= @incident.location_details %></dd>
       </dl>
     </section>
 
-    <dl class="incident-secondary">
-      <dt class="incident-field-label incident-informed-by">Informed By</dt>
-        <dd class="incident-field-value incident-informed-by"><%= @incident.informed_by %></dd>
-
-      <dt class="incident-field-label incident-level">Level</dt>
-        <dd class="incident-field-value incident-level"><%= @incident.level %></dd>
-
-      <dt class="incident-field-label incident-number">Incident Number</dt>
-        <dd class="incident-field-value incident-number"><%= @incident.incident_number %></dd>
-
-      <dt class="incident-field-label incident-location-details">Location Details</dt>
-        <dd class="incident-field-value incident-location-details"><%= @incident.location_details %></dd>
-    </dl>
+    <figure class="secondary">
+    </figure>
 
     <p class="msg msg-information">If you have any issues, concerns, questions or suggestions regarding this data please <a href="/about/#contact" title="Contact Detention Logs">contact Detention&nbsp;Logs</a>.</p>
   </article>
-</div>
+</main>

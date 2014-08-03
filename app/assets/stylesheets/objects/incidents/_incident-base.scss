@@ -2,8 +2,6 @@
 // Styles that apply to incident reports in all views
 //
 // .incident-field-label
-// .incident-primary-meta
-//   .incident-field-value
 // .foirequest-status
 
 .incident-field-label {
@@ -11,12 +9,4 @@
   color: $color-grey-dark;
   text-transform: uppercase;
   letter-spacing: 1px;
-}
-
-// .incident-field-value {}
-
-.incident-primary-meta {
-  .incident-field-value {
-    font-weight: bold;
-  }
 }
