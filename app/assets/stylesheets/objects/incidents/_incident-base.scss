@@ -1,3 +1,11 @@
+// Incident base styles
+// Styles that apply to incident reports in all views
+//
+// .incident-field-label
+// .incident-primary-meta
+//   .incident-field-value
+// .foirequest-status
+
 .incident-field-label {
   @include rem(font-size, ms(0));
   color: $color-grey-dark;
