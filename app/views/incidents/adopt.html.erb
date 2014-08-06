@@ -1,7 +1,7 @@
 <%
   title "Adopt Incident #{@incident.incident_number}"
 
-  description "Help bring to light more information about incident #{@incident.incident_number} by submitting a Freedom of Information Request for its Detailed Incident Report"
+  description "Help bring to light more information about incident #{@incident.incident_number} by submitting a Freedom of Information Request for its Incident Detail Report"
 
   breadcrumb :incident_adopt, @incident
 %>
@@ -11,9 +11,9 @@
 <article class="body-container main-reading incident-adopt-body" role="main">
   <%= render 'incidents/adopt-callout' %>
 
-  <h2 id="what">What is a Detailed Incident Report?</h2>
+  <h2 id="what">What is an Incident Detail Report?</h2>
 
-  <p>A Detailed Incident Report contains more information about an incident. It can have multiple, more substancial accounts of what happened, list incidents related to this one, indicated whether minors were involved and more. These reports are extremely useful for investigating the detention network and provide important information about a range of detention issues. For example, see <a href="http://s3.amazonaws.com/detention_logs/incidents/detailed_reports/000/050/330/original/1-3CTBC9.pdf?1370745305">Detailed Incident Report 1-3CTBC9</a> and compare to the <%= link_to "summary incident report", incident_path(50330) %>.</p>
+  <p>A Incident Detail Report contains more information about an incident. It can have multiple, more substancial accounts of what happened, list incidents related to this one, indicated whether minors were involved and more. These reports are extremely useful for investigating the detention network and provide important information about a range of detention issues. For example, see <a href="http://s3.amazonaws.com/detention_logs/incidents/detailed_reports/000/050/330/original/1-3CTBC9.pdf?1370745305">Incident Detail Report 1-3CTBC9</a> and compare to the <%= link_to "summary incident report", incident_path(50330) %>.</p>
 
   <h2 id="why-do-it">Why make a request?</h2>
 
@@ -21,7 +21,7 @@
 
   <h2 id="what-to-expect">What should I expect?</h2>
 
-  <p>Lodging a freedom of information (FOI) request is easy. There is currently no application fee so all you need to do is follow the &lsquo;Adopt Incident 1-2TB9HT&rsquo; link at th top. You&rsquo;ll find a pre-written request for the detailed report for the incident you were just exploring (<%= link_to "Incident #{@incident.incident_number}", @incident, :title => "Go back to the summary of Incident #{@incident.incident_number}" %>).</p>
+  <p>Lodging a freedom of information (FOI) request is easy. There is currently no application fee so all you need to do is follow the &lsquo;Adopt Incident 1-2TB9HT&rsquo; link at th top. You&rsquo;ll find a pre-written request for the detail report for the incident you were just exploring (<%= link_to "Incident #{@incident.incident_number}", @incident, :title => "Go back to the summary of Incident #{@incident.incident_number}" %>).</p>
 
   <p>Your communication with the FOI Officer assigned to your request is handled through the <a href="https://www.righttoknow.org.au/">Right to Know website</a>, a fantastic tool by the <a href="https://www.openaustraliafoundation.org.au/">OpenAustralia Foundation</a> that makes it easy to use Australia&rsquo;s FOI system. At Right To Know requests are listed publicly which means that others can help you with your request if anything confusing comes up, and once released, the documents you request go public straight away. We&rsquo;ll add those documents to the incident reports on our site so everyone can access this public information.</p>
 
