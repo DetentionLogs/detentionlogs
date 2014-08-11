@@ -22,17 +22,17 @@
     }
   }
 
-  .page-title {
-    @extend h2;
+  // .page-title {
+  //   @extend h2;
 
-    @media (max-width: $bp-s) {
-      margin-top: 0;
-    }
+  //   @media (max-width: $bp-s) {
+  //     margin-top: 0;
+  //   }
 
-    + p {
-      margin-top: 0;
-    }
-  }
+  //   + p {
+  //     margin-top: 0;
+  //   }
+  // }
 
   .lede-sub-link {
     @include breakpoint($bp-l) {

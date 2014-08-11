@@ -14,8 +14,10 @@
       <h1 class="page-title p-name">Incident <%= @incident.incident_number %></h1>
 
       <nav class="page-nav">
-        <%= link_to "About Incident Reports", about_incidents_path, :class => "supporting help" %>
-        <%= render 'incidents/detail-report-link' %>
+        <%= link_to "About Incident Reports", about_incidents_path %>
+        <% if @incident.foi_requests.empty? and !@incident.detailed_report.path %>
+          <%= link_to "Adopt", incident_adopt_path(@incident), class: "incident-adopt-link", title: "help get more information about this incident" %>
+        <% end %>
       </nav>
     </header>
 

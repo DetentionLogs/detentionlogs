@@ -14,7 +14,11 @@
 	<header class="page-header">
 		<h1 class="page-title">Incident Reports</h1>
 
-    <p>Incident Reports are records of events that occur in immigration detention, produced by detention centre staff for the Australian Government. <%= link_to "About Incident Reports.", about_incidents_path, class: 'lede-sub-link', title: 'Read more information about Incident Reports and where this data came from.' %></p>
+    <nav class="page-nav">
+      <%= link_to "About Incident Reports", about_incidents_path, title: 'Read more information about Incident Reports.' %>
+    </nav>
+
+    <p class="page-summary">Incident Reports are records of events that occur in immigration detention, produced by detention centre staff for the Australian Government.</p>
 	</header>
 
 	<%= render 'incident-filters' %>

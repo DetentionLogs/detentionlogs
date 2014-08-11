@@ -1,14 +1,55 @@
 .page-header {
   @include clearfix;
+  @include rem(margin-bottom, ms(7));
   width: 100%;
-  border-bottom: 1px $color-grey-light solid;
 
   .page-title {
-    display: inline-block;
+    @include breakpoint($bp-m) {
+      display: inline-block;
+      float: left;
+    }
   }
 }
 
 .page-nav {
-  @extend %default-secondary-column;
-  vertical-align: baseline;
+  // @extend %default-secondary-column;
+  @include clearfix;
+  clear: right;
+
+  @include breakpoint($bp-m) {
+    @include rem(min-height, 3.75); // match the height of the page-title
+    border-bottom: 1px $color-grey-light solid;
+  }
+
+  @include breakpoint($bp-xxl) {
+    @include rem(min-height, 4.470588235); // match the height of the page-title
+  }
+
+  a {
+    @include rem(padding, ms(-2), ms(0));
+    display: block;
+    text-decoration: none;
+    border-left: 1px $color-grey-light solid;
+
+    @include breakpoint($bp-m) {
+      @include rem(padding, ms(-2), ms(1));
+      display: inline-block;
+      float: right;
+      width: auto;
+    }
+
+    @include breakpoint($bp-m) {
+      @include rem(padding, ms(-2), ms(2));
+      margin-top: 14px; // match the height so that the link sits on the baseline
+    }
+
+    @include breakpoint($bp-xxl) {
+      margin-top: 27px; // match the height so that the link sits on the baseline
+      // @include rem(padding, ms(5), ms(5), 0);
+    }
+  }
+}
+
+.page-summary {
+  clear: both;
 }
