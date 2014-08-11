@@ -1,6 +1,5 @@
 .page-header {
   @include clearfix;
-  @include rem(margin-bottom, ms(7));
   width: 100%;
 
   .page-title {

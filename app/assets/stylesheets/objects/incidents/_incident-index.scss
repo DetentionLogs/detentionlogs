@@ -1,5 +1,7 @@
 // Incident Index
-// Base styles for the incidents index page
+// Base styles for the incidents index page,
+// all layout so far.
+//
 //
 // .incident-index
 //   .page-header
@@ -22,21 +24,7 @@
     }
   }
 
-  // .page-title {
-  //   @extend h2;
-
-  //   @media (max-width: $bp-s) {
-  //     margin-top: 0;
-  //   }
-
-  //   + p {
-  //     margin-top: 0;
-  //   }
-  // }
-
-  .lede-sub-link {
-    @include breakpoint($bp-l) {
-      display: none;
-    }
+  .page-header {
+    @include rem(margin-bottom, ms(7));
   }
 }
