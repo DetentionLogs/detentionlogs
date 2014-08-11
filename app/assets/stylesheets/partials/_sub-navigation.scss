@@ -56,7 +56,7 @@
   li {
     display: inline;
 
-    & + li:before {
+    &:after {
       content: " > ";
       color: $color-grey;
     }
@@ -71,6 +71,10 @@
 
       @include breakpoint($bp-m) {
         display: inline;
+      }
+
+      &:after {
+        content: none;
       }
     }
   }
