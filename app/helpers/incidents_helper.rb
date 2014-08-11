@@ -28,14 +28,14 @@ module IncidentsHelper
   def link_to_right_to_know(incident)
     if (incident.foi_requests.count == 1)
       foi_request = incident.foi_requests.first
-      text = "FOI Request: #{foi_request.display_status}"
+      text = "FOI Request for more detail: #{foi_request.display_status}"
       link = "https://www.righttoknow.org.au/request/#{foi_request.url_title}"
     else
       statuses = incident.foi_requests.map(&:display_status).uniq
-      text = "#{incident.foi_requests.length} FOI Requests: #{statuses.to_sentence.gsub('.', '')}"
+      text = "#{incident.foi_requests.length} FOI Requests for more detail: #{statuses.to_sentence.gsub('.', '')}"
       link = "https://www.righttoknow.org.au/search/#{incident.incident_number}"
     end
 
-    link_to text, link, { class: "discrete distinct-download"}
+    link_to text, link, { class: "incident-rtk-request-link"}
   end
 end
