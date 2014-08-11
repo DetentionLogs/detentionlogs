@@ -10,11 +10,7 @@
 
   .banner {
     @include rem(margin-top, ms(-6));
-    word-break: none;
-
-    @include breakpoint($bp-l) {
-      float: left;
-    }
+    float: left;
   }
 
   .tagline {
