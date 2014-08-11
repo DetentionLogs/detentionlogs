@@ -8,22 +8,38 @@
   }
 }
 
+%msg-error,
 .msg-error {
   background-color: lighten($color-error, 20%);
   border-top-color: $color-error;
 }
 
+%msg-valid,
 .msg-valid {
   background-color: lighten($color-valid, 40%);
   border-top-color: $color-valid;
 }
 
+%msg-notice,
 .msg-notice {
   background-color: $color-salient-light-2;
   border-top-color: $color-warning;
 }
 
+%msg-information,
 .msg-information {
   background-color: lighten($color-information, 20%);
   border-top-color: $color-information;
+
+  a {
+    color: $color-black;
+  }
+}
+
+%msg-access {
+  background-color: $color-submit;
+
+  a {
+    color: $color-white;
+  }
 }

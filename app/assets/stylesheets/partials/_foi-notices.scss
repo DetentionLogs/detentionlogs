@@ -1,0 +1,39 @@
+.notice {
+  @include clearfix;
+  @include rem(padding, ms(-10), ms(-3));
+  border-radius: .3em;
+  clear: both;
+  display: block;
+  width: auto;
+}
+
+// FOI Request state classes for use in display
+//
+
+.foi_state_not_held,
+.foi_state_user_withdrawn,
+.foi_state_gone_postal,
+.foi_state_rejected {
+  @extend %msg-information;
+}
+
+ // not sure how to treat these two yet
+.foi_state_not_foi,
+.foi_state_vexatious {
+  @extend %msg-information;
+}
+
+.foi_state_internal_review,
+.foi_state_waiting_response,
+.foi_state_waiting_clarification {
+  @extend %msg-notice;
+}
+
+.foi_state_partially_successful,
+.foi_state_successful {
+  @extend %msg-valid;
+}
+
+.incident-report-download {
+  @extend %msg-access;
+}
