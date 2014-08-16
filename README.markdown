@@ -17,6 +17,8 @@ Read more about the project on the [About page](http://detentionlogs.com.au/abou
 
 ### Contributing 
 
+[![Stories in Ready](https://badge.waffle.io/DetentionLogs/detentionlogs.png?label=ready&title=Ready)](http://waffle.io/DetentionLogs/detentionlogs)
+
 If you are interested in contributing to the development of Detention Logs please start by looking to see what [Issues](https://github.com/DetentionLogs/detentionlogs/issues) are currently open. It is very helpful to have people joining the discussion or sugggesting ideas. If you find something simple that you know you can fix or improve, feel free to make the change and send through a pull request.
 
 If you want to contribute an enhancement or a fix:
